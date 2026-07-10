@@ -17,8 +17,8 @@
   --color-muted-light: rgba(255, 255, 255, 0.68);
 
   /* Typography */
-  --font-display: "Cinqo Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Cinqo Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 
   /* Font sizes - we'll create text utilities text-hero, text-h1 etc */
   --text-hero: clamp(2.4rem, 6vw, 5rem);
@@ -66,13 +66,6 @@
   /* Glassmorphism custom vars */
   --glass-blur: 16px;
   --glass-blur-strong: 28px;
-}
-
-/* Base custom font */
-@font-face {
-  font-family: "Cinqo Sans";
-  src: local("Helvetica Neue"), local("Arial");
-  font-display: swap;
 }
 
 @layer base {

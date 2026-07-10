@@ -41,7 +41,7 @@ export default function NewsSection() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: "easeOut" }}
             >
               <Link href={item.href} className="flex flex-col gap-2 w-[280px] shrink-0">
-                <div className="relative aspect-[4/3] rounded-md overflow-hidden bg-navy-900">
+                <div className="relative aspect-[4/3] rounded-[10px] overflow-hidden bg-navy-900">
                   <Image
                     src={item.image}
                     alt={item.title}

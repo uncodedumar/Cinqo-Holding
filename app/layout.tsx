@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
+import { Inter, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: "Cinqo Holding — Built on Commitment. Driven by Performance.",
@@ -17,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.variable} ${ibmPlexSans.variable}`}>
         <SmoothScrollProvider>
           <Navbar />
           {children}
