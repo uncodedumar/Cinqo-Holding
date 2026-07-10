@@ -19,7 +19,7 @@ export const newsData: NewsItem[] = [
     tag: "News",
     title: "Cinqo Holding Initiates Strategic Group Restructuring",
     date: "May 19, 2026",
-    image: "/images/news/news-2.jpg",
+    image: "/images/news/news-1.jpg",
     href: "/news/strategic-group-restructuring-2",
   },
   {
@@ -27,7 +27,7 @@ export const newsData: NewsItem[] = [
     tag: "News",
     title: "Cinqo Holding Initiates Strategic Group Restructuring",
     date: "May 19, 2026",
-    image: "/images/news/news-3.jpg",
+    image: "/images/news/news-1.jpg",
     href: "/news/strategic-group-restructuring-3",
   },
   {
@@ -35,7 +35,7 @@ export const newsData: NewsItem[] = [
     tag: "News",
     title: "Cinqo Holding Initiates Strategic Group Restructuring",
     date: "May 19, 2026",
-    image: "/images/news/news-4.jpg",
+    image: "/images/news/news-1.jpg",
     href: "/news/strategic-group-restructuring-4",
   },
 ];
