@@ -16,6 +16,8 @@ export default function ProjectHighlights() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [hovering, setHovering] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const playPromise = useRef<Promise<void> | null>(null);
 
   const project = projectsData[activeProjectIndex];
   const activeThumb = project.gallery[activeImageIndex];
@@ -35,14 +37,37 @@ export default function ProjectHighlights() {
     setActiveImageIndex(index);
   };
 
+  const handleMouseEnter = () => {
+    setHovering(true);
+    if (videoRef.current) {
+      playPromise.current = videoRef.current.play();
+      if (playPromise.current !== undefined) {
+        playPromise.current.catch(() => {});
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHovering(false);
+    if (videoRef.current) {
+      if (playPromise.current !== undefined && playPromise.current !== null) {
+        playPromise.current.then(() => {
+          videoRef.current?.pause();
+        }).catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
   return (
     <section className="section bg-cream-100" id="projects">
       <div className="container grid gap-12 items-start min-[900px]:grid-cols-[1.1fr_0.9fr]">
         <div
           className="relative aspect-[4/3] rounded-[20px] overflow-hidden bg-navy-800"
           ref={heroRef}
-          onMouseEnter={() => setHovering(true)}
-          onMouseLeave={() => setHovering(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <Image
             src={activeThumb?.src ?? project.heroImage}
@@ -52,12 +77,12 @@ export default function ProjectHighlights() {
           />
           {project.heroVideo && (
             <video
+              ref={videoRef}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${hovering ? "opacity-100" : "opacity-0"}`}
               src={project.heroVideo}
               muted
               loop
               playsInline
-              autoPlay={hovering}
             />
           )}
         </div>

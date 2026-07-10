@@ -31,8 +31,32 @@ const FOOTER_COLUMNS = [
 export default function Footer() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleMouseEnter = () => videoRef.current?.play();
-  const handleMouseLeave = () => videoRef.current?.pause();
+  const playPromise = useRef<Promise<void> | null>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      playPromise.current = videoRef.current.play();
+      if (playPromise.current !== undefined) {
+        playPromise.current.catch(() => {
+          // Auto-play was prevented or interrupted
+        });
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      if (playPromise.current !== undefined && playPromise.current !== null) {
+        playPromise.current.then(() => {
+          videoRef.current?.pause();
+        }).catch(() => {
+          // ignore
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
 
   return (
     <footer
