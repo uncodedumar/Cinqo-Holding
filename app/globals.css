@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-navy-950: #0a1a24;
+  --color-navy-900: #10222e;
+  --color-navy-800: #1c3644;
+  --color-ink: #1a1a1a;
+  --color-coral-600: #e2432b;
+  --color-coral-500: #ea5a42;
+  --color-coral-100: #fbe9ea;
+  --color-cream-100: #f7f5f1;
+  --color-cream-50: #ffffff;
+  --color-line: #e3e0da;
+  --color-line-dark: rgba(255, 255, 255, 0.14);
+  --color-muted: #6b7280;
+  --color-muted-light: rgba(255, 255, 255, 0.68);
+
+  /* Typography */
+  --font-display: "Cinqo Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Cinqo Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Font sizes - we'll create text utilities text-hero, text-h1 etc */
+  --text-hero: clamp(2.4rem, 6vw, 5rem);
+  --text-h1: clamp(2rem, 4vw, 3.25rem);
+  --text-h2: clamp(1.5rem, 2.6vw, 2.25rem);
+  --text-h3: clamp(1.15rem, 1.6vw, 1.5rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-eyebrow: 0.8rem;
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+  --letter-spacing-eyebrow: 0.18em;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 24px;
+  --spacing-5: 32px;
+  --spacing-6: 48px;
+  --spacing-7: 64px;
+  --spacing-8: 96px;
+  --spacing-9: 140px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.25s;
+  --dur-normal: 0.6s;
+  --dur-slow: 1.2s;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Z-index */
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+
+  /* Glassmorphism custom vars */
+  --glass-blur: 16px;
+  --glass-blur-strong: 28px;
+}
+
+/* Base custom font */
+@font-face {
+  font-family: "Cinqo Sans";
+  src: local("Helvetica Neue"), local("Arial");
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis takes over smooth scrolling */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-cream-100);
+    line-height: var(--line-height-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: var(--line-height-tight);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  h1 { font-size: var(--text-h1); }
+  h2 { font-size: var(--text-h2); }
+  h3 { font-size: var(--text-h3); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-100);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-navy-800);
+    border-radius: var(--radius-pill);
+  }
+}
+
+@layer components {
+  /* Layout helpers */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 64px);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding-inline: 20px;
+    }
+  }
+
+  .section {
+    position: relative;
+    padding-block: clamp(64px, 10vw, 140px);
+  }
+
+  .section-dark {
+    background-color: var(--color-navy-900);
+    color: var(--color-cream-50);
+  }
+
+  /* Typography helpers */
+  .eyebrow {
+    font-size: var(--text-eyebrow);
+    letter-spacing: var(--letter-spacing-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-coral-600);
+    font-weight: 600;
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  /* Glassmorphism utilities */
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .glass-frost-hover {
+    transition: backdrop-filter var(--dur-normal) var(--ease-out-expo),
+      background var(--dur-normal) var(--ease-out-expo);
+  }
+
+  .glass-frost-hover:hover {
+    backdrop-filter: blur(var(--glass-blur-strong));
+    -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-small);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: transform var(--dur-fast) var(--ease-out-expo),
+      background var(--dur-fast) var(--ease-out-expo);
+  }
+
+  .btn-primary {
+    background: var(--color-coral-600);
+    color: var(--color-cream-50);
+  }
+  .btn-primary:hover {
+    background: var(--color-coral-500);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--color-line-dark);
+    color: inherit;
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Reveal / animation base states */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in {
+    opacity: 0;
+  }
+  .fade-in-visible {
+    opacity: 1;
+  }
+
+  /* Media overlays */
+  .bg-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 26, 36, 0.35) 0%,
+      rgba(10, 26, 36, 0.75) 100%
+    );
+  }
+}
+
+/* Animations from components */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
