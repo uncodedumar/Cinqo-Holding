@@ -15,7 +15,7 @@ export default function SubscribeNow() {
     <motion.section
       initial={{ scale: 0.9, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="relative overflow-hidden bg-[url('/images/subscribe/bg.jpg')] bg-center bg-cover bg-no-repeat py-24 text-cream-50 text-center"
     >

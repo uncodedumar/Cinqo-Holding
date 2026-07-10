@@ -37,7 +37,7 @@ export default function NewsSection() {
               key={`${item.id}-${i}`}
               initial={{ scale: 0.85, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: "easeOut" }}
             >
               <Link href={item.href} className="flex flex-col gap-2 w-[280px] shrink-0">
