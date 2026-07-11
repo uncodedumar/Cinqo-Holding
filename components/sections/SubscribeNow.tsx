@@ -17,10 +17,9 @@ export default function SubscribeNow() {
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="relative overflow-hidden bg-[url('/images/subscribe/bg.jpg')] bg-center bg-cover bg-no-repeat text-cream-50 text-center mx-[50px] mt-[10px] mb-[20px]"
+      className="relative overflow-hidden bg-[url('/images/subscribe/bg.jpg')] bg-center bg-cover bg-no-repeat text-cream-50 text-center mx-[50px] mt-[10px] mb-[70px]"
     >
-      <div className="bg-overlay" />
-      <div className="relative z-20 px-4 py-24 flex flex-col items-center gap-6">
+      <div className="relative px-4 py-24 flex flex-col items-center gap-6">
         <h2>Join M+ Readers Who Never Miss A Headline</h2>
         <p>Stay informed wherever you are. Join our community of <br />readers across social media platforms.</p>
 
@@ -31,9 +30,9 @@ export default function SubscribeNow() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-[280px] py-[14px] px-[20px] rounded-[5px] border border-white/20 bg-white/90 text-ink"
+            className="w-[280px] py-[14px] px-[20px] rounded-[2px] border border-white/20 bg-white/90 text-ink"
           />
-          <button type="submit" className="btn btn-primary rounded-[5px]">
+          <button type="submit" className="btn btn-primary rounded-[2px]">
             Subscribe Now
           </button>
         </form>
