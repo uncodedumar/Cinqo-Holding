@@ -2,7 +2,7 @@ import type { PartnerLogo } from "@/types";
 
 /**
  * Represented brands — rendered in an infinite horizontal loop
- * (see components/sections/LogosLoop.tsx).
+ * (see components/sections/Home/LogosLoop.tsx).
  */
 export const logosData: PartnerLogo[] = [
   { id: "brand-1", name: "Brand 1", logo: "/images/workedwith/015134c380fbe01bfda87aebae729a235444f9d2.png" },
