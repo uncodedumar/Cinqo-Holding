@@ -258,9 +258,13 @@
 
 /* Animations from components */
 @keyframes kenburns {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.12); }
+  0% { transform: scale(1.15); }
+  100% { transform: scale(1.25); }
 }
+.animate-kenburns {
+  animation: kenburns 6s ease-in-out;
+}
+
 @keyframes scroll {
   to { transform: translateX(-50%); }
 }
