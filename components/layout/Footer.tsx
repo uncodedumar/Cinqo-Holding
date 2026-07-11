@@ -79,8 +79,8 @@ export default function Footer() {
         preload="metadata"
       />
 
-      <div className="container relative z-20 grid gap-16 pt-24 pb-12 min-[900px]:grid-cols-[1fr_2fr] flex-1">
-        <div className="flex flex-col gap-4">
+      <div className="container relative z-20 grid gap-16 pt-[175px] pb-0 min-[900px]:grid-cols-[1fr_2fr] flex-1">
+        <div className="flex flex-col gap-4 mt-[75px]">
           <Image
             src="/images/logos/image.webp"
             alt="Cinqo"
@@ -93,9 +93,9 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-12 grid-cols-2">
-          {FOOTER_COLUMNS.map((col) => (
-            <div key={col.title}>
+        <div className="flex justify-end">
+          {FOOTER_COLUMNS.map((col, i) => (
+            <div key={col.title} className={i === 0 ? "mr-[100px]" : ""}>
               <h4 className="text-small uppercase tracking-[0.08em] mb-4 text-muted-light">{col.title}</h4>
               <ul className="flex flex-col gap-2">
                 {col.links.map((link) => (
@@ -109,37 +109,39 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container relative z-20 pb-2 text-small text-muted-light">
-        <div className="flex flex-col items-end">
-          <div className="flex items-center gap-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M20 4l-6.768 6.768"/>
-              </svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
+      <div className="-translate-y-[92px]">
+        <div className="container relative z-20 pb-1 text-small text-muted-light">
+          <div className="flex flex-col items-end">
+            <div className="flex items-center gap-4">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M20 4l-6.768 6.768"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="container relative z-20 border-t border-white/20 py-6 text-small text-muted-light">
-        <div className="flex items-center justify-between">
-          <span>© {new Date().getFullYear()} Cinqo Holding. All rights reserved.</span>
-          <span className="text-muted-light">Designed and developed by Bricklix (PVT) LTD</span>
+        <div className="container relative z-20 border-t border-white/20 pt-1 pb-[25px] text-small text-muted-light">
+          <div className="flex items-center justify-between">
+            <span>© {new Date().getFullYear()} Cinqo Holding. All rights reserved.</span>
+            <span className="text-muted-light">Designed and developed by Bricklix (PVT) LTD</span>
+          </div>
         </div>
       </div>
     </footer>
