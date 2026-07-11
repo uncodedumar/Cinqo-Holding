@@ -93,9 +93,9 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-12 grid-cols-2">
-          {FOOTER_COLUMNS.map((col) => (
-            <div key={col.title}>
+        <div className="grid gap-5 grid-cols-2">
+          {FOOTER_COLUMNS.map((col, i) => (
+            <div key={col.title} className={i === 0 ? "pl-5" : "justify-self-end"}>
               <h4 className="text-small uppercase tracking-[0.08em] mb-4 text-muted-light">{col.title}</h4>
               <ul className="flex flex-col gap-2">
                 {col.links.map((link) => (

@@ -30,9 +30,9 @@ export default function SubscribeNow() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-[280px] py-[14px] px-[20px] rounded-[2px] border border-white/20 bg-white/90 text-ink"
+            className="w-[280px] py-[14px] px-[20px] rounded-[1px] border border-white/20 bg-white/90 text-ink"
           />
-          <button type="submit" className="btn btn-primary rounded-[2px]">
+          <button type="submit" className="btn btn-primary rounded-[1px]">
             Subscribe Now
           </button>
         </form>
