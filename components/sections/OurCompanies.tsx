@@ -16,31 +16,39 @@ export default function OurCompanies() {
           Five operating Companies. Governed by one unified structure.
         </p>
 
-        <div className="mt-12 grid gap-6 min-[700px]:grid-cols-2 min-[1100px]:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {companiesData.map((company) => (
             <Link
               href={company.href}
               key={company.id}
-              className="group relative block overflow-hidden rounded-md border border-line bg-cream-50 p-8 min-h-[260px] isolate glass-frost-hover"
+              className="group relative block overflow-hidden rounded-md border border-line bg-cream-50 p-6 md:p-8 min-h-[360px] isolate glass-frost-hover transition-all duration-300 hover:shadow-md"
             >
+              {/* Background Image on Hover */}
               <Image
                 src={company.bgImage}
                 alt=""
                 fill
                 className="object-cover opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100 -z-20"
               />
+              
+              {/* Frosted Glass Overlay */}
               <div className="absolute inset-0 -z-10 bg-white/55 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100" />
 
-              <div className="flex flex-col gap-6 h-full justify-between">
-                <div className="h-[40px]">
+              {/* Card Content (Logo top, Text bottom) */}
+              <div className="flex flex-col justify-between h-full gap-6">
+                <div className="relative flex items-start">
                   <Image
                     src={company.logo}
                     alt={company.name}
-                    width={120}
-                    height={40}
+                    width={140}
+                    height={80}
+                    className="w-auto h-16 md:h-20 object-contain object-left"
                   />
                 </div>
-                <p>{company.description}</p>
+                
+                <p className="text-sm md:text-base leading-relaxed text-gray-700">
+                  {company.description}
+                </p>
               </div>
             </Link>
           ))}
