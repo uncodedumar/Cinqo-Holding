@@ -36,15 +36,26 @@ export default function Hero() {
     };
   }, [startAutoplay]);
 
-  // Play active video, pause others
+  // Play active video, pause others, apply Ken Burns zoom
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
+      gsap.killTweensOf(video);
       if (i === activeIndex) {
         video.currentTime = 0;
         video.play();
+        if (heroSlidesData[i].id !== "vid2") {
+          gsap.fromTo(
+            video,
+            { scale: 1.4 },
+            { scale: 1.6, duration: SLIDE_DURATION / 1000, ease: "none" }
+          );
+        } else {
+          gsap.set(video, { scale: 1 });
+        }
       } else {
         video.pause();
+        gsap.set(video, { scale: 1 });
       }
     });
   }, [activeIndex]);
