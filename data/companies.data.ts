@@ -8,7 +8,7 @@ export const companiesData: CompanyCard[] = [
   {
     id: "cinqo-holdings",
     name: "Cinqo Holdings",
-    logo: "/images/companies/cinqo-holdings-logo.svg",
+    logo: "/images/companies/CINQO.webp",
     bgImage: "/images/companies/cinqo-holdings-bg.jpg",
     description:
       "Cinqo Holding is the investment and strategic parent company that provides the governance, leadership and long-term vision behind the Group's portfolio of its operating businesses and investments.",
