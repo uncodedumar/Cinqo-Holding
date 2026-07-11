@@ -12,8 +12,10 @@ const inter = Inter({
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
+  variable: "--font-ibm-plex-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
