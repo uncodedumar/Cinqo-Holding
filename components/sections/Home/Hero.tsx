@@ -96,7 +96,7 @@ export default function Hero() {
         <div className="bg-overlay" />
       </div>
 
-      <div className="container relative z-20 pb-24 flex flex-col gap-6 !pl-[10px]" ref={headlineRef}>
+      <div className="container relative z-20 pb-24 flex flex-col gap-6 !pl-[40px]" ref={headlineRef}>
         <h1 className="text-white text-4xl md:text-5xl lg:text-[4rem] font-bold leading-[1.1] tracking-tight">
           BUILT ON COMMITMENT.
           <br />
