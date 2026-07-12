@@ -1,46 +1,38 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { newsData } from "@/data/news.data";
 
 export default function NewsSection() {
-  const stripRef = useRef<HTMLDivElement>(null);
-
-  const doubled = [...newsData, ...newsData];
-
   return (
     <section className="section bg-cream-100 overflow-hidden" id="news">
-      <div className="container">
-        <h2>CINQO News</h2>
-      </div>
+      <div className="container !px-[35px]">
+        <div className="flex items-start justify-between mb-12">
+          <h2 className="font-[var(--font-ibm-plex)] font-semibold text-[24px] tracking-wide">
+            CINQO News
+          </h2>
+          <Link href="/news" className="group text-right">
+            <span className="block text-small text-muted tracking-widest font-semibold group-hover:text-ink transition-colors">
+              Show All
+            </span>
+            <svg className="w-10 h-3 mt-1 ml-auto text-muted group-hover:text-ink transition-colors" viewBox="0 0 40 12" fill="none">
+              <path d="M0 6h33M33 1l5 5-5 5" stroke="currentColor" strokeWidth="1"/>
+            </svg>
+          </Link>
+        </div>
 
-      <div className="relative mt-12 overflow-hidden">
-        <div
-          ref={stripRef}
-          className="group flex gap-6 w-max cursor-pointer"
-          style={{
-            animation: "marquee 40s linear infinite",
-            animationPlayState: "paused",
-          }}
-          onMouseEnter={() => {
-            if (stripRef.current) stripRef.current.style.animationPlayState = "running";
-          }}
-          onMouseLeave={() => {
-            if (stripRef.current) stripRef.current.style.animationPlayState = "paused";
-          }}
-        >
-          {doubled.map((item, i) => (
+        <div className="grid grid-cols-4 gap-6">
+          {newsData.map((item, i) => (
             <motion.div
-              key={`${item.id}-${i}`}
+              key={item.id}
               initial={{ scale: 0.85, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: "easeOut" }}
             >
-              <Link href={item.href} className="flex flex-col gap-2 w-[280px] shrink-0">
+              <Link href={item.href} className="flex flex-col gap-2 group">
                 <div className="relative aspect-[4/3] rounded-[10px] overflow-hidden bg-navy-900">
                   <Image
                     src={item.image}
@@ -59,13 +51,6 @@ export default function NewsSection() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
   );
 }
