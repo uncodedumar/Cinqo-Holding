@@ -78,6 +78,7 @@ export default function Footer() {
         playsInline
         preload="metadata"
       />
+      <div className="absolute inset-0 z-[1] bg-black/25" />
 
       <div className="container relative z-20 grid gap-16 pt-[175px] pb-0 min-[900px]:grid-cols-[1fr_2fr] flex-1">
         <div className="flex flex-col gap-4 mt-[75px]">
