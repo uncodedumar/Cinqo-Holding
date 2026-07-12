@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import { heroSlidesData } from "@/data/hero.data";
 import Button from "@/components/ui/Button";
@@ -10,14 +11,14 @@ const SLIDE_DURATION = 6000;
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const headlineRef = useRef<HTMLDivElement>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const startAutoplay = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % heroSlidesData.length);
-    }, SLIDE_DURATION);
+    }, 6000);
   }, []);
 
   const goToSlide = useCallback(
@@ -36,26 +37,19 @@ export default function Hero() {
     };
   }, [startAutoplay]);
 
-  // Play active video, pause others, apply Ken Burns zoom
   useEffect(() => {
-    videoRefs.current.forEach((video, i) => {
-      if (!video) return;
-      gsap.killTweensOf(video);
+    imageRefs.current.forEach((el, i) => {
+      if (!el) return;
+      gsap.killTweensOf(el);
       if (i === activeIndex) {
-        video.currentTime = 0;
-        video.play();
-        if (heroSlidesData[i].id !== "vid2") {
-          gsap.fromTo(
-            video,
-            { scale: 1.4 },
-            { scale: 1.6, duration: SLIDE_DURATION / 1000, ease: "none" }
-          );
-        } else {
-          gsap.set(video, { scale: 1 });
-        }
+        gsap.set(el, { scale: 1, opacity: 1 });
+        gsap.to(el, {
+          scale: 1.15,
+          duration: 6,
+          ease: "none",
+        });
       } else {
-        video.pause();
-        gsap.set(video, { scale: 1 });
+        gsap.set(el, { scale: 1.15, opacity: 0 });
       }
     });
   }, [activeIndex]);
@@ -81,15 +75,17 @@ export default function Hero() {
         {heroSlidesData.map((slide, i) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-[1.2s] ease-in-out ${i === activeIndex ? "opacity-100" : "opacity-0"}`}
+            ref={(el) => { imageRefs.current[i] = el; }}
+            className="absolute inset-0"
+            style={{ opacity: i === activeIndex ? 1 : 0, zIndex: i === activeIndex ? 1 : 0 }}
           >
-            <video
-              ref={(el) => { videoRefs.current[i] = el; }}
-              src={slide.video}
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+            <Image
+              src={slide.image}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              className="object-cover"
+              sizes="100vw"
             />
           </div>
         ))}
