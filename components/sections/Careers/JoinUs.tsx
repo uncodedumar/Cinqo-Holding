@@ -67,7 +67,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-white text-gray-900 font-sans antialiased flex justify-center items-center p-4 md:p-12">
+    <div className="w-full h-[800px] bg-white text-gray-900 font-sans antialiased flex justify-center items-center p-4 md:p-12">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 border border-gray-100 shadow-sm rounded-lg overflow-hidden">
         
         {/* LEFT COLUMN: Contact Form */}
@@ -86,7 +86,7 @@ export default function ContactForm() {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded px-4 py-3 bg-white focus:outline-none focus:border-[#E03A3E] transition-colors"
+                  className="w-full border border-[#E03A3E] rounded px-4 py-3 bg-white focus:outline-none transition-colors"
                 />
               </div>
               <div className="flex flex-col">
@@ -96,7 +96,7 @@ export default function ContactForm() {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded px-4 py-3 bg-white focus:outline-none focus:border-[#E03A3E] transition-colors"
+                  className="w-full border border-[#E03A3E] rounded px-4 py-3 bg-white focus:outline-none transition-colors"
                 />
               </div>
             </div>
@@ -110,13 +110,13 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 rounded px-4 py-3 bg-white focus:outline-none focus:border-[#E03A3E] transition-colors"
+                  className="w-full border border-[#E03A3E] rounded px-4 py-3 bg-white focus:outline-none transition-colors"
                 />
               </div>
               <div className="flex flex-col">
                 <label className="text-xs text-gray-500 mb-2 font-medium">Phone Number</label>
                 <div className="relative flex">
-                  <div className="flex items-center gap-1 border border-r-0 border-gray-300 rounded-l px-3 bg-gray-50 text-sm text-gray-700 cursor-pointer select-none">
+                  <div className="flex items-center gap-1 border border-r-0 border-[#E03A3E] rounded-l px-3 bg-gray-50 text-sm text-gray-700 cursor-pointer select-none">
                     <span>BH</span>
                     <span className="text-gray-400 font-light">+973</span>
                     <ChevronDown size={14} className="text-gray-400 ml-1" />
@@ -126,7 +126,7 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-r px-4 py-3 bg-white focus:outline-none focus:border-[#E03A3E] transition-colors"
+                    className="w-full border border-[#E03A3E] rounded-r px-4 py-3 bg-white focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   placeholder="Message (350 characters max)"
                   rows={4}
-                  className="w-full border border-gray-300 rounded px-4 py-3 bg-white focus:outline-none focus:border-[#E03A3E] transition-colors resize-none placeholder-gray-400 text-sm"
+                  className="w-full border border-[#E03A3E] rounded px-4 py-3 bg-white focus:outline-none transition-colors resize-none placeholder-gray-400 text-sm"
                   required
                 />
                 <span className="absolute bottom-3 right-3 text-[10px] text-gray-400">
@@ -225,7 +225,7 @@ export default function ContactForm() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="self-start px-8 py-3 border border-gray-900 rounded bg-white text-gray-900 font-medium text-sm hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#E03A3E] focus:ring-offset-2 transition-all"
+            className="self-start px-8 py-3 border border-[#E03A3E] rounded bg-white text-gray-900 font-medium text-sm hover:bg-[#E03A3E] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#E03A3E] focus:ring-offset-2 transition-all"
           >
             Submit Now
           </button>
