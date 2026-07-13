@@ -25,7 +25,7 @@ export default function GuidingPrinciples() {
         gsap.from(el, {
           opacity: 0,
           y: 30,
-          duration: 0.7,
+          duration: 1.2,
           delay: i * 0.06,
           ease: "power2.out",
           scrollTrigger: {
@@ -64,11 +64,11 @@ export default function GuidingPrinciples() {
         style={{
           background: "linear-gradient(to right, #F5333F, transparent)",
           WebkitMaskImage: 'url("/pattern.svg")',
-          WebkitMaskSize: "80%",
+          WebkitMaskSize: "65%",
           WebkitMaskRepeat: "no-repeat",
           WebkitMaskPosition: "center",
           maskImage: 'url("/pattern.svg")',
-          maskSize: "80%",
+          maskSize: "65%",
           maskRepeat: "no-repeat",
           maskPosition: "center",
           opacity: 0.5,
@@ -99,10 +99,10 @@ export default function GuidingPrinciples() {
               />
               <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent to-navy-950/90" />
               <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-1">
-                <h4 className="text-white uppercase text-sm tracking-[0.04em]">
+                <h4 className="text-white uppercase text-base tracking-[0.04em]">
                   {principle.title}
                 </h4>
-                <p className="text-white/70 text-xs">
+                <p className="text-white/70 text-sm">
                   {principle.description}
                 </p>
               </div>
