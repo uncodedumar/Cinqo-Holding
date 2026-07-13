@@ -73,11 +73,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F1EB] text-[#1A1A1A] font-sans py-10 px-4 sm:px-8 lg:px-16">
-      <div className="max-w-full w-full flex flex-col lg:flex-row justify-between gap-0">
+    <div className="min-h-screen text-[#1A1A1A] font-sans border border-black" style={{ backgroundColor: '#F9F6F0' }}>
+      <div className="w-full flex flex-col lg:flex-row min-h-screen">
         
         {/* LEFT COLUMN: Contact Form */}
-        <form onSubmit={handleSubmit} className="lg:w-[58%] pb-8 lg:pb-0">
+        <form onSubmit={handleSubmit} className="flex-1 py-10 pl-4 sm:pl-8 lg:pl-16 pr-8 pb-8 lg:pb-0">
           
           <h1 className="text-lg sm:text-xl leading-[1.2] font-normal text-[#1A1A1A] mb-6">
             You can contact Cinqo via our secure form or through the contact details provided opposite.
@@ -219,37 +219,46 @@ export default function ContactForm() {
         </form>
 
         {/* RIGHT COLUMN: Info Panel */}
-        <div className="lg:w-[34%] w-full border-t lg:border-t-0 lg:border-l border-gray-300 flex flex-col">
+        <div className="lg:w-[34%] w-full border-t lg:border-t-0 lg:border-l border-black flex flex-col">
           
           {/* Top Cell */}
-          <div className="border-t-0 p-5 w-full flex-1 relative">
+          <div className="border-t-0 pt-5 pr-5 pb-5 w-full flex-1 relative">
             <Mail className="absolute top-[36px] right-[36px] text-[#E03A3E]" size={16} strokeWidth={1.5} />
-            <h4 className="text-[11px] font-medium text-gray-600">RFP Responses and Qualification Submissions</h4>
-            <ArrowDownRight className="text-gray-800 my-3" size={14} strokeWidth={1.5} />
+            <h4 className="text-[11px] font-medium text-gray-600 pl-6">RFP Responses and Qualification Submissions</h4>
+            <div className="absolute bottom-[36px] left-[24px] text-left">
+              <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
+              <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
+                <p>info@cinqo-me.com</p>
+              </div>
+            </div>
           </div>
 
           {/* Business Hours Segment */}
-          <div className="border-t border-gray-300 p-5 w-full flex-1 relative">
+          <div className="border-t border-black pt-5 pr-5 pb-5 w-full flex-1 relative">
             <Clock className="absolute top-[36px] right-[36px] text-[#E03A3E]" size={16} strokeWidth={1.5} />
-            <h4 className="text-[11px] font-medium text-gray-600">Business Hours</h4>
-            <ArrowDownRight className="text-gray-800 my-3" size={14} strokeWidth={1.5} />
-            <div className="text-sm space-y-1 text-[#1A1A1A] font-medium">
-              <p>Sat. - Wed. 8am to 5pm</p>
-              <p>Thu. 8am to 11am</p>
-              <p>Fri. Closed</p>
+            <h4 className="text-[11px] font-medium text-gray-600 pl-6">Business Hours</h4>
+            <div className="absolute bottom-[36px] left-[24px] text-left">
+              <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
+              <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
+                <p>Sat. - Wed. 8am to 5pm</p>
+                <p>Thu. 8am to 11am</p>
+                <p>Fri. Closed</p>
+              </div>
             </div>
           </div>
 
           {/* Postal Address Segment */}
-          <div className="border-t border-gray-300 p-5 w-full flex-1 relative">
+          <div className="border-t border-black pt-5 pr-5 pb-5 w-full flex-1 relative">
             <Clock className="absolute top-[36px] right-[36px] text-[#E03A3E]" size={16} strokeWidth={1.5} />
-            <h4 className="text-[11px] font-medium text-gray-600">Postal Address:</h4>
-            <ArrowDownRight className="text-gray-800 my-3" size={14} strokeWidth={1.5} />
-            <div className="text-sm font-medium text-[#1A1A1A] leading-snug">
-              <p>YBAK TOWER,</p>
-              <p>Level 14, Entrance No. 143-144</p>
-              <p>Road 1703, Block 317.</p>
-              <p>Diplomatic Area, Kingdom of<br/>Bahrain.</p>
+            <h4 className="text-[11px] font-medium text-gray-600 pl-6">Postal Address:</h4>
+            <div className="absolute bottom-[36px] left-[24px] text-left">
+              <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
+              <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
+                <p>YBAK TOWER,</p>
+                <p>Level 14, Entrance No. 143-144</p>
+                <p>Road 1703, Block 317.</p>
+                <p>Diplomatic Area, Kingdom of<br/>Bahrain.</p>
+              </div>
             </div>
           </div>
 
