@@ -296,7 +296,7 @@ export default function ContactForm() {
           </div>
 
           {/* Purpose Selection Section */}
-          <div className="mb-6">
+          <div className="mb-[18px]">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
               <h3 className="text-xs text-gray-700">Enquiries routed by purpose</h3>
               <p className="text-xs text-gray-500 sm:max-w-[50%] sm:text-right">
@@ -305,15 +305,15 @@ export default function ContactForm() {
             </div>
 
             {/* Selection Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[17px] items-end">
               {/* General Card */}
               <div
                 onClick={() => setEnquiryPurpose('general')}
-                className={`relative border-2 ${enquiryPurpose === 'general' ? 'border-[#E03A3E]' : 'border-gray-300'} bg-white p-3 cursor-pointer min-h-[110px] rounded-none`}
+                className={`border-2 ${enquiryPurpose === 'general' ? 'border-[#E03A3E]' : 'border-gray-300'} bg-white px-3 pt-[19px] pb-[16px] cursor-pointer min-h-[150px] rounded-none flex flex-col`}
               >
-                <Mail className="absolute top-[36px] right-[36px] text-[#E03A3E]" size={18} strokeWidth={1.5} />
-                <h4 className="text-[11px] font-bold text-[#1A1A1A] pr-10 mb-1">General enquiries</h4>
-                <p className="text-[11px] text-gray-500 leading-relaxed pr-10">
+                <Mail className="text-[#E03A3E] mb-4" size={18} strokeWidth={1.5} />
+                <h4 className="text-[12px] font-bold text-[#1A1A1A] mb-1">General enquiries</h4>
+                <p className="text-[10px] text-gray-500 leading-relaxed ">
                   Corporate Information, Media requests, & General Communication for the Group Office
                 </p>
               </div>
@@ -321,11 +321,11 @@ export default function ContactForm() {
               {/* Partnerships Card */}
               <div
                 onClick={() => setEnquiryPurpose('partnerships')}
-                className={`relative border-2 ${enquiryPurpose === 'partnerships' ? 'border-[#E03A3E]' : 'border-gray-300'} bg-white p-3 cursor-pointer min-h-[110px] rounded-none`}
+                className={`border-2 ${enquiryPurpose === 'partnerships' ? 'border-[#E03A3E]' : 'border-gray-300'} bg-white px-3 pt-[19px] pb-[16px] cursor-pointer min-h-[150px] rounded-none flex flex-col`}
               >
-                <Building2 className="absolute top-[36px] right-[36px] text-[#E03A3E]" size={18} strokeWidth={1.5} />
-                <h4 className="text-[11px] font-bold text-[#1A1A1A] pr-10 mb-1">Partnerships</h4>
-                <p className="text-[11px] text-gray-500 leading-relaxed pr-10">
+                <Building2 className="text-[#E03A3E] mb-4" size={18} strokeWidth={1.5} />
+                <h4 className="text-[12px] font-bold text-[#1A1A1A] mb-1">Partnerships</h4>
+                <p className="text-[10px] text-gray-500 leading-relaxed ">
                   Introductions for strategic collaborations, suppliers relationships, and operating-companies opportunities
                 </p>
               </div>
@@ -333,11 +333,11 @@ export default function ContactForm() {
               {/* Projects Card */}
               <div
                 onClick={() => setEnquiryPurpose('projects')}
-                className={`relative border-2 ${enquiryPurpose === 'projects' ? 'border-[#E03A3E]' : 'border-gray-300'} bg-white p-3 cursor-pointer min-h-[110px] rounded-none`}
+                className={`border-2 ${enquiryPurpose === 'projects' ? 'border-[#E03A3E]' : 'border-gray-300'} bg-white px-3 pt-[19px] pb-[16px] cursor-pointer min-h-[150px] rounded-none flex flex-col`}
               >
-                <Compass className="absolute top-[36px] right-[36px] text-[#E03A3E]" size={18} strokeWidth={1.5} />
-                <h4 className="text-[11px] font-bold text-[#1A1A1A] pr-10 mb-1">Projects Introductions</h4>
-                <p className="text-[11px] text-gray-500 leading-relaxed pr-10">
+                <Compass className="text-[#E03A3E] mb-4" size={18} strokeWidth={1.5} />
+                <h4 className="text-[12px] font-bold text-[#1A1A1A] mb-1">Projects Introductions</h4>
+                <p className="text-[10px] text-gray-500 leading-relaxed">
                   Early-stage project discussions, Technical hand offs, and requests for division-level coordination.
                 </p>
               </div>
