@@ -78,9 +78,10 @@ export default function Footer() {
         playsInline
         preload="metadata"
       />
+      <div className="absolute inset-0 z-[1] bg-black/25" />
 
       <div className="container relative z-20 grid gap-16 pt-[175px] pb-0 min-[900px]:grid-cols-[1fr_2fr] flex-1">
-        <div className="flex flex-col gap-4 mt-[75px]">
+        <div className="flex flex-col gap-4 justify-end h-full pb-[123px]">
           <Image
             src="/images/logos/image.webp"
             alt="Cinqo"
@@ -109,7 +110,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="-translate-y-[92px]">
+      <div className="-translate-y-[44px]">
         <div className="container relative z-20 pb-1 text-small text-muted-light">
           <div className="flex flex-col items-end">
             <div className="flex items-center gap-4">
