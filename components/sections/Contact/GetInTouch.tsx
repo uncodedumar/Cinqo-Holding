@@ -73,13 +73,13 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F1EB] text-[#1A1A1A] font-sans flex justify-center py-10 px-4">
-      <div className="max-w-[800px] w-full flex flex-col lg:flex-row gap-0">
+    <div className="min-h-screen bg-[#F4F1EB] text-[#1A1A1A] font-sans py-10 px-4 sm:px-8 lg:px-16">
+      <div className="max-w-full w-full flex flex-col lg:flex-row justify-between gap-0">
         
         {/* LEFT COLUMN: Contact Form */}
-        <form onSubmit={handleSubmit} className="flex-1 lg:pr-8 pb-8 lg:pb-0">
+        <form onSubmit={handleSubmit} className="lg:w-[58%] pb-8 lg:pb-0">
           
-          <h1 className="text-lg sm:text-xl leading-[1.2] font-normal text-[#1A1A1A] mb-6 max-w-[90%]">
+          <h1 className="text-lg sm:text-xl leading-[1.2] font-normal text-[#1A1A1A] mb-6">
             You can contact Cinqo via our secure form or through the contact details provided opposite.
           </h1>
 
@@ -225,21 +225,21 @@ export default function ContactForm() {
         </form>
 
         {/* RIGHT COLUMN: Info Panel */}
-        <div className="lg:w-[280px] w-full border-t lg:border-t-0 lg:border-l border-gray-300 flex flex-col">
+        <div className="lg:w-[34%] w-full border-t lg:border-t-0 lg:border-l border-gray-300 flex flex-col">
           
           {/* Top Cell */}
-          <div className="h-16 lg:h-[140px] relative">
-            <Mail className="absolute top-4 right-4 text-[#E03A3E]" size={16} strokeWidth={1.5} />
+          <div className="flex-1 w-full relative flex items-center justify-end p-5">
+            <Mail className="text-[#E03A3E]" size={16} strokeWidth={1.5} />
           </div>
 
           {/* Business Hours Segment */}
-          <div className="border-t border-gray-300 p-5 flex flex-col justify-center min-h-[140px]">
-            <div className="flex items-center justify-between mb-4">
+          <div className="border-t border-gray-300 p-5 w-full flex flex-col justify-center flex-1 items-end">
+            <div className="flex items-center justify-between w-full mb-3">
               <span className="text-xs text-gray-600 font-medium">Business Hours</span>
               <Clock className="text-[#E03A3E]" size={16} strokeWidth={1.5} />
             </div>
-            <ArrowDownRight className="text-gray-800 mb-3" size={14} strokeWidth={1.5} />
-            <div className="text-sm space-y-1 text-[#1A1A1A] font-medium">
+            <ArrowDownRight className="text-gray-800 mb-2" size={14} strokeWidth={1.5} />
+            <div className="text-sm space-y-1 text-[#1A1A1A] font-medium text-right">
               <p>Sat. - Wed. 8am to 5pm</p>
               <p>Thu. 8am to 11am</p>
               <p>Fri. Closed</p>
@@ -247,13 +247,13 @@ export default function ContactForm() {
           </div>
 
           {/* Postal Address Segment */}
-          <div className="border-t border-gray-300 p-5 flex flex-col justify-center min-h-[180px]">
-            <div className="flex items-center justify-between mb-4">
+          <div className="border-t border-gray-300 p-5 w-full flex flex-col justify-center flex-1 items-end">
+            <div className="flex items-center justify-between w-full mb-3">
               <span className="text-xs text-gray-600 font-medium">Postal Address:</span>
               <Clock className="text-[#E03A3E]" size={16} strokeWidth={1.5} />
             </div>
-            <ArrowDownRight className="text-gray-800 mb-3" size={14} strokeWidth={1.5} />
-            <div className="text-sm font-medium text-[#1A1A1A] leading-snug">
+            <ArrowDownRight className="text-gray-800 mb-2" size={14} strokeWidth={1.5} />
+            <div className="text-sm font-medium text-[#1A1A1A] leading-snug text-right">
               <p>YBAK TOWER,</p>
               <p>Level 14, Entrance No. 143-144</p>
               <p>Road 1703, Block 317.</p>
