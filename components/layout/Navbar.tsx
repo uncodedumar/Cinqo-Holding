@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Home", href: "/homeRoute" },
+  { label: "About", href: "/aboutRoute" },
   { label: "Companies", href: "/companies" },
   { label: "News", href: "/news" },
-  { label: "Careers", href: "/careers" },
+  { label: "Careers", href: "/careersRoute" },
   { label: "Projects", href: "/projects" },
 ];
 
@@ -99,7 +99,7 @@ export default function Navbar() {
 
         {/* Right: Aligned completely to the right margin */}
         <div className="flex z-10">
-          <Button href="/contact">
+          <Button href="/contactRoute">
             Contact
           </Button>
         </div>
