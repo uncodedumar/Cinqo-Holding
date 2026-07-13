@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/homeRoute" },
-  { label: "About", href: "/aboutRoute" },
+  { label: "Home", href: "/home" },
+  { label: "About", href: "/about" },
   { label: "Companies", href: "/companies" },
   { label: "News", href: "/news" },
-  { label: "Careers", href: "/careersRoute" },
+  { label: "Careers", href: "/careers" },
   { label: "Projects", href: "/projects" },
 ];
 
@@ -45,8 +45,8 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-out glass will-change-transform rounded-b-[2px]
-        ${scrolled ? "glass-dense shadow-lg shadow-black/20 py-1.5" : "py-2.5"} 
+      className={`fixed top-0 left-0 right-0 z-[100] border-0 transition-all duration-500 ease-out glass will-change-transform
+        ${scrolled ? "bg-navy-900/60 shadow-lg shadow-black/10 py-1.5" : "bg-navy-900/10 py-2.5"} 
         ${visible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-6 md:px-12 relative">
@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* Left: Aligned completely to the left margin */}
         <div className="flex z-10">
           <Link 
-            href="/" 
+            href="/home" 
             className="flex items-center transition-transform duration-200 hover:scale-103"
             aria-label="Cinqo Holdings Home"
           >
@@ -84,7 +84,7 @@ export default function Navbar() {
               <Link 
                 key={link.href} 
                 href={link.href} 
-                className={`text-[11px] font-semibold tracking-[0.16em] uppercase text-cream-50 transition-all duration-300 ease-out relative py-1 [text-shadow:0_1px_6px_rgba(0,0,0,0.12)]
+                className={`text-[11px] font-semibold tracking-[0.16em] uppercase text-cream-50 transition-all duration-300 ease-out relative py-1
                   ${isActive ? "opacity-100" : "opacity-75 hover:opacity-100"}`}
               >
                 {link.label}
@@ -99,7 +99,7 @@ export default function Navbar() {
 
         {/* Right: Aligned completely to the right margin */}
         <div className="flex z-10">
-          <Button href="/contactRoute">
+          <Button href="/contact">
             Contact
           </Button>
         </div>

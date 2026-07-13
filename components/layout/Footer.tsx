@@ -8,7 +8,7 @@ const FOOTER_COLUMNS = [
   {
     title: "Quick Links",
     links: [
-      { label: "Home", href: "/" },
+      { label: "Home", href: "/home" },
       { label: "About", href: "/about" },
       { label: "Companies", href: "/companies" },
       { label: "News & Insights", href: "/news" },
