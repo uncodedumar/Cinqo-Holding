@@ -205,7 +205,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen text-[#1A1A1A] font-sans border border-black" style={{ backgroundColor: '#F9F6F0' }}>
+    <div className="min-h-screen text-[#1A1A1A] font-sans border border-black bg-cream-100">
       <div className="w-full flex flex-col lg:flex-row min-h-screen">
         
         {/* LEFT COLUMN: Contact Form */}
