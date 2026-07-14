@@ -1,22 +1,16 @@
-import HeroSection from "@/components/sections/About/HeroSection";
-import AboutSection from "@/components/sections/About/AboutSection";
-import VisionSection from "@/components/sections/About/VisionSection";
-import GovernanceGrid from "@/components/sections/About/GovernanceGrid";
-import ChairmanMessage from "@/components/sections/About/ChairmanMessage";
-import DirectorsGrid from "@/components/sections/About/DirectorsGrid";
-import ExecutiveGrid from "@/components/sections/About/ExecutiveGrid";
+import Hero from "@/components/sections/About/Hero";
+import AboutSection from "@/components/sections/About/About";
+import Compliance from "@/components/sections/About/Compliance";
+import Leadership from "@/components/sections/About/Leadership";
 import News from "@/components/sections/About/News";
 
 export default function AboutPage() {
   return (
     <main>
-      <HeroSection />
+      <Hero />
       <AboutSection />
-      <VisionSection />
-      <GovernanceGrid />
-      <ChairmanMessage />
-      <DirectorsGrid />
-      <ExecutiveGrid />
+      <Compliance />
+      <Leadership />
       <News />
     </main>
   );
