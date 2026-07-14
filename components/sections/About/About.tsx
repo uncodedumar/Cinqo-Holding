@@ -1,10 +1,20 @@
+import Image from "next/image";
+
 export default function About() {
   return (
-    <section className="py-20 px-6 md:px-12 max-w-[1440px] mx-auto">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="text-center md:text-left">
-          <h2 className="text-7xl font-bold mb-4">20+</h2>
-          <p className="text-xl uppercase tracking-widest text-gray-500">Years of History</p>
+    <section className="relative py-12 min-h-[600px] overflow-hidden">
+      <Image
+        src="/images/about/a2.jpeg"
+        alt="About Cinqo Holding"
+        fill
+        className="object-cover brightness-100 saturate-[0.5] contrast-[0.85]"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-white/75" />
+      <div className="absolute inset-0 z-10 flex items-center pt-10">
+        <div className="ml-66 text-center font-[var(--font-ibm-plex)]">
+          <h2 className="text-[124px] font-normal mb-[-24px] text-black">20+</h2>
+          <p className="text-[30px] tracking-normal text-black font-bold pl-2">Years Of Deilvery</p>
         </div>
         <div>
           <p className="text-3xl leading-relaxed text-gray-700">
@@ -12,7 +22,6 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="mt-16 bg-gray-200 w-full h-[400px] rounded-lg"></div>
     </section>
   );
 }

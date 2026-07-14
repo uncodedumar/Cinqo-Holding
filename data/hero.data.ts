@@ -7,5 +7,5 @@ export const homeHeroSlidesData: HeroSlide[] = [
 ];
 
 export const aboutHeroSlidesData: HeroSlide[] = [
-  { id: "about1", image: "/images/hero/a1.jpeg", alt: "About Cinqo Holding" },
+  { id: "about1", image: "/images/hero/a1.png", alt: "About Cinqo Holding" },
 ];
