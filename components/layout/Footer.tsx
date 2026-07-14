@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const FOOTER_COLUMNS = [
   {
@@ -34,6 +35,9 @@ const FOOTER_COLUMNS = [
  * everything above it. Background video plays only on hover.
  */
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/home";
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const playPromise = useRef<Promise<void> | null>(null);
@@ -66,18 +70,29 @@ export default function Footer() {
   return (
     <footer
       className="relative z-0 overflow-hidden bg-navy-950 text-cream-50 isolate h-[620px] flex flex-col"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={isHome ? handleMouseEnter : undefined}
+      onMouseLeave={isHome ? handleMouseLeave : undefined}
     >
-      <video
-        ref={videoRef}
-        className="bg-media opacity-100"
-        src="/videos/footer/footer-bg.mp4"
-        muted
-        loop
-        playsInline
-        preload="metadata"
-      />
+      {isHome ? (
+        <video
+          ref={videoRef}
+          className="bg-media opacity-100"
+          src="/videos/footer/footer-bg.mp4"
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <Image
+          src="/videos/footer/image.webp"
+          alt=""
+          fill
+          className="bg-media object-cover"
+          quality={100}
+          priority
+        />
+      )}
       <div className="absolute inset-0 z-[1] bg-black/25" />
 
       <div className="container relative z-20 grid gap-16 pt-[175px] pb-0 min-[900px]:grid-cols-[1fr_2fr] flex-1">
