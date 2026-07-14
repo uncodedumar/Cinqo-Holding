@@ -40,7 +40,7 @@ export default function NewsSection() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <span className="absolute top-4 left-4 bg-cream-50 text-ink text-small py-1 px-3 rounded-pill">
+                  <span className="absolute top-4 left-4 bg-cream-50 text-navy-900 text-small py-1 px-3 rounded-pill">
                     {item.tag}
                   </span>
                 </div>
