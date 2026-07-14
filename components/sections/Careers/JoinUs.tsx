@@ -57,14 +57,14 @@ export default function JoinCinqo({
   };
 
   return (
-    <div className="flex flex-col lg:flex-row w-full h-[900px] bg-[rgba(0,0,0,0.02)] text-black font-display antialiased">
+    <div className="flex flex-col lg:flex-row w-full bg-[rgba(0,0,0,0.02)] text-black font-display antialiased gap-4">
       
       {/* LEFT COLUMN: Form Body (White background matching instructions) */}
-      <div className="w-full lg:w-[69%] px-6 py-12 md:px-12 lg:px-16 flex flex-col justify-center">
+      <div className="w-full lg:w-[67%] py-12 pr-2.5 flex flex-col justify-center">
         <div className="w-full max-w-[792px] mx-auto">
           
           {/* Header & Subtitle Section */}
-          <div className="mb-10">
+          <div className="mb-6 pl-3">
             <h1 className="text-[32px] font-normal leading-[37px] tracking-normal text-black font-ibm-plex mb-2">
               Join Cinqo
             </h1>
@@ -74,9 +74,9 @@ export default function JoinCinqo({
           </div>
 
           {/* Form Element */}
-          <form onSubmit={handleFormSubmit} className="space-y-6 text-[10px]">
+          <form onSubmit={handleFormSubmit} className="space-y-3 text-[10px] mx-4">
             
-            <div className="grid grid-cols-1 md:grid-cols-[378px_402px] gap-x-5 gap-y-5 justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
               
               {/* Row 1: First Name & Last Name */}
               <div className="flex flex-col space-y-1.5">
@@ -229,7 +229,7 @@ export default function JoinCinqo({
               </div>
 
               {/* Row 5 & 6 Stack Layout (Years of Experience, Linkedin Stacked on Left vs Upload Box on Right) */}
-              <div className="flex flex-col space-y-5">
+              <div className="flex flex-col space-y-3">
                 
                 {/* Years of Experience Dropdown */}
                 <div className="flex flex-col space-y-1.5">
@@ -280,7 +280,7 @@ export default function JoinCinqo({
                 </span>
                 <div 
                   onClick={handleUploadClick}
-                  className="w-full md:w-[397px] h-[117px] border border-[rgba(251,51,62,0.8)] bg-white flex flex-col items-center justify-center cursor-pointer hover:bg-neutral-50 transition-colors px-4 text-center relative group"
+                  className="w-full h-[117px] border border-[rgba(251,51,62,0.8)] bg-white flex flex-col items-center justify-center cursor-pointer hover:bg-neutral-50 transition-colors px-4 text-center relative group"
                 >
                   <input 
                     type="file"
@@ -324,7 +324,7 @@ export default function JoinCinqo({
             </div>
 
             {/* Legal Disclaimers */}
-            <div className="pt-4 space-y-3">
+            <div className="pt-2 space-y-1">
               <p className="text-[10px] leading-[18px] text-black/64">
                 By submitting this form,you agree to the processing of your personal data in accordance with our privacy policy
               </p>
@@ -334,10 +334,10 @@ export default function JoinCinqo({
             </div>
 
             {/* Submit Action Button Block */}
-            <div className="pt-4">
+            <div className="pt-2">
               <button
                 type="submit"
-                className="w-[153px] h-[41px] border border-[rgba(251,51,62,0.8)] bg-transparent text-[#231F20] text-[10px] font-normal tracking-wide flex items-center justify-center hover:bg-[#F5333F]/10 active:bg-[#F5333F]/20 transition-all focus:outline-none"
+                className="w-[153px] h-[41px] border border-[rgba(251,51,62,0.8)] bg-transparent text-[#231F20] text-[14px] font-normal tracking-wide flex items-center justify-center hover:opacity-60 active:opacity-40 transition-all focus:outline-none"
               >
                 Submit Now
               </button>
@@ -348,7 +348,7 @@ export default function JoinCinqo({
       </div>
 
       {/* RIGHT COLUMN: Image */}
-      <div className="w-full lg:w-[31%] relative h-full border-l border-neutral-100">
+      <div className="w-full lg:w-[29%] relative min-h-[600px] border-l border-neutral-100">
         <img
           src="/images/careers/image.png"
           alt="Careers"
