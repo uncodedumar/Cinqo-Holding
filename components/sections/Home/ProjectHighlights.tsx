@@ -64,10 +64,10 @@ export default function ProjectHighlights() {
   };
 
   return (
-    <section className="section bg-cream-100" id="projects">
+    <section className="section bg-white" id="projects">
       <div className="container grid gap-12 items-start min-[900px]:grid-cols-[1.1fr_0.9fr]">
         <div
-          className="relative aspect-[4/3] rounded-[20px] overflow-hidden bg-cream-100"
+          className="relative aspect-[4/3] rounded-[20px] overflow-hidden bg-white"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

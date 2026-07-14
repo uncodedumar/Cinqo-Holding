@@ -7,7 +7,7 @@ import { newsData } from "@/data/news.data";
 
 export default function NewsSection() {
   return (
-    <section className="section bg-cream-100 overflow-hidden" id="news">
+    <section className="section bg-white overflow-hidden" id="news">
       <div className="container !px-[35px]">
         <div className="flex items-start justify-between mb-12">
           <h2 className="font-[var(--font-ibm-plex)] font-semibold text-[24px] tracking-wide">
