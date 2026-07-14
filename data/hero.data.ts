@@ -9,3 +9,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
 export const aboutHeroSlidesData: HeroSlide[] = [
   { id: "about1", image: "/images/hero/a1.png", alt: "About Cinqo Holding" },
 ];
+
+export const careersHeroSlidesData: HeroSlide[] = [
+  { id: "careers1", image: "/images/hero/h1.jpg", alt: "Careers at Cinqo Holdings" },
+];
