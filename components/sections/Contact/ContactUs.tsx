@@ -14,8 +14,8 @@ export default function ContactUs() {
       
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-8">Got Plans?<br/>let's turn them<br/>into something<br/>real</h2>
-          <p className="text-gray-500 italic">Tell us what's on your mind</p>
+          <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-8">Got Plans?<br/>let&apos;s turn them<br/>into something<br/>real</h2>
+          <p className="text-gray-500 italic">Tell us what&apos;s on your mind</p>
         </div>
         <div className="bg-gray-200 min-h-[400px] rounded-lg"></div>
       </div>

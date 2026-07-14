@@ -6,7 +6,7 @@ export default function Leadership() {
       <div className="grid md:grid-cols-2 gap-12 mb-24 mt-8">
         <div className="bg-gray-200 min-h-[600px] rounded-lg"></div>
         <div className="flex flex-col justify-center">
-          <h3 className="text-3xl font-bold mb-6 uppercase">Chairman's Message</h3>
+          <h3 className="text-3xl font-bold mb-6 uppercase">Chairman&apos;s Message</h3>
           <div className="space-y-4 text-gray-700">
             <p>Welcome to Cinqo Holding...</p>
           </div>
