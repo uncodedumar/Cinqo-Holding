@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 interface JoinCinqoProps {
   /** Submission event handler */
@@ -490,10 +491,11 @@ export default function JoinCinqo({
 
       {/* RIGHT COLUMN: Image */}
       <div className="w-full lg:w-[31%] relative min-h-[600px] border-l border-neutral-100">
-        <img
+        <Image
           src="/images/careers/image.png"
           alt="Careers"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 
