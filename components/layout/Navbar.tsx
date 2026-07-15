@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
+import { businesses } from "@/data/businesses.data";
 
 const NAV_LINKS = [
   { label: "Home", href: "/home" },
@@ -79,7 +80,44 @@ export default function Navbar() {
         {/* Center: True Screen Absolute Layout Center with custom target gap spacing */}
         <nav className="hidden min-[900px]:flex items-center gap-7 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {NAV_LINKS.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.label === "Companies" && pathname.startsWith("/businesses/"));
+            
+            if (link.label === "Companies") {
+              return (
+                <div key={link.href} className="group relative py-2">
+                  <Link 
+                    href={link.href} 
+                    className={`text-[11px] font-semibold tracking-[0.16em] uppercase text-cream-50 transition-all duration-300 ease-out relative py-1 flex items-center gap-1.5
+                      ${isActive ? "opacity-100" : "opacity-75 group-hover:opacity-100"}`}
+                  >
+                    {link.label}
+                    <svg className="w-2.5 h-2.5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                    {/* Active route accent underline */}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-cream-50 motion-safe:animate-fade-in" />
+                    )}
+                  </Link>
+                  
+                  {/* Dropdown Menu */}
+                  <div className="absolute top-[120%] left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[200]">
+                    <div className="bg-white/95 backdrop-blur-md shadow-xl border border-gray-100 py-3 rounded-sm min-w-[280px] flex flex-col">
+                      {businesses.map((b) => (
+                        <Link 
+                          key={b.slug}
+                          href={`/businesses/${b.slug}`}
+                          className="px-6 py-3 text-[10px] font-semibold tracking-[0.15em] uppercase text-navy-900 hover:bg-gray-50 hover:text-red-500 transition-colors text-left whitespace-nowrap"
+                        >
+                          {b.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <Link 
                 key={link.href} 
