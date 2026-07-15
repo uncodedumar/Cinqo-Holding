@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { useLenis } from "@/components/providers/SmoothScrollProvider";
 
 const textContent =
   "While firmly rooted in Bahrain, Cinqo continues to expand its presence across the GCC through sustainable growth, strategic partnerships and opportunities aligned with its strengths and long-term vision.";
@@ -10,6 +11,7 @@ const textContent =
 const words = textContent.split(/\s+/);
 
 export default function About() {
+  const lenis = useLenis();
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
@@ -32,6 +34,7 @@ export default function About() {
           end: `+=${window.innerHeight * 2}`,
           pin: true,
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       })
       .to(wrap, { scale, duration: 0.5, ease: "none" })
@@ -42,29 +45,166 @@ export default function About() {
   }, []);
 
   useEffect(() => {
+    if (!lenis) return;
+
     const section = textSectionRef.current;
     const spans = wordRefs.current.filter(Boolean) as HTMLSpanElement[];
     if (!section || spans.length === 0) return;
 
-    const ctx = gsap.context(() => {
-      const stagger = 0.25;
-      const scrollDistance = stagger * words.length * 400;
+    const tl = gsap.timeline({ paused: true })
+      .to(spans, { fontWeight: 600, stagger: 1, duration: 1.5, ease: "power2.out" });
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: `+=${scrollDistance}`,
-          pin: true,
-          scrub: 0.5,
+    let locked = false;
+    let animationProgress = 0;
+    let canLock = true;
+    let touchStartY = 0;
+    const sensitivity = 0.0005;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (!locked) return;
+
+      const step = e.deltaY * sensitivity;
+      const next = Math.max(0, Math.min(1, animationProgress + step));
+
+      tl.progress(next);
+
+      if ((next >= 1 && e.deltaY > 0) || (next <= 0 && e.deltaY < 0)) {
+        release();
+        return;
+      }
+
+      animationProgress = next;
+    };
+
+    const onTouchStart = (e: TouchEvent) => {
+      if (!locked) return;
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (!locked) return;
+      e.preventDefault();
+
+      const dy = touchStartY - e.touches[0].clientY;
+      const step = dy * sensitivity;
+      const next = Math.max(0, Math.min(1, animationProgress + step));
+
+      tl.progress(next);
+
+      if ((next >= 1 && dy > 0) || (next <= 0 && dy < 0)) {
+        release();
+        return;
+      }
+
+      animationProgress = next;
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const onTouchEnd = () => {};
+
+    const KEY_STEP: Record<string, number> = {
+      ArrowDown: 0.05, ArrowUp: -0.05,
+      PageDown: 0.2, PageUp: -0.2,
+      " ": 0.1,
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (!locked) return;
+      const step = KEY_STEP[e.key];
+      if (step === undefined) return;
+      e.preventDefault();
+
+      const next = Math.max(0, Math.min(1, animationProgress + step));
+      tl.progress(next);
+
+      if ((next >= 1 && step > 0) || (next <= 0 && step < 0)) {
+        release();
+        return;
+      }
+
+      animationProgress = next;
+    };
+
+    const lock = (dir: "down" | "up") => {
+      if (locked || !canLock) return;
+      stopObservers();
+      locked = true;
+      canLock = false;
+      animationProgress = dir === "up" ? 1 : 0;
+      tl.progress(animationProgress);
+      lenis.stop();
+      window.addEventListener("wheel", onWheel, { passive: false });
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: false });
+      window.addEventListener("touchend", onTouchEnd);
+      window.addEventListener("keydown", onKeyDown);
+    };
+
+    const release = () => {
+      if (!locked) return;
+      locked = false;
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("keydown", onKeyDown);
+      lenis.start();
+      setTimeout(() => {
+        canLock = true;
+        startObservers();
+      }, 500);
+    };
+
+    let topObserver: IntersectionObserver | null = null;
+    let bottomObserver: IntersectionObserver | null = null;
+
+    const startObservers = () => {
+      stopObservers();
+      topObserver = new IntersectionObserver(
+        ([e]) => {
+          if (e.isIntersecting && !locked && canLock) {
+            stopObservers();
+            lock("down");
+          }
         },
-      })
-      .to(spans, { fontWeight: 600, stagger, duration: 0.05, ease: "power1.out" })
-      .to(spans, { fontWeight: 400, stagger, duration: 0.05, ease: "power1.in" }, stagger * 3);
-    }, section);
+        { threshold: 0, rootMargin: "0px 0px -100% 0px" },
+      );
+      bottomObserver = new IntersectionObserver(
+        ([e]) => {
+          if (e.isIntersecting && !locked && canLock) {
+            stopObservers();
+            lock("up");
+          }
+        },
+        { threshold: 0, rootMargin: "-100% 0px 0px 0px" },
+      );
+      topObserver.observe(section);
+      bottomObserver.observe(section);
+    };
 
-    return () => ctx.revert();
-  }, []);
+    const stopObservers = () => {
+      topObserver?.disconnect();
+      bottomObserver?.disconnect();
+      topObserver = null;
+      bottomObserver = null;
+    };
+
+    startObservers();
+
+    return () => {
+      if (locked) {
+        window.removeEventListener("wheel", onWheel);
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("touchmove", onTouchMove);
+        window.removeEventListener("touchend", onTouchEnd);
+        window.removeEventListener("keydown", onKeyDown);
+        lenis.start();
+      }
+      stopObservers();
+      tl.kill();
+    };
+  }, [lenis]);
 
   return (
     <div className="bg-white">
@@ -111,7 +251,7 @@ export default function About() {
           />
         </div>
       </section>
-      <section ref={textSectionRef} className="relative flex items-start justify-center bg-white px-6 pt-4">
+      <section ref={textSectionRef} className="relative flex items-start justify-center bg-white px-6 pt-12 z-30">
         <p className="max-w-3xl text-center text-[2rem] leading-relaxed text-black/80">
           {words.map((word, i) => (
             <span
