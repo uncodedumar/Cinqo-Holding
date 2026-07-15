@@ -112,11 +112,11 @@ export default function Footer() {
         <div className="flex justify-end">
           {FOOTER_COLUMNS.map((col, i) => (
             <div key={col.title} className={i === 0 ? "mr-[100px]" : ""}>
-              <h4 className="text-small uppercase tracking-[0.08em] mb-4 text-muted-light">{col.title}</h4>
+              <h4 className="text-small uppercase tracking-[0.08em] mb-4 text-cream-50">{col.title}</h4>
               <ul className="flex flex-col gap-2">
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-small opacity-85 transition-opacity duration-300 ease-out hover:opacity-100">{link.label}</Link>
+                    <Link href={link.href} className="text-small text-cream-50 opacity-85 transition-opacity duration-300 ease-out hover:opacity-100">{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -126,7 +126,7 @@ export default function Footer() {
       </div>
 
       <div className="-translate-y-[44px]">
-        <div className="container relative z-20 pb-1 text-small text-muted-light">
+        <div className="container relative z-20 pb-1 text-small text-cream-50">
           <div className="flex flex-col items-end">
             <div className="flex items-center gap-4">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-cream-50 hover:opacity-80 transition-opacity">
@@ -153,10 +153,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="container relative z-20 border-t border-white/20 pt-1 pb-[25px] text-small text-muted-light">
+        <div className="container relative z-20 border-t border-white/20 pt-1 pb-[25px] text-small text-cream-50">
           <div className="flex items-center justify-between">
             <span>© {new Date().getFullYear()} Cinqo Holding. All rights reserved.</span>
-            <span className="text-muted-light">Designed and developed by Bricklix (PVT) LTD</span>
+            <span className="text-cream-50">Designed and developed by Bricklix (PVT) LTD</span>
           </div>
         </div>
       </div>

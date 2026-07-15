@@ -1,47 +1,502 @@
-export default function JoinUs() {
+"use client";
+import React, { useState, useRef, useEffect } from 'react';
+
+interface JoinCinqoProps {
+  /** Submission event handler */
+  onSubmit?: (data: any) => void;
+}
+
+const countryCodes = [
+  { code: 'AF', label: 'AF', dial: '+93' }, { code: 'AL', label: 'AL', dial: '+355' },
+  { code: 'DZ', label: 'DZ', dial: '+213' }, { code: 'AD', label: 'AD', dial: '+376' },
+  { code: 'AO', label: 'AO', dial: '+244' }, { code: 'AG', label: 'AG', dial: '+1-268' },
+  { code: 'AR', label: 'AR', dial: '+54' }, { code: 'AM', label: 'AM', dial: '+374' },
+  { code: 'AU', label: 'AU', dial: '+61' }, { code: 'AT', label: 'AT', dial: '+43' },
+  { code: 'AZ', label: 'AZ', dial: '+994' }, { code: 'BS', label: 'BS', dial: '+1-242' },
+  { code: 'BH', label: 'BH', dial: '+973' }, { code: 'BD', label: 'BD', dial: '+880' },
+  { code: 'BB', label: 'BB', dial: '+1-246' }, { code: 'BY', label: 'BY', dial: '+375' },
+  { code: 'BE', label: 'BE', dial: '+32' }, { code: 'BZ', label: 'BZ', dial: '+501' },
+  { code: 'BJ', label: 'BJ', dial: '+229' }, { code: 'BT', label: 'BT', dial: '+975' },
+  { code: 'BO', label: 'BO', dial: '+591' }, { code: 'BA', label: 'BA', dial: '+387' },
+  { code: 'BW', label: 'BW', dial: '+267' }, { code: 'BR', label: 'BR', dial: '+55' },
+  { code: 'BN', label: 'BN', dial: '+673' }, { code: 'BG', label: 'BG', dial: '+359' },
+  { code: 'BF', label: 'BF', dial: '+226' }, { code: 'BI', label: 'BI', dial: '+257' },
+  { code: 'KH', label: 'KH', dial: '+855' }, { code: 'CM', label: 'CM', dial: '+237' },
+  { code: 'CA', label: 'CA', dial: '+1' }, { code: 'CV', label: 'CV', dial: '+238' },
+  { code: 'CF', label: 'CF', dial: '+236' }, { code: 'TD', label: 'TD', dial: '+235' },
+  { code: 'CL', label: 'CL', dial: '+56' }, { code: 'CN', label: 'CN', dial: '+86' },
+  { code: 'CO', label: 'CO', dial: '+57' }, { code: 'KM', label: 'KM', dial: '+269' },
+  { code: 'CG', label: 'CG', dial: '+242' }, { code: 'CR', label: 'CR', dial: '+506' },
+  { code: 'CI', label: 'CI', dial: '+225' }, { code: 'HR', label: 'HR', dial: '+385' },
+  { code: 'CU', label: 'CU', dial: '+53' }, { code: 'CY', label: 'CY', dial: '+357' },
+  { code: 'CZ', label: 'CZ', dial: '+420' }, { code: 'DK', label: 'DK', dial: '+45' },
+  { code: 'DJ', label: 'DJ', dial: '+253' }, { code: 'DM', label: 'DM', dial: '+1-767' },
+  { code: 'DO', label: 'DO', dial: '+1-809' }, { code: 'EC', label: 'EC', dial: '+593' },
+  { code: 'EG', label: 'EG', dial: '+20' }, { code: 'SV', label: 'SV', dial: '+503' },
+  { code: 'GQ', label: 'GQ', dial: '+240' }, { code: 'ER', label: 'ER', dial: '+291' },
+  { code: 'EE', label: 'EE', dial: '+372' }, { code: 'SZ', label: 'SZ', dial: '+268' },
+  { code: 'ET', label: 'ET', dial: '+251' }, { code: 'FJ', label: 'FJ', dial: '+679' },
+  { code: 'FI', label: 'FI', dial: '+358' }, { code: 'FR', label: 'FR', dial: '+33' },
+  { code: 'GA', label: 'GA', dial: '+241' }, { code: 'GM', label: 'GM', dial: '+220' },
+  { code: 'GE', label: 'GE', dial: '+995' }, { code: 'DE', label: 'DE', dial: '+49' },
+  { code: 'GH', label: 'GH', dial: '+233' }, { code: 'GR', label: 'GR', dial: '+30' },
+  { code: 'GD', label: 'GD', dial: '+1-473' }, { code: 'GT', label: 'GT', dial: '+502' },
+  { code: 'GN', label: 'GN', dial: '+224' }, { code: 'GW', label: 'GW', dial: '+245' },
+  { code: 'GY', label: 'GY', dial: '+592' }, { code: 'HT', label: 'HT', dial: '+509' },
+  { code: 'HN', label: 'HN', dial: '+504' }, { code: 'HK', label: 'HK', dial: '+852' },
+  { code: 'HU', label: 'HU', dial: '+36' }, { code: 'IS', label: 'IS', dial: '+354' },
+  { code: 'IN', label: 'IN', dial: '+91' }, { code: 'ID', label: 'ID', dial: '+62' },
+  { code: 'IR', label: 'IR', dial: '+98' }, { code: 'IQ', label: 'IQ', dial: '+964' },
+  { code: 'IE', label: 'IE', dial: '+353' }, { code: 'IL', label: 'IL', dial: '+972' },
+  { code: 'IT', label: 'IT', dial: '+39' }, { code: 'JM', label: 'JM', dial: '+1-876' },
+  { code: 'JP', label: 'JP', dial: '+81' }, { code: 'JO', label: 'JO', dial: '+962' },
+  { code: 'KZ', label: 'KZ', dial: '+7' }, { code: 'KE', label: 'KE', dial: '+254' },
+  { code: 'KI', label: 'KI', dial: '+686' }, { code: 'KP', label: 'KP', dial: '+850' },
+  { code: 'KR', label: 'KR', dial: '+82' }, { code: 'KW', label: 'KW', dial: '+965' },
+  { code: 'KG', label: 'KG', dial: '+996' }, { code: 'LA', label: 'LA', dial: '+856' },
+  { code: 'LV', label: 'LV', dial: '+371' }, { code: 'LB', label: 'LB', dial: '+961' },
+  { code: 'LS', label: 'LS', dial: '+266' }, { code: 'LR', label: 'LR', dial: '+231' },
+  { code: 'LY', label: 'LY', dial: '+218' }, { code: 'LI', label: 'LI', dial: '+423' },
+  { code: 'LT', label: 'LT', dial: '+370' }, { code: 'LU', label: 'LU', dial: '+352' },
+  { code: 'MG', label: 'MG', dial: '+261' }, { code: 'MW', label: 'MW', dial: '+265' },
+  { code: 'MY', label: 'MY', dial: '+60' }, { code: 'MV', label: 'MV', dial: '+960' },
+  { code: 'ML', label: 'ML', dial: '+223' }, { code: 'MT', label: 'MT', dial: '+356' },
+  { code: 'MH', label: 'MH', dial: '+692' }, { code: 'MR', label: 'MR', dial: '+222' },
+  { code: 'MU', label: 'MU', dial: '+230' }, { code: 'MX', label: 'MX', dial: '+52' },
+  { code: 'FM', label: 'FM', dial: '+691' }, { code: 'MD', label: 'MD', dial: '+373' },
+  { code: 'MC', label: 'MC', dial: '+377' }, { code: 'MN', label: 'MN', dial: '+976' },
+  { code: 'ME', label: 'ME', dial: '+382' }, { code: 'MA', label: 'MA', dial: '+212' },
+  { code: 'MZ', label: 'MZ', dial: '+258' }, { code: 'MM', label: 'MM', dial: '+95' },
+  { code: 'NA', label: 'NA', dial: '+264' }, { code: 'NR', label: 'NR', dial: '+674' },
+  { code: 'NP', label: 'NP', dial: '+977' }, { code: 'NL', label: 'NL', dial: '+31' },
+  { code: 'NZ', label: 'NZ', dial: '+64' }, { code: 'NI', label: 'NI', dial: '+505' },
+  { code: 'NE', label: 'NE', dial: '+227' }, { code: 'NG', label: 'NG', dial: '+234' },
+  { code: 'NO', label: 'NO', dial: '+47' }, { code: 'OM', label: 'OM', dial: '+968' },
+  { code: 'PK', label: 'PK', dial: '+92' }, { code: 'PW', label: 'PW', dial: '+680' },
+  { code: 'PS', label: 'PS', dial: '+970' }, { code: 'PA', label: 'PA', dial: '+507' },
+  { code: 'PG', label: 'PG', dial: '+675' }, { code: 'PY', label: 'PY', dial: '+595' },
+  { code: 'PE', label: 'PE', dial: '+51' }, { code: 'PH', label: 'PH', dial: '+63' },
+  { code: 'PL', label: 'PL', dial: '+48' }, { code: 'PT', label: 'PT', dial: '+351' },
+  { code: 'QA', label: 'QA', dial: '+974' }, { code: 'RO', label: 'RO', dial: '+40' },
+  { code: 'RU', label: 'RU', dial: '+7' }, { code: 'RW', label: 'RW', dial: '+250' },
+  { code: 'KN', label: 'KN', dial: '+1-869' }, { code: 'LC', label: 'LC', dial: '+1-758' },
+  { code: 'VC', label: 'VC', dial: '+1-784' }, { code: 'WS', label: 'WS', dial: '+685' },
+  { code: 'SM', label: 'SM', dial: '+378' }, { code: 'ST', label: 'ST', dial: '+239' },
+  { code: 'SA', label: 'SA', dial: '+966' }, { code: 'SN', label: 'SN', dial: '+221' },
+  { code: 'RS', label: 'RS', dial: '+381' }, { code: 'SC', label: 'SC', dial: '+248' },
+  { code: 'SL', label: 'SL', dial: '+232' }, { code: 'SG', label: 'SG', dial: '+65' },
+  { code: 'SK', label: 'SK', dial: '+421' }, { code: 'SI', label: 'SI', dial: '+386' },
+  { code: 'SB', label: 'SB', dial: '+677' }, { code: 'SO', label: 'SO', dial: '+252' },
+  { code: 'ZA', label: 'ZA', dial: '+27' }, { code: 'SS', label: 'SS', dial: '+211' },
+  { code: 'ES', label: 'ES', dial: '+34' }, { code: 'LK', label: 'LK', dial: '+94' },
+  { code: 'SD', label: 'SD', dial: '+249' }, { code: 'SR', label: 'SR', dial: '+597' },
+  { code: 'SE', label: 'SE', dial: '+46' }, { code: 'CH', label: 'CH', dial: '+41' },
+  { code: 'SY', label: 'SY', dial: '+963' }, { code: 'TW', label: 'TW', dial: '+886' },
+  { code: 'TJ', label: 'TJ', dial: '+992' }, { code: 'TZ', label: 'TZ', dial: '+255' },
+  { code: 'TH', label: 'TH', dial: '+66' }, { code: 'TL', label: 'TL', dial: '+670' },
+  { code: 'TG', label: 'TG', dial: '+228' }, { code: 'TO', label: 'TO', dial: '+676' },
+  { code: 'TT', label: 'TT', dial: '+1-868' }, { code: 'TN', label: 'TN', dial: '+216' },
+  { code: 'TR', label: 'TR', dial: '+90' }, { code: 'TM', label: 'TM', dial: '+993' },
+  { code: 'TV', label: 'TV', dial: '+688' }, { code: 'UG', label: 'UG', dial: '+256' },
+  { code: 'UA', label: 'UA', dial: '+380' }, { code: 'AE', label: 'AE', dial: '+971' },
+  { code: 'GB', label: 'GB', dial: '+44' }, { code: 'US', label: 'US', dial: '+1' },
+  { code: 'UY', label: 'UY', dial: '+598' }, { code: 'UZ', label: 'UZ', dial: '+998' },
+  { code: 'VU', label: 'VU', dial: '+678' }, { code: 'VA', label: 'VA', dial: '+379' },
+  { code: 'VE', label: 'VE', dial: '+58' }, { code: 'VN', label: 'VN', dial: '+84' },
+  { code: 'YE', label: 'YE', dial: '+967' }, { code: 'ZM', label: 'ZM', dial: '+260' },
+  { code: 'ZW', label: 'ZW', dial: '+263' }
+];
+
+export default function JoinCinqo({
+  onSubmit
+}: JoinCinqoProps) {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [fileName, setFileName] = useState<string>('');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [search, setSearch] = useState('');
+  
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    countryCode: 'BH',
+    phoneNumber: '',
+    currentLocation: '',
+    countryState: '',
+    areaOfExpertise: '',
+    preferredCompany: '',
+    yearsOfExperience: '',
+    linkedinProfile: '',
+    professionalSummary: ''
+  });
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+        setSearch('');
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (!dropdownOpen) setSearch('');
+  }, [dropdownOpen]);
+
+  const filteredCountries = countryCodes.filter(c =>
+    c.dial.includes(search) || c.code.toLowerCase().includes(search.toLowerCase()) || c.label.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const selectedCountry = countryCodes.find(c => c.code === formData.countryCode);
+
+  const handleDropdownKeyDown = (e: React.KeyboardEvent) => {
+    if (!dropdownOpen) return;
+    if (e.key === 'Backspace') { setSearch(s => s.slice(0, -1)); return; }
+    if (e.key === 'Escape') { setDropdownOpen(false); return; }
+    if (e.key.length === 1) {
+      setSearch(s => s + e.key);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFileName(e.target.files[0].name);
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (onSubmit) {
+      onSubmit({ ...formData, resumeName: fileName });
+    } else {
+      console.log('Form Submitted Data:', { ...formData, resumeName: fileName });
+    }
+  };
+
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 className="text-3xl font-bold mb-4">Join Cinqo</h2>
-          <p className="text-gray-600 mb-8">Take the next step in your career and explore exciting opportunities with us.</p>
+    <div className="flex flex-col lg:flex-row w-full bg-[rgba(0,0,0,0.02)] text-black font-display antialiased">
+      
+      {/* LEFT COLUMN: Form Body (White background matching instructions) */}
+      <div className="w-full lg:w-[69%] py-12 flex flex-col justify-center">
+        <div className="w-full max-w-[792px] mx-auto">
           
-          <form className="space-y-6">
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold mb-2">First Name</label>
-                <input type="text" className="w-full border border-gray-300 p-3 rounded" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2">Last Name</label>
-                <input type="text" className="w-full border border-gray-300 p-3 rounded" />
-              </div>
-            </div>
+          {/* Header & Subtitle Section */}
+          <div className="mb-6 pl-3">
+            <h1 className="text-[32px] font-normal leading-[37px] tracking-normal text-black font-ibm-plex mb-2">
+              Join Cinqo
+            </h1>
+            <p className="text-[16px] font-normal leading-[20px] text-black/80 max-w-[799px] font-ibm-plex">
+              Interested candidates may submit their profiles submitting your profile for future opportunities across our specialized operating companies
+            </p>
+          </div>
+
+          {/* Form Element */}
+          <form onSubmit={handleFormSubmit} className="space-y-3 text-[10px]">
             
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold mb-2">Email</label>
-                <input type="email" className="w-full border border-gray-300 p-3 rounded" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
+              
+              {/* Row 1: First Name & Last Name */}
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black focus:outline-none transition-all"
+                />
               </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2">Phone Number</label>
-                <input type="tel" className="w-full border border-gray-300 p-3 rounded" />
+
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black focus:outline-none transition-all"
+                />
               </div>
+
+              {/* Row 2: Email & Phone Number */}
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black focus:outline-none transition-all"
+                />
+              </div>
+
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Phone Number
+                </label>
+                <div className="flex h-[41px] bg-white border border-[rgba(251,51,62,0.8)] relative" ref={dropdownRef}>
+                  <div
+                    tabIndex={0}
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    onKeyDown={handleDropdownKeyDown}
+                    className="flex items-center gap-1 border-r border-[rgba(251,51,62,0.8)] px-3 bg-white text-[10px] text-black cursor-pointer select-none shrink-0 focus:outline-none"
+                  >
+                    <span className={`fi fi-${selectedCountry?.code?.toLowerCase() ?? ''}`}></span>
+                    <span className="font-semibold text-[10px]">{selectedCountry?.dial}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="m6 9 6 6 6-6" /></svg>
+                  </div>
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-0 mt-0 w-[240px] bg-white border border-gray-300 shadow-lg z-50 max-h-[200px] flex flex-col">
+                      <ul className="overflow-y-auto flex-1">
+                        {filteredCountries.map(c => (
+                          <li
+                            key={c.code}
+                            onClick={() => { setFormData(prev => ({ ...prev, countryCode: c.code })); setDropdownOpen(false); }}
+                            className={`flex items-center gap-2 px-3 py-1.5 text-[10px] cursor-pointer hover:bg-gray-100 ${c.code === formData.countryCode ? 'bg-gray-50' : ''}`}
+                          >
+                            <span className={`fi fi-${c.code.toLowerCase()}`}></span>
+                            <span className="font-medium">{c.label}</span>
+                            <span className="text-gray-500 ml-auto">{c.dial}</span>
+                          </li>
+                        ))}
+                        {filteredCountries.length === 0 && (
+                          <li className="px-3 py-2 text-[10px] text-gray-400">No results</li>
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                  <input
+                    type="tel"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    className="flex-1 h-full px-3 bg-transparent text-black focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Row 3: Current Location & Country/State */}
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Current Location / City
+                </label>
+                <input
+                  type="text"
+                  name="currentLocation"
+                  value={formData.currentLocation}
+                  onChange={handleChange}
+                  className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black focus:outline-none transition-all"
+                />
+              </div>
+
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Country/State
+                </label>
+                <input
+                  type="text"
+                  name="countryState"
+                  value={formData.countryState}
+                  onChange={handleChange}
+                  className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black focus:outline-none transition-all"
+                />
+              </div>
+
+              {/* Row 4: Area of Expertise & Preferred Company / Subsidiary */}
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Area of Expertise
+                </label>
+                <div className="relative">
+                  <select
+                    name="areaOfExpertise"
+                    value={formData.areaOfExpertise}
+                    onChange={handleChange}
+                    className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black/64 text-[10px] focus:outline-none appearance-none cursor-pointer"
+                  >
+                    <option value="">(Dropdown Menu)</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="finance">Finance</option>
+                    <option value="operations">Operations & Logistics</option>
+                    <option value="technology">Information Technology</option>
+                  </select>
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black/64">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Preferred Company / Subsidiary
+                </label>
+                <div className="relative">
+                  <select
+                    name="preferredCompany"
+                    value={formData.preferredCompany}
+                    onChange={handleChange}
+                    className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black/64 text-[10px] focus:outline-none appearance-none cursor-pointer"
+                  >
+                    <option value="">(Dropdown Menu)</option>
+                    <option value="subsidiary1">Specialized Op Company A</option>
+                    <option value="subsidiary2">Specialized Op Company B</option>
+                  </select>
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black/64">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 5 & 6 Stack Layout (Years of Experience, Linkedin Stacked on Left vs Upload Box on Right) */}
+              <div className="flex flex-col space-y-3">
+                
+                {/* Years of Experience Dropdown */}
+                <div className="flex flex-col space-y-1.5">
+                  <label className="text-[10px] font-normal leading-tight text-black/64">
+                    Years of Experience
+                  </label>
+                  <div className="relative">
+                    <select
+                      name="yearsOfExperience"
+                      value={formData.yearsOfExperience}
+                      onChange={handleChange}
+                      className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black/64 text-[10px] focus:outline-none appearance-none cursor-pointer"
+                    >
+                      <option value="">(Dropdown Menu)</option>
+                      <option value="0-2">0 - 2 Years</option>
+                      <option value="3-5">3 - 5 Years</option>
+                      <option value="6-10">6 - 10 Years</option>
+                      <option value="10+">10+ Years</option>
+                    </select>
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black/64">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Linkedin Link Input */}
+                <div className="flex flex-col space-y-1.5">
+                  <label className="text-[10px] font-normal leading-tight text-black/64">
+                    Linkedin Profile Link
+                  </label>
+                  <input
+                    type="url"
+                    name="linkedinProfile"
+                    value={formData.linkedinProfile}
+                    onChange={handleChange}
+                    className="w-full h-[41px] px-3 bg-white border border-[rgba(251,51,62,0.8)] text-black focus:outline-none transition-all"
+                  />
+                </div>
+
+              </div>
+
+              {/* Upload Panel spanning the height of the left elements */}
+              <div className="flex flex-col space-y-1.5 justify-end h-full">
+                <span className="text-[10px] font-normal leading-tight text-transparent select-none hidden md:block">
+                  Upload Filler
+                </span>
+                <div 
+                  onClick={handleUploadClick}
+                  className="w-full h-[117px] border border-[rgba(251,51,62,0.8)] bg-white flex flex-col items-center justify-center cursor-pointer hover:bg-neutral-50 transition-colors px-4 text-center relative group"
+                >
+                  <input 
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    accept=".pdf,.docx"
+                    className="hidden"
+                  />
+                  
+                  {/* Envelope-style Vector SVG in Crimson matching layout */}
+                  <svg className="w-7 h-7 text-[#F5333F] mb-1.5 group-hover:scale-105 transition-transform" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+                    <rect x="3" y="5" width="18" height="14" rx="1" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                  
+                  <span className="text-[12px] font-semibold text-black/64 leading-none mb-1">
+                    {fileName || "Resume / CV Upload"}
+                  </span>
+                  
+                  <span className="text-[10px] font-normal text-black/64 leading-tight max-w-[280px]">
+                    (File Upload Button — Supported formats: PDF, DOCX. Less than 10 MB)
+                  </span>
+                </div>
+              </div>
+
+              {/* Professional Summary Textarea (Spans full width) */}
+              <div className="col-span-1 md:col-span-2 flex flex-col space-y-1.5">
+                <label className="text-[10px] font-normal leading-tight text-black/64">
+                  Professional Summary
+                </label>
+                <textarea
+                  name="professionalSummary"
+                  placeholder="Briefly describe your core capability and how you execute with discipline..."
+                  value={formData.professionalSummary}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full h-[120px] p-3 bg-white border border-[rgba(251,51,62,0.8)] text-black placeholder-black/64 text-[10px] focus:outline-none transition-all resize-none"
+                />
+              </div>
+
             </div>
 
-            <div>
-               <label className="block text-sm font-semibold mb-2">Upload CV</label>
-               <div className="border-2 border-dashed border-gray-300 p-6 text-center rounded">
-                  <p className="text-gray-500">Drag & Drop or click to upload</p>
-               </div>
+            {/* Legal Disclaimers */}
+            <div className="pt-2 space-y-1">
+              <p className="text-[10px] leading-[18px] text-black/64">
+                By submitting this form, you agree to the processing of your personal data in accordance with our privacy policy
+              </p>
+              <p className="text-[10px] leading-[18px] text-black/64">
+                By submitting this form, you agree that all information provided is authentic
+              </p>
             </div>
 
-            <button className="bg-red-600 text-white px-8 py-3 font-semibold uppercase tracking-wider rounded">Submit</button>
+            {/* Submit Action Button Block */}
+            <div className="pt-2">
+              <button
+                type="submit"
+                className="w-[153px] h-[41px] border border-[rgba(251,51,62,0.8)] bg-transparent text-[#231F20] text-[14px] font-normal tracking-wide flex items-center justify-center hover:bg-[#F5333F]/10 active:bg-[#F5333F]/20 transition-all focus:outline-none"
+              >
+                Submit Now
+              </button>
+            </div>
+
           </form>
         </div>
-
-        <div className="bg-gray-200 min-h-[600px] rounded-lg"></div>
       </div>
-    </section>
+
+      {/* RIGHT COLUMN: Image */}
+      <div className="w-full lg:w-[31%] relative min-h-[600px] border-l border-neutral-100">
+        <img
+          src="/images/careers/image.png"
+          alt="Careers"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+    </div>
   );
 }
