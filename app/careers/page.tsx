@@ -8,9 +8,9 @@ export default function CareersPage() {
   return (
     <main>
       <Hero />
-      <ProfessionalHorizon />
-      <JoinUs />
       <ProfessionalFramework />
+      <JoinUs />      
+      <ProfessionalHorizon />
       <News />
     </main>
   );
