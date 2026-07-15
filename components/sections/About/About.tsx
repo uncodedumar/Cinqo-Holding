@@ -14,20 +14,22 @@ export default function About() {
   const lenis = useLenis();
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const section = sectionRef.current;
     const wrap = imageWrapRef.current;
-    if (!section || !wrap) return;
+    const overlay = overlayRef.current;
+    if (!section || !wrap || !overlay) return;
 
     const ctx = gsap.context(() => {
       const scaleX = window.innerWidth / wrap.offsetWidth;
       const scaleY = window.innerHeight / wrap.offsetHeight;
       const scale = Math.max(scaleX, scaleY) * 1.05;
 
-      gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: "center center",
@@ -36,9 +38,30 @@ export default function About() {
           scrub: 1,
           invalidateOnRefresh: true,
         },
+      });
+
+      // Zoom in: scale up, melt corners, lift shadow away, fade overlay in
+      tl.to(wrap, {
+        scale,
+        borderRadius: "0px",
+        boxShadow: "0 0 0 0 rgba(0,0,0,0)",
+        duration: 0.48,
+        ease: "power2.inOut",
       })
-      .to(wrap, { scale, duration: 0.5, ease: "none" })
-      .to(wrap, { scale: 1, duration: 0.5, ease: "none" });
+      .to(overlay, { opacity: 0.15, duration: 0.48, ease: "power2.inOut" }, "<")
+
+      // Brief hold at fullscreen
+      .to({}, { duration: 0.04 })
+
+      // Zoom out: scale back, restore corners, restore shadow, fade overlay out
+      .to(wrap, {
+        scale: 1,
+        borderRadius: "16px",
+        boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
+        duration: 0.48,
+        ease: "power2.inOut",
+      })
+      .to(overlay, { opacity: 0, duration: 0.48, ease: "power2.inOut" }, "<");
     }, section);
 
     return () => ctx.revert();
@@ -150,44 +173,53 @@ export default function About() {
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKeyDown);
       lenis.start();
-      setTimeout(() => {
-        canLock = true;
-        startObservers();
-      }, 500);
+
+      // Wait for the section to leave the viewport center before re-arming
+      canLock = false;
+      const exitObserver = new IntersectionObserver(
+        ([e]) => {
+          if (!e.isIntersecting) {
+            exitObserver.disconnect();
+            canLock = true;
+            startObservers();
+          }
+        },
+        { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
+      );
+      exitObserver.observe(section);
     };
 
-    let topObserver: IntersectionObserver | null = null;
-    let bottomObserver: IntersectionObserver | null = null;
+    let centerObserver: IntersectionObserver | null = null;
+    let scrollListener: (() => void) | null = null;
 
     const startObservers = () => {
       stopObservers();
-      topObserver = new IntersectionObserver(
+      
+      let lastScrollY = window.scrollY;
+      scrollListener = () => { lastScrollY = window.scrollY; };
+      window.addEventListener("scroll", scrollListener, { passive: true });
+
+      centerObserver = new IntersectionObserver(
         ([e]) => {
           if (e.isIntersecting && !locked && canLock) {
             stopObservers();
-            lock("down");
+            const isScrollingDown = window.scrollY >= lastScrollY;
+            lock(isScrollingDown ? "down" : "up");
           }
         },
-        { threshold: 0, rootMargin: "0px 0px -100% 0px" },
+        { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
       );
-      bottomObserver = new IntersectionObserver(
-        ([e]) => {
-          if (e.isIntersecting && !locked && canLock) {
-            stopObservers();
-            lock("up");
-          }
-        },
-        { threshold: 0, rootMargin: "-100% 0px 0px 0px" },
-      );
-      topObserver.observe(section);
-      bottomObserver.observe(section);
+      
+      centerObserver.observe(section);
     };
 
     const stopObservers = () => {
-      topObserver?.disconnect();
-      bottomObserver?.disconnect();
-      topObserver = null;
-      bottomObserver = null;
+      centerObserver?.disconnect();
+      centerObserver = null;
+      if (scrollListener) {
+        window.removeEventListener("scroll", scrollListener);
+        scrollListener = null;
+      }
     };
 
     startObservers();
@@ -237,10 +269,11 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section ref={sectionRef} className="relative flex items-center justify-center min-h-[85vh] bg-white">
+      <section ref={sectionRef} className="relative flex items-center justify-center min-h-screen bg-white overflow-hidden">
         <div
           ref={imageWrapRef}
-          className="relative w-[75%] h-[500px] z-50"
+          className="relative w-[75%] h-[500px] z-50 rounded-2xl overflow-hidden"
+          style={{ boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)" }}
         >
           <Image
             src="/images/about/a3.jpeg"
@@ -249,16 +282,23 @@ export default function About() {
             className="object-cover"
             sizes="100vw"
           />
+          <div ref={overlayRef} className="absolute inset-0 bg-black opacity-0 z-10 pointer-events-none" />
         </div>
       </section>
       <section ref={textSectionRef} className="relative flex items-start justify-center bg-white px-6 pt-12 z-30">
         <p className="max-w-3xl text-center text-[2rem] leading-relaxed text-black/80">
           {words.map((word, i) => (
-            <span
-              key={i}
-              ref={(el) => { wordRefs.current[i] = el; }}
-            >
-              {word}{" "}
+            <span key={i}>
+              <span className="relative inline-block">
+                <span className="invisible font-semibold">{word}</span>
+                <span
+                  ref={(el) => { wordRefs.current[i] = el; }}
+                  className="absolute left-[50%] top-0 -translate-x-1/2 w-full text-center"
+                >
+                  {word}
+                </span>
+              </span>
+              {" "}
             </span>
           ))}
         </p>
