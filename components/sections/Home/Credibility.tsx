@@ -71,7 +71,7 @@ export default function Credibility() {
     >
       {/* Uses global .bg-media class for absolute positioning, object-cover, and z-index */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-133 origin-center"
+        className="absolute -inset-px w-full h-full object-cover z-0 scale-133 origin-center"
         src="/videos/credibility/CredibilityDrone-shot.mp4"
         autoPlay
         muted
@@ -81,7 +81,7 @@ export default function Credibility() {
       />
 
       {/* Uses global .bg-overlay class for dark navy gradient overlay */}
-      <div className="bg-overlay" />
+      <div className="absolute -inset-px bg-slate-950/35 pointer-events-none" />
 
       {/* Uses global .container class for max-width and responsive padding */}
       <div className="container relative z-10">
