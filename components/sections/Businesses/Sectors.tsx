@@ -20,7 +20,7 @@ export default function Page() {
           <div className="group" style={{ width: '285px', height: '359px', overflow: 'hidden', position: 'relative', flexShrink: 0, borderRadius: '5px', border: '1px solid rgba(128,130,133,1)' }}>
             <img src="/images/sectors/card-1.webp" alt="Corporate Offices" className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" style={{ transform: 'scale(1.014)' }}></div>
-            <div className="absolute bottom-0 left-0 p-4 md:p-5 text-white">
+            <div className="absolute bottom-0 left-0 px-[14px] pt-4 pb-[15px] md:px-[22px] md:pt-5 md:pb-[23px] text-white">
               <h2 className="font-['Inter'] text-lg font-medium uppercase tracking-wider mb-2">Corporate Offices</h2>
               <p className="font-['Inter'] text-sm font-normal leading-snug opacity-90">
                 Interior construction aligned with functionality, acoustic performance and service integration.
@@ -32,7 +32,7 @@ export default function Page() {
           <div className="group" style={{ width: '285px', height: '359px', overflow: 'hidden', position: 'relative', flexShrink: 0, borderRadius: '5px', border: '1px solid rgba(128,130,133,1)' }}>
             <img src="/images/sectors/card-2.webp" alt="Retail & F&B" className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" style={{ transform: 'scale(1.014)' }}></div>
-            <div className="absolute bottom-0 left-0 p-4 md:p-5 text-white">
+            <div className="absolute bottom-0 left-0 px-[14px] pt-4 pb-[15px] md:px-[22px] md:pt-5 md:pb-[23px] text-white">
               <h2 className="font-['Inter'] text-lg font-medium uppercase tracking-wider mb-2">Retail & F&B</h2>
               <p className="font-['Inter'] text-sm font-normal leading-snug opacity-90">
                 Fast-track fit-out delivery focused on brand requirements and operational readiness.
@@ -44,7 +44,7 @@ export default function Page() {
           <div className="group" style={{ width: '285px', height: '359px', overflow: 'hidden', position: 'relative', flexShrink: 0, borderRadius: '5px', border: '1px solid rgba(128,130,133,1)' }}>
             <img src="/images/sectors/card-3.webp" alt="Residential Interiors" className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" style={{ transform: 'scale(1.014)' }}></div>
-            <div className="absolute bottom-0 left-0 p-4 md:p-5 text-white">
+            <div className="absolute bottom-0 left-0 px-[14px] pt-4 pb-[15px] md:px-[22px] md:pt-5 md:pb-[23px] text-white">
               <h2 className="font-['Inter'] text-lg font-medium uppercase tracking-wider mb-2">Residential Interiors</h2>
               <p className="font-['Inter'] text-sm font-normal leading-snug opacity-90">
                 Premium villa and apartment interior delivered with attention to detail and material quality.
@@ -56,7 +56,7 @@ export default function Page() {
           <div className="group" style={{ width: '285px', height: '359px', overflow: 'hidden', position: 'relative', flexShrink: 0, borderRadius: '5px', border: '1px solid rgba(128,130,133,1)' }}>
             <img src="/images/sectors/card-4.webp" alt="Healthcare & Clinics" className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" style={{ transform: 'scale(1.014)' }}></div>
-            <div className="absolute bottom-0 left-0 p-4 md:p-5 text-white">
+            <div className="absolute bottom-0 left-0 px-[14px] pt-4 pb-[15px] md:px-[22px] md:pt-5 md:pb-[23px] text-white">
               <h2 className="font-['Inter'] text-lg font-medium uppercase tracking-wider mb-2">Healthcare & Clinics</h2>
               <p className="font-['Inter'] text-sm font-normal leading-snug opacity-90">
                 Fit-outs incorporating hygienic materials and coordinated building services.
