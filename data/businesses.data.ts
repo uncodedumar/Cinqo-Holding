@@ -25,6 +25,51 @@ export interface BusinessData {
   sectors: SectorItem[];
 }
 
+export interface SectorsPageData {
+  showcaseText: string;
+  projects: string[];
+  showcaseImage: string;
+  aerialImage: string;
+  compositeImage: string;
+  compositeTitle: string;
+  compositeDescription: string;
+  pipCount: number;
+}
+
+export const sectorsPage: SectorsPageData = {
+  showcaseText: "A showcase of absolute accountability in execution. We measure the success of these works by the frequency of repeat client engagement and a commitment to honoring obligations long after final handover.",
+  projects: ["J003 FONTANA INFINITY", "J003 FONTANA INFINITY", "J003 FONTANA INFINITY"],
+  showcaseImage: "/images/sectors/sector-1.webp",
+  aerialImage: "/images/sectors/sector-2.webp",
+  compositeImage: "/images/sectors/sector-3.jpg",
+  compositeTitle: "J003 FONTANA INFINITY",
+  compositeDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  pipCount: 5
+};
+
+export const sectorsShowcase: SectorItem[] = [
+  {
+    title: "Corporate Offices",
+    description: "Interior construction aligned with functionality, acoustic performance and service integration.",
+    image: "/images/sectors/card-1.webp"
+  },
+  {
+    title: "Retail & F&B",
+    description: "Fast-track fit-out delivery focused on brand requirements and operational readiness.",
+    image: "/images/sectors/card-2.webp"
+  },
+  {
+    title: "Residential Interiors",
+    description: "Premium villa and apartment interior delivered with attention to detail and material quality.",
+    image: "/images/sectors/card-3.webp"
+  },
+  {
+    title: "Healthcare & Clinics",
+    description: "Fit-outs incorporating hygienic materials and coordinated building services.",
+    image: "/images/sectors/card-4.webp"
+  }
+];
+
 export const businesses: BusinessData[] = [
   {
     slug: "cinqo-contracting",
