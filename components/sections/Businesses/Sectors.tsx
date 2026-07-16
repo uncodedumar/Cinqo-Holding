@@ -11,7 +11,7 @@ const cardStyle: React.CSSProperties = {
   borderRadius: '5px'
 };
 
-export default function Page() {
+export default function Page({ slug }: { slug?: string }) {
   return (
     <div className="min-h-screen bg-white text-ink font-sans p-4 md:p-8 pb-0 md:pb-0">
       <div className="max-w-[1200px] mx-auto">
@@ -26,9 +26,9 @@ export default function Page() {
 
         {/* Sectors Grid */}
         <div className="flex flex-col md:flex-row items-center md:justify-center gap-[12px] mx-4">
-          {sectorsShowcase.map((s: SectorItem) => (
+          {sectorsShowcase.map((s: SectorItem, idx: number) => (
           <div key={s.title} className="group border border-muted" style={cardStyle}>
-            <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
+            <img src={slug === 'cinqo-contracting' && idx === 0 ? '/images/sectors/card-1_contract.webp' : s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" style={{ transform: 'scale(1.014)' }}></div>
             <div className="absolute bottom-0 left-0 px-[14px] pt-4 pb-[15px] md:px-[22px] md:pt-5 md:pb-[23px] text-white">
               <h2 className="font-['Inter'] text-lg font-medium uppercase tracking-wider mb-2">{s.title}</h2>
@@ -41,10 +41,10 @@ export default function Page() {
       </div>
 
       {/* Showcase Section - full width */}
-      <div className="-mx-4 md:-mx-8 mb-4">
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-12 -mt-3 pl-3">
+      <div className="-mr-4 md:-mr-8 md:flex md:justify-end mb-4">
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-12 -mt-3 md:w-[1264px] md:flex-shrink-0">
           <div className="w-full md:max-w-[308px] flex flex-col justify-between">
-            <p className="font-['Inter'] font-light text-[20px] leading-relaxed text-ink">
+            <p className="font-['Inter'] font-light text-[20px] leading-relaxed text-ink ml-3">
               {sectorsPage.showcaseText}
             </p>
             <div className="ml-3">
@@ -58,7 +58,7 @@ export default function Page() {
               </button>
             </div>
           </div>
-          <div style={{ width: '972px', height: '693px', flexShrink: 0 }} className="-ml-1">
+          <div style={{ width: '972px', height: '693px', flexShrink: 0 }}>
             <img src={sectorsPage.showcaseImage} alt="Showcase building" className="w-full h-full object-cover" />
           </div>
         </div>
