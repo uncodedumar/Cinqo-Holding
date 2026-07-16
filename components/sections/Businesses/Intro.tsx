@@ -1,6 +1,7 @@
 import { BusinessData } from "@/data/businesses.data";
 import Hero from "@/components/sections/reusable/Hero";
 import type { HeroSlideV2 } from "@/types";
+import Image from "next/image";
 
 export default function Intro({ business }: { business: BusinessData }) {
   const heroSlide: HeroSlideV2 = {
@@ -15,24 +16,26 @@ export default function Intro({ business }: { business: BusinessData }) {
       <Hero slides={[heroSlide]} showDots={false} />
 
       {/* Intro Text Section */}
-      <div className="w-full bg-cream-50 py-16">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Logo Placeholder */}
-          <div className="col-span-1 flex items-center justify-center md:justify-start">
-            <div className="w-32 h-32 relative opacity-20">
-               {/* This can be replaced by the actual logo later */}
-               <svg viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M24.096 24.2551L45.0002 24.2551L24.096 45.3189L24.096 24.2551Z" fill="#231F20"/>
-                <path d="M24.096 21.1562L45.0002 21.1562L24.096 0.09238L24.096 21.1562Z" fill="#808285"/>
-                <path d="M20.904 24.3351L-0.000227384 24.3352L20.904 45.399L20.904 24.3351Z" fill="#808285"/>
-                <path d="M20.904 21.0761L-0.000227384 21.0761L20.904 0.0123018L20.904 21.0761Z" fill="#231F20"/>
-              </svg>
-            </div>
-          </div>
-          
+      <div className="relative w-full py-2">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={business.introBgImage}
+            alt=""
+            fill
+            className="object-cover brightness-100 saturate-[0.5] contrast-[0.85]"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-white/75" />
+        </div>
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12">
+          {business.introHeading && (
+            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-black mb-6 uppercase whitespace-pre-line translate-y-6 translate-x-1">
+              {business.introHeading}
+            </h2>
+          )}
           {/* Text */}
-          <div className="col-span-1 md:col-span-2 flex items-center">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+          <div className="flex items-start justify-end">
+            <p className={`text-[1.375rem] text-black/80 leading-relaxed font-light max-w-2xl whitespace-pre-line -translate-y-16 ${business.slug === "thc-facilities-management" || business.slug === "cinqo-fitout" ? "-translate-x-4" : "-translate-x-8"}`}>
               {business.introText}
             </p>
           </div>
