@@ -5,6 +5,7 @@ export default function AboutHero() {
   return (
     <Hero
       slides={aboutHeroSlidesData}
+      showDots={false}
     />
   );
 }
