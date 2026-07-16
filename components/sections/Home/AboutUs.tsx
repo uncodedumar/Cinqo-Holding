@@ -45,7 +45,7 @@ export default function AboutUs() {
             <h3 className="font-bold text-black text-[20px] mb-2 tracking-[0.08em] uppercase font-[var(--font-ibm-plex)]">
               Vision
             </h3>
-            <p className="text-black/85 text-[20px] leading-[1.7] font-[var(--font-ibm-plex)] whitespace-nowrap">
+            <p className="text-black/85 text-[clamp(13px,2.2vw,20px)] leading-[1.7] font-[var(--font-ibm-plex)] whitespace-nowrap">
               To build a group of enduring businesses recognized for performance, trust and sustainable growth.
             </p>
           </div>
