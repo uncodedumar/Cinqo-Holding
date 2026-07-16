@@ -15,6 +15,12 @@ export interface SectorItem {
   image: string;
 }
 
+export interface SectorShowcaseItem {
+  title: string;
+  description: string;
+  image: string;
+}
+
 export interface BusinessData {
   slug: string;
   name: string;
@@ -23,15 +29,7 @@ export interface BusinessData {
   definesUs: DefineUsItem[];
   capabilities: CapabilityItem[];
   sectors: SectorItem[];
-  sectorFirstCardImage?: string;
-  sectorFirstCardTitle?: string;
-  sectorFirstCardDescription?: string;
-  sectorSecondCardTitle?: string;
-  sectorSecondCardDescription?: string;
-  sectorThirdCardTitle?: string;
-  sectorThirdCardDescription?: string;
-  sectorFourthCardTitle?: string;
-  sectorFourthCardDescription?: string;
+  sectorShowcase: SectorShowcaseItem[];
 }
 
 export interface SectorsPageData {
@@ -138,15 +136,28 @@ export const businesses: BusinessData[] = [
         image: "/images/businesses/sector-healthcare.jpg"
       }
     ],
-    sectorFirstCardImage: "/images/sectors/card-1_contract.webp",
-    sectorFirstCardTitle: "HIGH-END RESIDENTIAL VILLAS & COMPOUNDS",
-    sectorFirstCardDescription: "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
-    sectorSecondCardTitle: "RESIDENTIAL & COMMERCIAL TOWERS",
-    sectorSecondCardDescription: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and safety compliance.",
-    sectorThirdCardTitle: "COMMERCIAL MALLS & MIXED-USE DEVELOPMENTS",
-    sectorThirdCardDescription: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and safety compliance.",
-    sectorFourthCardTitle: "WAREHOUSES & INDUSTRIAL FACILITIES",
-    sectorFourthCardDescription: "Development of industrial structures incorporating utility integration, fire safety systems and operational infrastructure.",
+    sectorShowcase: [
+      {
+        title: "HIGH-END RESIDENTIAL VILLAS & COMPOUNDS",
+        description: "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
+        image: "/images/sectors/card-1_contract.webp"
+      },
+      {
+        title: "RESIDENTIAL & COMMERCIAL TOWERS",
+        description: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and safety compliance.",
+        image: "/images/sectors/card-2_contract.webp"
+      },
+      {
+        title: "COMMERCIAL MALLS & MIXED-USE DEVELOPMENTS",
+        description: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and safety compliance.",
+        image: "/images/sectors/card-3_contract.webp"
+      },
+      {
+        title: "WAREHOUSES & INDUSTRIAL FACILITIES",
+        description: "Development of industrial structures incorporating utility integration, fire safety systems and operational infrastructure.",
+        image: "/images/sectors/card-4_contract.webp"
+      }
+    ],
   },
   {
     slug: "thc-facilities-management",
@@ -206,14 +217,28 @@ export const businesses: BusinessData[] = [
         image: "/images/businesses/sector-retail.jpg"
       }
     ],
-    sectorFirstCardTitle: "HOSPITALITY",
-    sectorFirstCardDescription: "Facilities management solutions supporting hotels and serviced residences where uninterrupted operations are essential.",
-    sectorSecondCardTitle: "RESIDENTIAL TOWERS & COMPOUNDS",
-    sectorSecondCardDescription: "Maintenance of HVAC, fire systems, lifts and shared infrastructure to ensure consistent building performance.",
-    sectorThirdCardTitle: "OFFICE BUILDINGS",
-    sectorThirdCardDescription: "Preventive maintenance and system optimisation for corporate environments focused on uptime and efficiency.",
-    sectorFourthCardTitle: "INDUSTRIAL FACILITIES",
-    sectorFourthCardDescription: "Technical servicing of operational assets and infrastructure aligned with compliance and productivity requirements.",
+    sectorShowcase: [
+      {
+        title: "HOSPITALITY",
+        description: "Facilities management solutions supporting hotels and serviced residences where uninterrupted operations are essential.",
+        image: "/images/sectors/card-1_fm.webp"
+      },
+      {
+        title: "RESIDENTIAL TOWERS & COMPOUNDS",
+        description: "Maintenance of HVAC, fire systems, lifts and shared infrastructure to ensure consistent building performance.",
+        image: "/images/sectors/card-2_fm.webp"
+      },
+      {
+        title: "OFFICE BUILDINGS",
+        description: "Preventive maintenance and system optimisation for corporate environments focused on uptime and efficiency.",
+        image: "/images/sectors/card-3_fm.webp"
+      },
+      {
+        title: "INDUSTRIAL FACILITIES",
+        description: "Technical servicing of operational assets and infrastructure aligned with compliance and productivity requirements.",
+        image: "/images/sectors/card-4_fm.webp"
+      }
+    ],
   },
   {
     slug: "cinqo-trading",
@@ -223,14 +248,28 @@ export const businesses: BusinessData[] = [
     definesUs: [],
     capabilities: [],
     sectors: [],
-    sectorFirstCardTitle: "CONSTRUCTION & CONTRACTING",
-    sectorFirstCardDescription: "Supply of coatings, construction chemicals and engineered systems supported by specification and application advisory services.",
-    sectorSecondCardTitle: "RETAIL DISTRIBUTION",
-    sectorSecondCardDescription: "Structured supply to retail channels supported by inventory management, pricing governance and brand development.",
-    sectorThirdCardTitle: "INDUSTRIAL & MANUFACTURING",
-    sectorThirdCardDescription: "Technical products and systems supporting operational efficiency, asset protection and facility performance.",
-    sectorFourthCardTitle: "INFRASTRUCTURE & UTILITIES",
-    sectorFourthCardDescription: "Specialised technologies and engineering solutions supporting municipal and large-scale infrastructure projects.",
+    sectorShowcase: [
+      {
+        title: "CONSTRUCTION & CONTRACTING",
+        description: "Supply of coatings, construction chemicals and engineered systems supported by specification and application advisory services.",
+        image: "/images/sectors/card-1_trading.webp"
+      },
+      {
+        title: "RETAIL DISTRIBUTION",
+        description: "Structured supply to retail channels supported by inventory management, pricing governance and brand development.",
+        image: "/images/sectors/card-2_trading.webp"
+      },
+      {
+        title: "INDUSTRIAL & MANUFACTURING",
+        description: "Technical products and systems supporting operational efficiency, asset protection and facility performance.",
+        image: "/images/sectors/card-3_trading.webp"
+      },
+      {
+        title: "INFRASTRUCTURE & UTILITIES",
+        description: "Specialised technologies and engineering solutions supporting municipal and large-scale infrastructure projects.",
+        image: "/images/sectors/card-4_trading.webp"
+      }
+    ],
   },
   {
     slug: "cinqo-fitout",
@@ -239,7 +278,8 @@ export const businesses: BusinessData[] = [
     introText: "Coming soon...",
     definesUs: [],
     capabilities: [],
-    sectors: []
+    sectors: [],
+    sectorShowcase: [],
   },
   {
     slug: "cinqo-flooring-coating-technologies",
@@ -249,13 +289,27 @@ export const businesses: BusinessData[] = [
     definesUs: [],
     capabilities: [],
     sectors: [],
-    sectorFirstCardTitle: "FOOD & BEVERAGE",
-    sectorFirstCardDescription: "Hygienic flooring systems designed for production, processing and wash-down environments.",
-    sectorSecondCardTitle: "HEALTHCARE & PHARMACEUTICAL",
-    sectorSecondCardDescription: "Seamless flooring solutions suitable for laboratories, cleanrooms and contamination-sensitive facilities.",
-    sectorThirdCardTitle: "WAREHOUSES & LOGISTICS",
-    sectorThirdCardDescription: "Heavy-duty flooring systems designed for continuous operational traffic and material handling.",
-    sectorFourthCardTitle: "CAR PARKS & PODIUMS",
-    sectorFourthCardDescription: "Protective coating systems engineered for vehicular traffic and environmental exposure.",
+    sectorShowcase: [
+      {
+        title: "FOOD & BEVERAGE",
+        description: "Hygienic flooring systems designed for production, processing and wash-down environments.",
+        image: "/images/sectors/card-1_fc.webp"
+      },
+      {
+        title: "HEALTHCARE & PHARMACEUTICAL",
+        description: "Seamless flooring solutions suitable for laboratories, cleanrooms and contamination-sensitive facilities.",
+        image: "/images/sectors/card-2_fc.webp"
+      },
+      {
+        title: "WAREHOUSES & LOGISTICS",
+        description: "Heavy-duty flooring systems designed for continuous operational traffic and material handling.",
+        image: "/images/sectors/card-3_fc.webp"
+      },
+      {
+        title: "CAR PARKS & PODIUMS",
+        description: "Protective coating systems engineered for vehicular traffic and environmental exposure.",
+        image: "/images/sectors/card-4_fc.webp"
+      }
+    ],
   }
 ];

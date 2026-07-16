@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { sectorsShowcase, SectorItem, sectorsPage } from '../../../data/businesses.data';
+import { SectorShowcaseItem, SectorsPageData } from '@/data/businesses.data';
 
 const cardStyle: React.CSSProperties = {
   width: '285px',
@@ -11,26 +11,12 @@ const cardStyle: React.CSSProperties = {
   borderRadius: '5px'
 };
 
-export default function Page({ 
-  sectorFirstCardImage, 
-  sectorFirstCardTitle, 
-  sectorFirstCardDescription,
-  sectorSecondCardTitle,
-  sectorSecondCardDescription,
-  sectorThirdCardTitle,
-  sectorThirdCardDescription,
-  sectorFourthCardTitle,
-  sectorFourthCardDescription
+export default function Sectors({ 
+  sectorShowcase,
+  sectorsPageData
 }: { 
-  sectorFirstCardImage?: string;
-  sectorFirstCardTitle?: string;
-  sectorFirstCardDescription?: string;
-  sectorSecondCardTitle?: string;
-  sectorSecondCardDescription?: string;
-  sectorThirdCardTitle?: string;
-  sectorThirdCardDescription?: string;
-  sectorFourthCardTitle?: string;
-  sectorFourthCardDescription?: string;
+  sectorShowcase: SectorShowcaseItem[];
+  sectorsPageData: SectorsPageData;
 }) {
   return (
     <div className="min-h-screen bg-white text-ink font-sans p-4 md:p-8 pb-0 md:pb-0">
@@ -46,22 +32,16 @@ export default function Page({
 
         {/* Sectors Grid */}
         <div className="flex flex-col md:flex-row items-center md:justify-center gap-[12px] mx-4">
-          {sectorsShowcase.map((s: SectorItem, idx: number) => (
+          {sectorShowcase.map((s: SectorShowcaseItem, idx: number) => (
           <div key={s.title} className="group border border-muted" style={cardStyle}>
-             <img src={idx === 0 && sectorFirstCardImage ? sectorFirstCardImage : s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
+             <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover" style={{ transform: 'scale(1.014)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" style={{ transform: 'scale(1.014)' }}></div>
             <div className="absolute bottom-0 left-0 px-[8px] pt-2 pb-[8px] md:px-[12px] md:pt-3 md:pb-[12px] text-white">
               <h2 className="font-['Inter'] text-[17px] font-medium uppercase tracking-wider mb-1">
-                {idx === 0 && sectorFirstCardTitle ? sectorFirstCardTitle : 
-                 idx === 1 && sectorSecondCardTitle ? sectorSecondCardTitle :
-                 idx === 2 && sectorThirdCardTitle ? sectorThirdCardTitle :
-                 idx === 3 && sectorFourthCardTitle ? sectorFourthCardTitle : s.title}
+                {s.title}
               </h2>
               <p className="font-['Inter'] text-sm font-normal leading-snug opacity-90">
-                {idx === 0 && sectorFirstCardDescription ? sectorFirstCardDescription : 
-                 idx === 1 && sectorSecondCardDescription ? sectorSecondCardDescription :
-                 idx === 2 && sectorThirdCardDescription ? sectorThirdCardDescription :
-                 idx === 3 && sectorFourthCardDescription ? sectorFourthCardDescription : s.description}
+                {s.description}
               </p>
             </div>
           </div>
@@ -75,11 +55,11 @@ export default function Page({
         <div className="flex flex-col md:flex-row gap-8 lg:gap-12 -mt-3 md:w-[1264px] md:flex-shrink-0">
           <div className="w-full md:max-w-[308px] flex flex-col justify-between">
             <p className="font-['Inter'] font-light text-[20px] leading-relaxed text-ink ml-3">
-              {sectorsPage.showcaseText}
+              {sectorsPageData.showcaseText}
             </p>
             <div className="ml-3">
               <ul className="space-y-1.5 mb-3 font-[var(--font-ibm-plex)] font-medium text-[15px] tracking-widest uppercase">
-                {sectorsPage.projects.map((p, i) => (
+                {sectorsPageData.projects.map((p, i) => (
                   <li key={i}>{p}</li>
                 ))}
               </ul>
@@ -89,7 +69,7 @@ export default function Page({
             </div>
           </div>
           <div style={{ width: '972px', height: '693px', flexShrink: 0 }}>
-            <img src={sectorsPage.showcaseImage} alt="Showcase building" className="w-full h-full object-cover" />
+            <img src={sectorsPageData.showcaseImage} alt="Showcase building" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -97,21 +77,21 @@ export default function Page({
       {/* Aerial View Section - full width */}
       <div className="-mr-4 md:-mr-8 flex justify-end mb-4">
         <div style={{ width: '972px', height: '693px' }}>
-          <img src={sectorsPage.aerialImage} alt="Aerial view" className="w-full h-full object-cover" />
+          <img src={sectorsPageData.aerialImage} alt="Aerial view" className="w-full h-full object-cover" />
         </div>
       </div>
 
       {/* Bottom Composite Section - full width */}
       <div className="-mr-4 md:-mr-8 flex justify-end">
         <div className="relative overflow-visible" style={{ width: '1006px', height: '705px' }}>
-          <img src={sectorsPage.compositeImage} alt="Composite" className="w-full h-full object-cover" />
+          <img src={sectorsPageData.compositeImage} alt="Composite" className="w-full h-full object-cover" />
           <h2 className="absolute top-[18px] left-[18px] font-[var(--font-ibm-plex)] font-normal text-[20px] tracking-widest uppercase text-white">
-            {sectorsPage.compositeTitle}
+            {sectorsPageData.compositeTitle}
           </h2>
           <div className="absolute inset-0 flex items-center overflow-hidden">
             <div className="flex gap-3 animate-scroll-right" style={{ flexShrink: 0 }}>
-              {Array.from({ length: sectorsPage.pipCount * 2 }, (_, idx) => {
-                const i = (idx % sectorsPage.pipCount) + 1;
+              {Array.from({ length: sectorsPageData.pipCount * 2 }, (_, idx) => {
+                const i = (idx % sectorsPageData.pipCount) + 1;
                 return (
                   <img key={idx} src={`/images/sectors/pip-${i}.jpg`} alt="" className="flex-shrink-0" width="227" height="157" />
                 );
@@ -120,7 +100,7 @@ export default function Page({
           </div>
           <div className="absolute bottom-[18px] left-[18px]">
             <p className="font-[var(--font-ibm-plex)] font-medium text-[18px] text-white">
-              {sectorsPage.compositeDescription}
+              {sectorsPageData.compositeDescription}
             </p>
           </div>
         </div>
