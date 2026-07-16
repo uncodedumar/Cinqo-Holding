@@ -35,7 +35,7 @@ export default function Intro({ business }: { business: BusinessData }) {
           )}
           {/* Text */}
           <div className="flex items-start justify-end">
-            <p className={`text-[1.375rem] text-black/80 leading-relaxed font-light max-w-2xl whitespace-pre-line -translate-y-16 ${business.slug === "thc-facilities-management" || business.slug === "cinqo-fitout" ? "-translate-x-4" : business.slug === "cinqo-trading" ? "translate-x-0" : "-translate-x-8"}`}>
+            <p className={`text-[1.375rem] text-black/80 leading-relaxed font-light max-w-2xl whitespace-pre-line -translate-y-16 ${business.slug === "thc-facilities-management" || business.slug === "cinqo-fitout" ? "-translate-x-4" : business.slug === "cinqo-trading" ? "translate-x-0" : business.slug === "cinqo-contracting" ? "-translate-x-4" : "-translate-x-8"}`}>
               {business.introText}
             </p>
           </div>
