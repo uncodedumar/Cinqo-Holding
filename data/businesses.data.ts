@@ -19,6 +19,8 @@ export interface BusinessData {
   slug: string;
   name: string;
   heroImage: string;
+  introBgImage: string;
+  introHeading?: string;
   introText: string;
   definesUs: DefineUsItem[];
   capabilities: CapabilityItem[];
@@ -75,7 +77,8 @@ export const businesses: BusinessData[] = [
     slug: "cinqo-contracting",
     name: "CINQO CONTRACTING",
     heroImage: "/images/companies/c1.jpg",
-    introText: "Cinqo Contracting is the Cinqo Flagship enterprise...",
+        introBgImage: "/images/companies/ci1.png",
+    introHeading: "BUILT ON\nCOMMITMENT",    introText: "Cinqo Contracting is the Group's flagship construction company, delivering civil and building projects across Bahrain's residential, commercial and industrial sectors.\n\nFor nearly two decades, the company has delivered luxury villas, residential developments, commercial facilities, warehouses and industrial assets. Through execution focused planning, experienced project leadership and rigorous commercial control, Cinqo Contracting provides confidence from mobilisation through final handover.",
     definesUs: [
       {
         title: "Executive Oversight",
@@ -138,7 +141,9 @@ export const businesses: BusinessData[] = [
     slug: "thc-facilities-management",
     name: "THC FACILITIES MANAGEMENT",
     heroImage: "/images/companies/c2.jpeg",
-    introText: "THC Facilities Management helps clients protect, maintain and enhance the value of their assets through integrated facilities management solutions.",
+    introBgImage: "/images/companies/ci2.png",
+    introHeading: "PRESERVING\nVALUE",
+    introText: "THC Facilities Management helps clients protect, maintain and enhance the value of their assets through integrated facilities management services.\n\nOperating across residential, hospitality, commercial and industrial environments, the company combines technical expertise, preventative maintenance and responsive support to ensure operational continuity and long-term asset performance.",
     definesUs: [
       {
         title: "ASSET PERFORMANCE",
@@ -202,7 +207,9 @@ export const businesses: BusinessData[] = [
     slug: "cinqo-trading",
     name: "CINQO TRADING",
     heroImage: "/images/companies/h1.jpg",
-    introText: "Coming soon...",
+    introBgImage: "/images/companies/ci4.png",
+    introHeading: "STRUCTURED\nDISTRIBUTION",
+    introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\n\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.",
     definesUs: [],
     capabilities: [],
     sectors: []
@@ -211,7 +218,9 @@ export const businesses: BusinessData[] = [
     slug: "cinqo-fitout",
     name: "THC FITOUT",
     heroImage: "/images/companies/c3.JPG",
-    introText: "Coming soon...",
+    introBgImage: "/images/companies/ci3.png",
+    introHeading: "DELIVERED\nWITH\nPRECISION",
+    introText: "THC Fit Out delivers high-quality interior environments where design intent, technical coordination and execution excellence come together.\n\nFrom corporate offices and retail environments to hospitality venues and premium residential interiors, every project is delivered with a focus on quality, programmed control and attention to detail.",
     definesUs: [],
     capabilities: [],
     sectors: []
@@ -220,7 +229,9 @@ export const businesses: BusinessData[] = [
     slug: "cinqo-flooring-coating-technologies",
     name: "CINQO FLOORING & COATING TECHNOLOGIES",
     heroImage: "/images/companies/c5.png",
-    introText: "Coming soon...",
+    introBgImage: "/images/companies/ci4.png",
+    introHeading: "ENGINEERED\nFOR ENDURANCE",
+    introText: "Cinqo Flooring & Coating Technologies delivers high-performance flooring, waterproofing and protective coating systems for environments where durability, hygiene and long-term performance are critical.\n\nThe company serves logistics facilities, healthcare and pharmaceutical environments, food production sites, car parks and industrial installations through technically engineered solutions and manufacturer-approved systems.",
     definesUs: [],
     capabilities: [],
     sectors: []
