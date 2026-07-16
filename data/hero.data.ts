@@ -10,7 +10,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
     subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
   },
   {
-    id: "slide1",
+    id: "slide2",
     image: "/images/hero/h2.jpg",
     alt: "Cinqo Holdings construction and infrastructure",
     headline1: "BUILT ON COMMITMENT.",
@@ -18,7 +18,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
     subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
   },
   {
-    id: "slide1",
+    id: "slide3",
     image: "/images/hero/h3.png",
     alt: "Cinqo Holdings construction and infrastructure",
     headline1: "BUILT ON COMMITMENT.",
