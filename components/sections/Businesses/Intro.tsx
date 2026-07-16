@@ -1,28 +1,18 @@
-import Image from "next/image";
 import { BusinessData } from "@/data/businesses.data";
+import Hero from "@/components/sections/reusable/Hero";
+import type { HeroSlideV2 } from "@/types";
 
 export default function Intro({ business }: { business: BusinessData }) {
+  const heroSlide: HeroSlideV2 = {
+    id: business.slug,
+    image: business.heroImage,
+    alt: business.name,
+    headline1: business.name,
+  };
+
   return (
     <section className="w-full flex flex-col">
-      {/* Hero Banner */}
-      <div className="relative w-full h-[60vh] min-h-[450px] flex items-end">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src={business.heroImage} 
-            alt={business.name} 
-            fill 
-            className="object-cover object-center" 
-            priority
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-        
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wider drop-shadow-md">
-            {business.name}
-          </h1>
-        </div>
-      </div>
+      <Hero slides={[heroSlide]} showDots={false} />
 
       {/* Intro Text Section */}
       <div className="w-full bg-cream-50 py-16">

@@ -126,7 +126,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true }: Hero
               alt={slide.alt}
               fill
               priority={i === 0}
-              quality={90}
+              quality={100}
               className="object-cover"
               sizes="100vw"
             />
