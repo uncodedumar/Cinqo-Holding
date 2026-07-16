@@ -37,7 +37,7 @@ export default async function BusinessPage({
       <Capabilities capabilities={business.capabilities} />
       
       {/* Sectors grid */}
-      <Sectors sectors={business.sectors} />
+      <Sectors />
 
       <News/>
     </main>
