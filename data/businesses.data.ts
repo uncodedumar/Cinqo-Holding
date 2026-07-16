@@ -110,8 +110,8 @@ export const businesses: BusinessData[] = [
     ],
     sectors: [
       {
-        title: "RESIDENTIAL & COMMERCIAL COMPLEXES",
-        description: "High-rise towers and mixed-use developments...",
+        title: "HIGH-END RESIDENTIAL VILLAS & COMPOUNDS",
+        description: "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
         image: "/images/businesses/sector-residential.jpg"
       },
       {
