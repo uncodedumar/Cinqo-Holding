@@ -22,20 +22,20 @@ export default function Intro({ business }: { business: BusinessData }) {
             src={business.introBgImage}
             alt=""
             fill
-            className="object-cover brightness-100 saturate-[0.5] contrast-[0.85]"
+            className="object-cover object-left brightness-100 saturate-[0.5] contrast-[0.85]"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-white/75" />
         </div>
         <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12">
           {business.introHeading && (
-            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-black mb-6 uppercase whitespace-pre-line translate-y-6 translate-x-1">
+            <h2 className={`text-lg md:text-xl lg:text-2xl font-semibold text-black mb-6 uppercase whitespace-pre-line ${business.slug === "cinqo-trading" ? "translate-y-10 translate-x-4" : "translate-y-6 translate-x-1"}`}>
               {business.introHeading}
             </h2>
           )}
           {/* Text */}
           <div className="flex items-start justify-end">
-            <p className={`text-[1.375rem] text-black/80 leading-relaxed font-light max-w-2xl whitespace-pre-line -translate-y-16 ${business.slug === "thc-facilities-management" || business.slug === "cinqo-fitout" ? "-translate-x-4" : "-translate-x-8"}`}>
+            <p className={`text-[1.375rem] text-black/80 leading-relaxed font-light max-w-2xl whitespace-pre-line -translate-y-16 ${business.slug === "thc-facilities-management" || business.slug === "cinqo-fitout" ? "-translate-x-4" : business.slug === "cinqo-trading" ? "translate-x-0" : "-translate-x-8"}`}>
               {business.introText}
             </p>
           </div>

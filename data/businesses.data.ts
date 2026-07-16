@@ -186,7 +186,7 @@ export const businesses: BusinessData[] = [
     heroImage: "/images/companies/h1.jpg",
     introBgImage: "/images/companies/ci4.png",
     introHeading: "STRUCTURED\nDISTRIBUTION",
-    introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\n\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.",
+    introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.",
     definesUs: [],
     capabilities: [],
     sectorShowcase: [
@@ -248,7 +248,7 @@ export const businesses: BusinessData[] = [
     slug: "cinqo-flooring-coating-technologies",
     name: "CINQO FLOORING & COATING TECHNOLOGIES",
     heroImage: "/images/companies/c5.png",
-    introBgImage: "/images/companies/ci4.png",
+    introBgImage: "/images/companies/ci5.png",
     introHeading: "ENGINEERED\nFOR ENDURANCE",
     introText: "Cinqo Flooring & Coating Technologies delivers high-performance flooring, waterproofing and protective coating systems for environments where durability, hygiene and long-term performance are critical.\n\nThe company serves logistics facilities, healthcare and pharmaceutical environments, food production sites, car parks and industrial installations through technically engineered solutions and manufacturer-approved systems.",
     definesUs: [],
