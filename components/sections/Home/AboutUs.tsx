@@ -4,11 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, SplitText } from "@/lib/gsap";
 
-// TODO: placeholder copy — swap in the real Vision statement.
 const MISSION_TEXT =
-  "To build a group of enduring businesses recognized for performance, trust and sustainable growth.";
+  "To build and operate each business within the Group to a standard that retains clients, protects capital and delivers consistent results across market conditions — while fostering an environment where our teams are developed, empowered and held to the same standard of excellence.";
 const VISION_TEXT =
-  "Add your Vision statement here — placeholder copy, replace before shipping.";
+  "To build a group of enduring businesses recognised for performance, trust and sustainable growth.";
 
 export default function AboutUs() {
   const sectionRef = useRef<HTMLDivElement>(null);
