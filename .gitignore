@@ -32,3 +32,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw 4K source frames for ThePrinciple scroll sequence (~300MB) — the web
+# tiers actually used at runtime live in frames-web/ and frames-web-sm/
+/public/videos/principle/Frames/

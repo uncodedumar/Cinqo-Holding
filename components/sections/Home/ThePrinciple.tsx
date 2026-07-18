@@ -1,206 +1,372 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
+/**
+ * Cinematic scroll-scrubbed frame sequence ("scroll video").
+ *
+ * Frames are pre-encoded into two resolution tiers (see
+ * public/videos/principle/frames-web[-sm]/, generated from the raw 4K
+ * source in public/videos/principle/Frames/ via sharp — see git history /
+ * scratch scripts). The desktop tier is 1600px wide, the mobile tier
+ * 960px, chosen once on mount to bound decoded-canvas memory on phones.
+ */
+const TOTAL_FRAMES = 277;
+const DESKTOP_DIR = "/videos/principle/frames-web";
+const MOBILE_DIR = "/videos/principle/frames-web-sm";
+const MOBILE_BREAKPOINT = 768;
+const PIN_VH_MULTIPLIER = 3.2; // total pinned scroll runway, in viewport heights
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } 
+const frameUrl = (dir: string, n: number) => `${dir}/frame-${String(n).padStart(4, "0")}.webp`;
+
+// Blocks 2 & 3 are placeholder editorial copy in the same voice as the
+// original block — swap in final client copy when available.
+const TEXT_BLOCKS = [
+  {
+    eyebrow: "The Principle",
+    heading: "Clarity Before Commitment",
+    subheading: "Accountability at every level.",
+    body: "Every engagement begins with a clear understanding of scope, objectives and responsibilities. Strong outcomes are built on strong foundations.",
   },
-};
+  {
+    eyebrow: "The Principle",
+    heading: "Discipline Behind Every Decision",
+    subheading: "Governance that holds at every scale.",
+    body: "From first estimate to final handover, every commitment is tracked, tested and honoured — so trust is earned once and kept indefinitely.",
+  },
+  {
+    eyebrow: "The Principle",
+    heading: "Built to Outlast the Moment",
+    subheading: "Long-term value over short-term wins.",
+    body: "We measure success not at delivery, but in the years a project continues to perform — for the people who use it and the partners who return to us.",
+  },
+];
 
 export default function ThePrinciple() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const textBlockRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Track the scroll progress of this specific section
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
+  const [audioOn, setAudioOn] = useState(false);
+  const audioOnRef = useRef(false);
 
-  // Map scroll progress (0 to 1) directly to frame numbers (1 to 56)
-  const frameIndex = useTransform(scrollYProgress, [0, 1], [1, 56]);
+  useEffect(() => {
+    audioOnRef.current = audioOn;
+  }, [audioOn]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
-    const context = canvas.getContext("2d");
-    if (!context) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    // Helper to format the frame name matching your folder structure
-    const getFrameUrl = (index: number) => {
-      const paddedIndex = String(index).padStart(3, "0");
-      return `/videos/principle/Frames/Frame${paddedIndex}.jpg`;
+    const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
+    const dir = isMobile ? MOBILE_DIR : DESKTOP_DIR;
+    const preloadAhead = isMobile ? 10 : 24;
+    const preloadBehind = isMobile ? 4 : 10;
+    const keepRadius = isMobile ? 40 : 90;
+    const nearestSearchRadius = isMobile ? 12 : 24;
+
+    const cache = new Map<number, HTMLImageElement>();
+    let lastDrawn = -1;
+    let currentTarget = 1;
+
+    const isLoaded = (n: number) => {
+      const img = cache.get(n);
+      return !!img && img.complete && img.naturalWidth > 0;
     };
 
-  
+    const getImage = (n: number) => {
+      let img = cache.get(n);
+      if (!img) {
+        img = new window.Image();
+        img.decoding = "async";
+        img.src = frameUrl(dir, n);
+        cache.set(n, img);
+      }
+      return img;
+    };
 
-    // Preload images into memory for zero lag during scroll
-    const images: HTMLImageElement[] = [];
-    const totalFrames = 300;
-
-    for (let i = 1; i <= totalFrames; i++) {
-      const img = new Image();
-      img.src = getFrameUrl(i);
-      images.push(img);
-    }
-
-    // Draw the image on the canvas and scale it to mimic "object-cover"
     const drawImage = (img: HTMLImageElement) => {
-      if (!img.complete) return;
-      
-      const canvasWidth = canvas.width;
-      const canvasHeight = canvas.height;
-      const imgWidth = img.naturalWidth;
-      const imgHeight = img.naturalHeight;
+      const cw = canvas.width;
+      const ch = canvas.height;
+      const iw = img.naturalWidth;
+      const ih = img.naturalHeight;
+      if (!iw || !ih) return;
 
-      const imgRatio = imgWidth / imgHeight;
-      const canvasRatio = canvasWidth / canvasHeight;
-
-      let dWidth = canvasWidth;
-      let dHeight = canvasHeight;
+      const imgRatio = iw / ih;
+      const canvasRatio = cw / ch;
+      let dWidth = cw;
+      let dHeight = ch;
       let dx = 0;
       let dy = 0;
 
       if (imgRatio > canvasRatio) {
-        dWidth = canvasHeight * imgRatio;
-        dx = (canvasWidth - dWidth) / 2;
+        dWidth = ch * imgRatio;
+        dx = (cw - dWidth) / 2;
       } else {
-        dHeight = canvasWidth / imgRatio;
-        dy = (canvasHeight - dHeight) / 2;
+        dHeight = cw / imgRatio;
+        dy = (ch - dHeight) / 2;
       }
 
-      context.clearRect(0, 0, canvasWidth, canvasHeight);
-      context.drawImage(img, dx, dy, dWidth, dHeight);
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.drawImage(img, dx, dy, dWidth, dHeight);
     };
 
-    // Resize canvas to match screen resolution (handling retina displays)
+    const findNearestLoaded = (target: number) => {
+      if (isLoaded(target)) return target;
+      for (let d = 1; d <= nearestSearchRadius; d++) {
+        if (isLoaded(target - d)) return target - d;
+        if (isLoaded(target + d)) return target + d;
+      }
+      return null;
+    };
+
+    const requestFrame = (target: number) => {
+      currentTarget = target;
+
+      for (let i = target - preloadBehind; i <= target + preloadAhead; i++) {
+        if (i < 1 || i > TOTAL_FRAMES) continue;
+        const img = getImage(i);
+        if (i === target && !img.complete) {
+          img.onload = () => {
+            if (Math.abs(currentTarget - i) <= nearestSearchRadius) {
+              drawImage(img);
+              lastDrawn = i;
+            }
+          };
+        }
+      }
+
+      for (const key of cache.keys()) {
+        if (Math.abs(key - target) > keepRadius) cache.delete(key);
+      }
+
+      const nearest = findNearestLoaded(target);
+      if (nearest !== null && nearest !== lastDrawn) {
+        drawImage(cache.get(nearest)!);
+        lastDrawn = nearest;
+      }
+    };
+
     const handleResize = () => {
-      canvas.width = window.innerWidth * window.devicePixelRatio;
-      canvas.height = window.innerHeight * window.devicePixelRatio;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
       canvas.style.width = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
-      context.scale(window.devicePixelRatio, window.devicePixelRatio);
-      
-      // Re-draw current frame on resize
-      const currentFrame = Math.round(frameIndex.get());
-      const img = images[currentFrame - 1];
-      if (img) drawImage(img);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      lastDrawn = -1;
+      requestFrame(currentTarget);
     };
 
     window.addEventListener("resize", handleResize);
     handleResize();
+    requestFrame(1);
 
-    // Listen to Framer Motion's frame update value and draw it instantly
-    const unsubscribe = frameIndex.on("change", (latest) => {
-      const currentFrame = Math.round(latest);
-      const img = images[currentFrame - 1];
-      if (img) {
-        if (img.complete) {
-          drawImage(img);
-        } else {
-          img.onload = () => drawImage(img);
-        }
+    // Text-block sequencing — stacked in the DOM, swapped via refs only
+    // (no React state), so scroll updates never trigger a re-render.
+    let activeBlock = 0;
+    const showTextBlock = (index: number) => {
+      if (index === activeBlock) return;
+      const prevEl = textBlockRefs.current[activeBlock];
+      const nextEl = textBlockRefs.current[index];
+      activeBlock = index;
+
+      if (prevEl) {
+        gsap.to(prevEl, { opacity: 0, y: -30, duration: 0.6, ease: "power2.inOut" });
+        prevEl.setAttribute("aria-hidden", "true");
       }
-    });
+      if (nextEl) {
+        gsap.fromTo(
+          nextEl,
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+        );
+        nextEl.removeAttribute("aria-hidden");
+      }
+    };
+
+    const fadeAudio = (target: number, onComplete?: () => void) => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      gsap.to(audio, { volume: target, duration: 0.7, ease: "power1.out", onComplete });
+    };
+
+    const ctxGsap = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: wrap,
+        start: "top top",
+        end: () => `+=${window.innerHeight * PIN_VH_MULTIPLIER}`,
+        pin: true,
+        scrub: 1,
+        anticipatePin: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const targetFrame = 1 + Math.round(progress * (TOTAL_FRAMES - 1));
+          requestFrame(targetFrame);
+
+          const segment = Math.min(
+            TEXT_BLOCKS.length - 1,
+            Math.floor(progress * TEXT_BLOCKS.length),
+          );
+          showTextBlock(segment);
+        },
+        onEnter: () => {
+          if (audioButtonRef.current) {
+            gsap.to(audioButtonRef.current, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" });
+          }
+        },
+        onLeave: () => {
+          if (audioOnRef.current) fadeAudio(0, () => audioRef.current?.pause());
+        },
+        onEnterBack: () => {
+          if (audioOnRef.current) {
+            audioRef.current?.play().catch(() => {});
+            fadeAudio(0.28);
+          }
+        },
+        onLeaveBack: () => {
+          if (audioButtonRef.current) {
+            gsap.to(audioButtonRef.current, { opacity: 0, y: 12, duration: 0.4, ease: "power2.in" });
+          }
+          if (audioOnRef.current) fadeAudio(0, () => audioRef.current?.pause());
+        },
+      });
+    }, wrap);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      unsubscribe();
+      ctxGsap.revert();
+      cache.clear();
+      audioRef.current?.pause();
     };
-  }, [frameIndex]);
+  }, []);
+
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audioOnRef.current) {
+      gsap.to(audio, { volume: 0, duration: 0.5, onComplete: () => audio.pause() });
+      audioOnRef.current = false;
+      setAudioOn(false);
+    } else {
+      audio.volume = 0;
+      audio.play().catch(() => {});
+      gsap.to(audio, { volume: 0.28, duration: 0.9 });
+      audioOnRef.current = true;
+      setAudioOn(true);
+    }
+  };
 
   return (
-    /* 
-      We make the parent container 'h-[300vh]' to give the user enough scroll track 
-      to appreciate the frames. 'sticky' keeps the visual viewport locked at full screen 
-      while they scroll.
-    */
-    <div ref={sectionRef} className="relative h-[300vh] bg-black w-full">
-      <section className="sticky top-0 h-[100vh] flex flex-col items-center justify-center overflow-hidden w-full">
-        
-        {/* High performance Canvas instead of a slow React Image component */}
-        <canvas
-          ref={canvasRef}
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-130 origin-center"
+    <div ref={wrapRef} className="relative h-screen w-full bg-black">
+      <section className="relative h-screen w-full overflow-hidden">
+        <canvas ref={canvasRef} aria-hidden className="absolute inset-0 h-full w-full" />
+
+        {/* Legibility scrim so overlay text stays readable over any frame */}
+        <div
+          aria-hidden
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.65) 100%)",
+          }}
         />
-        
-        <motion.div 
-          className="relative z-20 flex flex-col items-center text-center w-full px-4 max-w-[1290px] mx-auto mt-0 sm:mt-[-50px]"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+
+        <div className="absolute inset-0 z-20 flex items-center justify-center px-4">
+          <div className="relative w-full max-w-[1290px] mx-auto text-center">
+            {TEXT_BLOCKS.map((block, i) => (
+              <div
+                key={block.heading}
+                ref={(el) => {
+                  textBlockRefs.current[i] = el;
+                }}
+                aria-hidden={i === 0 ? undefined : "true"}
+                className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center"
+                style={i === 0 ? undefined : { opacity: 0, transform: "translate(0, 40px)" }}
+              >
+                <span
+                  className="uppercase text-white mb-2 sm:mb-[16px]"
+                  style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "20px",
+                    lineHeight: "1.2",
+                  }}
+                >
+                  {block.eyebrow}
+                </span>
+
+                <h2
+                  className="uppercase text-white mb-6 sm:mb-[47px]"
+                  style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "clamp(32px, 5vw, 64px)",
+                    lineHeight: "1.1",
+                  }}
+                >
+                  {block.heading}
+                </h2>
+
+                <h3
+                  className="uppercase text-white mb-4 sm:mb-[16px]"
+                  style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(18px, 3vw, 24px)",
+                    lineHeight: "1.2",
+                  }}
+                >
+                  {block.subheading}
+                </h3>
+
+                <p
+                  className="text-white max-w-[650px] mx-auto"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "clamp(16px, 2vw, 20px)",
+                    lineHeight: "1.5",
+                  }}
+                >
+                  {block.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <audio ref={audioRef} src="/audios/ThePrinciple.mp3" loop preload="none" />
+
+        <button
+          ref={audioButtonRef}
+          type="button"
+          onClick={toggleAudio}
+          aria-label={audioOn ? "Mute ambient sound" : "Play ambient sound"}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2.5 text-white opacity-0 backdrop-blur-md transition-colors duration-300 hover:border-white/50 hover:bg-white/15"
+          style={{ transform: "translateX(-50%) translateY(12px)" }}
         >
-          <motion.span 
-            variants={itemVariants}
-            className="uppercase text-white mb-2 sm:mb-[16px]"
-            style={{ 
-              fontFamily: "'IBM Plex Sans', sans-serif", 
-              fontWeight: 500, 
-              fontSize: "20px", 
-              lineHeight: "1.2"
-            }}
-          >
-            The Principle
-          </motion.span>
-          
-          <motion.h2 
-            variants={itemVariants}
-            className="uppercase text-white mb-6 sm:mb-[47px]"
-            style={{ 
-              fontFamily: "'IBM Plex Sans', sans-serif", 
-              fontWeight: 500, 
-              fontSize: "clamp(32px, 5vw, 64px)", 
-              lineHeight: "1.1",
-            }}
-          >
-            Clarity Before Commitment
-          </motion.h2>
-          
-          <motion.h3 
-            variants={itemVariants}
-            className="uppercase text-white mb-4 sm:mb-[16px]"
-            style={{ 
-              fontFamily: "'IBM Plex Sans', sans-serif", 
-              fontWeight: 700, 
-              fontSize: "clamp(18px, 3vw, 24px)", 
-              lineHeight: "1.2",
-            }}
-          >
-            Accountability at every level.
-          </motion.h3>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-white max-w-[650px] mx-auto"
-            style={{ 
-              fontFamily: "'Inter', sans-serif", 
-              fontWeight: 500, 
-              fontSize: "clamp(16px, 2vw, 20px)", 
-              lineHeight: "1.5",
-            }}
-          >
-            Every engagement begins with a clear understanding of scope,
-            objectives and responsibilities. Strong outcomes are built on
-            strong foundations.
-          </motion.p>
-        </motion.div>
+          {audioOn ? (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5 6 9H3v6h3l5 4V5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5 6 9H3v6h3l5 4V5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              <path d="m16 9 5 6M21 9l-5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          )}
+          <span className="text-[0.7rem] font-medium uppercase tracking-[0.14em]">
+            Sound {audioOn ? "On" : "Off"}
+          </span>
+        </button>
       </section>
     </div>
   );
