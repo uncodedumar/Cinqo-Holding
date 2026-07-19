@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 import { BusinessData } from "@/data/businesses.data";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -174,11 +175,13 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
                   key={tIdx}
                   className="w-32 md:w-44 aspect-[4/3] relative shrink-0 pr-3"
                 >
-                  <img
+                  <Image
                     src={thumb}
                     alt={`${activeProject.title} thumbnail ${
                       (tIdx % activeProject.hoverThumbnails.length) + 1
                     }`}
+                    width={400}
+                    height={300}
                     className="w-full h-full object-cover rounded-sm shadow-md"
                   />
                 </div>

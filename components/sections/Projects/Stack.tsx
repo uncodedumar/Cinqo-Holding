@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image'; // 1. Import Next.js Image
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +85,7 @@ const StackedSection = () => {
           className="card absolute top-[15vh] w-[90vw] h-[75vh] rounded-sm overflow-hidden shadow-[0_-15px_40px_-10px_rgba(0,0,0,0.15)]"
           style={{ zIndex: i + 1 }} 
         >
-          <img src={src} className="w-full h-full object-cover" alt="stack" />
+          <Image src={src} className="w-full h-full object-cover" alt="stack" />
           
           {/* Conditional text container solely on the last image */}
           {i === images.length - 1 && (

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Image from 'next/image'; // 1. Import Next.js Image
 import { SectorShowcaseItem } from '@/data/businesses.data';
 
 // Increased width and height for bigger cards
@@ -15,10 +16,8 @@ const cardStyle: React.CSSProperties = {
 
 export default function Sectors({ 
   sectorShowcase,
-  
 }: { 
   sectorShowcase: SectorShowcaseItem[];
-
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -60,11 +59,13 @@ export default function Sectors({
               opacity: 0
             }}
           >
-            {/* Image with smooth scale-up on hover */}
-            <img 
+            {/* 2. Replaced <img> with Next.js <Image> */}
+            <Image 
               src={s.image} 
-              alt={s.title} 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
+              alt={s.title}
+              fill
+              sizes="320px"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
             />
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent transition-opacity duration-500 group-hover:opacity-90"></div>
