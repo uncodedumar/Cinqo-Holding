@@ -64,9 +64,9 @@ export default function TeamSection() {
     gsap.utils.toArray<HTMLElement>(".parallax-wrapper").forEach((wrapper) => {
       gsap.fromTo(
         wrapper,
-        { yPercent: -10 },
+        { yPercent: -5 },
         {
-          yPercent: 10,
+          yPercent: 5,
           ease: "none",
           scrollTrigger: {
             trigger: wrapper.parentElement,
@@ -98,7 +98,7 @@ export default function TeamSection() {
                   src={director.image}
                   alt={director.name}
                   fill
-                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.1]"
                   unoptimized
                 />
               </div>
@@ -135,7 +135,7 @@ export default function TeamSection() {
                   src={exec.image}
                   alt={exec.name}
                   fill
-                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.15]"
                   unoptimized
                 />
               </div>
@@ -169,7 +169,7 @@ export default function TeamSection() {
                   src={executives[8].image}
                   alt={executives[8].name}
                   fill
-                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.15]"
                   unoptimized
                 />
               </div>
