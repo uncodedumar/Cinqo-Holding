@@ -2,7 +2,7 @@ import Image from 'next/image'; // 1. Import Next.js Image
 
 export default function Location() {
   return (
-    <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
+    <section className="relative w-full h-[350px] md:h-[350px] lg:h-[500px]">
       {/* Background Map */}
       <iframe
         src="https://www.google.com/maps?q=Yusuf+Bin+Ahmed+Kanoo+Tower+Manama+Bahrain&output=embed"
@@ -14,19 +14,7 @@ export default function Location() {
         title="Cinqo Holding Location"
       />
 
-      {/* Floating Card Overlay */}
-      <div className="absolute top-1/2 right-4 md:right-12 lg:right-24 transform -translate-y-1/2 w-[90%] max-w-[420px] bg-white shadow-2xl z-10">
-        
-        {/* Card content restricted to an image as requested */}
-        <Image
-  src="/images/contactus/map.jpg" 
-  alt="Location Details" 
-  width={800} /* Replace with the actual width of your image */
-  height={600} /* Replace with the actual height of your image */
-  className="w-full h-auto block"
-/>
-
-      </div>
+    
     </section>
   );
 }

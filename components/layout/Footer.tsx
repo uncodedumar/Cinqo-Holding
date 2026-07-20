@@ -11,7 +11,7 @@ const FOOTER_COLUMNS = [
       { label: "Home", href: "/home" },
       { label: "About", href: "/about" },
       { label: "Companies", href: "/companies" },
-      { label: "News & Insights", href: "/news" },
+      { label: "Cinqo News", href: "/news" },
       { label: "Careers", href: "/careers" },
       { label: "Projects", href: "/projects" },
       { label: "Contact Us", href: "/contact" },
@@ -20,11 +20,11 @@ const FOOTER_COLUMNS = [
   {
     title: "Companies",
     links: [
-      { label: "Cinqo Contracting", href: "/companies/cinqo-contracting" },
-      { label: "Cinqo Trading", href: "/companies/cinqo-trading" },
-      { label: "Cinqo Coatings & Coating Technologies", href: "/companies/cinqo-coatings" },
-      { label: "THC Facilities Management", href: "/companies/thc-facilities" },
-      { label: "THC Fitout", href: "/companies/thc-fitout" },
+      { label: "Cinqo Contracting", href: "/businesses/cinqo-contracting" },
+      { label: "Cinqo Trading", href: "/businesses/cinqo-trading" },
+      { label: "Cinqo Coatings & Coating Technologies", href: "/businesses/cinqo-coatings" },
+      { label: "THC Facilities Management", href: "/businesses/thc-facilities" },
+      { label: "THC Fitout", href: "/businesses/thc-fitout" },
     ],
   },
 ];
