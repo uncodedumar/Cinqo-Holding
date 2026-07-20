@@ -13,7 +13,7 @@ if (typeof window !== "undefined") {
 
 // --- Data ---
 const directors = [
-  { name: "Junaid Usman", image: "/images/about/JunaidUsman.png" },
+  { name: "Junaid Usman", image: "/images/about/Junaid_Usman.png" },
   { name: "Sufyan Usman", image: "/images/about/SufyanUsman.png" },
   { name: "Uzair Usman", image: "/images/about/UzairUsman.png" },
 ];
@@ -24,7 +24,7 @@ const executives = [
   { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "/images/about/Ranjith.png" },
   { name: "Mohd Ali", designation: "General Manager – THC Facilities Management", image: "/images/about/Ali.png" },
   { name: "Collins", designation: "General Manager – THC Fit Out", image: "/images/about/Collins.png" },
-  { name: "Prakash", designation: "Group Finance Manager", image: "/images/about/Prakash.png" },
+  { name: "Prakash_", designation: "Group Finance Manager", image: "/images/about/Prakash.png" },
   { name: "Satish", designation: "Group HR Manager", image: "/images/about/Satish.png" },
   { name: "Alok", designation: "Group Business Development Manager", image: "/images/about/Alok.png" },
   { name: "Selina", designation: "Group Admin Manager", image: "/images/about/Selina.png" },
@@ -64,9 +64,9 @@ export default function TeamSection() {
     gsap.utils.toArray<HTMLElement>(".parallax-wrapper").forEach((wrapper) => {
       gsap.fromTo(
         wrapper,
-        { yPercent: -10 },
+        { yPercent: -5 },
         {
-          yPercent: 10,
+          yPercent: 5,
           ease: "none",
           scrollTrigger: {
             trigger: wrapper.parentElement,
@@ -98,7 +98,7 @@ export default function TeamSection() {
                   src={director.image}
                   alt={director.name}
                   fill
-                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.1]"
                   unoptimized
                 />
               </div>
@@ -135,7 +135,7 @@ export default function TeamSection() {
                   src={exec.image}
                   alt={exec.name}
                   fill
-                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.15]"
                   unoptimized
                 />
               </div>
@@ -169,7 +169,7 @@ export default function TeamSection() {
                   src={executives[8].image}
                   alt={executives[8].name}
                   fill
-                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.15]"
                   unoptimized
                 />
               </div>
