@@ -169,42 +169,52 @@ export const businesses: BusinessData[] = [
     introText: "THC Facilities Management helps clients protect, maintain and enhance the value of their assets through integrated facilities management services.\n\nOperating across residential, hospitality, commercial and industrial environments, the company combines technical expertise, preventative maintenance and responsive support to ensure operational continuity and long-term asset performance.",
     definesUs: [
       {
-      title: "PRINCIPAL ALIGNMENT",
-      description: "Manufacturer relationships are built on long-term partnerships, commercial integrity and consistent market representation.",
-      bgimage: "/images/companies/ci1.png",
-    },
-    {
-      title: "TECHNICAL DISTRIBUTION",
-      description: "Specification guidance, application support and technical advisory services form an integral part of the distribution model.",
-      bgimage: "/images/companies/ci1.png",
-    },
-    {
-      title: "STRATEGIC PARTNERS",
-        description: "Working closely with clients to achieve their facility goals.",
+        title: "ASSET PRESERVATION",
+        description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+        bgimage: "/images/companies/ci1.png",
+      },
+      {
+        title: "OPERATIONAL CONTINUITY",
+        description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+        bgimage: "/images/companies/ci1.png",
+      },
+      {
+        title: "LIFECYCLE FOCUS",
+        description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+        bgimage: "/images/companies/ci1.png",
+      },
+      {
+        title: "TRANSPARENT REPORTING",
+        description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
         bgimage: "/images/companies/ci1.png",
       }
     ],
     capabilities: [
       {
-        title: "Asset Preservation",
-        description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+        title: "PREVENTIVE MAINTAINANCE PROGRAMMES",
+        description: "Scheduled servicing based on asset condition, manufacturer guidelines and operational requirements to reduce unplanned downtime.",
         image: "/images/capabilities/HAWAR.jpg"
       },
       {
-        title: "Operational Continuity",
-        description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+        title: "MEP SERVICING & DIAGNOSTICS",
+        description: "Troubleshooting and technical evaluation of mechanical and electrical systems to maintain performance continuity.",
         image: "/images/capabilities/HAWAR.jpg"
       },
       {
-        title: "Lifecycle Focus",
-        description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+        title: "SOFT SERVICES & PROPERTY CARE",
+        description: "Cleaning, landscaping and general upkeep delivered with defined service standards and documented quality checks.",
         image: "/images/capabilities/HAWAR.jpg"
       },
       {
-        title: "Transparent Reporting",
-        description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+        title: "ANNUAL MAINTENANCE CONTRACTS",
+        description: "Comprehensive service coverage including scheduled inspections, reporting and performance tracking.",
         image: "/images/capabilities/HAWAR.jpg"
       },
+      {
+        title: "ASSET REGISTERS & COMPLIANCE DOCUMENTATION",
+        description: "Centralised records of equipment, warranties and servicing history to support transparency and regulatory alignment.",
+        image: "/images/capabilities/HAWAR.jpg"
+      }
     ],
     sectorShowcase: [
       {
@@ -412,40 +422,51 @@ export const businesses: BusinessData[] = [
     introHeading: "ENGINEERED\nFOR\nENDURANCE",
     introText: "Cinqo Flooring & Coating Technologies delivers high-performance flooring, waterproofing and protective coating systems for environments where durability, hygiene and long-term performance are critical.\n\nThe company serves logistics facilities, healthcare and pharmaceutical environments, food production sites, car parks and industrial installations through technically engineered solutions and manufacturer-approved systems.",
     definesUs: [{
-      title: "ASSET PERFORMANCE",
-      description: "Maximizing the lifespan and performance of your assets.",
+      title: "SYSTEM-BASED APPROACH",
+      description: "Solutions are specified as complete systems tailored to operational, chemical and mechanical performance requirements.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "OPERATIONAL EFFICIENCY",
-      description: "Optimizing operations to reduce costs and improve service delivery.",
+      title: "PREPARATION INTEGRITY",
+      description: "Substrate evaluation, moisture testing and surface preparation form the foundation of long-term system performance.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "STRATEGIC PARTNERS",
-      description: "Working closely with clients to achieve their facility goals.",
+      title: "APPLICATION CONTROL",
+      description: "Environmental conditions, application parameters and quality standards are monitored throughout installation.",
       bgimage: "/images/companies/ci1.png",
-    }],
+    },
+    {
+      title: "PERFORMANCE DURABILITY",
+      description: "Systems are selected to withstand operational demands while maximising service life and reliability.",
+      bgimage: "/images/companies/ci1.png",
+    },],
     capabilities: [{
-      title: "Asset Preservation",
-      description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+      title: "EPOXY & POLYURETHANE SYSTEMS",
+      description: "High-performance flooring systems selected for durability, chemical resistance and mechanical load characteristics.",
       image: "/images/capabilities/cc51.jpg"
     },
     {
-      title: "Operational Continuity",
-      description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+      title: "PROTECTIVE COATINGS",
+      description: "Application of corrosion-resistant and protective systems for industrial structures and infrastructure assets.",
       image: "/images/capabilities/cc52.jpeg"
     },
     {
-      title: "Lifecycle Focus",
-      description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+      title: "WATERPROOFING SYSTEMS",
+      description: "Membrane and coating solutions applied to protect structural integrity against water ingress and moisture damage.",
       image: "/images/capabilities/cc53.jpg"
     },
     {
-      title: "Transparent Reporting",
-      description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+      title: "SURFACE PREPARATION",
+      description: "Moisture testing, mechanical profiling and adhesion evaluation to ensure substrate compatibility with the specified system.",
       image: "/images/capabilities/HAWAR.jpg"
-    }],
+    },
+    {
+      title: "TURNKEY SUPPLY & APPLICATION",
+      description: "Integrated delivery covering material sourcing, surface preparation, application and performance verification.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+  ],
     sectorShowcase: [
       {
         title: "FOOD &\n BEVERAGE",
@@ -492,20 +513,26 @@ export const businesses: BusinessData[] = [
     introHeading: "ENGINEERED\nFOR\nENDURANCE",
     introText: "Cinqo Holding evaluates and manages investments aligned with the Group’s long-term vision, operational expertise and governance standards.The portfolio spans real estate, strategic partnerships, technology ventures and growth-oriented businesses where the Group can contribute not only capital, but also commercial discipline, operational insight and strategic direction.",
     definesUs: [{
-      title: "ASSET PERFORMANCE",
-      description: "Maximizing the lifespan and performance of your assets.",
+      title: "INCOME-GENERATING REAL ESTATE",
+      description: "Commercial, industrial and residential assets with stable cash flows and long-term value creation potential.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "OPERATIONAL EFFICIENCY",
-      description: "Optimizing operations to reduce costs and improve service delivery.",
+      title: "TECHNOLOGY VENTURES",
+      description: "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "STRATEGIC PARTNERS",
-      description: "Working closely with clients to achieve their facility goals.",
+      title: "EARLY-STAGE BUSINESSES",
+      description: "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
       bgimage: "/images/companies/ci1.png",
-    }],
+    },
+    {
+      title: "INDUSTRIAL PARTNERSHIPS & DISTRIBUTION RIGHTS",
+      description: "Strategic investments in industries focused on innovation and value addition.",
+      bgimage: "/images/companies/ci1.png",
+    }
+  ],
     capabilities: [],
     sectorShowcase: [
       
