@@ -46,7 +46,7 @@ export default function DefineUs({
                 borderColor: "var(--color-coral-500)",
                 boxShadow: "0 20px 40px rgba(0,0,0,0.12)", // Softer, wider premium shadow
               }}
-              className="group relative overflow-hidden bg-white border border-line rounded-sm px-5 pt-8 pb-6 flex flex-col justify-end h-full min-h-[380px] lg:min-h-[420px] cursor-default"
+              className="group relative overflow-hidden bg-white border border-line rounded-sm px-5 pb-6 flex flex-col h-full min-h-[380px] lg:min-h-[420px] cursor-default"
             >
               {/* Premium Background Image Layer */}
               {/* @ts-ignore - Assuming bgimage exists on the data type based on your request */}
@@ -61,7 +61,7 @@ export default function DefineUs({
                 </>
               )}
 
-              <div className="relative z-10 flex flex-col gap-3">
+              <div className="relative z-10 flex flex-col gap-3 mt-16">
                 <motion.h3
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}

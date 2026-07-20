@@ -169,17 +169,17 @@ export const businesses: BusinessData[] = [
     introText: "THC Facilities Management helps clients protect, maintain and enhance the value of their assets through integrated facilities management services.\n\nOperating across residential, hospitality, commercial and industrial environments, the company combines technical expertise, preventative maintenance and responsive support to ensure operational continuity and long-term asset performance.",
     definesUs: [
       {
-        title: "ASSET PERFORMANCE",
-        description: "Maximizing the lifespan and performance of your assets.",
-        bgimage: "/images/companies/ci1.png",
-      },
-      {
-        title: "OPERATIONAL EFFICIENCY",
-        description: "Optimizing operations to reduce costs and improve service delivery.",
-        bgimage: "/images/companies/ci1.png",
-      },
-      {
-        title: "STRATEGIC PARTNERS",
+      title: "PRINCIPAL ALIGNMENT",
+      description: "Manufacturer relationships are built on long-term partnerships, commercial integrity and consistent market representation.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "TECHNICAL DISTRIBUTION",
+      description: "Specification guidance, application support and technical advisory services form an integral part of the distribution model.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "STRATEGIC PARTNERS",
         description: "Working closely with clients to achieve their facility goals.",
         bgimage: "/images/companies/ci1.png",
       }
@@ -250,57 +250,67 @@ export const businesses: BusinessData[] = [
     heroImage: "/images/companies/trading.jpeg",
     introBgImage: "/images/companies/ci4.png",
     introHeading: "STRUCTURED\nDISTRIBUTION",
-    introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.",
+    introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.\n\nwhPrincipal relationships are governed by formal distribution agreements and managed with the commercial discipline, market knowledge and technical expertise expected by leading international manufacturers.",
     definesUs: [{
-      title: "ASSET PERFORMANCE",
-      description: "Maximizing the lifespan and performance of your assets.",
+      title: "PRINCIPAL ALIGNMENT",
+      description: "Manufacturer relationships are built on long-term partnerships, commercial integrity and consistent market representation.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "OPERATIONAL EFFICIENCY",
-      description: "Optimizing operations to reduce costs and improve service delivery.",
+      title: "TECHNICAL DISTRIBUTION",
+      description: "Specification guidance, application support and technical advisory services form an integral part of the distribution model.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "STRATEGIC PARTNERS",
-      description: "Working closely with clients to achieve their facility goals.",
+      title: "INVENTORY & LOGISTICS",
+      description: "ERP-managed inventory, batch traceability and real-time stock visibility support reliable supply across retail and project channels.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "AFTER-SALES SUPPORT",
+      description: "Technical support, warranty coordination and field assistance continue beyond delivery to support long-term product performance.",
       bgimage: "/images/companies/ci1.png",
     }],
     capabilities: [{
-      title: "Asset Preservation",
-      description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+      title: "TECHNICAL ADVISORY",
+      description: "System selection, specification review and application guidance across all represented brands.",
       image: "/images/capabilities/HAWAR.jpg"
     },
     {
-      title: "Operational Continuity",
-      description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+      title: "SYSTEM DESIGN SUPPORT",
+      description: "Recommendations aligned with environmental conditions, performance requirements and project objectives.",
       image: "/images/capabilities/HAWAR.jpg"
     },
     {
-      title: "Lifecycle Focus",
-      description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+      title: "WAREHOUSING & LOGISTICS",
+      description: "ERP-managed inventory, batch traceability and scheduled distribution services.",
       image: "/images/capabilities/HAWAR.jpg"
     },
     {
-      title: "Transparent Reporting",
-      description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+      title: "AFTER-SALES & FIELD SUPPORT",
+      description: "Technical troubleshooting, warranty coordination and post-installation support.",
       image: "/images/capabilities/HAWAR.jpg"
     },],
     sectorShowcase: [
       {
-        title: "Infrastructure",
-        description: "Technical distribution supporting national infrastructure development.",
+        title: "CONSTRUCTION & CONTRACTING",
+        description: "Supply of coatings, construction chemicals and engineered systems supported by specification and application advisory services.",
         image: "/images/sectors/sector-1.webp",
       },
       {
-        title: "Construction",
-        description: "Paints, chemicals and building materials sourced from authorised global brands.",
+        title: "RETAIL DISTRIBUTION",
+        description: "Structured supply to retail channels supported by inventory management, pricing governance and brand development.",
         image: "/images/sectors/sector-2.webp",
       },
       {
-        title: "Industrial",
-        description: "Acoustic systems and specification support for industrial-scale projects.",
+        title: "INDUSTRIAL & MANUFACTURING",
+        description: "Technical products and systems supporting operational efficiency, asset protection and facility performance.",
         image: "/images/sectors/sector-3.jpg",
+      },
+      {
+        title: "INFRASTRUCTURE & \n UTILITIES",
+        description: "Specialised technologies and engineering solutions supporting municipal and large-scale infrastructure projects.",
+        image: "/images/sectors/sector-1.webp",
       },
     ],
     showcaseText: "A curated look at the high-grade materials and exclusive technologies we have distributed to Bahrain's most significant infrastructural projects.",
@@ -530,15 +540,15 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-1.png",
         title: "Decorative Paints",
         description:
-          "Premium decorative paints and coatings for residential and commercial interiors, providing lasting beauty and protection.",
+          "One of the world's leading decorative paint brands, offering interior and exterior coatings, Weathershield systems, primers and specialty finishes. Exclusive distributor in Bahrain.",
         layout: "grid",
       },
       {
-        name: "Crayco",
-        logo: "/workedwith/logo-2.png",
+        name: "Crafco",
+        logo: "/workedwith/logo-7.png",
         title: "Floor Coatings & Pavement Preservation",
         description:
-          "High-performance floor coatings and pavement preservation solutions for industrial, commercial, and infrastructure applications.",
+          "Specialised flooring, pavement preservation and sealant solutions for infrastructure, industrial and commercial applications. Exclusive distributor in Bahrain.",
         layout: "wide",
       },
       {
@@ -546,15 +556,15 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-3.png",
         title: "Wood Coatings",
         description:
-          "Professional wood coating systems that deliver exceptional durability, color retention, and protection against the elements.",
+          "Premium wood protection and finishing systems designed to enhance durability, appearance and long-term performance across interior and exterior applications.",
         layout: "grid",
       },
       {
-        name: "Spay",
+        name: "Sivam",
         logo: "/workedwith/logo-4.png",
         title: "Wood Coatings",
         description:
-          "Specialized wood coating solutions designed for demanding environments with superior finish and long-lasting performance.",
+          "High-performance wood finishing systems including stains, primers, sealers and topcoats for furniture, joinery and interior wood applications.",
         layout: "wide",
       },
     ],
@@ -567,7 +577,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-5.png",
         title: "Interior & Exterior Construction Systems",
         description:
-          "Innovative drywall, plasterboard, and ceiling systems for complete interior and exterior building solutions.",
+          "Global leader in gypsum-based partition, ceiling and cladding solutions, delivering efficient and sustainable construction systems. Exclusive distributor in Bahrain.",
         layout: "grid",
       },
       {
@@ -575,7 +585,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-6.png",
         title: "Acoustic Ceiling Systems",
         description:
-          "High-performance acoustic ceiling solutions that enhance sound quality, comfort, and aesthetics in any space.",
+          "Advanced acoustic ceiling and wall solutions designed to improve comfort, wellbeing and building performance across commercial and institutional environments.",
         layout: "wide",
       },
     ],
@@ -588,15 +598,15 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-7.png",
         title: "Construction Chemicals",
         description:
-          "World-leading construction chemical solutions for sealing, bonding, reinforcing, and protecting structures.",
+          "Global leader in waterproofing, concrete admixtures, sealants, adhesives and structural solutions for construction and infrastructure projects.",
         layout: "grid",
       },
       {
-        name: "Master Builders Solutions",
+        name: "BASF Master Builders Solutions",
         logo: "/workedwith/logo-8.png",
         title: "Construction Chemicals",
         description:
-          "Advanced admixtures, concrete treatments, and chemical solutions that enhance construction performance and durability.",
+          "Innovative construction chemical technologies including admixtures, repair mortars, grouts and protective systems engineered for long-term durability.",
         layout: "wide",
       },
       {
@@ -604,7 +614,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-1.png",
         title: "Construction Chemicals",
         description:
-          "Specialty chemical products for construction, including waterproofing, surface treatments, and protective coatings.",
+          "Specialist manufacturer of tile adhesives, waterproofing systems, grouts and construction solutions developed for demanding Gulf environments.",
         layout: "grid",
       },
     ],
@@ -617,7 +627,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
         logo: "/workedwith/logo-2.png",
         title: "Vacuum Sewerage Systems",
         description:
-          "Innovative vacuum sewerage technology for efficient, reliable, and cost-effective wastewater collection in challenging terrains.",
+          "Leading provider of vacuum sewerage technology for municipalities and large-scale developments, delivering efficient and sustainable wastewater solutions.",
         layout: "wide",
       },
     ],
