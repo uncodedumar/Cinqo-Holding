@@ -503,20 +503,26 @@ export const businesses: BusinessData[] = [
     introHeading: "ENGINEERED\nFOR\nENDURANCE",
     introText: "Cinqo Holding evaluates and manages investments aligned with the Group’s long-term vision, operational expertise and governance standards.The portfolio spans real estate, strategic partnerships, technology ventures and growth-oriented businesses where the Group can contribute not only capital, but also commercial discipline, operational insight and strategic direction.",
     definesUs: [{
-      title: "ASSET PERFORMANCE",
-      description: "Maximizing the lifespan and performance of your assets.",
+      title: "INCOME-GENERATING REAL ESTATE",
+      description: "Commercial, industrial and residential assets with stable cash flows and long-term value creation potential.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "OPERATIONAL EFFICIENCY",
-      description: "Optimizing operations to reduce costs and improve service delivery.",
+      title: "TECHNOLOGY VENTURES",
+      description: "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "STRATEGIC PARTNERS",
-      description: "Working closely with clients to achieve their facility goals.",
+      title: "EARLY-STAGE BUSINESSES",
+      description: "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
       bgimage: "/images/companies/ci1.png",
-    }],
+    },
+    {
+      title: "INDUSTRIAL PARTNERSHIPS & DISTRIBUTION RIGHTS",
+      description: "Strategic investments in industries focused on innovation and value addition.",
+      bgimage: "/images/companies/ci1.png",
+    }
+  ],
     capabilities: [],
     sectorShowcase: [
       
