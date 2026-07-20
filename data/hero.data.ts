@@ -4,7 +4,6 @@ export const homeHeroSlidesData: HeroSlide[] = [
   {
     id: "slide1",
     image: "/images/hero/a1.png",
- HeroUpdate
     alt: "Cinqo Holdings",
     badge: "CINQO HOLDINGS",
     alt: "Cinqo Holdings ",
