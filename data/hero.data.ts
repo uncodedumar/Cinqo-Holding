@@ -4,7 +4,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   {
     id: "slide1",
     image: "/images/hero/a1.png",
-    alt: "Cinqo Holdings construction and infrastructure",
+    alt: "Cinqo Holdings ",
     headline1: "BUILT ON COMMITMENT.",
     headline2: "DRIVEN BY PERFORMANCE.",
     subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
@@ -68,14 +68,14 @@ export const contactHeroSlidesData: HeroSlideV2[] = [
 ];
 
 export const newsHeroSlidesData: HeroSlideV2[] = [
-  { id: "contact1", image: "/images/hero/hero-news.jfif", alt: "Cinqo News",  headline1: "Cinqo News.",
+  { id: "contact1", image: "/images/hero/hero-news.jpg", alt: "Cinqo News",  headline1: "Cinqo News.",
    },
 ];
 
 
 
 export const newsSlugHeroSlidesData: HeroSlideV2[] = [
-  { id: "contact1", image: "/images/hero/h1.jpg", alt: "Contact Cinqo Holdings",  headline1: "News.",
+  { id: "contact1", image: "/images/hero/hero-news.jpg", alt: "Contact Cinqo Holdings",  headline1: "News.",
    },
 ];
 

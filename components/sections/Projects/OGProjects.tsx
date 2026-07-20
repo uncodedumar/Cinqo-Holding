@@ -39,13 +39,19 @@ export default function OngoingProjects() {
                     : "bg-white text-black hover:bg-[#71797E] hover:text-white"
                 }`}
               >
+                {/* Company Division */}
+                <div className="col-span-12 md:col-span-3 font-semibold text-md md:text-lg truncate">
+                  {/* Uses project.company if it exists in your data, otherwise falls back to "Cinqo Trading" */}
+                  {project.company || "Cinqo Trading"}
+                </div>
+
                 {/* Heading */}
-                <div className="col-span-12 md:col-span-4 font-bold text-lg md:text-xl truncate">
+                <div className="col-span-12 md:col-span-3 font-bold text-lg md:text-xl truncate">
                   {project.name}
                 </div>
 
                 {/* Subheading (Hidden on open state to match image, or adjusts nicely) */}
-                <div className={`col-span-12 md:col-span-5 text-sm md:text-base truncate transition-opacity duration-300 ${
+                <div className={`col-span-12 md:col-span-3 text-sm md:text-base truncate transition-opacity duration-300 ${
                   isOpen ? "opacity-0 hidden md:block" : "opacity-100"
                 }`}>
                   <span className={`${isOpen ? "text-transparent" : "text-gray-500 group-hover:text-gray-200"}`}>
@@ -146,14 +152,14 @@ export default function OngoingProjects() {
                               </svg>
                             </button>
                             <button className="h-10 px-6 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors">
-  <Image 
-    src="/arrow.svg" /* Replace with your actual image path */
-    alt="Right arrow" 
-    width={20} 
-    height={20} 
-    className="w-5 h-5" /* Optional: keeps the exact same styling footprint */
-  />
-</button>
+                              <Image 
+                                src="/arrow.svg" /* Replace with your actual image path */
+                                alt="Right arrow" 
+                                width={20} 
+                                height={20} 
+                                className="w-5 h-5" /* Optional: keeps the exact same styling footprint */
+                              />
+                            </button>
                           </div>
                         </div>
 

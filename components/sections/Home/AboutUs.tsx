@@ -120,25 +120,28 @@ export default function AboutUs() {
             Cinqo is recognized for delivering industry
           </span>
 
-          {/* Inline Pill Image */}
-          <span className="inline-block align-middle mx-3 w-[140px] h-[52px] relative rounded-[40px] overflow-hidden shadow-sm -mt-2 transition-transform duration-300 hover:scale-110">
-            <Image
-              src="/images/about/image_7a5798.png"
-              alt="Cinqo Facility"
-              fill
-              className="object-cover"
-              priority
-            />
-          </span>
+          
 
-          <span className={hoverSpanClass}>leading</span>{" "}
+          <span className={hoverSpanClass}> leading</span>{" "}
           <br className="hidden md:block" />
           <span className={hoverSpanClass}>solutions, exceptional service and sustained value across</span>{" "}
           <span className={`${hoverSpanClass} text-black font-normal`}>
             public and private sectors
           </span>
         </div>
-
+ {/* Vision Content Block styled exactly like About Us */}
+ <div className="text-center text-[32px] leading-[1.6] font-light text-[#737373] w-full tracking-tight font-['Inter',_sans-serif]">
+          <h3 className="text-black font-semibold text-[24px] mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
+            Vision
+          </h3>
+          <p ref={visionTextRef} className="max-w-4xl mx-auto">
+            {VISION_TEXT.split(" ").map((word, index) => (
+              <span key={index} className={hoverSpanClass}>
+                {word}{" "}
+              </span>
+            ))}
+          </p>
+        </div>
         {/* Mission Content Block styled exactly like About Us */}
         <div className="text-center text-[32px] leading-[1.6] font-light text-[#737373] mb-20 w-full tracking-tight font-['Inter',_sans-serif]">
           <h3 className="text-black font-semibold text-[24px] mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
@@ -153,19 +156,7 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* Vision Content Block styled exactly like About Us */}
-        <div className="text-center text-[32px] leading-[1.6] font-light text-[#737373] w-full tracking-tight font-['Inter',_sans-serif]">
-          <h3 className="text-black font-semibold text-[24px] mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
-            Vision
-          </h3>
-          <p ref={visionTextRef} className="max-w-4xl mx-auto">
-            {VISION_TEXT.split(" ").map((word, index) => (
-              <span key={index} className={hoverSpanClass}>
-                {word}{" "}
-              </span>
-            ))}
-          </p>
-        </div>
+       
 
       </div>
     </section>

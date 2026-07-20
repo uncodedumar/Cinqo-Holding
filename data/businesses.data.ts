@@ -381,6 +381,18 @@ export const businesses: BusinessData[] = [
           "/images/sectors/pip-5.jpg"
         ],
         hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
+      },
+      {
+        title: "CORPORATE HQ MANAMA",
+        mainImage: "/images/companies/c3.JPG",
+        hoverThumbnails: [
+          "/images/sectors/pip-1.jpg",
+          "/images/sectors/pip-2.jpg",
+          "/images/sectors/pip-3.jpg",
+          "/images/sectors/pip-4.jpg",
+          "/images/sectors/pip-5.jpg"
+        ],
+        hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
       }
     ]
   },

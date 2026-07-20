@@ -46,6 +46,7 @@ export interface Project {
   highlighted?: boolean;
   image: string;
   logo?: string;
+  company: string,
   description: string;
   bullets?: string[];
   thumbnails?: string[];

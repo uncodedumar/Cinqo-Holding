@@ -89,7 +89,7 @@ export default function ContactUs() {
           variants={wipeVariants}
         >
           <Image 
-            src="/images/contactus/image.webp" 
+            src="/images/contactus/Reception.jpeg" 
             alt="Contact" 
             fill
             priority

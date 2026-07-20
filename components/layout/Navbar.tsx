@@ -172,26 +172,26 @@ export default function Navbar() {
   return (
     <>
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] border-0 transition-all duration-500 ease-out glass will-change-transform
-        ${scrolled ? "bg-navy-900/60 shadow-lg shadow-black/10 py-2.5" : "bg-navy-900/10 py-4"}
-        ${visible ? "translate-y-0" : "-translate-y-full"}`}
-    >
+  className={`fixed top-0 left-0 right-0 z-[100] border-0 transition-all duration-500 ease-out  will-change-transform bg-gradient-to-b from-black to-transparent
+    ${scrolled ? "shadow-lg shadow-black/10 py-2.5" : "py-4"}
+    ${visible ? "translate-y-0" : "-translate-y-full"}`}
+>
       <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-6 md:px-12 relative">
 
         {/* Left: Aligned completely to the left margin */}
         <div className="flex z-10">
           <Link
             href="/home"
-            className="flex items-center transition-transform duration-200 hover:scale-103"
+            className="flex items-center transition-transform duration-200 hover:scale-106"
             aria-label="Cinqo Holdings Home"
           >
             <svg
-              width="45"
-              height="46"
+              width="80"
+              height="80"
               viewBox="0 0 45 46"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8.5 w-auto"
+              className="h-10 w-auto"
             >
               <path d="M24.096 24.2551L45.0002 24.2551L24.096 45.3189L24.096 24.2551Z" fill="#231F20"/>
               <path d="M24.096 21.1562L45.0002 21.1562L24.096 0.09238L24.096 21.1562Z" fill="#808285"/>
@@ -251,7 +251,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[11px] font-semibold tracking-[0.16em] uppercase text-cream-50 transition-all duration-300 ease-out relative py-1
+                className={`text-[12px] font-semibold tracking-[0.16em] uppercase text-cream-50 transition-all duration-300 ease-out relative py-1
                   ${isActive ? "opacity-100" : "opacity-75 hover:opacity-100"}`}
               >
                 {link.label}
