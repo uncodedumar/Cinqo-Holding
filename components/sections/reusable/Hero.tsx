@@ -138,6 +138,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
               quality={100}
               className="object-cover"
               sizes="100vw"
+              style={slide.imagePosition ? { objectPosition: slide.imagePosition } : undefined}
             />
           </div>
         ))}

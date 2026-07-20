@@ -81,6 +81,7 @@ export interface HeroSlide {
   headline1: ReactNode;
   headline2: ReactNode;
   subtitle?: string;
+  imagePosition?: string;
 }
 
 export interface HeroSlideV2 {
@@ -89,4 +90,5 @@ export interface HeroSlideV2 {
   alt: string;
   headline1: ReactNode;
   subtitle?: string;
+  imagePosition?: string;
 }
