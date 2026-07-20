@@ -430,12 +430,12 @@ export const businesses: BusinessData[] = [
       {
         title: "FOOD &\n BEVERAGE",
         description: "Hygienic flooring systems designed for production, processing and wash-down environments.",
-        image: "/images/sectors/cp51.jpg",
+        image: "/images/sectors/cp51.JPG",
       },
       {
         title: "HEALTHCARE &\n PHARMACEUTICAL",
         description: "Seamless flooring solutions suitable for laboratories, cleanrooms and contamination-sensitive facilities.",
-        image: "/images/sectors/cp52.jpg",
+        image: "/images/sectors/cp52.jpeg",
       },
       {
         title: "WAREHOUSES &\n LOGISTICS",
@@ -445,7 +445,7 @@ export const businesses: BusinessData[] = [
       {
         title: "CAR PARKS &\n PODIUMS",
         description: "Protective coating systems engineered for vehicular traffic and environmental exposure.",
-        image: "/images/sectors/cp54.png",
+        image: "/images/sectors/cp54.jpg",
       },
     ],
     showcaseText: "Review our specialized applications of high-performance flooring and coating systems across challenging industrial and healthcare environments.",
