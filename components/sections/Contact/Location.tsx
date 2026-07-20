@@ -19,10 +19,12 @@ export default function Location() {
         
         {/* Card content restricted to an image as requested */}
         <Image
-          src="/images/contactus/map.jpg" /* Replace with your actual image path */
-          alt="Location Details" 
-          className="w-full h-auto block"
-        />
+  src="/images/contactus/map.jpg" 
+  alt="Location Details" 
+  width={800} /* Replace with the actual width of your image */
+  height={600} /* Replace with the actual height of your image */
+  className="w-full h-auto block"
+/>
 
       </div>
     </section>
