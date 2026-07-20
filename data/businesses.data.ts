@@ -159,42 +159,52 @@ export const businesses: BusinessData[] = [
     introText: "THC Facilities Management helps clients protect, maintain and enhance the value of their assets through integrated facilities management services.\n\nOperating across residential, hospitality, commercial and industrial environments, the company combines technical expertise, preventative maintenance and responsive support to ensure operational continuity and long-term asset performance.",
     definesUs: [
       {
-        title: "ASSET PERFORMANCE",
-        description: "Maximizing the lifespan and performance of your assets.",
+        title: "ASSET PRESERVATION",
+        description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
         bgimage: "/images/companies/ci1.png",
       },
       {
-        title: "OPERATIONAL EFFICIENCY",
-        description: "Optimizing operations to reduce costs and improve service delivery.",
+        title: "OPERATIONAL CONTINUITY",
+        description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
         bgimage: "/images/companies/ci1.png",
       },
       {
-        title: "STRATEGIC PARTNERS",
-        description: "Working closely with clients to achieve their facility goals.",
+        title: "LIFECYCLE FOCUS",
+        description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+        bgimage: "/images/companies/ci1.png",
+      },
+      {
+        title: "TRANSPARENT REPORTING",
+        description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
         bgimage: "/images/companies/ci1.png",
       }
     ],
     capabilities: [
       {
-        title: "Asset Preservation",
-        description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+        title: "PREVENTIVE MAINTAINANCE PROGRAMMES",
+        description: "Scheduled servicing based on asset condition, manufacturer guidelines and operational requirements to reduce unplanned downtime.",
         image: "/images/capabilities/HAWAR.jpg"
       },
       {
-        title: "Operational Continuity",
-        description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+        title: "MEP SERVICING & DIAGNOSTICS",
+        description: "Troubleshooting and technical evaluation of mechanical and electrical systems to maintain performance continuity.",
         image: "/images/capabilities/HAWAR.jpg"
       },
       {
-        title: "Lifecycle Focus",
-        description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+        title: "SOFT SERVICES & PROPERTY CARE",
+        description: "Cleaning, landscaping and general upkeep delivered with defined service standards and documented quality checks.",
         image: "/images/capabilities/HAWAR.jpg"
       },
       {
-        title: "Transparent Reporting",
-        description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+        title: "ANNUAL MAINTENANCE CONTRACTS",
+        description: "Comprehensive service coverage including scheduled inspections, reporting and performance tracking.",
         image: "/images/capabilities/HAWAR.jpg"
       },
+      {
+        title: "ASSET REGISTERS & COMPLIANCE DOCUMENTATION",
+        description: "Centralised records of equipment, warranties and servicing history to support transparency and regulatory alignment.",
+        image: "/images/capabilities/HAWAR.jpg"
+      }
     ],
     sectorShowcase: [
       {
