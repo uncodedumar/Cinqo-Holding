@@ -6,7 +6,7 @@ import { SectorShowcaseItem } from '@/data/businesses.data';
 
 // Increased width and height for bigger cards
 const cardStyle: React.CSSProperties = {
-  width: '280px', 
+  width: '320px', 
   height: '420px',
   overflow: 'hidden',
   position: 'relative',
