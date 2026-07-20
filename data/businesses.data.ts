@@ -409,17 +409,17 @@ export const businesses: BusinessData[] = [
     capabilities: [{
       title: "Asset Preservation",
       description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
-      image: "/images/capabilities/HAWAR.jpg"
+      image: "/images/capabilities/cc51.jpg"
     },
     {
       title: "Operational Continuity",
       description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
-      image: "/images/capabilities/HAWAR.jpg"
+      image: "/images/capabilities/cc52.jpeg"
     },
     {
       title: "Lifecycle Focus",
       description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
-      image: "/images/capabilities/HAWAR.jpg"
+      image: "/images/capabilities/cc53.jpg"
     },
     {
       title: "Transparent Reporting",
@@ -428,19 +428,24 @@ export const businesses: BusinessData[] = [
     }],
     sectorShowcase: [
       {
-        title: "Healthcare",
-        description: "Ultra-hygienic, chemically resistant flooring for pharmaceutical environments.",
-        image: "/images/sectors/sector-1.webp",
+        title: "FOOD &\n BEVERAGE",
+        description: "Hygienic flooring systems designed for production, processing and wash-down environments.",
+        image: "/images/sectors/cp51.jpg",
       },
       {
-        title: "Logistics",
-        description: "Durable protective systems engineered for high-traffic logistics facilities.",
-        image: "/images/sectors/sector-2.webp",
+        title: "HEALTHCARE &\n PHARMACEUTICAL",
+        description: "Seamless flooring solutions suitable for laboratories, cleanrooms and contamination-sensitive facilities.",
+        image: "/images/sectors/cp52.jpg",
       },
       {
-        title: "Industrial",
-        description: "Manufacturer-approved coating systems for demanding industrial installations.",
-        image: "/images/sectors/sector-3.jpg",
+        title: "WAREHOUSES &\n LOGISTICS",
+        description: "Heavy-duty flooring systems designed for continuous operational traffic and material handling.",
+        image: "/images/sectors/cp53.jpg",
+      },
+      {
+        title: "CAR PARKS &\n PODIUMS",
+        description: "Protective coating systems engineered for vehicular traffic and environmental exposure.",
+        image: "/images/sectors/cp54.png",
       },
     ],
     showcaseText: "Review our specialized applications of high-performance flooring and coating systems across challenging industrial and healthcare environments.",
