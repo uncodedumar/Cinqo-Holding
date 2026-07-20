@@ -123,7 +123,7 @@ export default function OurCompanies() {
         <p className="companies-subheading text-h3 mt-2 text-muted">
           Five operating Companies. Governed by one unified structure.
         </p>
-
+<br />
         <div ref={gridRef} className="mt-2 grid gap-6 grid-cols-1 sm:grid-cols-3">
           {companiesData.map((company) => (
             <Link

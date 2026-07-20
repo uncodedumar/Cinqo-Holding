@@ -340,7 +340,7 @@ export default function About() {
           style={{ boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)" }}
         >
           <Image
-            src="/images/about/a3.jpeg"
+            src="/images/about/9add3f66-e635-4034-8524-da355a9df816.jpeg"
             alt="Cinqo Holding"
             fill
             className="object-cover"

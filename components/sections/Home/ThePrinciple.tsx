@@ -157,27 +157,6 @@ export default function ThePrinciple() {
     handleResize();
     requestFrame(1);
 
-    let activeBlock = 0;
-    const showTextBlock = (index: number) => {
-      if (index === activeBlock) return;
-      const prevEl = textBlockRefs.current[activeBlock];
-      const nextEl = textBlockRefs.current[index];
-      activeBlock = index;
-
-      if (prevEl) {
-        gsap.to(prevEl, { opacity: 0, y: -30, duration: 0.6, ease: "power2.inOut" });
-        prevEl.setAttribute("aria-hidden", "true");
-      }
-      if (nextEl) {
-        gsap.fromTo(
-          nextEl,
-          { opacity: 0, y: 40 },
-          { opacity: 1, y: 0, duration: 0.8, delay: 0.4, ease: "power3.out" }, // Added delay so they don't overlap
-        );
-        nextEl.removeAttribute("aria-hidden");
-      }
-    };
-
     const ctxGsap = gsap.context(() => {
       ScrollTrigger.create({
         trigger: wrap,
@@ -188,14 +167,74 @@ export default function ThePrinciple() {
         anticipatePin: 1,
         onUpdate: (self) => {
           const progress = self.progress;
-          const targetFrame = 1 + Math.round(progress * (TOTAL_FRAMES - 1));
-          requestFrame(targetFrame);
+          // Calculate the exact float frame for ultra-smooth sub-frame text interpolation
+          const exactFrame = 1 + progress * (TOTAL_FRAMES - 1);
+          // Pass integer frame to the canvas drawing logic
+          requestFrame(Math.round(exactFrame));
 
-          const segment = Math.min(
-            TEXT_BLOCKS.length - 1,
-            Math.floor(progress * TEXT_BLOCKS.length),
-          );
-          showTextBlock(segment);
+          const segmentLength = TOTAL_FRAMES / TEXT_BLOCKS.length;
+          const FADE_IN_DUR = 15; // Frame span for fade in
+          const FADE_OUT_DUR = 15; // Frame span for fade out
+          const GAP = 2; // Guaranteed empty frames between blocks to absolutely prevent overlaps
+
+          textBlockRefs.current.forEach((el, i) => {
+            if (!el) return;
+
+            const startFrame = i * segmentLength;
+            const endFrame = (i + 1) * segmentLength;
+            const isFirst = i === 0;
+            const isLast = i === TEXT_BLOCKS.length - 1;
+
+            // Define interpolation bounds tied perfectly to the scroll frame
+            const fadeInStart = isFirst ? -1 : startFrame + GAP;
+            const fadeInEnd = isFirst ? 0 : fadeInStart + FADE_IN_DUR;
+
+            const fadeOutEnd = isLast ? TOTAL_FRAMES + FADE_OUT_DUR : endFrame;
+            const fadeOutStart = fadeOutEnd - FADE_OUT_DUR;
+
+            let opacity = 0;
+            let y = 40;
+            let pointerEvents = "none";
+            let ariaHidden = "true";
+
+            if (exactFrame < fadeInStart) {
+              opacity = 0;
+              y = 40;
+            } else if (exactFrame >= fadeInStart && exactFrame <= fadeInEnd) {
+              // Fading in (power3.out emulation)
+              const p = (exactFrame - fadeInStart) / (fadeInEnd - fadeInStart);
+              const easeP = 1 - Math.pow(1 - p, 3);
+              opacity = easeP;
+              y = 40 * (1 - easeP);
+            } else if (exactFrame > fadeInEnd && exactFrame < fadeOutStart) {
+              // Fully visible
+              opacity = 1;
+              y = 0;
+              pointerEvents = "auto";
+              ariaHidden = "false";
+            } else if (exactFrame >= fadeOutStart && exactFrame <= fadeOutEnd) {
+              // Fading out (power2.inOut emulation)
+              const p = (exactFrame - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+              const easeP = p < 0.5 ? 2 * p * p : -1 + (4 - 2 * p) * p;
+              opacity = 1 - easeP;
+              y = -30 * easeP;
+            } else if (exactFrame > fadeOutEnd) {
+              // Faded out
+              opacity = 0;
+              y = -30;
+            }
+
+            // Apply directly — no time-based tweens means 0% chance of timeline overlaps
+            el.style.opacity = opacity.toFixed(3);
+            el.style.transform = `translateY(${y.toFixed(2)}px)`;
+            el.style.pointerEvents = pointerEvents;
+            
+            if (ariaHidden === "true") {
+              el.setAttribute("aria-hidden", "true");
+            } else {
+              el.removeAttribute("aria-hidden");
+            }
+          });
         },
       });
     }, wrap);
