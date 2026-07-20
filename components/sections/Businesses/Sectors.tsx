@@ -35,12 +35,12 @@ export default function Sectors({
   }, []);
 
   return (
-    <div ref={sectionRef} className="min-h-screen bg-white text-ink font-sans p-4 md:p-8 pb-0 md:pb-0">
+    <div ref={sectionRef} className="w-full bg-white text-ink font-sans p-4 md:p-8 pb-16 md:pb-24">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Sectors Header + Cards */}
         {/* Increased gap from gap-6 to gap-12 to add more space between heading and cards */}
-        <div className="md:h-[520px] md:flex md:flex-col md:gap-12">
+        <div className="flex flex-col gap-8 md:gap-12">
           
         {/* Sectors Header */}
         {/* Added mb-6 for additional space below the header */}

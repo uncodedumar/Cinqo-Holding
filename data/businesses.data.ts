@@ -198,19 +198,24 @@ export const businesses: BusinessData[] = [
     ],
     sectorShowcase: [
       {
-        title: "Residential",
-        description: "Preventative maintenance programmes that protect long-term residential asset value.",
-        image: "/images/sectors/sector-1.webp",
-      },
-      {
         title: "Hospitality",
-        description: "Responsive facilities support tailored to hospitality service standards.",
-        image: "/images/sectors/sector-2.webp",
+        description: "Facilities management solutions supporting hotels and serviced residences where uninterrupted operations are essential.",
+        image: "/images/sectors/card-4.webp",
       },
       {
-        title: "Commercial",
-        description: "Integrated facilities management for commercial towers and mixed-use assets.",
-        image: "/images/sectors/sector-3.jpg",
+        title: "Residential Towers & Compounds",
+        description: "Maintenance of HVAC, fire systems, lifts and shared infrastructure to ensure consistent building performance.",
+        image: "/images/sectors/card-3.webp",
+      },
+      {
+        title: "Office Buildings",
+        description: "Preventive maintenance and system optimisation for corporate environments focused on uptime and efficiency.",
+        image: "/images/sectors/card-2.webp",
+      },
+      {
+        title: "Industrial Facilities",
+        description: "Technical servicing of operational assets and infrastructure aligned with compliance and productivity requirements.",
+        image: "/images/sectors/card-4.webp",
       },
     ],
     showcaseText: "Discover how we maintain and elevate the value of premier properties through our comprehensive and responsive facilities management solutions.",
