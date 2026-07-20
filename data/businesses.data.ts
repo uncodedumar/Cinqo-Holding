@@ -90,18 +90,23 @@ export const businesses: BusinessData[] = [
     ],
     sectorShowcase: [
       {
-        title: "Residential",
-        description: "Luxury villas and residential developments delivered with disciplined project execution.",
+        title: "HIGH-END RESIDENTIAL\n VILLAS & COMPOUNDS",
+        description: "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
         image: "/images/sectors/sector-1.webp",
       },
       {
-        title: "Commercial",
-        description: "Commercial facilities built to rigorous quality, safety and programme standards.",
+        title: "RESIDENTIAL &\ COMMERTIAL TOWERS",
+        description: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and saftey compliance.",
         image: "/images/sectors/sector-2.webp",
       },
       {
-        title: "Industrial",
-        description: "Warehouses and industrial assets delivered from mobilisation through final handover.",
+        title: "COMMERCIAL MALLS &\n MIXED-USE DEVELOPMENTS",
+        description: "Execution of retail and mixed-use projects requiring coordinated structural, architectural and MEP delivery.",
+        image: "/images/sectors/sector-3.jpg",
+      },
+      {
+        title: "WAREHOUSE &\n INDUSTRIAL FACILITIES",
+        description: "Development of industrial structures incorporating utility integration, fire safety systems and operational infracstructure.",
         image: "/images/sectors/sector-3.jpg",
       },
     ],
