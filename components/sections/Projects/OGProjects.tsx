@@ -17,7 +17,10 @@ export default function OngoingProjects() {
   };
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-16 bg-white font-sans">
+    <section
+      id="ongoing-projects"
+      className="w-full max-w-7xl mx-auto px-6 py-16 bg-white font-sans scroll-mt-28"
+    >
       <h2 className="text-2xl font-bold mb-6 text-black">Ongoing Projects</h2>
       
       <div className="border-t border-gray-200">

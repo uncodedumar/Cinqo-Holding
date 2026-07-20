@@ -7,14 +7,24 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
 import Button from "@/components/ui/Button";
 import { businesses } from "@/data/businesses.data";
+import { useLenis } from "@/components/providers/SmoothScrollProvider";
+import { scrollToHash } from "@/lib/scroll";
 
 type DropdownLink = { label: string; href: string };
 type NavLink = { label: string; href: string; dropdown?: DropdownLink[] };
 
+// Anchors below must match the section ids on /about and /projects.
 const ABOUT_DROPDOWN: DropdownLink[] = [
-  { label: "Leadership", href: "/about#leadership" },
+  { label: "About Us", href: "/about#about-us" },
+  { label: "Governance, Compliance & HSEQ", href: "/about#governance" },
+  { label: "Chairman's Message", href: "/about#chairmans-message" },
   { label: "Directors", href: "/about#directors" },
-  { label: "Executives", href: "/about#executives" },
+  { label: "Executive Management", href: "/about#executives" },
+];
+
+const PROJECTS_DROPDOWN: DropdownLink[] = [
+  { label: "Ongoing Projects", href: "/projects#ongoing-projects" },
+  { label: "Completed Projects", href: "/projects#completed-projects" },
 ];
 
 export default function Navbar() {
@@ -24,6 +34,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const pathname = usePathname();
+  const lenis = useLenis();
 
   const NAV_LINKS: NavLink[] = [
     { label: "Home", href: "/home" },
@@ -35,7 +46,7 @@ export default function Navbar() {
     },
     { label: "News", href: "/news" },
     { label: "Careers", href: "/careers" },
-    { label: "Projects", href: "/projects" },
+    { label: "Projects", href: "/projects", dropdown: PROJECTS_DROPDOWN },
   ];
 
   useEffect(() => {
@@ -136,11 +147,33 @@ export default function Navbar() {
     setOpenAccordion((prev) => (prev === label ? null : label));
   };
 
+  /*
+    Anchor clicks that stay on the current page have to be driven manually:
+    the App Router pushes the new hash through history without firing
+    `hashchange`, and Lenis would fight a native jump anyway. Cross-page
+    anchors fall through to normal navigation and are picked up on arrival by
+    HashScroller in SmoothScrollProvider.
+  */
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    setMobileOpen(false);
+
+    // Companies entries are plain routes — nothing to intercept.
+    const [path, hash] = href.split("#");
+    if (!hash || path !== pathname) return;
+
+    e.preventDefault();
+    window.history.replaceState(null, "", href);
+    scrollToHash(lenis, hash);
+  };
+
   return (
     <>
     <header
       className={`fixed top-0 left-0 right-0 z-[100] border-0 transition-all duration-500 ease-out glass will-change-transform
-        ${scrolled ? "bg-navy-900/60 shadow-lg shadow-black/10 py-1.5" : "bg-navy-900/10 py-2.5"}
+        ${scrolled ? "bg-navy-900/60 shadow-lg shadow-black/10 py-2.5" : "bg-navy-900/10 py-4"}
         ${visible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-6 md:px-12 relative">
@@ -197,11 +230,12 @@ export default function Navbar() {
 
                   {/* Dropdown Menu */}
                   <div className="absolute top-[120%] left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[200]">
-                    <div className="bg-white/95 backdrop-blur-md shadow-xl border border-gray-100 py-3 rounded-sm min-w-[280px] flex flex-col">
+                    <div className="bg-white/95 backdrop-blur-md shadow-xl border border-gray-100 py-3 rounded-sm min-w-[300px] flex flex-col">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
+                          onClick={(e) => handleAnchorClick(e, item.href)}
                           className="px-6 py-3 text-[10px] font-semibold tracking-[0.15em] uppercase text-navy-900 hover:bg-gray-50 hover:text-red-500 transition-colors text-left whitespace-nowrap"
                         >
                           {item.label}
@@ -266,6 +300,27 @@ export default function Navbar() {
           ref={panelRef}
           className="relative h-full w-full flex flex-col overflow-y-auto px-6 pt-24 pb-10"
         >
+          {/* Explicit close affordance — the hamburger morphs into an X behind
+              the overlay, so the panel needs its own visible dismiss target. */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+            className="absolute top-7 right-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-cream-50 transition-colors hover:bg-white/10 active:bg-white/15"
+          >
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+
           <div ref={linksRef} className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => {
               const isActive =
@@ -307,7 +362,7 @@ export default function Navbar() {
                           <Link
                             key={item.href}
                             href={item.href}
-                            onClick={() => setMobileOpen(false)}
+                            onClick={(e) => handleAnchorClick(e, item.href)}
                             className="py-2.5 pl-4 text-sm font-medium uppercase tracking-[0.1em] text-cream-50/75 hover:text-cream-50 transition-colors"
                           >
                             {item.label}

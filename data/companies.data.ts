@@ -6,45 +6,40 @@ import type { CompanyCard } from "@/types";
  */
 export const companiesData: CompanyCard[] = [
   {
-    id: "cinqo-holdings",
-    name: "Cinqo Holdings",
-    logo: "/images/companies/cinqo-holding.png",
-    bgImage: "/images/hero/h3.png",
+    id: "cinqo-contracting",
+    name: "Cinqo Contracting",
+    logo: "/images/logos/6.png",
+    bgImage: "/images/companies/c1.jpg",
     description:
-      "Cinqo Holding is the investment and strategic parent company that provides the governance, leadership and long-term vision behind the Group's portfolio of its operating businesses and investments.",
-    href: "/companies/cinqo-holdings",
-  },
-  {
-    id: "cinqo-trading",
-    name: "Cinqo Trading",
-    logo: "/images/companies/cinqo-trading.png",
-    bgImage: "/images/companies/h1.jpg",
-    description:
-      "Structured technical distribution, inventory management, and specification support for nine of the world's leading building and coating brands.",
-    href: "/companies/cinqo-trading",
-  },
+      "Delivering civil and building construction across various sectors — shaping communities, businesses and infrastructure.",
+    href: "/companies/cinqo-contracting",
+  }
+  ,
   {
     id: "cinqo-coatings",
-    name: "Cinqo Coatings",
-    logo: "/images/companies/cinqo-floor.png",
+    name: "Cinqo Flooring & Coatings Technologies",
+    logo: "/images/logos/4.png",
     bgImage: "/images/companies/c5.png",
     description:
       "Specialists in epoxy flooring, polyurethane systems, waterproofing and protective coatings engineered for demanding industrial and commercial environments.",
     href: "/companies/cinqo-coatings",
   },
   {
-    id: "cinqo-contracting",
-    name: "Cinqo Contracting",
-    logo: "/images/companies/cinqo-contracting.png",
-    bgImage: "/images/companies/c1.jpg",
+    id: "cinqo-trading",
+    name: "Cinqo Trading",
+    logo: "/images/logos/2.png",
+    bgImage: "/images/companies/h1.jpg",
     description:
-      "Delivering civil and building construction across various sectors — shaping communities, businesses and infrastructure.",
-    href: "/companies/cinqo-contracting",
+      "Structured technical distribution, inventory management, and specification support for nine of the world's leading building and coating brands.",
+    href: "/companies/cinqo-trading",
   },
+
+ 
+  
   {
     id: "thc-facility-management",
     name: "THC Facility Management",
-    logo: "/images/companies/cinqo-facility.png",
+    logo: "/images/logos/1.png",
     bgImage: "/images/companies/c2.jpeg",
     description:
       "Provider of integrated hard and soft facilities management services supporting residential, commercial, hospitality and industrial assets.",
@@ -53,10 +48,19 @@ export const companiesData: CompanyCard[] = [
   {
     id: "thc-fitout",
     name: "THC Fitout",
-    logo: "/images/companies/cinqo-fitout.png",
+    logo: "/images/logos/3.png",
     bgImage: "/images/companies/c3.JPG",
     description:
       "Interior construction specialists delivering corporate, hospitality and residential fit-out projects with a focus on quality, coordination and finish excellence.",
     href: "/companies/thc-fitout",
+  },
+  {
+    id: "cinqo-holdings",
+    name: "Cinqo Holdings",
+    logo: "/images/logos/5.png",
+    bgImage: "/images/hero/h3.png",
+    description:
+      "Cinqo Holding is the investment and strategic parent company that provides the governance, leadership and long-term vision behind the Group's portfolio of its operating businesses and investments.",
+    href: "/companies/cinqo-holdings",
   },
 ];

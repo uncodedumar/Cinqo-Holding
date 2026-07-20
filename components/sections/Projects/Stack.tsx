@@ -85,7 +85,9 @@ const StackedSection = () => {
           className="card absolute top-[15vh] w-[90vw] h-[75vh] rounded-sm overflow-hidden shadow-[0_-15px_40px_-10px_rgba(0,0,0,0.15)]"
           style={{ zIndex: i + 1 }} 
         >
-          <Image src={src} className="w-full h-full object-cover" alt="stack" />
+          {/* `fill` (not w/h) because the card sizes itself in viewport units
+              and gsap animates those dimensions during the stack sequence. */}
+          <Image src={src} alt="stack" fill sizes="90vw" className="object-cover" />
           
           {/* Conditional text container solely on the last image */}
           {i === images.length - 1 && (

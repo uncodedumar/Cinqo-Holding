@@ -13,9 +13,9 @@ if (typeof window !== "undefined") {
 
 // --- Data ---
 const directors = [
-  { name: "Junaid Usman", image: "https://placehold.co/600x800/dbeafe/1e3a8a?text=Junaid" },
-  { name: "Sufyan Usman", image: "https://placehold.co/600x800/dbeafe/1e3a8a?text=Sufyan" },
-  { name: "Uzair Usman", image: "https://placehold.co/600x800/dbeafe/1e3a8a?text=Uzair" },
+  { name: "Junaid Usman", image: "/images/about/JunaidUsman.png" },
+  { name: "Sufyan Usman", image: "/images/about/SufyanUsman.png" },
+  { name: "Uzair Usman", image: "/images/about/UzairUsman.png" },
 ];
 
 const executives = [
@@ -60,16 +60,16 @@ export default function TeamSection() {
       );
     });
 
-    // 2. Professional Parallax on Images
-    gsap.utils.toArray<HTMLElement>(".parallax-image").forEach((img) => {
+    // 2. Professional Parallax on the wrapper instead of the image directly
+    gsap.utils.toArray<HTMLElement>(".parallax-wrapper").forEach((wrapper) => {
       gsap.fromTo(
-        img,
+        wrapper,
         { yPercent: -10 },
         {
           yPercent: 10,
           ease: "none",
           scrollTrigger: {
-            trigger: img.parentElement,
+            trigger: wrapper.parentElement,
             start: "top bottom",
             end: "bottom top",
             scrub: true,
@@ -85,24 +85,26 @@ export default function TeamSection() {
       {/* ================= DIRECTORS SECTION ================= */}
       <h2 id="directors" className="text-2xl font-bold text-gray-900 mb-8 tracking-wide scroll-mt-28">Directors</h2>
       
-      {/* Directors Grid - Constrained max-width to slightly lower the card sizes */}
+      {/* Directors Grid */}
       <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-16">
         {directors.map((director, index) => (
           <div key={index} className="reveal-card group cursor-pointer flex flex-col gap-4">
-            {/* Image Wrapper */}
-            <div className="relative w-full aspect-[4/5] bg-[#e6f4fc] rounded-xl overflow-hidden shadow-sm">
-              <Image
-                src={director.image}
-                alt={director.name}
-                fill
-                className="parallax-image scale-[1.2] object-cover object-bottom transition-transform duration-700 ease-out group-hover:scale-[1.25]"
-                unoptimized
-              />
-              {/* Corporate shadow overlay on hover */}
-              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10" />
+            
+            {/* Clean Container Without Blue Background */}
+            <div className="relative w-full aspect-[4/5] bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+              {/* Separate Parallax node to avoid GSAP/Tailwind conflict */}
+              <div className="parallax-wrapper absolute inset-0 w-full h-full">
+                <Image
+                  src={director.image}
+                  alt={director.name}
+                  fill
+                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  unoptimized
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10 pointer-events-none" />
             </div>
 
-            {/* Info Section */}
             <div className="flex justify-between items-start">
               <div>
                 <h3 className="text-[1.1rem] font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-700">
@@ -127,15 +129,17 @@ export default function TeamSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
         {executives.slice(0, 8).map((exec, index) => (
           <div key={index} className="reveal-card group cursor-pointer flex flex-col gap-4">
-            <div className="relative w-full aspect-[4/5] bg-[#e6f4fc] rounded-xl overflow-hidden shadow-sm">
-              <Image
-                src={exec.image}
-                alt={exec.name}
-                fill
-                className="parallax-image scale-[1.2] object-cover object-bottom transition-transform duration-700 ease-out group-hover:scale-[1.25]"
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10" />
+            <div className="relative w-full aspect-[4/5] bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+              <div className="parallax-wrapper absolute inset-0 w-full h-full">
+                <Image
+                  src={exec.image}
+                  alt={exec.name}
+                  fill
+                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  unoptimized
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10 pointer-events-none" />
             </div>
 
             <div className="flex justify-between items-start">
@@ -155,19 +159,21 @@ export default function TeamSection() {
         ))}
       </div>
 
-      {/* Last Executive (Selina) - Centered with precise math to perfectly match the grid size */}
+      {/* Last Executive (Selina) */}
       <div className="flex justify-center mt-12">
         <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
           <div className="reveal-card group cursor-pointer flex flex-col gap-4">
-            <div className="relative w-full aspect-[4/5] bg-[#e6f4fc] rounded-xl overflow-hidden shadow-sm">
-              <Image
-                src={executives[8].image}
-                alt={executives[8].name}
-                fill
-                className="parallax-image scale-[1.2] object-cover object-bottom transition-transform duration-700 ease-out group-hover:scale-[1.25]"
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10" />
+            <div className="relative w-full aspect-[4/5] bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+              <div className="parallax-wrapper absolute inset-0 w-full h-full">
+                <Image
+                  src={executives[8].image}
+                  alt={executives[8].name}
+                  fill
+                  className="scale-[1.25] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.3]"
+                  unoptimized
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10 pointer-events-none" />
             </div>
 
             <div className="flex justify-between items-start">

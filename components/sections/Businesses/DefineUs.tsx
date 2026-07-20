@@ -3,7 +3,14 @@
 import { motion } from "framer-motion";
 import { BusinessData } from "@/data/businesses.data";
 
-export default function DefineUs({ definesUs }: { definesUs: BusinessData["definesUs"] }) {
+export default function DefineUs({
+  definesUs,
+  title = "What Defines Us",
+}: {
+  definesUs: BusinessData["definesUs"];
+  /** Investments reuses this grid to present its investment areas. */
+  title?: string;
+}) {
   if (!definesUs || definesUs.length === 0) return null;
 
   return (
@@ -22,7 +29,7 @@ export default function DefineUs({ definesUs }: { definesUs: BusinessData["defin
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2 className="mb-12 md:mb-16 text-center [font-family:var(--font-display)] font-semibold text-[20px] md:text-[24px] tracking-[0.05em] text-ink uppercase">
-            What Defines Us
+            {title}
           </h2>
         </motion.div>
 

@@ -57,7 +57,11 @@ export default function GovernanceGrid() {
   const towerParallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={sectionRef} className="bg-white py-12 md:py-16 overflow-hidden">
+    <section
+      id="governance"
+      ref={sectionRef}
+      className="bg-white py-12 md:py-16 overflow-hidden scroll-mt-28"
+    >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}

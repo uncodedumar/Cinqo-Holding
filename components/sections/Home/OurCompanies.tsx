@@ -118,7 +118,7 @@ export default function OurCompanies() {
   return (
     <section className="section bg-white -mt-4" id="companies" ref={sectionRef}>
       <div className="container">
-        <p className="companies-eyebrow eyebrow">The Group</p>
+        
         <h2 className="companies-heading">Our Companies</h2>
         <p className="companies-subheading text-h3 mt-2 text-muted">
           Five operating Companies. Governed by one unified structure.
@@ -145,7 +145,7 @@ export default function OurCompanies() {
                 className="company-overlay absolute inset-0 opacity-90"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(10,26,36,0.55) 0%, rgba(10,26,36,0.35) 35%, rgba(10,26,36,0.88) 100%)",
+                    "linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(134, 134, 134, 0.35) 35%, rgba(10,26,36,0.88) 100%)",
                 }}
               />
 
@@ -158,13 +158,16 @@ export default function OurCompanies() {
                     alt={company.name}
                     width={200}
                     height={100}
-                    className="h-16 w-auto object-contain sm:h-14"
+                    className="h-40 w-auto object-contain sm:h-14"
                   />
                 </div>
 
                 {/* Name + description */}
                 <div className="flex flex-col min-h-[200px]">
                   <div className="mt-auto">
+                  <p className=" line-clamp-6 text-[0.9rem] leading-relaxed text-white ">
+                      {company.name}
+                    </p>
                     <p className="company-desc mt-6 line-clamp-6 text-[0.9rem] leading-relaxed text-white translate-y-1">
                       {company.description}
                     </p>

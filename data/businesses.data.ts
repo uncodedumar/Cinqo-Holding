@@ -231,8 +231,41 @@ export const businesses: BusinessData[] = [
     introBgImage: "/images/companies/ci4.png",
     introHeading: "STRUCTURED\nDISTRIBUTION",
     introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.",
-    definesUs: [],
-    capabilities: [],
+    definesUs: [{
+      title: "ASSET PERFORMANCE",
+      description: "Maximizing the lifespan and performance of your assets.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "OPERATIONAL EFFICIENCY",
+      description: "Optimizing operations to reduce costs and improve service delivery.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "STRATEGIC PARTNERS",
+      description: "Working closely with clients to achieve their facility goals.",
+      bgimage: "/images/companies/ci1.png",
+    }],
+    capabilities: [{
+      title: "Asset Preservation",
+      description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Operational Continuity",
+      description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Lifecycle Focus",
+      description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Transparent Reporting",
+      description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },],
     sectorShowcase: [
       {
         title: "Infrastructure",
@@ -273,8 +306,41 @@ export const businesses: BusinessData[] = [
     introBgImage: "/images/companies/ci3.png",
     introHeading: "DELIVERED\nWITH\nPRECISION",
     introText: "THC Fit Out delivers high-quality interior environments where design intent, technical coordination and execution excellence come together.\n\nFrom corporate offices and retail environments to hospitality venues and premium residential interiors, every project is delivered with a focus on quality, programmed control and attention to detail.",
-    definesUs: [],
-    capabilities: [],
+    definesUs: [{
+      title: "ASSET PERFORMANCE",
+      description: "Maximizing the lifespan and performance of your assets.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "OPERATIONAL EFFICIENCY",
+      description: "Optimizing operations to reduce costs and improve service delivery.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "STRATEGIC PARTNERS",
+      description: "Working closely with clients to achieve their facility goals.",
+      bgimage: "/images/companies/ci1.png",
+    }],
+    capabilities: [{
+      title: "Asset Preservation",
+      description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Operational Continuity",
+      description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Lifecycle Focus",
+      description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Transparent Reporting",
+      description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+      image: "/images/capabilities/HAWAR.jpg"
+    }],
     sectorShowcase: [
       {
         title: "Corporate",
@@ -315,8 +381,41 @@ export const businesses: BusinessData[] = [
     introBgImage: "/images/companies/ci5.png",
     introHeading: "ENGINEERED\nFOR\nENDURANCE",
     introText: "Cinqo Flooring & Coating Technologies delivers high-performance flooring, waterproofing and protective coating systems for environments where durability, hygiene and long-term performance are critical.\n\nThe company serves logistics facilities, healthcare and pharmaceutical environments, food production sites, car parks and industrial installations through technically engineered solutions and manufacturer-approved systems.",
-    definesUs: [],
-    capabilities: [],
+    definesUs: [{
+      title: "ASSET PERFORMANCE",
+      description: "Maximizing the lifespan and performance of your assets.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "OPERATIONAL EFFICIENCY",
+      description: "Optimizing operations to reduce costs and improve service delivery.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "STRATEGIC PARTNERS",
+      description: "Working closely with clients to achieve their facility goals.",
+      bgimage: "/images/companies/ci1.png",
+    }],
+    capabilities: [{
+      title: "Asset Preservation",
+      description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Operational Continuity",
+      description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Lifecycle Focus",
+      description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Transparent Reporting",
+      description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+      image: "/images/capabilities/HAWAR.jpg"
+    }],
     sectorShowcase: [
       {
         title: "Healthcare",
@@ -348,6 +447,36 @@ export const businesses: BusinessData[] = [
         ],
         hoverDescription: "Installation of ultra-hygienic, chemically resistant flooring solutions designed to withstand rigorous pharmaceutical standards."
       }
+    ]
+  },
+  {
+    slug: "cinqo-holding-investments",
+    name: "CINQO HOLDING INVESTMENTS",
+    heroImage: "/images/companies/c5.png",
+    introBgImage: "/images/companies/ci5.png",
+    introHeading: "ENGINEERED\nFOR\nENDURANCE",
+    introText: "Cinqo Holding evaluates and manages investments aligned with the Group’s long-term vision, operational expertise and governance standards.The portfolio spans real estate, strategic partnerships, technology ventures and growth-oriented businesses where the Group can contribute not only capital, but also commercial discipline, operational insight and strategic direction.",
+    definesUs: [{
+      title: "ASSET PERFORMANCE",
+      description: "Maximizing the lifespan and performance of your assets.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "OPERATIONAL EFFICIENCY",
+      description: "Optimizing operations to reduce costs and improve service delivery.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "STRATEGIC PARTNERS",
+      description: "Working closely with clients to achieve their facility goals.",
+      bgimage: "/images/companies/ci1.png",
+    }],
+    capabilities: [],
+    sectorShowcase: [
+      
+    ],
+    showcaseText: "",
+    showcaseProjects: [
     ]
   }
 ];

@@ -37,7 +37,7 @@ export default function Leadership() {
 
   return (
     <section
-      id="leadership"
+      id="chairmans-message"
       ref={sectionRef}
       className="bg-white py-12 md:py-24 overflow-hidden scroll-mt-28"
     >
@@ -49,7 +49,7 @@ export default function Leadership() {
           {/* Left Side: Image container that stretches to exactly match the text height on desktop */}
           <div className="relative w-full h-[450px] lg:h-auto lg:min-h-full rounded-sm overflow-hidden">
             <Image
-              src="/images/about/chairman.png"
+              src="/images/about/chairman.jpeg"
               alt="Chairman of Cinqo Holding"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

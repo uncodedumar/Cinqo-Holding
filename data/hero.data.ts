@@ -12,42 +12,42 @@ export const homeHeroSlidesData: HeroSlide[] = [
   {
     id: "slide2",
     image: "/images/hero/h2.jpg",
-    alt: "Cinqo Holdings construction and infrastructure",
-    headline1: "BUILT ON COMMITMENT.",
-    headline2: "DRIVEN BY PERFORMANCE.",
-    subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
+    alt: "Cinqo Contracting",
+    headline1: "BUILT",
+    headline2: "ON COMMITMENT.",
+    subtitle: "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.."
   },
   {
     id: "slide3",
     image: "/images/hero/h3.png",
-    alt: "Cinqo Holdings construction and infrastructure",
-    headline1: "BUILT ON COMMITMENT.",
-    headline2: "DRIVEN BY PERFORMANCE.",
-    subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
+    alt: "THC Facilities Management",
+    headline1: "PRESERVING",
+    headline2: "VALUES.",
+    subtitle: "Provider of integrated hard and soft facilities management services supporting residential, commercial, hospitality and industrial assets."
   },
   {
     id: "slide4",
     image: "/images/hero/h3.png",
-    alt: "Cinqo Holdings construction and infrastructure",
-    headline1: "BUILT ON COMMITMENT.",
-    headline2: "DRIVEN BY PERFORMANCE.",
-    subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
+    alt: "THC Fitout",
+    headline1: "DELIVERED",
+    headline2: "WITH PRECISION.",
+    subtitle: "Interior construction specialists delivering corporate, retail, hospitality and residential fit-out projects with a focus on quality, coordination and finish excellence."
   },
   {
     id: "slide5",
     image: "/images/hero/h3.png",
-    alt: "Cinqo Holdings construction and infrastructure",
-    headline1: "BUILT ON COMMITMENT.",
-    headline2: "DRIVEN BY PERFORMANCE.",
-    subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
+    alt: "Cinqo Trading",
+    headline1: "STRUCTURED",
+    headline2: "DISTRIBUTION.",
+    subtitle: "Exclusive and authorised distributor of leading international brands across paints, construction chemicals, building materials and infrastructure solutions."
   },
   {
     id: "slide6",
     image: "/images/hero/h3.png",
-    alt: "Cinqo Holdings construction and infrastructure",
-    headline1: "BUILT ON COMMITMENT.",
-    headline2: "DRIVEN BY PERFORMANCE.",
-    subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
+    alt: "Cinqo Flooring & Coating ",
+    headline1: "ENGINEERED",
+    headline2: "FOR ENDURANCE.",
+    subtitle: "Specialists in epoxy flooring, polyurethane systems, waterproofing and protective coatings engineered for demanding industrial and commercial environments"
   },
   
 ];

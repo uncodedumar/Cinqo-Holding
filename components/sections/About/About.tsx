@@ -283,7 +283,10 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* SECTION 1 - Refactored to match image_8647e4.jpg EXACTLY */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-24">
+      <section
+        id="about-us"
+        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-24 scroll-mt-28"
+      >
         {/* Video Background with Image Fallback via 'poster' */}
         <div className="absolute inset-0 z-0">
           <video
