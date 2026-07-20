@@ -232,7 +232,7 @@ export const businesses: BusinessData[] = [
   {
     slug: "cinqo-trading",
     name: "CINQO TRADING",
-    heroImage: "/images/companies/h1.jpg",
+    heroImage: "/images/companies/trading.jpeg",
     introBgImage: "/images/companies/ci4.png",
     introHeading: "STRUCTURED\nDISTRIBUTION",
     introText: "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.",

@@ -70,7 +70,7 @@ export default function ContactUs() {
           {/* Text Container */}
           <motion.div className="w-full md:w-[45%] flex flex-col justify-between pb-12 md:pb-16 pointer-events-auto min-h-[450px] md:min-h-[550px]" variants={itemVariants}>
             <h2 className="text-xl md:text-4xl font-medium leading-[1.1] text-black mb-8" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
-              Got Plans?<br/>let&apos;s turn them<br/>into something<br/>real
+              Contact Us to discuss your<br></br> requirements and a <br></br>memeber of our team <br></br>will get in touch.
             </h2>
             
             {/* Spacer to push subheading to the bottom */}
