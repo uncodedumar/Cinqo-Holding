@@ -75,12 +75,12 @@ export const businesses: BusinessData[] = [
       {
         title: "CIVIL & STRUCTURAL CONSTRUCTION",
         description: "Scheduling review and progress tracking to safeguard timelines and milestone commitments.",
-        image: "/images/capabilities/HAWAR.jpg"
+        image: "/images/capabilities/cc1.png"
       },
       {
         title: "MEP CONTRACTING",
         description: "Scheduling review and progress tracking to safeguard timelines and milestone commitments.",
-        image: "/images/capabilities/HAWAR.jpg"
+        image: "/images/capabilities/cc2.png"
       },
       {
         title: "HIGH END FIT OUT & JOINERY",
@@ -92,22 +92,22 @@ export const businesses: BusinessData[] = [
       {
         title: "HIGH-END RESIDENTIAL\n VILLAS & COMPOUNDS",
         description: "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
-        image: "/images/sectors/sector-1.webp",
+        image: "/images/sectors/cp11.jfif",
       },
       {
-        title: "RESIDENTIAL &\ COMMERTIAL TOWERS",
-        description: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and saftey compliance.",
-        image: "/images/sectors/sector-2.webp",
+        title: "RESIDENTIAL & \n COMMERCIAL TOWERS",
+        description: "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and safety compliance.",
+        image: "/images/sectors/cp12.jpg",
       },
       {
         title: "COMMERCIAL MALLS &\n MIXED-USE DEVELOPMENTS",
         description: "Execution of retail and mixed-use projects requiring coordinated structural, architectural and MEP delivery.",
-        image: "/images/sectors/sector-3.jpg",
+        image: "/images/sectors/cp13.jpg",
       },
       {
-        title: "WAREHOUSE &\n INDUSTRIAL FACILITIES",
-        description: "Development of industrial structures incorporating utility integration, fire safety systems and operational infracstructure.",
-        image: "/images/sectors/sector-3.jpg",
+        title: "WAREHOUSES &\n INDUSTRIAL FACILITIES",
+        description: "Development of industrial structures incorporating utility integration, fire safety systems and operational infrastructure.",
+        image: "/images/sectors/cp14.jpg",
       },
     ],
     showcaseText: "Explore our portfolio of landmark civil and building projects across Bahrain's residential, commercial, and industrial sectors, demonstrating our commitment to quality, safety, and precision.",
