@@ -19,15 +19,15 @@ const directors = [
 ];
 
 const executives = [
-  { name: "Siby", designation: "General Manager – Cinqo Contracting", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Siby" },
-  { name: "Salman", designation: "Operations Manager – Cinqo Contracting", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Salman" },
-  { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Ranjith" },
-  { name: "Mohd Ali", designation: "General Manager – THC Facilities Management", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Mohd+Ali" },
-  { name: "Collins", designation: "General Manager – THC Fit Out", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Collins" },
-  { name: "Prakash", designation: "Group Finance Manager", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Prakash" },
-  { name: "Satish", designation: "Group HR Manager", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Satish" },
-  { name: "Alok", designation: "Group Business Development Manager", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Alok" },
-  { name: "Selina", designation: "Group Admin Manager", image: "https://placehold.co/500x600/dbeafe/1e3a8a?text=Selina" },
+  { name: "Siby", designation: "General Manager – Cinqo Contracting", image: "/images/about/Siby.png" },
+  { name: "Salman", designation: "Operations Manager – Cinqo Contracting", image: "/images/about/Salman.png" },
+  { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "/images/about/Ranjith.png" },
+  { name: "Mohd Ali", designation: "General Manager – THC Facilities Management", image: "/images/about/Ali.png" },
+  { name: "Collins", designation: "General Manager – THC Fit Out", image: "/images/about/Collins.png" },
+  { name: "Prakash", designation: "Group Finance Manager", image: "/images/about/Prakash.png" },
+  { name: "Satish", designation: "Group HR Manager", image: "/images/about/Satish.png" },
+  { name: "Alok", designation: "Group Business Development Manager", image: "/images/about/Alok.png" },
+  { name: "Selina", designation: "Group Admin Manager", image: "/images/about/Selina.png" },
 ];
 
 // --- Icons ---
