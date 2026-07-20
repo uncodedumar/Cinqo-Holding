@@ -78,6 +78,7 @@ export interface HeroSlide {
   id: string;
   image: string;
   alt: string;
+  badge?: string;
   headline1: ReactNode;
   headline2: ReactNode;
   subtitle?: string;
