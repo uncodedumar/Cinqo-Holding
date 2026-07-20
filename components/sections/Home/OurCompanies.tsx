@@ -2,134 +2,58 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { companiesData } from "@/data/companies.data";
+import { useEffect, useRef, useState } from "react";
 
-/**
- * Our Companies — premium photo-backed cards, 3 per row.
- * Cards rise into alignment as the section scrolls into view; on hover the
- * backdrop softens into a blur, the coral divider extends, and the company
- * name grows seamlessly.
- */
 export default function OurCompanies() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Entrance: heading reveal + scroll-synced "rise" of the card row
+  // Intersection Observer to trigger the "rise up" animation on scroll
   useEffect(() => {
-    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); // Stop observing once it has animated
+        }
+      },
+      { threshold: 0.1 } // Triggers when 10% of the section is visible
+    );
 
-    const ctx = gsap.context(() => {
-      gsap.from(".companies-eyebrow", {
-        y: 18,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".companies-eyebrow", start: "top 90%" },
-      });
-      gsap.from(".companies-heading", {
-        y: 24,
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.05,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".companies-heading", start: "top 90%" },
-      });
-      gsap.from(".companies-subheading", {
-        y: 24,
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".companies-subheading", start: "top 90%" },
-      });
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-      // Wide scroll range + a stagger that roughly equals each card's own
-      // duration, so one card finishes rising before the next one starts.
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: "top 88%",
-          end: "bottom 25%",
-          scrub: 1.2,
-        },
-      }).from(".company-card", {
-        y: 220,
-        opacity: 0,
-        duration: 1,
-        stagger: 1,
-        ease: "power2.out",
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  // Hover: card lift, background blur, and element scaling
-  useEffect(() => {
-    if (!gridRef.current) return;
-
-    const cards = gsap.utils.toArray<HTMLElement>(".company-card");
-    const cleanups = cards.map((card) => {
-      const bg = card.querySelector<HTMLElement>(".company-bg-img");
-      const overlay = card.querySelector<HTMLElement>(".company-overlay");
-      const innerContent = card.querySelector<HTMLElement>(".company-inner-content");
-      const nameEl = card.querySelector<HTMLElement>(".company-name");
-      const descEl = card.querySelector<HTMLElement>(".company-desc");
-      const arrowEl = card.querySelector<HTMLElement>(".company-arrow");
-      const underlineEl = card.querySelector<HTMLElement>(".company-underline");
-
-      const tl = gsap.timeline({ paused: true });
-
-      // Animate the inner content instead of the card container to completely avoid the ScrollTrigger collision
-      if (innerContent) {
-        tl.to(innerContent, { y: -8, scale: 1.02, duration: 0.55, ease: "power3.out" }, 0);
-      }
-      
-      if (bg) tl.to(bg, { scale: 1, filter: "blur(9px)", duration: 0.65, ease: "power3.out" }, 0);
-      if (overlay) tl.to(overlay, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0);
-      
-      // Safe guard layout-altering properties
-      if (nameEl) {
-        const baseFontSize = parseFloat(getComputedStyle(nameEl).fontSize);
-        tl.to(nameEl, { fontSize: baseFontSize * 1.22, duration: 0.55, ease: "power3.out" }, 0);
-      }
-      if (underlineEl) tl.to(underlineEl, { width: 64, duration: 0.5, ease: "power3.out" }, 0.05);
-      if (descEl) tl.to(descEl, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.08);
-      if (arrowEl) tl.to(arrowEl, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.12);
-
-      const onEnter = () => tl.play();
-      const onLeave = () => tl.reverse();
-      
-      card.addEventListener("mouseenter", onEnter);
-      card.addEventListener("mouseleave", onLeave);
-      
-      return () => {
-        card.removeEventListener("mouseenter", onEnter);
-        card.removeEventListener("mouseleave", onLeave);
-        tl.kill();
-      };
-    });
-
-    return () => cleanups.forEach((cleanup) => cleanup());
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
   }, []);
 
   return (
-    <section className="section bg-white -mt-4" id="companies" ref={sectionRef}>
+    <section 
+      ref={sectionRef}
+      id="companies"
+      // Added transition classes for the rise-up effect
+      className={`section bg-white -mt-4 transition-all duration-1000 ease-out transform ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+      }`} 
+    >
       <div className="container">
-        
-        <h2 className="companies-heading">Our Companies</h2>
-        <p className="companies-subheading text-h3 mt-2 text-muted">
+        <h2 className="text-4xl font-bold">Our Companies</h2>
+        <p className="text-h3 mt-2 text-muted">
           Five operating Companies. Governed by one unified structure.
         </p>
-<br />
-        <div ref={gridRef} className="mt-2 grid gap-6 grid-cols-1 sm:grid-cols-3">
+        <br />
+        
+        {/* Added stretch to ensure grid items match height */}
+        <div className="mt-2 grid gap-6 grid-cols-1 sm:grid-cols-3 items-stretch">
           {companiesData.map((company) => (
             <Link
               href={company.href}
               key={company.id}
-              className="company-card group relative isolate block aspect-square w-full overflow-hidden rounded-sm border border-white/10 will-change-transform hover:border-coral-500/60 transition-colors duration-500 shadow-[0_10px_30px_-15px_rgba(10,26,36,0.4)] hover:shadow-[0_30px_60px_-18px_rgba(10,26,36,0.55)]"
+              // Removed `aspect-square`. Added `h-full`, `min-h-[400px]`, and `flex` to dynamically adjust to content.
+              className="group relative isolate flex flex-col w-full min-h-[400px] overflow-hidden rounded-sm border border-white/10 transition-all duration-500 hover:border-coral-500/60 shadow-[0_10px_30px_-15px_rgba(10,26,36,0.4)] hover:shadow-[0_30px_60px_-18px_rgba(10,26,36,0.55)]"
             >
               {/* Background photo */}
               <Image
@@ -137,48 +61,52 @@ export default function OurCompanies() {
                 alt=""
                 fill
                 sizes="(min-width: 640px) 33vw, 90vw"
-                className="company-bg-img absolute inset-0 object-cover scale-105"
+                className="absolute inset-0 object-cover scale-105 transition-all duration-500 group-hover:scale-100 group-hover:blur-[6px] -z-10"
               />
 
               {/* Legibility scrim */}
               <div
-                className="company-overlay absolute inset-0 opacity-90"
+                className="absolute inset-0 opacity-90 transition-opacity duration-500 group-hover:opacity-100 -z-10"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(134, 134, 134, 0.35) 35%, rgba(10,26,36,0.88) 100%)",
+                    "linear-gradient(180deg, rgba(37, 37, 37, 0.55) 0%, rgba(0, 0, 0, 0.35) 35%, rgba(10,26,36,0.88) 100%)",
                 }}
               />
 
-              {/* Added 'company-inner-content' layout wrapper to seamlessly separate interactive translation from the scroll matrix */}
-              <div className="company-inner-content relative z-10 flex h-full w-full flex-col justify-between p-6 will-change-transform">
+              {/* Inner Content Layout */}
+              <div className="relative z-10 flex h-full w-full flex-col justify-between p-6 transition-transform duration-500 group-hover:-translate-y-2">
+                
                 {/* Logo */}
-                <div className="flex justify-start">
+                <div className="flex justify-start mb-8">
                   <Image
                     src={company.logo}
                     alt={company.name}
-                    width={200}
-                    height={100}
-                    className="h-40 w-auto object-contain sm:h-14"
+                    width={240}
+                    height={120}
+                    className="h-24 w-auto object-contain sm:h-20"
                   />
                 </div>
 
                 {/* Name + description */}
-                <div className="flex flex-col min-h-[200px]">
-                  <div className="mt-auto">
-                  <p className=" line-clamp-6 text-[0.9rem] leading-relaxed text-white ">
-                      {company.name}
-                    </p>
-                    <p className="company-desc mt-6 line-clamp-6 text-[0.9rem] leading-relaxed text-white translate-y-1">
-                      {company.description}
-                    </p>
-                    <span className="company-arrow mt-3 inline-flex items-center gap-1 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-coral-500 opacity-0 -translate-x-1.5">
-                      View Company
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </div>
+                <div className="flex flex-col mt-auto">
+                  {/* Removed line-clamp-6 so all text displays perfectly */}
+                  <p className="text-[1rem] font-medium leading-relaxed text-white transition-all duration-500 group-hover:text-[1.15rem]">
+                    {company.name}
+                  </p>
+                  {/* Removed line-clamp-6 here as well */}
+                  <p className="mt-4 text-[0.9rem] leading-relaxed text-white/90">
+                    {company.description}
+                  </p>
+                  
+                  {/* Arrow / View Button */}
+                  <span className="mt-6 inline-flex items-center gap-1 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-coral-500 opacity-0 -translate-x-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+                    View Company
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
                 </div>
+
               </div>
             </Link>
           ))}

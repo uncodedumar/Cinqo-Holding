@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { PROJECTS } from "@/data/projects.data";
 
-export default function CompletedProjects() {
-  // Filter data to only show "completed" projects
-  const completedProjects = PROJECTS.filter((project) => project.status === "completed");
+export default function OngoingProjects() {
+  // Filter data to only show "ongoing" projects
+  const ongoingProjects = PROJECTS.filter((project) => project.status === "completed");
   
   // Track which accordion row is open
   const [openId, setOpenId] = useState<string | null>(null);
@@ -18,13 +18,13 @@ export default function CompletedProjects() {
 
   return (
     <section
-      id="completed-projects"
+      id="ongoing-projects"
       className="w-full max-w-7xl mx-auto px-6 py-16 bg-white font-sans scroll-mt-28"
     >
-      <h2 className="text-2xl font-bold mb-6 text-black">Completed Projects</h2>
+      <h2 className="text-2xl font-bold mb-6 text-black">Ongoing Projects</h2>
       
       <div className="border-t border-gray-200">
-        {completedProjects.map((project) => {
+        {ongoingProjects.map((project) => {
           const isOpen = openId === project.id;
 
           return (
@@ -39,13 +39,19 @@ export default function CompletedProjects() {
                     : "bg-white text-black hover:bg-[#71797E] hover:text-white"
                 }`}
               >
+                {/* Company Division */}
+                <div className="col-span-12 md:col-span-3 font-semibold text-md md:text-lg truncate">
+                  {/* Uses project.company if it exists in your data, otherwise falls back to "Cinqo Trading" */}
+                  {project.company || "Cinqo Trading"}
+                </div>
+
                 {/* Heading */}
-                <div className="col-span-12 md:col-span-4 font-bold text-lg md:text-xl truncate">
+                <div className="col-span-12 md:col-span-3 font-bold text-lg md:text-xl truncate">
                   {project.name}
                 </div>
 
                 {/* Subheading (Hidden on open state to match image, or adjusts nicely) */}
-                <div className={`col-span-12 md:col-span-5 text-sm md:text-base truncate transition-opacity duration-300 ${
+                <div className={`col-span-12 md:col-span-3 text-sm md:text-base truncate transition-opacity duration-300 ${
                   isOpen ? "opacity-0 hidden md:block" : "opacity-100"
                 }`}>
                   <span className={`${isOpen ? "text-transparent" : "text-gray-500 group-hover:text-gray-200"}`}>
@@ -141,19 +147,19 @@ export default function CompletedProjects() {
                           {/* Arrows (Static for styling purposes as requested) */}
                           <div className="flex items-center gap-3">
                             <button className="w-10 h-10 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors">
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                               </svg>
                             </button>
                             <button className="h-10 px-6 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors">
-  <Image 
-    src="/arrow.svg" /* Replace with your actual image path */
-    alt="Right arrow" 
-    width={20} 
-    height={20} 
-    className="w-5 h-5" /* Optional: keeps the exact same styling footprint */
-  />
-</button>
+                              <Image 
+                                src="/arrow.svg" /* Replace with your actual image path */
+                                alt="Right arrow" 
+                                width={20} 
+                                height={20} 
+                                className="w-5 h-5" /* Optional: keeps the exact same styling footprint */
+                              />
+                            </button>
                           </div>
                         </div>
 

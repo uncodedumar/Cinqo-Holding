@@ -12,7 +12,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/c1.jpg",
     description:
       "Delivering civil and building construction across various sectors — shaping communities, businesses and infrastructure.",
-    href: "/companies/cinqo-contracting",
+    href: "/businesses/cinqo-contracting",
   }
   ,
   {
@@ -22,7 +22,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/c5.png",
     description:
       "Specialists in epoxy flooring, polyurethane systems, waterproofing and protective coatings engineered for demanding industrial and commercial environments.",
-    href: "/companies/cinqo-coatings",
+    href: "/businesses/cinqo-coatings",
   },
   {
     id: "cinqo-trading",
@@ -31,7 +31,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/h1.jpg",
     description:
       "Structured technical distribution, inventory management, and specification support for nine of the world's leading building and coating brands.",
-    href: "/companies/cinqo-trading",
+    href: "/businesses/cinqo-trading",
   },
 
  
@@ -43,7 +43,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/c2.jpeg",
     description:
       "Provider of integrated hard and soft facilities management services supporting residential, commercial, hospitality and industrial assets.",
-    href: "/companies/thc-facility-management",
+    href: "/businesses/thc-facility-management",
   },
   {
     id: "thc-fitout",
@@ -52,7 +52,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/c3.JPG",
     description:
       "Interior construction specialists delivering corporate, hospitality and residential fit-out projects with a focus on quality, coordination and finish excellence.",
-    href: "/companies/thc-fitout",
+    href: "/businesses/thc-fitout",
   },
   {
     id: "cinqo-holdings",
@@ -61,6 +61,6 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/hero/h3.png",
     description:
       "Cinqo Holding is the investment and strategic parent company that provides the governance, leadership and long-term vision behind the Group's portfolio of its operating businesses and investments.",
-    href: "/companies/cinqo-holdings",
+    href: "/businesses/cinqo-holdings",
   },
 ];
