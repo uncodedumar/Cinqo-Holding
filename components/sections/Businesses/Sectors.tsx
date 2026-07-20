@@ -71,11 +71,11 @@ export default function Sectors({
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent transition-opacity duration-500 group-hover:opacity-90"></div>
             
             {/* Card Content */}
-            <div className="absolute bottom-0 left-0 px-[12px] pt-3 pb-[12px] text-white transform transition-transform duration-500">
-              <h2 className="font-['Inter'] text-[18px] font-normal uppercase tracking-wider drop-shadow-md whitespace-pre-line leading-tight min-h-[3.5rem]">
+            <div className="absolute bottom-0 left-0 w-full px-[12px] pt-3 pb-[12px] text-white transform transition-transform duration-500">
+              <h2 className="font-['Inter'] text-[18px] font-normal uppercase tracking-wider drop-shadow-md whitespace-pre-line leading-tight min-h-[3.5rem] md:min-h-[4.5rem]">
                 {s.title}
               </h2>
-              <p className="font-['Inter'] text-[15px] font-light leading-snug opacity-90 drop-shadow-sm mt-1">
+              <p className="font-['Inter'] text-[15px] font-light leading-snug opacity-90 drop-shadow-sm mt-1 min-h-[4.5rem] md:min-h-[5.5rem]">
                 {s.description}
               </p>
             </div>
