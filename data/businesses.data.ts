@@ -381,7 +381,28 @@ export const businesses: BusinessData[] = [
           "/images/sectors/pip-5.jpg"
         ],
         hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
-      }
+      },
+         {
+        title: "Maserati",
+        mainImage: "/images/maserati/main.jpeg",
+        hoverThumbnails: [
+          "/images/maserati/hover-1.jpeg",
+          "/images/maserati/hover-2.jpeg",
+          "/images/maserati/hover-3.jpeg",
+          "/images/maserati/hover-4.jpeg",
+        ],
+        hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
+      },
+         {
+        title: "BINNA FITOUT",
+        mainImage: "/images/binno/main.JPG",
+        hoverThumbnails: [
+          "/images/binno/hover-1.jpg",
+          "/images/binno/hover-2.jpg",
+        ],
+        hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
+      },
+
     ]
   },
   {
