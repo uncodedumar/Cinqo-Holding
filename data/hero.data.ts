@@ -6,7 +6,6 @@ export const homeHeroSlidesData: HeroSlide[] = [
     image: "/images/hero/a1.png",
     alt: "Cinqo Holdings",
     badge: "CINQO HOLDINGS",
-    alt: "Cinqo Holdings ",
     headline1: "BUILT ON COMMITMENT.",
     headline2: "DRIVEN BY PERFORMANCE.",
     subtitle: "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management."
