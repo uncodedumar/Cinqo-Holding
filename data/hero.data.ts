@@ -53,12 +53,12 @@ export const homeHeroSlidesData: HeroSlide[] = [
   
 ];
 export const aboutHeroSlidesData: HeroSlideV2[] = [
-  { id: "about1", image: "/images/hero/a1.png", alt: "About Cinqo Holding", headline1: "About Cinqo",
+  { id: "about1", image: "/images/hero/hero-about.jfif", alt: "About Cinqo Holding", headline1: "About Cinqo",
   },
 ];
 
 export const careersHeroSlidesData: HeroSlideV2[] = [
-  { id: "careers1", image: "/images/hero/h1.jpg", alt: "Careers at Cinqo Holdings", headline1: "Careers",
+  { id: "careers1", image: "/images/hero/hero-carrers.jfif", alt: "Careers at Cinqo Holdings", headline1: "Careers",
     },
 ];
 
@@ -68,7 +68,7 @@ export const contactHeroSlidesData: HeroSlideV2[] = [
 ];
 
 export const newsHeroSlidesData: HeroSlideV2[] = [
-  { id: "contact1", image: "/images/hero/h1.jpg", alt: "Contact Cinqo Holdings",  headline1: "Cinqo News.",
+  { id: "contact1", image: "/images/hero/hero-news.jfif", alt: "Cinqo News",  headline1: "Cinqo News.",
    },
 ];
 
@@ -81,6 +81,6 @@ export const newsSlugHeroSlidesData: HeroSlideV2[] = [
 
 
 export const projectsHeroSlidesData: HeroSlideV2[] = [
-  { id: "contact1", image: "/images/hero/h1.jpg", alt: "Contact Cinqo Holdings",  headline1: "Cinqo Projects",
+  { id: "contact1", image: "/images/hero/hero-projects.jfif", alt: "Cinqo Projects",  headline1: "Cinqo Projects",
    },
 ];
