@@ -16,7 +16,6 @@ const cardImages = [
 
 export default function GuidingPrinciples() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const svgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -24,30 +23,17 @@ export default function GuidingPrinciples() {
       gsap.utils.toArray<HTMLElement>(".principle-card").forEach((el, i) => {
         gsap.from(el, {
           opacity: 0,
-          y: 80, // Increased from 30 for a more dramatic rise
-          duration: 1.4, // Slightly longer for a premium feel
-          delay: i * 0.1, // Increased stagger slightly
-          ease: "power3.out", // Smoother corporate-style easing
+          y: 80,
+          duration: 1.4,
+          delay: i * 0.1,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 85%", // Starts a bit earlier so it rises into view naturally
+            start: "top 85%",
             toggleActions: "play none none reverse",
           },
         });
       });
-
-      if (svgRef.current) {
-        gsap.to(svgRef.current, {
-          rotate: 360,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-      }
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -57,24 +43,6 @@ export default function GuidingPrinciples() {
       className="section text-ink text-center overflow-hidden relative"
       ref={sectionRef}
     >
-      <div
-        ref={svgRef}
-        className="absolute inset-0 z-0 will-change-transform"
-        aria-hidden
-        style={{
-          background: "linear-gradient(to right, #F5333F, transparent)",
-          WebkitMaskImage: 'url("/")',
-          WebkitMaskSize: "65%",
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskPosition: "center",
-          maskImage: 'url("/pattern.svg")',
-          maskSize: "45%",
-          maskRepeat: "no-repeat",
-          maskPosition: "center",
-          opacity: 0.5,
-        }}
-      />
-
       <div className="container">
         <div className="relative z-10 max-w-[640px] mx-auto mb-12">
           <h2>Guiding Principles</h2>

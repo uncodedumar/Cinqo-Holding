@@ -3,7 +3,7 @@ import type { HeroSlide, HeroSlideV2 } from "@/types";
 export const homeHeroSlidesData: HeroSlide[] = [
   {
     id: "slide1",
-    image: "/images/hero/h1.jpg",
+    image: "/images/hero/a1.png",
     alt: "Cinqo Holdings construction and infrastructure",
     headline1: "BUILT ON COMMITMENT.",
     headline2: "DRIVEN BY PERFORMANCE.",
@@ -11,7 +11,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide2",
-    image: "/images/hero/h2.jpg",
+    image: "/images/hero/hero-contracting.jpg",
     alt: "Cinqo Contracting",
     headline1: "BUILT",
     headline2: "ON COMMITMENT.",
@@ -19,7 +19,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide3",
-    image: "/images/hero/h3.png",
+    image: "/images/hero/hero-thc fm.jpeg",
     alt: "THC Facilities Management",
     headline1: "PRESERVING",
     headline2: "VALUES.",
@@ -27,7 +27,8 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide4",
-    image: "/images/hero/h3.png",
+    image: "/images/hero/hero-thc fitout.JPG",
+    imagePosition: "50% 40%",
     alt: "THC Fitout",
     headline1: "DELIVERED",
     headline2: "WITH PRECISION.",
@@ -35,7 +36,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide5",
-    image: "/images/hero/h3.png",
+    image: "/images/hero/hero-trading.jpeg",
     alt: "Cinqo Trading",
     headline1: "STRUCTURED",
     headline2: "DISTRIBUTION.",
@@ -43,7 +44,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide6",
-    image: "/images/hero/h3.png",
+    image: "/images/hero/hero-cfct.jpg",
     alt: "Cinqo Flooring & Coating ",
     headline1: "ENGINEERED",
     headline2: "FOR ENDURANCE.",
