@@ -24,7 +24,7 @@ const executives = [
   { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "/images/about/Ranjith.png" },
   { name: "Mohd Ali", designation: "General Manager – THC Facilities Management", image: "/images/about/Ali.png" },
   { name: "Collins", designation: "General Manager – THC Fit Out", image: "/images/about/Collins.png" },
-  { name: "Prakash_", designation: "Group Finance Manager", image: "/images/about/Prakash.png" },
+  { name: "Prakash", designation: "Group Finance Manager", image: "/images/about/Prakash_.png" },
   { name: "Satish", designation: "Group HR Manager", image: "/images/about/Satish.png" },
   { name: "Alok", designation: "Group Business Development Manager", image: "/images/about/Alok.png" },
   { name: "Selina", designation: "Group Admin Manager", image: "/images/about/Selina.png" },
