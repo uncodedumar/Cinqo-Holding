@@ -74,18 +74,28 @@ export const businesses: BusinessData[] = [
     capabilities: [
       {
         title: "CIVIL & STRUCTURAL CONSTRUCTION",
-        description: "Scheduling review and progress tracking to safeguard timelines and milestone commitments.",
+        description: "Execution of foundations, superstructure and core civil works with close supervision, quantity control and quality monitoring.",
         image: "/images/capabilities/cc1.png"
       },
       {
-        title: "MEP CONTRACTING",
-        description: "Scheduling review and progress tracking to safeguard timelines and milestone commitments.",
+        title: "MEP COORDINATION",
+        description: "Alignment of mechanical, electrical and plumbing systems within structural and architectural frameworks to reduce clashes and protect long-term serviceability.",
         image: "/images/capabilities/cc2.png"
       },
       {
-        title: "HIGH END FIT OUT & JOINERY",
-        description: "Scheduling review and progress tracking to safeguard timelines and milestone commitments.",
+        title: "FULL PROJECT DELIVERY",
+        description: "End-to-end management from mobilisation to final handover, including subcontractor coordination, programme control and cost oversight.",
         image: "/images/capabilities/HAWAR.jpg"
+      },
+      {
+        title: "COST & VARIATION MANAGEMENT",
+        description: "Commercial monitoring of quantities, change orders and financial exposure to maintain clarity and protect project viability.",
+        image: "/images/capabilities/cc1.png"
+      },
+      {
+        title: "PROGRAMME OVERSIGHT",
+        description: "Scheduling review and progress tracking to safeguard timelines and milestone commitments.",
+        image: "/images/capabilities/cc1.png"
       }
     ],
     sectorShowcase: [
