@@ -6,7 +6,7 @@ import { SectorShowcaseItem } from '@/data/businesses.data';
 
 // Increased width and height for bigger cards
 const cardStyle: React.CSSProperties = {
-  width: '320px', 
+  width: '280px', 
   height: '420px',
   overflow: 'hidden',
   position: 'relative',
@@ -64,7 +64,7 @@ export default function Sectors({
               src={s.image} 
               alt={s.title}
               fill
-              sizes="320px"
+              sizes="280px"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
             />
             {/* Gradient Overlay */}
