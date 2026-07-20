@@ -157,6 +157,11 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
         }`}
         ref={contentRef}
       >
+        {"badge" in slides[activeIndex] && slides[activeIndex].badge && (
+          <span className="animate-slide-item text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-white/90">
+            {slides[activeIndex].badge}
+          </span>
+        )}
         <h1
           className={`animate-slide-item text-white leading-[1.15] tracking-tight ${
             isCompact
