@@ -49,7 +49,7 @@ export default function Sectors({
         </div>
 
         {/* Sectors Grid */}
-        <div className="flex flex-col md:flex-row items-center md:justify-center gap-6 mx-4">
+        <div className="flex flex-col md:flex-row items-center md:justify-center gap-2 mx-4">
           {sectorShowcase.map((s: SectorShowcaseItem) => (
           <div 
             key={s.title} 
@@ -72,11 +72,10 @@ export default function Sectors({
             
             {/* Card Content */}
             <div className="absolute bottom-0 left-0 px-[12px] pt-3 pb-[12px] text-white transform transition-transform duration-500">
-              <h2 className="font-['Inter'] text-[18px] font-normal uppercase tracking-wider mb-1 drop-shadow-md">
+              <h2 className="font-['Inter'] text-[18px] font-normal uppercase tracking-wider drop-shadow-md whitespace-pre-line leading-tight min-h-[3.5rem]">
                 {s.title}
               </h2>
-              <br />
-              <p className="font-['Inter'] text-[15px] font-light leading-snug opacity-90 drop-shadow-sm">
+              <p className="font-['Inter'] text-[15px] font-light leading-snug opacity-90 drop-shadow-sm mt-1">
                 {s.description}
               </p>
             </div>
