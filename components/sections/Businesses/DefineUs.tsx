@@ -61,7 +61,7 @@ export default function DefineUs({
                 </>
               )}
 
-              <div className="relative z-10 flex flex-col gap-3 mt-16">
+              <div className="relative z-10 flex flex-col gap-3 mt-auto">
                 <motion.h3
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}

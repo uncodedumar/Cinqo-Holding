@@ -347,55 +347,70 @@ export const businesses: BusinessData[] = [
     introHeading: "DELIVERED\nWITH\nPRECISION",
     introText: "THC Fit Out delivers high-quality interior environments where design intent, technical coordination and execution excellence come together.\n\nFrom corporate offices and retail environments to hospitality venues and premium residential interiors, every project is delivered with a focus on quality, programmed control and attention to detail.",
     definesUs: [{
-      title: "ASSET PERFORMANCE",
-      description: "Maximizing the lifespan and performance of your assets.",
+      title: "DESIGN INTEGRITY",
+      description: "Projects are executed in accordance with approved designs while maintaining alignment with architectural intent.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "OPERATIONAL EFFICIENCY",
-      description: "Optimizing operations to reduce costs and improve service delivery.",
+      title: "CONTROLLED EXECUTION",
+      description: "Trade coordination, sequencing and finish management are carefully supervised throughout delivery.",
       bgimage: "/images/companies/ci1.png",
     },
     {
-      title: "STRATEGIC PARTNERS",
-      description: "Working closely with clients to achieve their facility goals.",
+      title: "MATERIAL OVERSIGHT",
+      description: "Specifications and finishes are monitored through structured reviews and on-site quality control.",
+      bgimage: "/images/companies/ci1.png",
+    },
+    {
+      title: "DETAIL ORIENTATION",
+      description: "Precision in finishing, alignment and coordination defines the quality of the final outcome.",
       bgimage: "/images/companies/ci1.png",
     }],
     capabilities: [{
-      title: "Asset Preservation",
-      description: "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
+      title: "Interior Fit-Out & Finishing",
+      description: "Execution of partitions, ceilings, flooring and finishing systems with controlled supervision and quality documentation.",
       image: "/images/capabilities/HAWAR.jpg"
     },
     {
-      title: "Operational Continuity",
-      description: "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
+      title: "Joinery & Custom Fabrication",
+      description: "Manufacture and installation of bespoke elements aligned with approved shop drawings and material specifications.",
       image: "/images/capabilities/HAWAR.jpg"
     },
     {
-      title: "Lifecycle Focus",
-      description: "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
+      title: "MEP Integration",
+      description: "Coordination of lighting, HVAC and service infrastructure within interior works to ensure performance and accessibility.",
       image: "/images/capabilities/HAWAR.jpg"
     },
     {
-      title: "Transparent Reporting",
-      description: "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
+      title: "Design Coordination",
+      description: "Technical alignment of architectural drawings prior to execution to minimise rework and interface conflicts.",
+      image: "/images/capabilities/HAWAR.jpg"
+    },
+    {
+      title: "Commercial & Variation Management",
+      description: "Monitoring of scope adjustments and financial implications throughout delivery.",
       image: "/images/capabilities/HAWAR.jpg"
     }],
     sectorShowcase: [
       {
-        title: "Corporate",
-        description: "Office interiors coordinated across design intent, MEP and joinery.",
+        title: "Corporate Offices",
+        description: "Interior construction aligned with functionality, acoustic performance and service integration.",
         image: "/images/sectors/sector-1.webp",
       },
       {
-        title: "Hospitality",
-        description: "Hospitality venues fitted out with meticulous attention to detail.",
+        title: "Retail & F&B",
+        description: "Fast-track fit-out delivery focused on brand requirements and operational readiness.",
         image: "/images/sectors/sector-2.webp",
       },
       {
-        title: "Residential",
-        description: "Premium residential interiors delivered under programmed quality control.",
+        title: "Residential Interiors",
+        description: "Premium villa and apartment interiors delivered with attention to detail and material quality.",
         image: "/images/sectors/sector-3.jpg",
+      },
+      {
+        title: "Healthcare & Clinics",
+        description: "Fit-outs incorporating hygienic materials and coordinated building services.",
+        image: "/images/sectors/sector-1.webp",
       },
     ],
     showcaseText: "Step inside our completed interior environments, where uncompromising design intent meets precise technical execution.",
