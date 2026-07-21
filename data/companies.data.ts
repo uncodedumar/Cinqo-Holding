@@ -43,7 +43,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/c2.jpeg",
     description:
       "Provider of integrated hard and soft facilities management services supporting residential, commercial, hospitality and industrial assets.",
-    href: "/businesses/thc-facility-management",
+    href: "/businesses/thc-facilities-management",
   },
   {
     id: "thc-fitout",
