@@ -11,7 +11,7 @@ export const companiesData: CompanyCard[] = [
     logo: "/images/logos/6.png",
     bgImage: "/images/companies/c1.jpg",
     description:
-      "Delivering civil and building construction across various sectors — shaping communities, businesses and infrastructure.",
+      "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.",
     href: "/businesses/cinqo-contracting",
   }
   ,
@@ -22,7 +22,7 @@ export const companiesData: CompanyCard[] = [
     bgImage: "/images/companies/c5.png",
     description:
       "Specialists in epoxy flooring, polyurethane systems, waterproofing and protective coatings engineered for demanding industrial and commercial environments.",
-    href: "/businesses/cinqo-coatings",
+    href: "/businesses/cinqo-flooring-coating-technologies",
   },
   {
     id: "cinqo-trading",
@@ -30,7 +30,7 @@ export const companiesData: CompanyCard[] = [
     logo: "/images/logos/2.png",
     bgImage: "/images/companies/h1.jpg",
     description:
-      "Structured technical distribution, inventory management, and specification support for nine of the world's leading building and coating brands.",
+      "Exclusive and authorised distributor of leading international brands across paints, construction chemicals, building materials and infrastructure solutions.",
     href: "/businesses/cinqo-trading",
   },
 
@@ -47,20 +47,20 @@ export const companiesData: CompanyCard[] = [
   },
   {
     id: "thc-fitout",
-    name: "THC Fitout",
+    name: "THC Fit Out",
     logo: "/images/logos/3.png",
     bgImage: "/images/companies/c3.JPG",
     description:
-      "Interior construction specialists delivering corporate, hospitality and residential fit-out projects with a focus on quality, coordination and finish excellence.",
-    href: "/businesses/thc-fitout",
+      "Interior construction specialists delivering corporate, retail, hospitality and residential fit-out projects with a focus on quality, coordination and finish excellence.",
+    href: "/businesses/cinqo-fitout",
   },
   {
-    id: "cinqo-holding",
-    name: "Cinqo Holding",
+    id: "cinqo-holding-investments",
+    name: "Cinqo Holding Investments",
     logo: "/images/logos/5.png",
     bgImage: "/images/hero/h3.png",
     description:
-      "Cinqo Holding is the investment and strategic parent company that provides the governance, leadership and long-term vision behind the Group's portfolio of its operating businesses and investments.",
-    href: "/businesses/cinqo-holding",
+      "Cinqo Holding evaluates and manages investments aligned with the Group's long-term vision, operational expertise and governance standards.",
+    href: "/businesses/cinqo-holding-investments",
   },
 ];

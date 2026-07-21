@@ -18,13 +18,14 @@ const FOOTER_COLUMNS = [
     ],
   },
   {
-    title: "Companies",
+    title: "Divisions",
     links: [
       { label: "Cinqo Contracting", href: "/businesses/cinqo-contracting" },
       { label: "Cinqo Trading", href: "/businesses/cinqo-trading" },
-      { label: "Cinqo Coatings & Coating Technologies", href: "/businesses/cinqo-coatings" },
-      { label: "THC Facilities Management", href: "/businesses/thc-facilities" },
-      { label: "THC Fitout", href: "/businesses/thc-fitout" },
+      { label: "Cinqo Flooring & Coating Technologies", href: "/businesses/cinqo-flooring-coating-technologies" },
+      { label: "THC Facilities Management", href: "/businesses/thc-facilities-management" },
+      { label: "THC Fitout", href: "/businesses/cinqo-fitout" },
+      { label: "Cinqo Holding Investments", href: "/businesses/cinqo-holding-investments" },
     ],
   },
 ];
