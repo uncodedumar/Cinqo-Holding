@@ -244,13 +244,37 @@ export const businesses: BusinessData[] = [
         title: "COMMERCIAL PLAZA OVERSIGHT",
         mainImage: "/images/companies/c2.jpeg",
         hoverThumbnails: [
-          "/images/sectors/pip-1.jpg",
-          "/images/sectors/pip-2.jpg",
-          "/images/sectors/pip-3.jpg",
-          "/images/sectors/pip-4.jpg",
-          "/images/sectors/pip-5.jpg"
+          "/images/Businesses/CinqoFM/Projects/image00001.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00002.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00003.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00004.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00005.jpeg"
         ],
         hoverDescription: "Complete lifecycle management and preventative maintenance operations for a 50-story commercial hub."
+      },
+      {
+        title: "Project 2",
+        mainImage: "/images/companies/c2.jpeg",
+        hoverThumbnails: [
+          "/images/Businesses/CinqoFM/Projects/image00016.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00017.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00018.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00019.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00020.jpeg"
+        ],
+        hoverDescription: "TBD"
+      },
+      {
+        title: "Project 3",
+        mainImage: "/images/companies/c2.jpeg",
+        hoverThumbnails: [
+          "/images/Businesses/CinqoFM/Projects/image00024.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00025.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00026.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00027.jpeg",
+          "/images/Businesses/CinqoFM/Projects/image00028.jpeg"
+        ],
+        hoverDescription: "TBD"
       }
     ]
   },
