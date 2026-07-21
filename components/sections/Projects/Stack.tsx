@@ -22,7 +22,7 @@ const images = [
 
   "/images/Projects/project-1/projectStack3.jpg",
 
-  "/images/Projects/project-1/projectStack4.jpg",
+  "/images/Projects/project-1/projectStack4.png",
 
 ];
 
