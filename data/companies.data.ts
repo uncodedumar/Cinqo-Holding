@@ -17,7 +17,7 @@ export const companiesData: CompanyCard[] = [
   ,
   {
     id: "cinqo-coatings",
-    name: "Cinqo Flooring & Coatings Technologies",
+    name: "Cinqo Flooring & Coating Technologies",
     logo: "/images/logos/4.png",
     bgImage: "/images/companies/c5.png",
     description:
