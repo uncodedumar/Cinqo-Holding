@@ -560,7 +560,7 @@ export const businesses: BusinessData[] = [
     },
     {
       title: "EARLY-STAGE BUSINESSES",
-      description: "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
+      description: "Selective investments in emerging ventures with strong leadership, sound fundamentals and sustainable growth potential.",
       bgimage: "/images/companies/ci1.png",
     },
     {
