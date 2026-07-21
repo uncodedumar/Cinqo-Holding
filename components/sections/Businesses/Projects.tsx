@@ -169,7 +169,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
           >
             {/* Spacing comes from per-item padding, not `gap`, so the -50%
                 loop point lands exactly on the duplicate. */}
-            <div className="flex items-center w-max animate-projects-marquee ml-auto">
+            <div className="flex items-center w-max animate-projects-marquee">
               {loopedThumbnails.map((thumb, tIdx) => (
                 <div
                   key={`${activeProject.title}-${tIdx}`}
