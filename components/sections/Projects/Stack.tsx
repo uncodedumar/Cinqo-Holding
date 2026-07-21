@@ -16,13 +16,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const images = [
 
-  "https://picsum.photos/id/1015/1600/900",
+  "/images/Projects/project-1/projectStack1.jpg",
 
-  "https://picsum.photos/id/1016/1600/900",
+  "/images/Projects/project-1/projectStack2.jpg",
 
-  "https://picsum.photos/id/1018/1600/900",
+  "/images/Projects/project-1/projectStack3.jpg",
 
-  "https://picsum.photos/id/1019/1600/900",
+  "/images/Projects/project-1/projectStack4.jpg",
 
 ];
 
