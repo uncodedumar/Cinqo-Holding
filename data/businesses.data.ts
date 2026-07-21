@@ -146,11 +146,11 @@ export const businesses: BusinessData[] = [
       },
       {
         title: "AVS VILLA",
-        mainImage: "/images/companies/c1.jpg",
+        mainImage: "/images/Businesses/CinqoContracting/Projects/villaBg.png",
         hoverThumbnails: [
           "/images/Businesses/CinqoContracting/Projects/villa1.jpeg",
-          "/images/Businesses/CinqoContracting/Projects/villa2.jpeg",
-          "/images/Businesses/CinqoContracting/Projects/villa3.jpeg",
+          "/images/Businesses/CinqoContracting/Projects/villa2.jpg",
+          "/images/Businesses/CinqoContracting/Projects/villa3.jpg",
           "/images/Businesses/CinqoContracting/Projects/villa4.jpeg",
         ],
         hoverDescription: "A premier luxury residential development featuring twin towers, exceptional resort-style amenities, and meticulous structural execution."
