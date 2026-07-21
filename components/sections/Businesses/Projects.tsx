@@ -68,7 +68,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
       */}
       <div className="w-full lg:w-[28%] xl:w-1/4 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between p-8 md:p-10 lg:p-14 shrink-0 bg-white z-10">
         {/* Top text — identical for every project */}
-        <p className="text-ink/80 text-[15px] leading-snug pr-4 max-w-[26ch]">
+        <p className="text-ink/80 text-h2 leading-snug pr-4 max-w-[26ch]">
           {data.showcaseText}
         </p>
 

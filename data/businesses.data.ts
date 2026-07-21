@@ -120,7 +120,7 @@ export const businesses: BusinessData[] = [
         image: "/images/sectors/cp14.jpg",
       },
     ],
-    showcaseText: "Explore our portfolio of landmark civil and building projects across Bahrain's residential, commercial, and industrial sectors, demonstrating our commitment to quality, safety, and precision.",
+    showcaseText: "Projects Highlights",
     showcaseProjects: [
       {
         title: "STORY BUILDING JANABAYA",
@@ -235,7 +235,7 @@ export const businesses: BusinessData[] = [
         image: "/images/sectors/card-4.webp",
       },
     ],
-    showcaseText: "Discover how we maintain and elevate the value of premier properties through our comprehensive and responsive facilities management solutions.",
+    showcaseText: "Projects Highlights",
     showcaseProjects: [
       {
         title: "COMMERCIAL PLAZA OVERSIGHT",
@@ -344,7 +344,7 @@ export const businesses: BusinessData[] = [
         image: "/images/sectors/sector-1.webp",
       },
     ],
-    showcaseText: "A curated look at the high-grade materials and exclusive technologies we have distributed to Bahrain's most significant infrastructural projects.",
+    showcaseText: "Projects Highlights",
     showcaseProjects: [
       {
         title: "BAHRAIN INFRASTRUCTURE SUPPLY",
@@ -434,7 +434,7 @@ export const businesses: BusinessData[] = [
         image: "/images/sectors/sector-1.webp",
       },
     ],
-    showcaseText: "Step inside our completed interior environments, where uncompromising design intent meets precise technical execution.",
+    showcaseText: "Projects Highlights",
     showcaseProjects: [
       {
         title: "Rolls Royce",
@@ -550,7 +550,7 @@ export const businesses: BusinessData[] = [
         image: "/images/sectors/cp54.jpg",
       },
     ],
-    showcaseText: "Review our specialized applications of high-performance flooring and coating systems across challenging industrial and healthcare environments.",
+    showcaseText: "Projects Highlights",
     showcaseProjects: [
       {
         title: "PHARMA LOGISTICS HUB",
