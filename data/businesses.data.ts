@@ -559,6 +559,54 @@ export const businesses: BusinessData[] = [
           "/images/sectors/pip-5.jpg"
         ],
         hoverDescription: "Installation of ultra-hygienic, chemically resistant flooring solutions designed to withstand rigorous pharmaceutical standards."
+      },
+      {
+        title: "BIA CAR PARK",
+        mainImage: "/images/Businesses/CinqoCoating/Projects/one/main.jpg",
+        hoverThumbnails: [
+          "/images/Businesses/CinqoCoating/Projects/one/hover-1.jpg",
+          "/images/Businesses/CinqoCoating/Projects/one/hover-2.jpg",
+          "/images/Businesses/CinqoCoating/Projects/one/hover-3.jpg",
+          "/images/Businesses/CinqoCoating/Projects/one/hover-4.jpg",
+          "/images/Businesses/CinqoCoating/Projects/one/hover-5.jpg"
+        ],
+        hoverDescription: "Placeholder description for BIA CAR PARK project."
+      },
+      {
+        title: "HAWAR BOARDWALK & VILLAS",
+        mainImage: "/images/Businesses/CinqoCoating/Projects/two/main.jpg",
+        hoverThumbnails: [
+          "/images/Businesses/CinqoCoating/Projects/two/hover-1.jpg",
+          "/images/Businesses/CinqoCoating/Projects/two/hover-2.jpg",
+          "/images/Businesses/CinqoCoating/Projects/two/hover-3.jpg",
+          "/images/Businesses/CinqoCoating/Projects/two/hover-4.jpg",
+          "/images/Businesses/CinqoCoating/Projects/two/hover-5.jpg"
+        ],
+        hoverDescription: "Placeholder description for HAWAR BOARDWALK & VILLAS project."
+      },
+      {
+        title: "JUFFAIR SQUARE",
+        mainImage: "/images/Businesses/CinqoCoating/Projects/three/main.jpg",
+        hoverThumbnails: [
+          "/images/Businesses/CinqoCoating/Projects/three/hover-1.jpg",
+          "/images/Businesses/CinqoCoating/Projects/three/hover-2.jpg",
+          "/images/Businesses/CinqoCoating/Projects/three/hover-3.jpg",
+          "/images/Businesses/CinqoCoating/Projects/three/hover-4.jpg",
+          "/images/Businesses/CinqoCoating/Projects/three/hover-5.jpg"
+        ],
+        hoverDescription: "Placeholder description for JUFFAIR SQUARE project."
+      },
+      {
+        title: "FONTANA INFINITY",
+        mainImage: "/images/Businesses/CinqoCoating/Projects/four/main.jpg",
+        hoverThumbnails: [
+          "/images/Businesses/CinqoCoating/Projects/four/hover-1.jpg",
+          "/images/Businesses/CinqoCoating/Projects/four/hover-2.jpg",
+          "/images/Businesses/CinqoCoating/Projects/four/hover-3.jpg",
+          "/images/Businesses/CinqoCoating/Projects/four/hover-4.jpg",
+          "/images/Businesses/CinqoCoating/Projects/four/hover-5.jpg"
+        ],
+        hoverDescription: "Placeholder description for FONTANA INFINITY project."
       }
     ]
   },
