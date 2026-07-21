@@ -55,12 +55,12 @@ export const companiesData: CompanyCard[] = [
     href: "/businesses/thc-fitout",
   },
   {
-    id: "cinqo-holdings",
-    name: "Cinqo Holdings",
+    id: "cinqo-holding",
+    name: "Cinqo Holding",
     logo: "/images/logos/5.png",
     bgImage: "/images/hero/h3.png",
     description:
       "Cinqo Holding is the investment and strategic parent company that provides the governance, leadership and long-term vision behind the Group's portfolio of its operating businesses and investments.",
-    href: "/businesses/cinqo-holdings",
+    href: "/businesses/cinqo-holding",
   },
 ];
