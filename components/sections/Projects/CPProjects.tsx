@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { PROJECTS } from "@/data/projects.data";
 
-export default function OngoingProjects() {
+export default function CompletedProjects() {
   // Filter data to only show "ongoing" projects
   const ongoingProjects = PROJECTS.filter((project) => project.status === "completed");
   
@@ -18,10 +18,10 @@ export default function OngoingProjects() {
 
   return (
     <section
-      id="ongoing-projects"
+      id="completed-projects"
       className="w-full max-w-7xl mx-auto px-6 py-16 bg-white font-sans scroll-mt-28"
     >
-      <h2 className="text-2xl font-bold mb-6 text-black">Ongoing Projects</h2>
+      <h2 className="text-2xl font-bold mb-6 text-black">Completed Projects</h2>
       
       <div className="border-t border-gray-200">
         {ongoingProjects.map((project) => {

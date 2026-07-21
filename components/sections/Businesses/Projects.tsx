@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { BusinessData } from "@/data/businesses.data";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -100,9 +101,9 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
             })}
           </ul>
 
-          <button className="px-6 py-3 border border-gray-400 text-sm font-semibold tracking-wider hover:bg-black hover:text-white hover:border-black transition-all self-start">
+          <Link href="/projects" className="px-6 py-3 border border-gray-400 text-sm font-semibold tracking-wider hover:bg-black hover:text-white hover:border-black transition-all self-start text-center">
             VIEW ALL PROJECTS
-          </button>
+          </Link>
         </div>
       </div>
 
