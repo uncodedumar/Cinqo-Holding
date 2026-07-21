@@ -124,7 +124,7 @@ export const businesses: BusinessData[] = [
     showcaseProjects: [
       {
         title: "STORY BUILDING JANABAYA",
-        mainImage: "/images/companies/c1.jpg",
+        mainImage: "/images/Businesses/CinqoContracting/Projects/janabayaBg.jpg",
         hoverThumbnails: [
           "/images/Businesses/CinqoContracting/Projects/janabaya1.jpg",
           "/images/Businesses/CinqoContracting/Projects/janabaya2.jpg",
