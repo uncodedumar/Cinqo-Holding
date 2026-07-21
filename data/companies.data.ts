@@ -37,8 +37,8 @@ export const companiesData: CompanyCard[] = [
  
   
   {
-    id: "thc-facility-management",
-    name: "THC Facility Management",
+    id: "thc-facilities-management",
+    name: "THC Facilities Management",
     logo: "/images/logos/1.png",
     bgImage: "/images/companies/c2.jpeg",
     description:
