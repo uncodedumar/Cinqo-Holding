@@ -123,38 +123,35 @@ export const businesses: BusinessData[] = [
     showcaseText: "Explore our portfolio of landmark civil and building projects across Bahrain's residential, commercial, and industrial sectors, demonstrating our commitment to quality, safety, and precision.",
     showcaseProjects: [
       {
-        title: "J003 FONTANA INFINITY",
+        title: "STORY BUILDING JANABAYA",
         mainImage: "/images/companies/c1.jpg",
         hoverThumbnails: [
-          "/images/sectors/pip-1.jpg",
-          "/images/sectors/pip-2.jpg",
-          "/images/sectors/pip-3.jpg",
-          "/images/sectors/pip-4.jpg",
-          "/images/sectors/pip-5.jpg"
+          "/images/Businesses/CinqoContracting/Projects/janabaya1.jpg",
+          "/images/Businesses/CinqoContracting/Projects/janabaya2.jpg",
+          "/images/Businesses/CinqoContracting/Projects/janabaya3.jpg",
+          "/images/Businesses/CinqoContracting/Projects/janabaya4.jpg",
         ],
         hoverDescription: "A premier luxury residential development featuring twin towers, exceptional resort-style amenities, and meticulous structural execution."
       },
       {
-        title: "J003 FONTANA INFINITY",
+        title: "NATIONAL TRANSPORT RIFFA",
         mainImage: "/images/companies/c1.jpg",
         hoverThumbnails: [
-          "/images/sectors/pip-1.jpg",
-          "/images/sectors/pip-2.jpg",
-          "/images/sectors/pip-3.jpg",
-          "/images/sectors/pip-4.jpg",
-          "/images/sectors/pip-5.jpg"
+          "/images/Businesses/CinqoContracting/Projects/riffaTransport1.jpg",
+          "/images/Businesses/CinqoContracting/Projects/riffaTransport2.jpg",
+          "/images/Businesses/CinqoContracting/Projects/riffaTransport3.jpeg",
+          "/images/Businesses/CinqoContracting/Projects/riffaTransport4.jpeg",
         ],
         hoverDescription: "A premier luxury residential development featuring twin towers, exceptional resort-style amenities, and meticulous structural execution."
       },
       {
-        title: "J003 FONTANA INFINITY",
+        title: "AVS VILLA",
         mainImage: "/images/companies/c1.jpg",
         hoverThumbnails: [
-          "/images/sectors/pip-1.jpg",
-          "/images/sectors/pip-2.jpg",
-          "/images/sectors/pip-3.jpg",
-          "/images/sectors/pip-4.jpg",
-          "/images/sectors/pip-5.jpg"
+          "/images/Businesses/CinqoContracting/Projects/villa1.jpeg",
+          "/images/Businesses/CinqoContracting/Projects/villa2.jpeg",
+          "/images/Businesses/CinqoContracting/Projects/villa3.jpeg",
+          "/images/Businesses/CinqoContracting/Projects/villa4.jpeg",
         ],
         hoverDescription: "A premier luxury residential development featuring twin towers, exceptional resort-style amenities, and meticulous structural execution."
       },
