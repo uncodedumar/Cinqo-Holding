@@ -17,7 +17,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
     badge: "CINQO CONTRACTING",
     headline1: "BUILT",
     headline2: "ON COMMITMENT.",
-    subtitle: "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.."
+    subtitle: "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities."
   },
   {
     id: "slide3",
