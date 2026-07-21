@@ -13,21 +13,21 @@ if (typeof window !== "undefined") {
 
 // --- Data ---
 const directors = [
-  { name: "Junaid Usman", image: "/images/about/Junaid_Usman.png" },
-  { name: "Sufyan Usman", image: "/images/about/SufyanUsman.png" },
-  { name: "Uzair Usman", image: "/images/about/UzairUsman.png" },
+  { name: "Junaid Usman", designation: "Director", image: "/images/about/Junaid_Usman.png", linkedin: "#" },
+  { name: "Sufyan Usman", designation: "Director", image: "/images/about/SufyanUsman.png", linkedin: "#" },
+  { name: "Uzair Usman", designation: "Director", image: "/images/about/UzairUsman.png", linkedin: "#" },
 ];
 
 const executives = [
-  { name: "Siby", designation: "General Manager – Cinqo Contracting", image: "/images/about/Siby.png" },
-  { name: "Salman", designation: "Operations Manager – Cinqo Contracting", image: "/images/about/Salman.png" },
-  { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "/images/about/Ranjith.png" },
-  { name: "Mohd Ali", designation: "General Manager – THC Facilities Management", image: "/images/about/Ali.png" },
-  { name: "Collins", designation: "General Manager – THC Fit Out", image: "/images/about/Collins.png" },
-  { name: "Prakash", designation: "Group Finance Manager", image: "/images/about/Prakash_.png" },
-  { name: "Satish", designation: "Group HR Manager", image: "/images/about/Satish.png" },
-  { name: "Alok", designation: "Group Business Development Manager", image: "/images/about/Alok.png" },
-  { name: "Selina", designation: "Group Admin Manager", image: "/images/about/Selina.png" },
+  { name: "Siby", designation: "General Manager – Cinqo Contracting", image: "/images/about/Siby.png", linkedin: "#" },
+  { name: "Salman", designation: "Operations Manager – Cinqo Contracting", image: "/images/about/Salman.png", linkedin: "#" },
+  { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "/images/about/Ranjith.png", linkedin: "#" },
+  { name: "Mohd Ali", designation: "General Manager – THC Facilities Management", image: "/images/about/Ali.png", linkedin: "#" },
+  { name: "Collins", designation: "General Manager – THC Fit Out", image: "/images/about/Collins.png", linkedin: "#" },
+  { name: "Prakash", designation: "Group Finance Manager", image: "/images/about/Prakash_.png", linkedin: "#" },
+  { name: "Satish", designation: "Group HR Manager", image: "/images/about/Satish.png", linkedin: "#" },
+  { name: "Alok", designation: "Group Business Development Manager", image: "/images/about/Alok.png", linkedin: "#" },
+  { name: "Selina", designation: "Group Admin Manager", image: "/images/about/Selina.png", linkedin: "#" },
 ];
 
 // --- Icons ---
@@ -110,10 +110,13 @@ export default function TeamSection() {
                 <h3 className="text-[1.1rem] font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-700">
                   {director.name}
                 </h3>
+                <p className="text-[0.8rem] text-gray-500 mt-1 transition-colors duration-300 group-hover:text-gray-700">
+                  {director.designation}
+                </p>
               </div>
-              <div className="text-gray-400 transition-colors duration-300 group-hover:text-blue-700">
+              <a href={director.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
                 <LinkedInIcon />
-              </div>
+              </a>
             </div>
           </div>
         ))}
@@ -151,9 +154,9 @@ export default function TeamSection() {
                   {exec.designation}
                 </p>
               </div>
-              <div className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
+              <a href={exec.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
                 <LinkedInIcon />
-              </div>
+              </a>
             </div>
           </div>
         ))}
@@ -185,9 +188,9 @@ export default function TeamSection() {
                   {executives[8].designation}
                 </p>
               </div>
-              <div className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
+              <a href={executives[8].linkedin || "#"} target="_blank" rel="noopener noreferrer" className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
                 <LinkedInIcon />
-              </div>
+              </a>
             </div>
           </div>
         </div>
