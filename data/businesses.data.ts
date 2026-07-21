@@ -437,36 +437,40 @@ export const businesses: BusinessData[] = [
     showcaseText: "Step inside our completed interior environments, where uncompromising design intent meets precise technical execution.",
     showcaseProjects: [
       {
-        title: "CORPORATE HQ MANAMA",
+        title: "Rolls Royce",
         mainImage: "/images/companies/c3.JPG",
         hoverThumbnails: [
-          "/images/sectors/pip-1.jpg",
-          "/images/sectors/pip-2.jpg",
-          "/images/sectors/pip-3.jpg",
-          "/images/sectors/pip-4.jpg",
-          "/images/sectors/pip-5.jpg"
+          "/images/Businesses/CinqoFitout/Projects/IMG_2212.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_2111.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_2108.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_2172.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_2112.JPG"
         ],
-        hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
+        hoverDescription: "TBD"
       },
          {
         title: "Maserati",
-        mainImage: "/images/maserati/main.jpeg",
+        mainImage: "/images/Businesses/CinqoFitout/Projects/maz-main.jpeg",
         hoverThumbnails: [
-          "/images/maserati/hover-1.jpeg",
-          "/images/maserati/hover-2.jpeg",
-          "/images/maserati/hover-3.jpeg",
-          "/images/maserati/hover-4.jpeg",
+          "/images/Businesses/CinqoFitout/Projects/hover-1.jpeg",
+          "/images/Businesses/CinqoFitout/Projects/hover-2.jpeg",
+          "/images/Businesses/CinqoFitout/Projects/hover-3.jpeg",
+          "/images/Businesses/CinqoFitout/Projects/hover-4.jpeg",
+          "/images/Businesses/CinqoFitout/Projects/hover-5.jpeg"
         ],
-        hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
+        hoverDescription: "TBD"
       },
          {
         title: "BINNA FITOUT",
-        mainImage: "/images/binno/main.JPG",
+        mainImage: "/images/Businesses/CinqoFitout/Projects/bino-main.JPG",
         hoverThumbnails: [
-          "/images/binno/hover-1.jpg",
-          "/images/binno/hover-2.jpg",
+          "/images/Businesses/CinqoFitout/Projects/IMG_4304.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_4320.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_4328.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_4575.JPG",
+          "/images/Businesses/CinqoFitout/Projects/IMG_4581.JPG"
         ],
-        hoverDescription: "A turnkey interior fit-out for a multinational headquarters, featuring custom joinery and highly coordinated MEP integration."
+        hoverDescription: "TBD"
       },
 
     ]
