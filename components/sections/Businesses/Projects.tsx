@@ -172,7 +172,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
             <div className="flex items-center w-max animate-projects-marquee">
               {loopedThumbnails.map((thumb, tIdx) => (
                 <div
-                  key={tIdx}
+                  key={`${activeProject.title}-${tIdx}`}
                   className="w-32 md:w-44 aspect-[4/3] relative shrink-0 pr-3"
                 >
                   <Image
@@ -182,6 +182,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
                     }`}
                     width={400}
                     height={300}
+                    unoptimized
                     className="w-full h-full object-cover rounded-sm shadow-md"
                   />
                 </div>
