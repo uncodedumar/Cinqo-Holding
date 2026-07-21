@@ -9,42 +9,42 @@ export const principlesData: GuidingPrinciple[] = [
     id: "relationships-built-on-trust",
     title: "Relationships Built on Trust",
     description:
-      "We build long-term relationships with our clients and partners based on transparency, reliability and mutual respect.",
+      "Long-term relationships are built through consistent delivery, transparent communication and accountability.",
     image: "/images/principles/relationships-built-on-trust.jpg",
   },
   {
     id: "continuous-improvement",
     title: "Continuous Improvement",
     description:
-      "We continuously refine our systems and processes and empower leaders to drive sustainable growth across all operating companies.",
+      "Investment in people, technology and systems supports performance and sustainable growth.",
     image: "/images/principles/continuous-improvement.jpg",
   },
   {
     id: "executive-accountability",
     title: "Executive Accountability",
     description:
-      "Leadership across every company operates with clear ownership and full accountability for outcomes.",
+      "Leadership remains actively involved across operations, ensuring decisions are timely, informed and aligned with Group objectives.",
     image: "/images/principles/executive-accountability.jpg",
   },
   {
-    id: "integrated-visibility",
-    title: "Integrated Visibility",
+    id: "clarity-before-commitment",
+    title: "Clarity Before Commitment",
     description:
-      "A unified ERP platform gives leadership real-time visibility, transparency and proactive governance across operations.",
+      "Every engagement begins with a clear understanding of scope, objectives and responsibilities.",
     image: "/images/principles/integrated-visibility.jpg",
   },
   {
     id: "disciplined-growth",
     title: "Disciplined Growth",
     description:
-      "Expansion is guided by capability, operational readiness and long-term opportunities, not by short-term standards.",
+      "Expansion is guided by capability, operational readiness and long-term sustainability.",
     image: "/images/principles/disciplined-growth.jpg",
   },
   {
     id: "principal-led-partnerships",
     title: "Principal-Led Partnerships",
     description:
-      "Direct, principal-led relationships with clients and partners ensure decisions are made quickly and with full accountability.",
+      "Relationships with leading international manufacturers are built on performance, market knowledge and commercial integrity.",
     image: "/images/principles/principal-led-partnerships.jpg",
   },
 ];
