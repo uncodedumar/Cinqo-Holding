@@ -23,8 +23,8 @@ const line: Variants = {
 };
 
 const fade: Variants = {
-  rest: { opacity: 0, scale: 0.96 },
-  hover: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: EASE } },
+  rest: { opacity: 0, x: "150%" },
+  hover: { opacity: 1, x: "0%", transition: { duration: 0.6, ease: EASE } },
 };
 
 export default function ShowcaseSection({ data }: { data: BusinessData }) {
@@ -165,11 +165,11 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
           {/* Centre band — continuously looping thumbnail marquee */}
           <motion.div
             variants={fade}
-            className="relative w-full overflow-hidden -mx-8 md:-mx-10 lg:-mx-14 px-8 md:px-10 lg:px-14"
+            className="relative overflow-hidden -mx-8 md:-mx-10 lg:-mx-14 pl-8 md:pl-10 lg:pl-14 w-[calc(100%+4rem)] md:w-[calc(100%+5rem)] lg:w-[calc(100%+7rem)]"
           >
             {/* Spacing comes from per-item padding, not `gap`, so the -50%
                 loop point lands exactly on the duplicate. */}
-            <div className="flex items-center w-max animate-projects-marquee">
+            <div className="flex items-center w-max animate-projects-marquee ml-auto">
               {loopedThumbnails.map((thumb, tIdx) => (
                 <div
                   key={tIdx}
