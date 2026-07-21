@@ -135,7 +135,7 @@ export const businesses: BusinessData[] = [
       },
       {
         title: "NATIONAL TRANSPORT RIFFA",
-        mainImage: "/images/companies/c1.jpg",
+        mainImage: "/images/Businesses/CinqoContracting/Projects/riffaBg.jpeg",
         hoverThumbnails: [
           "/images/Businesses/CinqoContracting/Projects/riffaTransport1.jpg",
           "/images/Businesses/CinqoContracting/Projects/riffaTransport2.jpg",
