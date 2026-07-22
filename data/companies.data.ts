@@ -6,6 +6,15 @@ import type { CompanyCard } from "@/types";
  */
 export const companiesData: CompanyCard[] = [
   {
+    id: "cinqo-holding-investments",
+    name: "Cinqo Holding Investments",
+    logo: "/images/logos/5.png",
+    bgImage: "/images/hero/h3.png",
+    description:
+      "Cinqo Holding evaluates and manages investments aligned with the Group's long-term vision, operational expertise and governance standards.",
+    href: "/businesses/cinqo-holding-investments",
+  },
+  {
     id: "cinqo-contracting",
     name: "Cinqo Contracting",
     logo: "/images/logos/6.png",
@@ -13,8 +22,7 @@ export const companiesData: CompanyCard[] = [
     description:
       "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.",
     href: "/businesses/cinqo-contracting",
-  }
-  ,
+  },
   {
     id: "cinqo-coatings",
     name: "Cinqo Flooring & Coating Technologies",
@@ -34,8 +42,6 @@ export const companiesData: CompanyCard[] = [
     href: "/businesses/cinqo-trading",
   },
 
- 
-  
   {
     id: "thc-facilities-management",
     name: "THC Facilities Management",
@@ -53,14 +59,5 @@ export const companiesData: CompanyCard[] = [
     description:
       "Interior construction specialists delivering corporate, retail, hospitality and residential fit-out projects with a focus on quality, coordination and finish excellence.",
     href: "/businesses/cinqo-fitout",
-  },
-  {
-    id: "cinqo-holding-investments",
-    name: "Cinqo Holding Investments",
-    logo: "/images/logos/5.png",
-    bgImage: "/images/hero/h3.png",
-    description:
-      "Cinqo Holding evaluates and manages investments aligned with the Group's long-term vision, operational expertise and governance standards.",
-    href: "/businesses/cinqo-holding-investments",
   },
 ];
