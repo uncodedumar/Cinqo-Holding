@@ -202,7 +202,7 @@ const StackedSection = () => {
 
               <p className="text-xl md:text-2xl text-white/90 text-center max-w-2xl px-4">
 
-                The stack is complete. Keep scrolling down to discover what comes next.
+                Keep scrolling down to discover what comes next.
 
               </p>
 

@@ -19,16 +19,8 @@ export default function TrustedBySection() {
 
       {/* Reduced container height to keep the loop concise */}
       <div 
-        className="relative w-full max-w-[1400px] h-[180px] md:h-[220px] overflow-hidden rounded-[10px] flex flex-col justify-center"
-        style={{
-          backgroundImage: `url('/images/logobg.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
+        className="relative w-full max-w-[1400px] py-4 md:py-8 overflow-hidden flex flex-col justify-center"
       >
-        {/* Dull White Opacity Layer */}
-        <div className="absolute inset-0 bg-white/5 z-0 pointer-events-none rounded-[10px]" />
 
         {/* Row: Smooth Marquee */}
         <div 
@@ -36,17 +28,17 @@ export default function TrustedBySection() {
           role="region" 
           aria-label="Scrolling brand logos"
         >
-          <div className="animate-marquee flex whitespace-nowrap gap-12 md:gap-16 items-center">
+          <div className="animate-marquee flex whitespace-nowrap gap-6 md:gap-10 items-center">
             {[...logosData, ...logosData, ...logosData].map((logoItem, i) => (
               <div 
                 key={`logo-${logoItem.id}-${i}`} 
-                className="mx-2 relative h-8 md:h-12 w-28 md:w-40 flex-shrink-0"
+                className="relative h-12 md:h-20 w-36 md:w-56 flex-shrink-0"
               >
                 <Image 
                   src={logoItem.logo} 
                   alt={`${logoItem.name} logo`}
                   fill
-                  sizes="(max-width: 768px) 112px, 160px"
+                  sizes="(max-width: 768px) 144px, 224px"
                   className="object-contain" 
                   priority={i < logosData.length}
                 />
@@ -55,8 +47,6 @@ export default function TrustedBySection() {
           </div>
         </div>
 
-        {/* Subtle Ring Overlay */}
-        <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-[10px] z-20"></div>
       </div>
 
       <style jsx>{`
