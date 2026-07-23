@@ -12,7 +12,7 @@ export default function Intro({ business }: { business: BusinessData }) {
     image: business.heroImage,
     alt: business.name,
     headline1: business.name,
-    imagePosition: business.heroImagePosition || (business.slug === "cinqo-holding-investments" ? "50% 100%" : "center center"),
+    imagePosition: business.heroImagePosition || (business.slug === "cinqo-holding-investments" ? "50% 15%" : "center center"),
   };
 
   // Animation configuration for the "rise up" effect

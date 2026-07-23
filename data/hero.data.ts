@@ -12,16 +12,6 @@ export const homeHeroSlidesData: HeroSlide[] = [
       "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management, interior fit-out and strategic investments.",
   },
   {
-    id: "slide7",
-    image: "/images/hero/holdingNewBg.png",
-    alt: "Cinqo Holding Investments",
-    badge: "CINQO HOLDING INVESTMENTS",
-    headline1: "GOVERNANCE.",
-    headline2: "ALIGNMENT.\nLONG-TERM VALUE.",
-    subtitle:
-      "Cinqo Holding evaluates and manages investments aligned with the Group’s long-term vision, operational expertise and governance standards.The portfolio spans real estate, strategic partnerships, technology ventures and growth-oriented businesses where the Group can contribute not only capital, but also commercial discipline, operational insight and strategic direction.",
-  },
-  {
     id: "slide2",
     image: "/images/hero/hero-contracting.jpg",
     alt: "Cinqo Contracting",
