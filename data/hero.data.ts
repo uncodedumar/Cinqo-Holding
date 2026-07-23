@@ -3,7 +3,7 @@ import type { HeroSlide, HeroSlideV2 } from "@/types";
 export const homeHeroSlidesData: HeroSlide[] = [
   {
     id: "slide1",
-    image: "/images/hero/a1.png",
+    image: "/images/hero/holdingBg.jpeg",
     alt: "Cinqo Holding",
     badge: "CINQO HOLDING",
     headline1: "BUILT ON COMMITMENT.",
@@ -23,7 +23,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide6",
-    image: "/images/hero/hero-cfct.jpg",
+    image: "/images/hero/coatingnewBg.png",
     alt: "Cinqo Flooring & Coating ",
     badge: "CINQO FLOORING & COATING",
     headline1: "ENGINEERED",
@@ -33,7 +33,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide5",
-    image: "/images/hero/hero-trading.jpeg",
+    image: "/images/hero/tradingBg.jpeg",
     alt: "Cinqo Trading",
     badge: "CINQO TRADING",
     headline1: "Building Solutions.",
@@ -53,7 +53,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide4",
-    image: "/images/hero/hero-thc fitout.JPG",
+    image: "/images/hero/fitoutBg.jpg",
     imagePosition: "50% 40%",
     alt: "THC Fitout",
     badge: "THC FITOUT",
