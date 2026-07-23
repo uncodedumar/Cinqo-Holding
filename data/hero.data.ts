@@ -66,7 +66,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
 export const aboutHeroSlidesData: HeroSlideV2[] = [
   {
     id: "about1",
-    image: "/images/hero/hero-about.jfif",
+    image: "/images/hero/hero-about.jpg",
     alt: "About Cinqo Holding",
     headline1: "About Cinqo",
   },
@@ -75,7 +75,7 @@ export const aboutHeroSlidesData: HeroSlideV2[] = [
 export const careersHeroSlidesData: HeroSlideV2[] = [
   {
     id: "careers1",
-    image: "/images/hero/hero-carrers.jfif",
+    image: "/images/hero/hero-carrers.jpg",
     alt: "Careers at Cinqo Holdings",
     headline1: "Careers",
   },
@@ -111,7 +111,7 @@ export const newsSlugHeroSlidesData: HeroSlideV2[] = [
 export const projectsHeroSlidesData: HeroSlideV2[] = [
   {
     id: "contact1",
-    image: "/images/hero/hero-projects.jfif",
+    image: "/images/hero/hero-projects.jpg",
     alt: "Cinqo Projects",
     headline1: "Cinqo Projects",
   },
