@@ -5,31 +5,6 @@ import Image from "next/image";
 import { brandPortfolio } from "@/data/businesses.data";
 import type { BrandPortfolioItem, BrandPortfolioCategory } from "@/data/businesses.data";
 
-function ImageGrid() {
-  return (
-    <div className="grid grid-cols-2 gap-3 md:gap-4">
-      <div className="relative aspect-square rounded-[6px] overflow-hidden shadow-sm">
-        <Image
-          src="/biz.jpg"
-          alt="Business showcase 1"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 50vw, 30vw"
-        />
-      </div>
-      <div className="relative aspect-square rounded-[6px] overflow-hidden shadow-sm">
-        <Image
-          src="/biz.jpg"
-          alt="Business showcase 2"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 50vw, 30vw"
-        />
-      </div>
-    </div>
-  );
-}
-
 function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number }) {
   return (
     <motion.div
@@ -37,7 +12,7 @@ function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="mb-16 last:mb-0 pl-0 md:pl-4"
+      className="mb-14 last:mb-0 pl-0 md:pl-4"
     >
       {/* Brand Name & Connecting Horizontal Line */}
       <div className="flex items-center gap-4 mb-6 -mr-[clamp(20px,5vw,64px)]">
@@ -48,9 +23,10 @@ function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number })
       </div>
       
       {/* Brand Content Row */}
-      <div className="flex flex-col md:flex-row gap-6 lg:gap-10 items-stretch">
-        <div className="w-full md:w-[35%] lg:w-[32%] flex flex-col justify-between">
-          <div className="relative h-[90px] md:h-[100px] w-full max-w-[420px] mb-8 md:mb-0 pl-4">
+      <div className="flex flex-col md:flex-row gap-6 lg:gap-12 items-start md:items-center">
+        {/* Left Side: Brand Logo */}
+        <div className="w-full md:w-[30%] lg:w-[25%] flex-shrink-0">
+          <div className="relative h-[70px] md:h-[90px] w-full max-w-[240px]">
             <Image
               src={item.logo}
               alt={`${item.name} logo`}
@@ -58,19 +34,16 @@ function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number })
               className="object-contain object-left"
             />
           </div>
-          
-          <div className="mt-auto">
-            <h4 className="text-[15px] md:text-[16px] font-semibold text-[#111827] mb-2">
-              {item.title}
-            </h4>
-            <p className="text-[13px] md:text-[14px] leading-[1.6] text-[#444] max-w-[95%]">
-              {item.description}
-            </p>
-          </div>
         </div>
         
-        <div className="w-full md:w-[65%] lg:w-[68%]">
-          <ImageGrid />
+        {/* Right Side: Title & Description */}
+        <div className="w-full md:w-[70%] lg:w-[75%]">
+          <h4 className="text-[15px] md:text-[17px] font-semibold text-[#111827] mb-2">
+            {item.title}
+          </h4>
+          <p className="text-[13.5px] md:text-[15px] leading-[1.65] text-[#4b5563]">
+            {item.description}
+          </p>
         </div>
       </div>
     </motion.div>
