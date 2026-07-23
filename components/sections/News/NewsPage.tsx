@@ -69,8 +69,8 @@ export default function NewsSection() {
   const listItems = Array.from({ length: 6 }).map((_, i) => getNews(i + 3));
   const tallCard1 = getNews(9);
   const tallCard2 = getNews(10);
-  const bottomHorizCard = getNews(11);
-  const giantCard = getNews(12);
+  const tallCard3 = getNews(11);
+  const tallCard4 = getNews(12);
 
   // Helper to extract paragraph text from the content block
   const getParagraphText = (content: any[]) => {
@@ -192,86 +192,31 @@ export default function NewsSection() {
       {/* Full Width Section Divider */}
       <hr className="w-full border-zinc-300 my-10" />
 
-      {/* --- BOTTOM SECTION (50% / 50% Split) --- */}
-      <div className="flex flex-col lg:flex-row gap-x-12">
-        {/* Left Column (2 Tall Cards + 1 Horizontal Card) */}
-        <div className="w-full lg:w-1/2 flex flex-col">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-            {[tallCard1, tallCard2].map((card, idx) => (
-              <Link 
-                href={card.href} 
-                key={`tall-${idx}`} 
-                className="group block scroll-anim opacity-0 translate-y-10 transition-all duration-700 ease-out"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <div className="relative w-full aspect-[16/10] bg-zinc-800 rounded-sm overflow-hidden mb-4">
-                  {card.featuredImage && (
-                    <Image
-                      src={card.featuredImage}
-                      alt={card.title}
-                      fill
-                      className="parallax-img object-cover opacity-40 group-hover:opacity-60 transition-opacity"
-                    />
-                  )}
-                </div>
-                <h4 className="font-semibold text-base leading-snug mb-1.5 text-black group-hover:text-zinc-600 transition-colors pr-4">
-                  {card.title}
-                </h4>
-                <p className="text-xs text-zinc-500 font-medium">{card.date}</p>
-              </Link>
-            ))}
-          </div>
-
-          <hr className="border-zinc-300 mb-8" />
-
-          {/* 1 Horizontal Bottom Card */}
-          <Link 
-            href={bottomHorizCard.href} 
-            className="flex items-center gap-6 group scroll-anim opacity-0 translate-y-10 transition-all duration-700 ease-out"
-          >
-            <div className="relative w-40 h-28 bg-zinc-800 shrink-0 rounded-sm overflow-hidden">
-              {bottomHorizCard.featuredImage && (
-                <Image
-                  src={bottomHorizCard.featuredImage}
-                  alt={bottomHorizCard.title}
-                  fill
-                  className="parallax-img object-cover opacity-40 group-hover:opacity-60 transition-opacity"
-                />
-              )}
-            </div>
-            <div className="flex flex-col justify-center">
-              <p className="text-xs text-zinc-500 font-medium mb-1.5 uppercase tracking-wide">
-                {bottomHorizCard.date}
-              </p>
-              <h4 className="text-[17px] font-semibold text-black leading-snug group-hover:text-zinc-600 transition-colors">
-                {bottomHorizCard.title}
-              </h4>
-            </div>
-          </Link>
-        </div>
-
-        {/* Right Column (Giant Card) */}
-        <div className="w-full lg:w-1/2 mt-10 lg:mt-0 flex flex-col">
-          <Link 
-            href={giantCard.href} 
-            className="group block h-full flex flex-col scroll-anim opacity-0 translate-y-10 transition-all duration-700 ease-out"
+      {/* --- BOTTOM SECTION (4 Tall Cards) --- */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[tallCard1, tallCard2, tallCard3, tallCard4].map((card, idx) => (
+          <Link
+            href={card.href}
+            key={`tall-${idx}`}
+            className="group block scroll-anim opacity-0 translate-y-10 transition-all duration-700 ease-out"
+            style={{ transitionDelay: `${idx * 100}ms` }}
           >
             <div className="relative w-full aspect-[16/10] bg-zinc-800 rounded-sm overflow-hidden mb-4">
-              {giantCard.featuredImage && (
+              {card.featuredImage && (
                 <Image
-                  src={giantCard.featuredImage}
-                  alt={giantCard.title}
+                  src={card.featuredImage}
+                  alt={card.title}
                   fill
                   className="parallax-img object-cover opacity-40 group-hover:opacity-60 transition-opacity"
                 />
               )}
             </div>
-            <h3 className="text-lg md:text-xl font-bold leading-snug mb-1.5 text-black group-hover:text-zinc-600 transition-colors pr-8">
-              {giantCard.title}
-            </h3>
-            <p className="text-sm text-zinc-500 font-medium">{giantCard.date}</p>
+            <h4 className="font-semibold text-base leading-snug mb-1.5 text-black group-hover:text-zinc-600 transition-colors pr-4">
+              {card.title}
+            </h4>
+            <p className="text-xs text-zinc-500 font-medium">{card.date}</p>
           </Link>
-        </div>
+        ))}
       </div>
     </section>
   );

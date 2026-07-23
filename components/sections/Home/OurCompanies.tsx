@@ -15,10 +15,10 @@ export default function OurCompanies() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Stop observing once it has animated
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 } // Triggers when 10% of the section is visible
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -34,79 +34,84 @@ export default function OurCompanies() {
     <section 
       ref={sectionRef}
       id="companies"
-      // Added transition classes for the rise-up effect
-      className={`section bg-white -mt-4 transition-all duration-1000 ease-out transform ${
+      className={`section bg-slate-50/60 transition-all duration-1000 ease-out transform ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
       }`} 
     >
       <div className="container">
-        <h2 className="text-4xl font-bold">Our Companies</h2>
-        <p className="text-h3 mt-2 text-muted">
-          Five operating Companies. Governed by one unified structure.
-        </p>
-        <br />
-        
-        {/* Added stretch to ensure grid items match height */}
-        <div className="mt-2 grid gap-6 grid-cols-1 sm:grid-cols-3 items-stretch">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Our Companies</h2>
+          <p className="text-base sm:text-lg mt-3 text-gray-600">
+            Five operating Companies. Governed by one unified structure.
+          </p>
+        </div>
+
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           {companiesData.map((company) => (
             <Link
               href={company.href}
               key={company.id}
-              // Removed `aspect-square`. Added `h-full`, `min-h-[400px]`, and `flex` to dynamically adjust to content.
-              className="group relative isolate flex flex-col w-full min-h-[400px] overflow-hidden rounded-sm border border-white/10 transition-all duration-500 hover:border-coral-500/60 shadow-[0_10px_30px_-15px_rgba(10,26,36,0.4)] hover:shadow-[0_30px_60px_-18px_rgba(10,26,36,0.55)]"
+              className="group flex flex-col w-full bg-white rounded-2xl border border-gray-200/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden hover:-translate-y-1.5"
             >
-              {/* Background photo */}
-              <Image
-                src={company.bgImage}
-                alt=""
-                fill
-                sizes="(min-width: 640px) 33vw, 90vw"
-                className="absolute inset-0 object-cover scale-105 transition-all duration-500 group-hover:scale-100 group-hover:blur-[6px] -z-10"
-              />
+              {/* Top Photo Banner */}
+              <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-gray-100">
+                <Image
+                  src={company.bgImage}
+                  alt={company.name}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
-              {/* Legibility scrim */}
-              <div
-                className="absolute inset-0 opacity-90 transition-opacity duration-500 group-hover:opacity-100 -z-10"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(37, 37, 37, 0.55) 0%, rgba(0, 0, 0, 0.35) 35%, rgba(10,26,36,0.88) 100%)",
-                }}
-              />
+              {/* Overlapping White Logo Badge */}
+              <div className="relative z-10 -mt-10 mx-auto bg-white rounded-xl shadow-md border border-gray-100/90 px-4 py-2 flex items-center justify-center min-w-[120px] max-w-[150px] h-14 transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  width={130}
+                  height={55}
+                  className="max-h-10 max-w-[110px] w-auto object-contain"
+                />
+              </div>
 
-              {/* Inner Content Layout */}
-              <div className="relative z-10 flex h-full w-full flex-col justify-between p-6 transition-transform duration-500 group-hover:-translate-y-2">
-                
-                {/* Logo */}
-                <div className="flex justify-start mb-8">
-                  <Image
-                    src={company.logo}
-                    alt={company.name}
-                    width={240}
-                    height={120}
-                    className="h-24 w-auto object-contain sm:h-20"
-                  />
-                </div>
-
-                {/* Name + description */}
-                <div className="flex flex-col mt-auto">
-                  {/* Removed line-clamp-6 so all text displays perfectly */}
-                  <p className="text-[1rem] font-medium leading-relaxed text-white transition-all duration-500 group-hover:text-[1.15rem]">
+              {/* Card Content Body */}
+              <div className="flex-1 flex flex-col justify-between pt-4 pb-5 px-6 text-center">
+                <div>
+                  {/* Company Name */}
+                  <h3 className="text-lg font-bold text-gray-900 tracking-tight leading-snug mb-3 group-hover:text-coral-600 transition-colors">
                     {company.name}
-                  </p>
-                  {/* Removed line-clamp-6 here as well */}
-                  <p className="mt-4 text-[0.9rem] leading-relaxed text-white/90">
+                  </h3>
+
+                  {/* Company Description */}
+                  <p className="text-xs sm:text-[0.875rem] text-gray-600 leading-relaxed font-normal">
                     {company.description}
                   </p>
-                  
-                  {/* Arrow / View Button */}
-                  <span className="mt-6 inline-flex items-center gap-1 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-coral-500 opacity-0 -translate-x-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+                </div>
+
+                {/* Footer section with divider line */}
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-sm font-semibold text-gray-900 group-hover:text-coral-600 transition-colors">
                     View Company
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </span>
+                  <span className="text-coral-600 transition-transform duration-300 group-hover:translate-x-1">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12h14M13 6l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
                 </div>
-
               </div>
             </Link>
           ))}
@@ -114,4 +119,4 @@ export default function OurCompanies() {
       </div>
     </section>
   );
-}
+}
