@@ -132,12 +132,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="container relative z-20 border-t border-white/20 pt-4 pb-6 text-sm text-cream-50">
-          <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-between gap-2 text-center sm:text-left">
-            <span>© {new Date().getFullYear()} Cinqo Holding. All rights reserved.</span>
-            <span className="text-cream-50">Designed and developed by Bricklix (PVT) LTD</span>
-          </div>
-        </div>
+        <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-between gap-2 text-center sm:text-left">
+  <span>© {new Date().getFullYear()} Cinqo Holding. All rights reserved.</span>
+  <span className="text-cream-50">
+    Designed and developed by{" "}
+    <a 
+      href="https://www.bricklix.com" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="hover:underline text-cream-50"
+    >
+      Bricklix (PVT) LTD
+    </a>
+  </span>
+</div>
       </div>
     </footer>
   );
