@@ -53,7 +53,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide3",
-    image: "/images/hero/hero-thc fm.jpeg",
+    image: "/images/hero/FMBg.jpeg",
     alt: "THC Facilities Management",
     badge: "THC FACILITIES MANAGEMENT",
     headline1: "PRESERVING",
