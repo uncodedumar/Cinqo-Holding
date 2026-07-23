@@ -18,11 +18,11 @@ const images = [
 
   "/images/projects/project-1/projectStack1.jpg",
 
-  "/images/projects/project-1/projectStack2.jpg",
+  "/images/projects/project-1/projectStack2.jpeg",
 
-  "/images/projects/project-1/projectStack3.jpg",
+  "/images/projects/project-1/projectStack3.png",
 
-  "/images/projects/project-1/projectStack4.png",
+  "/images/projects/project-1/projectStack4.jpeg",
 
 ];
 
