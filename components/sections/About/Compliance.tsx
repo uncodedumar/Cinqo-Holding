@@ -137,7 +137,7 @@ export default function GovernanceGrid() {
               className="absolute inset-0 w-full h-[130%] -top-[15%]"
             >
               <Image
-                src="/images/about/YusafBinKanoo.jpg"
+                src="/images/about/kanoo.jpeg"
                 alt="Kanoo Tower Architecture"
                 fill
                 className="object-cover object-center"
