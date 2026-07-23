@@ -26,12 +26,13 @@ function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number })
       <div className="flex flex-col md:flex-row gap-6 lg:gap-12 items-start md:items-center">
         {/* Left Side: Brand Logo */}
         <div className="w-full md:w-[30%] lg:w-[25%] flex-shrink-0">
-          <div className="relative h-[70px] md:h-[90px] w-full max-w-[240px]">
+          <div className="relative h-[55px] md:h-[65px] w-full max-w-[200px] flex items-center">
             <Image
               src={item.logo}
               alt={`${item.name} logo`}
               fill
               className="object-contain object-left"
+              sizes="200px"
             />
           </div>
         </div>

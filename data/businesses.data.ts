@@ -773,7 +773,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
     items: [
       {
         name: "Dulux",
-        logo: "/workedwith/logo-1.png",
+        logo: "/workedwith/dulux.jpg",
         title: "Decorative Paints",
         description:
           "One of the world's leading decorative paint brands, offering interior and exterior coatings, Weathershield systems, primers and specialty finishes. Exclusive distributor in Bahrain.",
@@ -789,7 +789,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
       },
       {
         name: "Sikkens",
-        logo: "/workedwith/logo-3.png",
+        logo: "/workedwith/logo-8.png",
         title: "Wood Coatings",
         description:
           "Premium wood protection and finishing systems designed to enhance durability, appearance and long-term performance across interior and exterior applications.",
@@ -797,7 +797,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
       },
       {
         name: "Sivam",
-        logo: "/workedwith/logo-4.png",
+        logo: "/workedwith/logo-2.png",
         title: "Wood Coatings",
         description:
           "High-performance wood finishing systems including stains, primers, sealers and topcoats for furniture, joinery and interior wood applications.",
@@ -810,7 +810,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
     items: [
       {
         name: "Gyproc Saint-Gobain",
-        logo: "/workedwith/logo-5.png",
+        logo: "/workedwith/logo-4.png",
         title: "Interior & Exterior Construction Systems",
         description:
           "Global leader in gypsum-based partition, ceiling and cladding solutions, delivering efficient and sustainable construction systems. Exclusive distributor in Bahrain.",
@@ -831,7 +831,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
     items: [
       {
         name: "Sika",
-        logo: "/workedwith/logo-7.png",
+        logo: "/workedwith/logo-3.png",
         title: "Construction Chemicals",
         description:
           "Global leader in waterproofing, concrete admixtures, sealants, adhesives and structural solutions for construction and infrastructure projects.",
@@ -839,7 +839,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
       },
       {
         name: "BASF Master Builders Solutions",
-        logo: "/workedwith/logo-8.png",
+        logo: "/workedwith/logo-1.png",
         title: "Construction Chemicals",
         description:
           "Innovative construction chemical technologies including admixtures, repair mortars, grouts and protective systems engineered for long-term durability.",
@@ -847,7 +847,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
       },
       {
         name: "Apple Chemie",
-        logo: "/workedwith/logo-1.png",
+        logo: "/workedwith/logo-5.png",
         title: "Construction Chemicals",
         description:
           "Specialist manufacturer of tile adhesives, waterproofing systems, grouts and construction solutions developed for demanding Gulf environments.",
@@ -860,7 +860,7 @@ export const brandPortfolio: BrandPortfolioCategory[] = [
     items: [
       {
         name: "Flovac",
-        logo: "/workedwith/logo-2.png",
+        logo: "/workedwith/flavoc.png",
         title: "Vacuum Sewerage Systems",
         description:
           "Leading provider of vacuum sewerage technology for municipalities and large-scale developments, delivering efficient and sustainable wastewater solutions.",
