@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { PROJECTS } from "@/data/projects.data";
 
 export default function ProjectHighlights() {
@@ -63,9 +64,27 @@ export default function ProjectHighlights() {
         {/* Right Side: Content and Thumbnails */}
         <div className="flex flex-col justify-between h-full py-4 min-h-[450px]">
           <div>
-            <h2 className="text-4xl font-bold text-black tracking-tight mb-6">
-              Project Highlights
-            </h2>
+            <div className="flex items-start justify-between mb-6">
+              <h2 className="text-4xl font-bold text-black tracking-tight">
+                Project Highlights
+              </h2>
+              <Link href="/projects" className="group text-right flex-shrink-0">
+                <span className="block text-small text-muted tracking-widest font-semibold group-hover:text-ink transition-colors">
+                  View all
+                </span>
+                <svg
+                  className="w-10 h-3 mt-1 ml-auto text-muted group-hover:text-ink transition-colors"
+                  viewBox="0 0 40 12"
+                  fill="none"
+                >
+                  <path
+                    d="M0 6h33M33 1l5 5-5 5"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </Link>
+            </div>
             <p className="text-gray-600 text-base leading-relaxed max-w-md">
               {activeProject.description}
             </p>

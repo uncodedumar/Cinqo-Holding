@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { BusinessData } from "@/data/businesses.data";
 
@@ -61,34 +61,15 @@ export default function Capabilities({ capabilities }: { capabilities: BusinessD
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16 pb-10 pt-2">
-                        <div className="relative aspect-[3/2] w-full rounded-[4px] overflow-hidden bg-gray-100">
-                          {/* Smooth wipe animation on image load */}
-                          <motion.div
-                            initial={{ clipPath: "inset(0 100% 0 0)" }}
-                            animate={{ clipPath: "inset(0 0% 0 0)" }}
-                            transition={{ duration: 0.6, ease: "easeInOut" }}
-                            className="absolute inset-0"
-                          >
-                            <Image 
-                              src={item.image}
-                              alt={item.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </motion.div>
-                        </div>
-                        <div className="flex flex-col justify-end">
-                          {/* Larger text with rise up animation */}
-                          <motion.p 
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
-                            className="[font-family:var(--font-body)] text-[16px] md:text-[18px] text-ink/80 group-hover:text-white transition-colors duration-300 leading-relaxed font-normal"
-                          >
-                            {item.description}
-                          </motion.p>
-                        </div>
+                      <div className="pb-10 pt-2">
+                        <motion.p 
+                          initial={{ y: 20, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+                          className="[font-family:var(--font-body)] text-[16px] md:text-[18px] text-ink/80 group-hover:text-white transition-colors duration-300 leading-relaxed font-normal"
+                        >
+                          {item.description}
+                        </motion.p>
                       </div>
                     </motion.div>
                   )}
