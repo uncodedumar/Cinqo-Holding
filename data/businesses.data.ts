@@ -45,8 +45,9 @@ export const businesses: BusinessData[] = [
   {
     slug: "cinqo-holding-investments",
     name: "CINQO HOLDING INVESTMENTS",
-    heroImage: "/images/companies/c5.png",
+    heroImage: "/images/companies/c6.jpg",
     introBgImage: "/images/companies/ci5.png",
+    introBgVideo: "/images/companies/Intro-6.mp4",
     introHeading: "Governance.\nAlignment.\nLong-Term Value.",
     introText:
       "Cinqo Holding evaluates and manages investments aligned with the Group’s long-term vision, operational expertise and governance standards.The portfolio spans real estate, strategic partnerships, technology ventures and growth-oriented businesses where the Group can contribute not only capital, but also commercial discipline, operational insight and strategic direction.",
@@ -86,6 +87,7 @@ export const businesses: BusinessData[] = [
     name: "CINQO CONTRACTING",
     heroImage: "/images/companies/c1.jpg",
     introBgImage: "/images/companies/ci1.png",
+    introBgVideo: "/images/companies/Intro-1.mp4",
     introHeading: "BUILT ON\nCOMMITMENT",
     introText:
       "Cinqo Contracting is the Group's flagship construction company, delivering civil and building projects across Bahrain's residential, commercial and industrial sectors.\n\nFor nearly two decades, the company has delivered luxury villas, residential developments, commercial facilities, warehouses and industrial assets. Through execution focused planning, experienced project leadership and rigorous commercial control, Cinqo Contracting provides confidence from mobilisation through final handover.",
@@ -219,6 +221,7 @@ export const businesses: BusinessData[] = [
     name: "CINQO FLOORING & COATING TECHNOLOGIES",
     heroImage: "/images/companies/c5.png",
     introBgImage: "/images/companies/ci5.png",
+    introBgVideo: "/images/companies/Intro-5.mp4",
     introHeading: "ENGINEERED\nFOR\nENDURANCE",
     introText:
       "Cinqo Flooring & Coating Technologies delivers high-performance flooring, waterproofing and protective coating systems for environments where durability, hygiene and long-term performance are critical.\n\nThe company serves logistics facilities, healthcare and pharmaceutical environments, food production sites, car parks and industrial installations through technically engineered solutions and manufacturer-approved systems.",
@@ -378,6 +381,7 @@ export const businesses: BusinessData[] = [
     name: "CINQO TRADING",
     heroImage: "/images/companies/trading.jpeg",
     introBgImage: "/images/companies/ci4.png",
+    introBgVideo: "/images/companies/Intro-4.mp4",
     introHeading: "STRUCTURED\nDISTRIBUTION",
     introText:
       "Cinqo Trading serves as the commercial and technical bridge between leading international manufacturers and the GCC market.\nThrough exclusive and authorised partnerships with globally recognised brands, the division supplies paints, construction chemicals, building materials, acoustic systems and infrastructure technologies across Bahrain.\n\nBeyond distribution, Cinqo Trading supports specification development, technical evaluation, project execution and after-sales support, helping clients select and implement solutions with confidence.\n\nPrincipal relationships are governed by formal distribution agreements and managed with the commercial discipline, market knowledge and technical expertise expected by leading international manufacturers.",
@@ -481,6 +485,7 @@ export const businesses: BusinessData[] = [
     name: "THC FACILITIES MANAGEMENT",
     heroImage: "/images/companies/c2.jpeg",
     introBgImage: "/images/companies/ci2.png",
+    introBgVideo: "/images/companies/Intro-2.mp4",
     introHeading: "PRESERVING\nVALUE",
     introText:
       "THC Facilities Management helps clients protect, maintain and enhance the value of their assets through integrated facilities management services.\n\nOperating across residential, hospitality, commercial and industrial environments, the company combines technical expertise, preventative maintenance and responsive support to ensure operational continuity and long-term asset performance.",
@@ -615,6 +620,7 @@ export const businesses: BusinessData[] = [
     name: "THC FITOUT",
     heroImage: "/images/companies/c3.JPG",
     introBgImage: "/images/companies/ci3.png",
+    introBgVideo: "/images/companies/Intro-3.mp4",
     introHeading: "DELIVERED\nWITH\nPRECISION",
     introText:
       "THC Fit Out delivers high-quality interior environments where design intent, technical coordination and execution excellence come together.\n\nFrom corporate offices and retail environments to hospitality venues and premium residential interiors, every project is delivered with a focus on quality, programmed control and attention to detail.",

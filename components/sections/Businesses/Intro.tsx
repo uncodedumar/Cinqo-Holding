@@ -12,6 +12,7 @@ export default function Intro({ business }: { business: BusinessData }) {
     image: business.heroImage,
     alt: business.name,
     headline1: business.name,
+    ...(["cinqo-holding-investments", "cinqo-contracting"].includes(business.slug) && { imagePosition: "50% 25%" }),
   };
 
   // Animation configuration for the "rise up" effect
@@ -40,7 +41,7 @@ export default function Intro({ business }: { business: BusinessData }) {
               muted
               playsInline
               poster={business.introBgImage}
-              className="absolute inset-0 w-full h-full object-cover object-left brightness-100 saturate-[0.5] contrast-[0.85]"
+              className="absolute inset-0 w-full h-full object-cover brightness-100 saturate-[0.5] contrast-[0.95]"
             >
               <source src={business.introBgVideo} type="video/mp4" />
             </video>
@@ -49,7 +50,7 @@ export default function Intro({ business }: { business: BusinessData }) {
               src={business.introBgImage}
               alt={`${business.name} Background`}
               fill
-              className="object-cover object-left brightness-100 saturate-[0.5] contrast-[0.85]"
+              className="object-cover brightness-100 saturate-[0.5] contrast-[0.95]"
               sizes="100vw"
             />
           )}
