@@ -9,37 +9,37 @@ const governanceCards = [
     title: "ETHICAL CONDUCT\n& COMPLIANCE",
     description:
       "The Group operates within a defined regulatory and ethical framework. Compliance, transparency and responsible conduct guide all commercial and operational activities.",
-    image: "/images/about/compliance-bg.jpg", // Replace with your image paths
+    image: "/images/about/conImp.jpeg", // Replace with your image paths
   },
   {
     title: "DELEGATION &\nAPPROVALS",
     description:
       "Procurement, subcontracting, commercial decisions & financial commitments operate within documented approval frameworks designed to maintain accountability and alignment with Group policy.",
-    image: "/images/about/approvals-bg.jpg",
+    image: "/images/about/delegation.jpeg",
   },
   {
     title: "QUALITY\nASSURANCE",
     description:
       "Quality is supported through documented procedures, inspection protocols and performance monitoring systems. Materials, workmanship and service delivery are evaluated against established standards and project requirements.",
-    image: "/images/about/quality-bg.jpg",
+    image: "/images/about/QA.jpeg",
   },
   {
     title: "HEALTH, SAFETY &\nENVIRONMENT (HSE)",
     description:
       "Health, Safety and Environment principles are embedded throughout the organization. From planning and procurement to execution and handover, the Group remains committed to protecting people, property & the environment while delivering work to the highest professional standards.",
-    image: "/images/about/hse-bg.jpg",
+    image: "/images/about/health.jpeg",
   },
   {
     title: "CERTIFICATIONS",
     description:
       "Operating systems are aligned with recognised industry and OEM standards. Certifications reflect the discipline, technical capability and quality standards maintained across the Group.",
-    image: "/images/about/certifications-bg.jpg",
+    image: "/images/about/certification.jpeg",
   },
   {
     title: "RISK MANAGEMENT",
     description:
       "The Group applies structured risk assessment and mitigation processes across commercial and operational activities. Regular reviews support informed decision making, business continuity and the protection of stakeholder interest.",
-    image: "/images/about/risk-bg.jpg",
+    image: "/images/about/Risk.jpeg",
   },
 ];
 

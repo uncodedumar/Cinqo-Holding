@@ -53,8 +53,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide4",
-    image: "/images/hero/fitoutBg.jpg",
-    imagePosition: "50% 40%",
+    image: "/images/hero/FitoutNewBg.jpg",
     alt: "THC Fitout",
     badge: "THC FITOUT",
     headline1: "DELIVERED",
