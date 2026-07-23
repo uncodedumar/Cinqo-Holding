@@ -6,8 +6,8 @@ export const homeHeroSlidesData: HeroSlide[] = [
     image: "/images/hero/holdingBg.jpeg",
     alt: "Cinqo Holding",
     badge: "CINQO HOLDING",
-    headline1: "BUILT ON COMMITMENT.",
-    headline2: "DRIVEN BY PERFORMANCE.",
+    headline1: "ONE GROUP.",
+    headline2: "UNIFIED VISION.",
     subtitle:
       "Built on over two decades of operational excellence, Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, and facilities management, interior fit-out and strategic investments.",
   },
@@ -53,7 +53,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide4",
-    image: "/images/hero/FitoutNewBg.jpg",
+    image: "/images/hero/FitoutNewBg.JPG",
     alt: "THC Fitout",
     badge: "THC FITOUT",
     headline1: "DELIVERED",

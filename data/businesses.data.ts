@@ -45,7 +45,7 @@ export const businesses: BusinessData[] = [
   {
     slug: "cinqo-holding-investments",
     name: "CINQO HOLDING INVESTMENTS",
-    heroImage: "/images/companies/c5.png",
+    heroImage: "/images/hero/holdingBg.jpeg",
     introBgImage: "/images/companies/ci5.png",
     introHeading: "Governance.\nAlignment.\nLong-Term Value.",
     introText:
