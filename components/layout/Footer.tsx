@@ -77,14 +77,14 @@ export default function Footer() {
       <div className="container relative z-20 grid gap-10 pt-16 pb-10 md:pt-20 lg:pt-[120px] grid-cols-1 lg:grid-cols-[1fr_2fr]">
         <div className="flex flex-col gap-4">
           <Image
-            src="/images/logos/image.webp"
+            src="/images/logos/5.png"
             alt="Cinqo"
             width={150}
             height={52}
             className="object-contain"
           />
           <p className="text-base text-cream-50">
-            Built on commitment. Driven by performance.
+            One group, Unified vision.
           </p>
         </div>
 
