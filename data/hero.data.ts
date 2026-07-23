@@ -3,7 +3,7 @@ import type { HeroSlide, HeroSlideV2 } from "@/types";
 export const homeHeroSlidesData: HeroSlide[] = [
   {
     id: "slide1",
-    image: "/images/hero/newHoldingBg.png",
+    image: "/images/hero/holdingNewBg.png",
     alt: "Cinqo Holding",
     badge: "CINQO HOLDING",
     headline1: "ONE GROUP.",
@@ -13,7 +13,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide7",
-    image: "/images/hero/newHoldingBg.png",
+    image: "/images/hero/holdingNewBg.png",
     alt: "Cinqo Holding Investments",
     badge: "CINQO HOLDING INVESTMENTS",
     headline1: "GOVERNANCE.",
