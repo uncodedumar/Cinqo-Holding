@@ -5,7 +5,56 @@ import Image from "next/image";
 import { brandPortfolio } from "@/data/businesses.data";
 import type { BrandPortfolioItem, BrandPortfolioCategory } from "@/data/businesses.data";
 
+// Per-logo optical normalization rules so wide/small/tall brand logos appear perfectly balanced
+const logoStyles: Record<string, { container: string; imgClass?: string }> = {
+  "BASF Master Builders Solutions": {
+    container: "h-[75px] md:h-[90px] max-w-[280px] md:max-w-[320px]",
+    imgClass: "scale-125 md:scale-140 origin-left",
+  },
+  Sika: {
+    container: "h-[48px] md:h-[55px] max-w-[140px]",
+    imgClass: "scale-90 origin-left",
+  },
+  "Ecophon Saint-Gobain": {
+    container: "h-[50px] md:h-[58px] max-w-[200px]",
+    imgClass: "scale-95 origin-left",
+  },
+  Dulux: {
+    container: "h-[60px] md:h-[75px] max-w-[220px]",
+    imgClass: "scale-110 origin-left",
+  },
+  Flovac: {
+    container: "h-[60px] md:h-[75px] max-w-[220px]",
+    imgClass: "scale-110 origin-left",
+  },
+  "Gyproc Saint-Gobain": {
+    container: "h-[60px] md:h-[70px] max-w-[220px]",
+    imgClass: "scale-105 origin-left",
+  },
+  Sivam: {
+    container: "h-[60px] md:h-[70px] max-w-[220px]",
+    imgClass: "scale-105 origin-left",
+  },
+  Crafco: {
+    container: "h-[60px] md:h-[70px] max-w-[220px]",
+    imgClass: "scale-105 origin-left",
+  },
+  Sikkens: {
+    container: "h-[60px] md:h-[70px] max-w-[220px]",
+    imgClass: "scale-105 origin-left",
+  },
+  "Apple Chemie": {
+    container: "h-[60px] md:h-[70px] max-w-[220px]",
+    imgClass: "scale-105 origin-left",
+  },
+};
+
 function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number }) {
+  const customStyle = logoStyles[item.name] || {
+    container: "h-[60px] md:h-[70px] max-w-[220px]",
+    imgClass: "scale-100 origin-left",
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -25,14 +74,14 @@ function BrandCard({ item, index }: { item: BrandPortfolioItem; index: number })
       {/* Brand Content Row */}
       <div className="flex flex-col md:flex-row gap-6 lg:gap-12 items-start md:items-center">
         {/* Left Side: Brand Logo */}
-        <div className="w-full md:w-[30%] lg:w-[25%] flex-shrink-0">
-          <div className="relative h-[55px] md:h-[65px] w-full max-w-[200px] flex items-center">
+        <div className="w-full md:w-[30%] lg:w-[25%] flex-shrink-0 flex items-center min-h-[70px]">
+          <div className={`relative w-full ${customStyle.container} flex items-center`}>
             <Image
               src={item.logo}
               alt={`${item.name} logo`}
               fill
-              className="object-contain object-left"
-              sizes="200px"
+              className={`object-contain object-left ${customStyle.imgClass || ""}`}
+              sizes="320px"
             />
           </div>
         </div>
