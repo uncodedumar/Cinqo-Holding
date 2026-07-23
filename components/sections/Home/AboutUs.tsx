@@ -142,6 +142,7 @@ export default function AboutUs() {
             ))}
           </p>
         </div>
+        <br />
         {/* Mission Content Block styled exactly like About Us */}
         <div className="text-center text-[32px] leading-[1.6] font-light text-[#737373] mb-20 w-full tracking-tight font-['Inter',_sans-serif]">
           <h3 className="text-black font-semibold text-[24px] mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
