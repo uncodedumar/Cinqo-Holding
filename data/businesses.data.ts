@@ -465,22 +465,8 @@ export const businesses: BusinessData[] = [
         image: "/images/sectors/sector-1.webp",
       },
     ],
-    showcaseText: "Projects Highlights",
-    showcaseProjects: [
-      {
-        title: "BAHRAIN INFRASTRUCTURE SUPPLY",
-        mainImage: "/images/companies/h1.jpg",
-        hoverThumbnails: [
-          "/images/sectors/pip-1.jpg",
-          "/images/sectors/pip-2.jpg",
-          "/images/sectors/pip-3.jpg",
-          "/images/sectors/pip-4.jpg",
-          "/images/sectors/pip-5.jpg",
-        ],
-        hoverDescription:
-          "Supplied advanced construction chemicals and acoustic systems for a major national infrastructure development.",
-      },
-    ],
+    showcaseText: "",
+    showcaseProjects: [],
   },
   {
     slug: "thc-facilities-management",
