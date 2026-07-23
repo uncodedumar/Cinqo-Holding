@@ -16,28 +16,40 @@ const TOTAL_FRAMES = 277;
 const DESKTOP_DIR = "/videos/principle/frames-web";
 const MOBILE_DIR = "/videos/principle/frames-web-sm";
 const MOBILE_BREAKPOINT = 768;
-const PIN_VH_MULTIPLIER = 3.2; // total pinned scroll runway, in viewport heights
+const PIN_VH_MULTIPLIER = 6.4; // total pinned scroll runway, in viewport heights
 
 const frameUrl = (dir: string, n: number) => `${dir}/frame-${String(n).padStart(4, "0")}.webp`;
 
 const TEXT_BLOCKS = [
   {
-    eyebrow: "The Principle",
-    heading: "Clarity Before Commitment",
-    subheading: "Accountability at every level.",
-    body: "Every engagement begins with a clear understanding of scope, objectives and responsibilities. Strong outcomes are built on strong foundations.",
+    eyebrow: "GUIDING PRINCIPLES",
+    heading: "RELATIONSHIPS BUILT ON TRUST",
+    body: "Long-term relationships are built through consistent delivery, transparent communication and accountability.",
   },
   {
-    eyebrow: "The Principle",
-    heading: "Discipline Behind Every Decision",
-    subheading: "Governance that holds at every scale.",
-    body: "From first estimate to final handover, every commitment is tracked, tested and honoured — so trust is earned once and kept indefinitely.",
+    eyebrow: "GUIDING PRINCIPLES",
+    heading: "CONTINUOUS IMPROVEMENT",
+    body: "Investment in people, technology and systems supports performance and sustainable growth.",
   },
   {
-    eyebrow: "The Principle",
-    heading: "Built to Outlast the Moment",
-    subheading: "Long-term value over short-term wins.",
-    body: "We measure success not at delivery, but in the years a project continues to perform — for the people who use it and the partners who return to us.",
+    eyebrow: "GUIDING PRINCIPLES",
+    heading: "EXECUTING WITH PRECISION",
+    body: "Leadership remains actively involved across operations, ensuring decisions are timely, informed and aligned with Group objectives.",
+  },
+  {
+    eyebrow: "GUIDING PRINCIPLES",
+    heading: "CLARITY BEFORE COMMITMENT",
+    body: "Every engagement begins with a clear understanding of scope, objectives and responsibilities.",
+  },
+  {
+    eyebrow: "GUIDING PRINCIPLES",
+    heading: "DISCIPLINED GROWTH",
+    body: "Expansion is guided by capability, operational readiness and long-term sustainability.",
+  },
+  {
+    eyebrow: "GUIDING PRINCIPLES",
+    heading: "PRINCIPAL-LED PARTNERSHIPS",
+    body: "Relationships with leading international manufacturers are built on performance, market knowledge and commercial integrity.",
   },
 ];
 
@@ -173,9 +185,9 @@ export default function ThePrinciple() {
           requestFrame(Math.round(exactFrame));
 
           const segmentLength = TOTAL_FRAMES / TEXT_BLOCKS.length;
-          const FADE_IN_DUR = 15; // Frame span for fade in
-          const FADE_OUT_DUR = 15; // Frame span for fade out
-          const GAP = 2; // Guaranteed empty frames between blocks to absolutely prevent overlaps
+          const FADE_IN_DUR = 10; // Frame span for fade in
+          const FADE_OUT_DUR = 10; // Frame span for fade out
+          const GAP = 1; // Guaranteed empty frames between blocks to absolutely prevent overlaps
 
           textBlockRefs.current.forEach((el, i) => {
             if (!el) return;
@@ -311,7 +323,6 @@ export default function ThePrinciple() {
                     lineHeight: "1.3",
                   }}
                 >
-                  {block.subheading}
                 </h3>
 
                 <p

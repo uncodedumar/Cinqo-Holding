@@ -20,7 +20,7 @@ export default function SubscribeNow() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative overflow-hidden bg-white mx-[50px] mt-[10px] mb-[150px] rounded-sm"
       >
-        <div className="bg-white bg-[url('/images/subscribe/bg.jpg')] bg-center bg-auto bg-no-repeat overflow-hidden text-white text-center rounded-[5px] px-4 py-24 flex flex-col items-center gap-6">
+        <div className="bg-white bg-[url('/images/subscribe/subscribeNow.jpeg')] bg-center bg-auto bg-no-repeat overflow-hidden text-white text-center rounded-[5px] px-4 py-24 flex flex-col items-center gap-6">
           <h2>Get Latest News Updates</h2>
           <p>
             Stay informed wherever you are. Join our community of readers <br />

@@ -17,7 +17,6 @@ export default function Home() {
       <Credibility />
       <OurCompanies />
       <ThePrinciple />
-      <GuidingPrinciples />
       <ProjectHighlights />
       <LogosLoop />
       <NewsSection />
