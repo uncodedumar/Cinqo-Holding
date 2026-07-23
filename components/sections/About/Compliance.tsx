@@ -53,8 +53,8 @@ export default function GovernanceGrid() {
   });
 
   // Subtle Parallax for Cards & Stronger Parallax for the Tower Image
-  const cardParallaxY = useTransform(scrollYProgress, [0, 1], ["-5%", "50%"]);
-  const towerParallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const cardParallaxY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const towerParallaxY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
     <section
@@ -93,7 +93,7 @@ export default function GovernanceGrid() {
                 {/* Background Image with Parallax & Hover Scale */}
                 <motion.div 
                   style={{ y: cardParallaxY }}
-                  className="absolute inset-0 -top-[10%] h-[120%] z-0"
+                  className="absolute inset-0 -top-[15%] h-[130%] z-0"
                 >
                   <Image
                     src={card.image}
@@ -134,7 +134,7 @@ export default function GovernanceGrid() {
             {/* Parallax Container for Tower - Sized larger to allow vertical panning without clipping */}
             <motion.div 
               style={{ y: towerParallaxY }} 
-              className="absolute inset-0 w-full h-[124%] -top-[12%]"
+              className="absolute inset-0 w-full h-[130%] -top-[15%]"
             >
               <Image
                 src="/images/about/YusafBinKanoo.jpg"
