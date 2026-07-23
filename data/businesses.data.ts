@@ -27,6 +27,7 @@ export interface BusinessData {
   slug: string;
   name: string;
   heroImage: string;
+  heroImagePosition?: string;
   introBgImage: string;
   /** Optional looping background video for the intro section (falls back to introBgImage when omitted). */
   introBgVideo?: string;
@@ -85,7 +86,8 @@ export const businesses: BusinessData[] = [
   {
     slug: "cinqo-contracting",
     name: "CINQO CONTRACTING",
-    heroImage: "/images/companies/c1.jpg",
+    heroImage: "/images/companies/contractingBg.jpeg",
+    heroImagePosition: "50% 85%",
     introBgImage: "/images/companies/ci1.png",
     introBgVideo: "/images/companies/Intro-1.mp4",
     introHeading: "BUILT ON\nCOMMITMENT",
