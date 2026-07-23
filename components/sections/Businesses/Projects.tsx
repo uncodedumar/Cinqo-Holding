@@ -174,7 +174,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
               {loopedThumbnails.map((thumb, tIdx) => (
                 <div
                   key={`${activeProject.title}-${tIdx}`}
-                  className="w-32 md:w-44 aspect-[4/3] relative shrink-0 pr-3"
+                  className="w-44 md:w-64 lg:w-72 aspect-[4/3] relative shrink-0 pr-4"
                 >
                   <Image
                     src={thumb}
