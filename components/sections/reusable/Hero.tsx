@@ -164,7 +164,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
             </span>
           )}
           <h1
-            className={`animate-slide-item text-white leading-[1.15] tracking-tight ${
+            className={`animate-slide-item text-white leading-[1.15] tracking-tight whitespace-pre-line ${
               isCompact
                 ? "text-2xl md:text-4xl lg:text-[2.75rem] font-bold uppercase max-w-4xl"
                 : "text-4xl md:text-5xl lg:text-[4rem] font-semibold"
