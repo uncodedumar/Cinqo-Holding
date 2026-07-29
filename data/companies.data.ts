@@ -18,7 +18,7 @@ export const companiesData: CompanyCard[] = [
     id: "cinqo-contracting",
     name: "Cinqo Contracting",
     logo: "/images/logos/6.png",
-    bgImage: "/images/hero/hero-contracting.jpg",
+    bgImage: "/images/hero/contracting-hero.png",
     description:
       "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.",
     href: "/businesses/cinqo-contracting",
