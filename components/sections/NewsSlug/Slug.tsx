@@ -50,7 +50,11 @@ export default function NewsSlug({ currentNews, sidebarNews }: NewsSlugProps) {
             <span className="text-small text-muted">{currentNews.date}</span>
           </div>
 
-          <div className="max-w-none space-y-6 text-body leading-relaxed text-ink">
+          <p className="text-2xl text-ink mb-4 font-medium">
+            {currentNews.excerpt}
+          </p>
+
+          <div className="max-w-none space-y-3 text-body leading-relaxed text-ink">
             {currentNews.content.map((block, idx) => {
               if (block.type === "heading") {
                 return (
