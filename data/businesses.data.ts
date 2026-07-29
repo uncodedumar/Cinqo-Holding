@@ -222,7 +222,7 @@ export const businesses: BusinessData[] = [
   {
     slug: "cinqo-flooring-coating-technologies",
     name: "CINQO FLOORING & COATING TECHNOLOGIES",
-    heroImage: "/images/companies/c5.png",
+    heroImage: "/images/hero/coatingnewBg.png",
     introBgImage: "/images/companies/ci5.png",
     introBgVideo: "/images/companies/Intro-5.mp4",
     introHeading: "ENGINEERED\nFOR\nENDURANCE",
