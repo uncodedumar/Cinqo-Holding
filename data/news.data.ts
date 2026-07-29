@@ -13,7 +13,7 @@ export const newsData: NewsItem[] = [
     tag: "News",
     title: "Standard News Article (Will be skipped)",
     date: "May 15, 2026",
-    featuredImage: "/images/news/news-1.jpg",
+    featuredImage: "/images/news/news-6.webp",
     href: "/news/standard-news",
     excerpt: "A brief look into our baseline operations and standard updates.",
     content: [
@@ -29,7 +29,7 @@ export const newsData: NewsItem[] = [
     tag: "Latest",
     title: "Cinqo Holding Initiates Strategic Group Restructuring",
     date: "May 19, 2026",
-    featuredImage: "/images/news/news-1.jpg",
+    featuredImage: "/images/news/news-5.webp",
     href: "/news/strategic-group-restructuring",
     excerpt: "Cinqo Holding outlines a comprehensive internal restructuring plan to accelerate long-term operational velocity.",
     content: [
@@ -62,7 +62,7 @@ export const newsData: NewsItem[] = [
     tag: "Top",
     title: "Major Milestone: Cinqo Reaches Global Markets",
     date: "May 20, 2026",
-    featuredImage: "/images/news/news-1.jpg",
+    featuredImage: "/images/news/news-4.webp",
     href: "/news/global-markets",
     excerpt: "Cinqo successfully scales operations across European and APAC markets, onboarding tier-one enterprise accounts.",
     content: [
@@ -85,7 +85,7 @@ export const newsData: NewsItem[] = [
     tag: "Latest",
     title: "Q2 Earnings Report Released to Stakeholders",
     date: "May 21, 2026",
-    featuredImage: "/images/news/news-1.jpg",
+    featuredImage: "/images/news/news-3.webp",
     href: "/news/q2-earnings",
     excerpt: "Financial metrics outpace original projections with a 34% year-over-year revenue climb for Q2.",
     content: [
@@ -104,7 +104,7 @@ export const newsData: NewsItem[] = [
     tag: "Top",
     title: "Cinqo Acquires Leading Tech Startup",
     date: "May 22, 2026",
-    featuredImage: "/images/news/news-1.jpg",
+    featuredImage: "/images/news/news-2.webp",
     href: "/news/startup-acquisition",
     excerpt: "The acquisition expands Cinqo's technical capabilities, integrating next-generation data architecture.",
     content: [
@@ -126,7 +126,7 @@ export const newsData: NewsItem[] = [
     tag: "Latest",
     title: "New AI Integration Announced Across Platforms",
     date: "May 23, 2026",
-    featuredImage: "/images/news/news-1.jpg",
+    featuredImage: "/images/news/news-1.webp",
     href: "/news/ai-integration",
     excerpt: "Intelligent tooling updates roll out immediately, introducing predictive workflows for all premium tiers.",
     content: [
@@ -142,7 +142,7 @@ export const newsData: NewsItem[] = [
     tag: "Top",
     title: "Cinqo Trading Signs Multi-Year Supply Agreement",
     date: "May 24, 2026",
-    featuredImage: "/images/projects/3.jpg",
+    featuredImage: "/images/projects/news-7.webp",
     href: "/news/trading-supply-agreement",
     excerpt: "A new multi-year supply agreement cements Cinqo Trading's position as a preferred regional distribution partner.",
     content: [
