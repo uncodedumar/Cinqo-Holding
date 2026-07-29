@@ -325,9 +325,7 @@ export default function ContactForm() {
           <div className="mb-[18px]">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
               <h3 className="text-xs text-gray-700">Enquiries routed by purpose</h3>
-              <p className="text-xs text-gray-500 sm:max-w-[50%] sm:text-right">
-                Select the route that most closely matches your enquiry <br />and the office will direct it to the relevant division.
-              </p>
+              
             </div>
 
             {/* Selection Grid */}
