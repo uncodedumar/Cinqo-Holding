@@ -38,13 +38,13 @@ const timelineData = [
 
 const investmentsData = [
   {
-    logoAlt: "Procural",
-    logoSrc: "/images/investments/procural.png",
+    logoAlt: "AROOJ development company",
+    logoSrc: "/images/investments/arooj.png",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    logoAlt: "AROOJ development company",
-    logoSrc: "/images/investments/arooj.png",
+    logoAlt: "Procural",
+    logoSrc: "/images/investments/procural.png",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
@@ -55,11 +55,6 @@ const investmentsData = [
   {
     logoAlt: "Al Rashid Health Center",
     logoSrc: "/images/investments/al-rashid.png",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    logoAlt: "ETSMA",
-    logoSrc: "/images/investments/etsma.png",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
 ];
