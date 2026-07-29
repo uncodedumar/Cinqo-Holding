@@ -7,13 +7,8 @@ import Link from "next/link";
 import { newsData } from "@/data/news.data";
 
 export default function NewsSection() {
-  // 1. Logic: Exclude the 'standard-news' placeholder and the 13 most recent items
-  // (already shown in the featured grid above), then reverse the remainder to chronological.
-  const withoutSkipped = newsData.filter((item) => item.id !== "news-6");
-  const offset = 13;
-  const processedNews = withoutSkipped
-    .slice(0, Math.max(0, withoutSkipped.length - offset))
-    .reverse();
+  // 1. Take the 6 most recent news items (newest first).
+  const processedNews = [...newsData].reverse().slice(0, 6);
 
   // 2. State for loading more items (starts at 12)
   const [visibleCount, setVisibleCount] = useState(12);

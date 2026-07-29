@@ -273,121 +273,180 @@ export const newsData: NewsItem[] = [
     id: "news-14",
     slug: "leadership-team-strengthened",
     tag: "News",
-    title: "Cinqo Holding Strengthens Leadership Team",
+    title: "Hawar Hotel Development – Phase 1, Phase 2 & Enhancement Works",
     date: "May 31, 2026",
-    featuredImage: "/images/projects/1.jpg",
+    featuredImage: "/images/news/news-7.webp",
     href: "/news/leadership-team-strengthened",
-    excerpt: "Cinqo Holding welcomes several senior executives to accelerate strategic execution across its divisions.",
+    excerpt: "Cinqo Supports the Successful Delivery of Hawar Hotel Development Through Integrated Finishing Solutions",
     content: [
       {
         type: "paragraph",
-        text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos. The new appointments span finance, operations, and technology functions.",
-      }
+        text: "Cinqo Flooring & Coating Technologies successfully delivered a comprehensive range of floor coating, decorative coating, concrete protective coating, waterproofing and architectural finishing works for the prestigious Hawar Hotel Development by Mantis at Hawar Island, in collaboration with Nass Contracting.",
+      },
+      {
+        type: "paragraph",
+        text: "Spanning Phase 1, Phase 2 and Enhancement Works, Cinqo executed a multi-disciplinary finishing package across a combined area of approximately 100,000 m\u00b2, contributing to the successful delivery of this unique hospitality destination. The scope of works included concrete protective coating systems, epoxy flooring solutions, internal and external wall and ceiling painting, architectural floor and wall finishes, swimming pool waterproofing and tiling works and helipad protective coating applications.",
+      },
+      {
+        type: "paragraph",
+        text: "The successful execution of this extensive package highlights Cinqo's expertise in managing complex and diverse finishing requirements for high-profile hospitality developments. Through the application of advanced material technologies, technical expertise and meticulous workmanship, Cinqo delivered durable, high-performance solutions engineered to meet demanding operational requirements while achieving the highest standards of quality, functionality and aesthetics.",
+      },
+      {
+        type: "paragraph",
+        text: "As a key contributor to the development of Hawar Island's hospitality landscape, Cinqo continues to strengthen its position as a trusted specialist in resin flooring systems, protective coatings, waterproofing solutions and architectural finishes. This landmark project reflects our commitment to delivering integrated solutions that support the successful completion of prestigious developments throughout the Kingdom of Bahrain.",
+      },
     ],
   },
   {
     id: "news-15",
     slug: "record-group-performance",
     tag: "Top",
-    title: "Annual Report Highlights Record Group Performance",
+    title: "Kooheji Projects",
     date: "June 1, 2026",
-    featuredImage: "/images/projects/2.jpg",
+    featuredImage: "/images/news/news-6.webp",
     href: "/news/record-group-performance",
-    excerpt: "Cinqo Holding's latest annual report highlights record revenue and profitability across every business unit.",
+    excerpt: "Cinqo Strengthens Portfolio Through Flooring & Finishing Works Across Kooheji Developments",
     content: [
       {
         type: "paragraph",
-        text: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Full financial statements are available in the annual report download.",
-        links: [
-          { text: "annual report download", url: "/downloads/reports/annual-2026.pdf" }
-        ]
-      }
+        text: "Cinqo Flooring & Coating Technologies has executed specialized flooring, decorative coating and architectural finishing works across a portfolio of developments by Kooheji Projects, delivering high-quality solutions for residential, commercial and mixed-use projects throughout the Kingdom of Bahrain.",
+      },
+      {
+        type: "paragraph",
+        text: "With a combined project area of approximately 620,000 m\u00b2, these developments represent a significant contribution to Bahrain\u2019s evolving built environment. Over the years, Cinqo\u2019s scope of works has included car park epoxy and polyurethane floor coating systems, decorative painting, architectural floor finishes and other specialized finishing applications, supporting Kooheji Projects in achieving exceptional standards of quality, durability and performance across their developments.",
+      },
+      {
+        type: "paragraph",
+        text: "Completed projects include:",
+      },
+      {
+        type: "paragraph",
+        text: "Onyx Rotana & Residences (Bahrain Bay) \u2022 Onyx Skyview (Bahrain Bay) \u2022 Onyx Bahrain Bay \u2022 Fontana Infinity \u2022 Fontana Towers \u2022 Fontana Gardens \u2022 Seef Avenue \u2022 Seef Avenue II \u2022 Seef Boulevard \u2022 Catamaran (Seef District) \u2022 Marassi Views \u2022 Canal View \u2022 Juffair Square \u2022 Springfield Suites",
+      },
+      {
+        type: "paragraph",
+        text: "These projects represent a selection of developments where Cinqo has provided specialized flooring and finishing solutions for Kooheji Projects. Our continued involvement demonstrates our capability to deliver reliable, high-performance systems tailored to the technical requirements of diverse and demanding construction environments, while maintaining a strong commitment to quality, precision and workmanship.",
+      },
     ],
   },
   {
     id: "news-16",
     slug: "trading-distribution-hub",
     tag: "Latest",
-    title: "Cinqo Trading Opens New Regional Distribution Hub",
+    title: "Tivoli & Avani Hotel and Residences",
     date: "June 2, 2026",
-    featuredImage: "/images/projects/3.jpg",
+    featuredImage: "/images/news/news-5.webp",
     href: "/news/trading-distribution-hub",
-    excerpt: "A newly opened distribution hub sharpens delivery times and expands warehousing capacity for Cinqo Trading.",
+    excerpt: "Cinqo Executes High-Performance Car Park Epoxy and Polyurethane Floor Coating and Architectural Floor and Wall Finishes Package at Tivoli & Avani Hotel and Residences",
     content: [
       {
         type: "paragraph",
-        text: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. The facility triples existing cold-chain and dry-goods storage capacity.",
-      }
+        text: "Cinqo Flooring & Coating Technologies is currently executing car park floor coating and architectural floor finishes works for the Tivoli & Avani Hotel and Residences development in collaboration with Cebarco Bahrain.",
+      },
+      {
+        type: "paragraph",
+        text: "Located in Zallaq, Bahrain, this premium hospitality development includes the installation of high-performance epoxy and polyurethane flooring systems across approximately 35,000 m\u00b2 of car park, service rooms areas, together with architectural floor finishes. The traffic coating system incorporates a seamless 1.2 mm thick polyurethane membrane engineered to provide exceptional abrasion resistance, waterproofing performance, crack-bridging flexibility, enhanced slip resistance and long-term durability under demanding vehicular traffic conditions.",
+      },
+      {
+        type: "paragraph",
+        text: "As work progresses, Cinqo continues to apply its expertise in specialized flooring solutions, maintaining a strong focus on quality, precision and workmanship to support the successful delivery of this prestigious development in Bahrain's hospitality sector.",
+      },
     ],
   },
   {
     id: "news-17",
     slug: "coatings-iso-certification",
     tag: "News",
-    title: "Cinqo Coatings Achieves ISO Certification",
+    title: "Future Generation Reserve Phase 2",
     date: "June 3, 2026",
-    featuredImage: "/images/projects/4.jpg",
+    featuredImage: "/images/news/news-4.webp",
     href: "/news/coatings-iso-certification",
-    excerpt: "Cinqo Coatings & Coating Technologies earns a key international quality management certification.",
+    excerpt: "Cinqo Progresses Specialized Flooring & Decorative Painting Package for Future Generation Reserve Phase 2",
     content: [
       {
         type: "paragraph",
-        text: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur. The certification reinforces our commitment to consistent, auditable quality standards.",
-      }
+        text: "Cinqo Flooring & Coating Technologies is pleased to be contributing to the Future Generation Reserve Phase 2 development in collaboration with Cebarco Bahrain, delivering specialized flooring and finishing solutions for this significant project in the Kingdom of Bahrain.",
+      },
+      {
+        type: "paragraph",
+        text: "The scope of works includes epoxy, polyurethane floor coating, anti-carbonation coating and internal and external wall and ceiling decorative coating works covering approximately 50,000 m\u00b2. These finishing solutions are designed to enhance durability, functionality and aesthetics while meeting the quality requirements of a large-scale development.",
+      },
+      {
+        type: "paragraph",
+        text: "Through our expertise in flooring, coating and finishing applications, Cinqo continues to deliver reliable solutions for complex construction projects, combining technical knowledge, quality workmanship and attention to detail throughout the execution of the works.",
+      },
     ],
   },
   {
     id: "news-18",
     slug: "community-outreach-initiative",
     tag: "Latest",
-    title: "Group Hosts Community Outreach Initiative",
+    title: "Bahrain Marina Development Phase 1",
     date: "June 4, 2026",
-    featuredImage: "/images/hero/h1.jpg",
+    featuredImage: "/images/news/news-3.webp",
     href: "/news/community-outreach-initiative",
-    excerpt: "Cinqo Holding employees volunteer across a series of community outreach events throughout the region.",
+    excerpt: "Bahrain Marina Development Phase 1 – Car Park Epoxy & Polyurethane Flooring Systems and Architectural Floor & Wall Finishes",
     content: [
       {
         type: "paragraph",
-        text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti. Over 300 employees participated across five cities.",
+        text: "Cinqo Flooring & Coating Technologies is currently executing specialized floor finishing works for the Bahrain Marina Development Phase 1 in collaboration with Nass Contracting.",
       },
       {
-        type: "image",
-        src: "/images/companies/h1.jpg",
-        alt: "Cinqo Holding community outreach event",
-        caption: "Volunteers from across the group taking part in the outreach initiative."
-      }
+        type: "paragraph",
+        text: "Under this project, Cinqo is delivering a comprehensive flooring scope comprising high-performance epoxy and polyurethane car park coating systems covering approximately 55,000 m\u00b2, along with approximately 100,000 m\u00b2 of architectural floor finishes works. These solutions are designed to provide exceptional durability, safety and long-term performance while supporting the functional and aesthetic requirements of this landmark waterfront development.",
+      },
+      {
+        type: "paragraph",
+        text: "This project demonstrates Cinqo\u2019s capability in managing large-scale flooring and finishing packages through technical expertise, precise execution and effective project coordination. Our continued involvement in major developments across the Kingdom of Bahrain reflects our commitment to delivering reliable solutions that meet demanding performance and quality requirements.",
+      },
     ],
   },
   {
     id: "news-19",
     slug: "digital-transformation-program",
     tag: "Top",
-    title: "Cinqo Holding Expands Digital Transformation Program",
+    title: "Marassi Galleria",
     date: "June 5, 2026",
-    featuredImage: "/images/hero/h2.jpg",
+    featuredImage: "/images/news/news-2.webp",
     href: "/news/digital-transformation-program",
-    excerpt: "A group-wide digital transformation program accelerates automation across finance, operations, and logistics.",
+    excerpt: "Marassi Galleria – Specialized Flooring Solutions for Bahrain's Premier Retail Destination",
     content: [
       {
         type: "paragraph",
-        text: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit. The program is expected to complete its first phase by year-end.",
-      }
+        text: "Cinqo Flooring & Coating Technologies is proud to have contributed to Marassi Galleria, one of Bahrain's premier retail and lifestyle destinations developed by Eagle Hills, through the successful completion of the high-performance car park epoxy and polyurethane floor coating works.",
+      },
+      {
+        type: "paragraph",
+        text: "Working under the Cebarco\u2013Shapoorji Joint Venture, our scope included the installation of a seamless, high-performance epoxy and polyurethane flooring system covering 270,000m\u00b2 making it the largest project in the Kingdom of Bahrain. Engineered for demanding car park environments, the system provides excellent durability, abrasion resistance, enhanced safety and ease of maintenance while delivering a clean, professional finish.",
+      },
+      {
+        type: "paragraph",
+        text: "This project reflects Cinqo's capability to deliver specialized flooring and coating solutions for high-profile commercial developments, reinforcing our commitment to quality, performance and long-term value.",
+      },
     ],
   },
   {
     id: "news-20",
     slug: "fitout-flagship-showroom",
     tag: "News",
-    title: "THC Fitout Unveils Flagship Showroom",
+    title: "International Airport – Airport Modernization Program",
     date: "June 6, 2026",
-    featuredImage: "/images/hero/h3.png",
+    featuredImage: "/images/news/news-1.webp",
     href: "/news/fitout-flagship-showroom",
-    excerpt: "THC Fitout opens a new flagship showroom, giving clients a hands-on look at premium interior finishes.",
+    excerpt: "Cinqo Completes 175,000 m² High-Performance Car Park Epoxy Flooring Package for Bahrain International Airport",
     content: [
       {
         type: "paragraph",
-        text: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. The showroom features live material samples and full-scale finish mockups.",
-      }
+        text: "As part of Cinqo Flooring & Coating Technologies' portfolio of landmark infrastructure projects in the Kingdom of Bahrain, we successfully completed the car park epoxy floor coating works for the Bahrain International Airport \u2013 Airport Modernization Program. The project was delivered for the Ministry of Transportation and Telecommunications / Bahrain Airport Company, in collaboration with the Arabtec\u2013TAV Joint Venture as the main contractor.",
+      },
+      {
+        type: "paragraph",
+        text: "The scope of works included the installation of a high-performance seamless epoxy flooring system covering approximately 175,000 m\u00b2 of car park areas. Engineered to provide a robust, abrasion-resistant surface capable of withstanding intensive vehicular movement within a demanding operational environment. Designed for long-term durability, the flooring solution delivers enhanced safety, improved maintenance efficiency and consistent performance while maintaining a high-quality aesthetic finish.",
+      },
+      {
+        type: "paragraph",
+        text: "Delivered as part of one of Bahrain's most significant aviation infrastructure developments, this project reflects Cinqo's expertise in executing large-scale flooring solutions for major public infrastructure developments. It highlights our ability to manage complex flooring requirements with technical precision, advanced application methods and a strong commitment to quality, performance and project excellence.",
+      },
     ],
   },
 ];

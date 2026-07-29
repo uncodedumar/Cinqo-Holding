@@ -6,10 +6,7 @@ import Link from "next/link";
 import { newsData } from "@/data/news.data";
 
 export default function NewsSection() {
-  const targetIds = ["news-1", "news-2", "news-3", "news-4"];
-  const displayNews = targetIds
-    .map((id) => newsData.find((item) => item.id === id))
-    .filter(Boolean);
+  const displayNews = [...newsData].reverse().slice(0, 4);
 
   return (
     <section className="section bg-white overflow-hidden hidden md:block" id="news">
