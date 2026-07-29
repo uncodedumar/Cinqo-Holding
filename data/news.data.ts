@@ -271,12 +271,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-14",
-    slug: "leadership-team-strengthened",
+    slug: "hawar-hotel-development-phase-1-phase-2-enhancement-works",
     tag: "News",
     title: "Hawar Hotel Development – Phase 1, Phase 2 & Enhancement Works",
     date: "May 31, 2026",
     featuredImage: "/images/news/news-7.webp",
-    href: "/news/leadership-team-strengthened",
+    href: "/news/hawar-hotel-development-phase-1-phase-2-enhancement-works",
     excerpt: "Cinqo Supports the Successful Delivery of Hawar Hotel Development Through Integrated Finishing Solutions",
     content: [
       {
@@ -299,12 +299,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-15",
-    slug: "record-group-performance",
+    slug: "kooheji-projects",
     tag: "Top",
     title: "Kooheji Projects",
     date: "June 1, 2026",
     featuredImage: "/images/news/news-6.webp",
-    href: "/news/record-group-performance",
+    href: "/news/kooheji-projects",
     excerpt: "Cinqo Strengthens Portfolio Through Flooring & Finishing Works Across Kooheji Developments",
     content: [
       {
@@ -321,7 +321,59 @@ export const newsData: NewsItem[] = [
       },
       {
         type: "paragraph",
-        text: "Onyx Rotana & Residences (Bahrain Bay) \u2022 Onyx Skyview (Bahrain Bay) \u2022 Onyx Bahrain Bay \u2022 Fontana Infinity \u2022 Fontana Towers \u2022 Fontana Gardens \u2022 Seef Avenue \u2022 Seef Avenue II \u2022 Seef Boulevard \u2022 Catamaran (Seef District) \u2022 Marassi Views \u2022 Canal View \u2022 Juffair Square \u2022 Springfield Suites",
+        text: "\u2022 Onyx Rotana & Residences (Bahrain Bay)",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Onyx Skyview (Bahrain Bay)",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Onyx Bahrain Bay",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Fontana Infinity",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Fontana Towers",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Fontana Gardens",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Seef Avenue",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Seef Avenue II",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Seef Boulevard",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Catamaran (Seef District)",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Marassi Views",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Canal View",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Juffair Square",
+      },
+      {
+        type: "paragraph",
+        text: "\u2022 Springfield Suites",
       },
       {
         type: "paragraph",
@@ -331,12 +383,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-16",
-    slug: "trading-distribution-hub",
+    slug: "tivoli-avani-hotel-and-residences",
     tag: "Latest",
     title: "Tivoli & Avani Hotel and Residences",
     date: "June 2, 2026",
     featuredImage: "/images/news/news-5.webp",
-    href: "/news/trading-distribution-hub",
+    href: "/news/tivoli-avani-hotel-and-residences",
     excerpt: "Cinqo Executes High-Performance Car Park Epoxy and Polyurethane Floor Coating and Architectural Floor and Wall Finishes Package at Tivoli & Avani Hotel and Residences",
     content: [
       {
@@ -355,12 +407,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-17",
-    slug: "coatings-iso-certification",
+    slug: "future-generation-reserve-phase-2",
     tag: "News",
     title: "Future Generation Reserve Phase 2",
     date: "June 3, 2026",
     featuredImage: "/images/news/news-4.webp",
-    href: "/news/coatings-iso-certification",
+    href: "/news/future-generation-reserve-phase-2",
     excerpt: "Cinqo Progresses Specialized Flooring & Decorative Painting Package for Future Generation Reserve Phase 2",
     content: [
       {
@@ -379,12 +431,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-18",
-    slug: "community-outreach-initiative",
+    slug: "bahrain-marina-development-phase-1",
     tag: "Latest",
     title: "Bahrain Marina Development Phase 1",
     date: "June 4, 2026",
     featuredImage: "/images/news/news-3.webp",
-    href: "/news/community-outreach-initiative",
+    href: "/news/bahrain-marina-development-phase-1",
     excerpt: "Bahrain Marina Development Phase 1 – Car Park Epoxy & Polyurethane Flooring Systems and Architectural Floor & Wall Finishes",
     content: [
       {
@@ -403,12 +455,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-19",
-    slug: "digital-transformation-program",
+    slug: "marassi-galleria",
     tag: "Top",
     title: "Marassi Galleria",
     date: "June 5, 2026",
     featuredImage: "/images/news/news-2.webp",
-    href: "/news/digital-transformation-program",
+    href: "/news/marassi-galleria",
     excerpt: "Marassi Galleria – Specialized Flooring Solutions for Bahrain's Premier Retail Destination",
     content: [
       {
@@ -427,12 +479,12 @@ export const newsData: NewsItem[] = [
   },
   {
     id: "news-20",
-    slug: "fitout-flagship-showroom",
+    slug: "international-airport-airport-modernization-program",
     tag: "News",
     title: "International Airport – Airport Modernization Program",
     date: "June 6, 2026",
     featuredImage: "/images/news/news-1.webp",
-    href: "/news/fitout-flagship-showroom",
+    href: "/news/international-airport-airport-modernization-program",
     excerpt: "Cinqo Completes 175,000 m² High-Performance Car Park Epoxy Flooring Package for Bahrain International Airport",
     content: [
       {
