@@ -13,7 +13,7 @@ export const homeHeroSlidesData: HeroSlide[] = [
   },
   {
     id: "slide2",
-    image: "/images/hero/hero-contracting.jpg",
+    image: "/images/hero/contracting-hero.png",
     alt: "Cinqo Contracting",
     badge: "CINQO CONTRACTING",
     headline1: "BUILT",
