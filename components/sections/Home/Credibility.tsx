@@ -17,7 +17,7 @@ const STATS = [
   },
 
   {
-    target: 600,
+    target: 1200,
 
     suffix: "+",
 

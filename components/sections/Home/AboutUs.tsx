@@ -112,7 +112,7 @@ export default function AboutUs() {
           className="text-center text-[32px] leading-[1.6] font-light text-[#737373] mb-20 w-full tracking-tight font-['Inter',_sans-serif]"
         >
           <span className={hoverSpanClass}>With a team of over</span>{" "}
-          <span className={`${hoverSpanClass} text-black font-normal`}>600 employees</span>{" "}
+          <span className={`${hoverSpanClass} text-black font-normal`}>1200 employees</span>{" "}
           <span className={hoverSpanClass}>and a portfolio of specialized</span>{" "}
           <br className="hidden md:block" />
           <span className={hoverSpanClass}>industries,</span>{" "}
