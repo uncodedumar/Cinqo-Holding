@@ -76,9 +76,7 @@ export default function ContactUs() {
             {/* Spacer to push subheading to the bottom */}
             <div className="flex-grow"></div>
 
-            <p className="text-gray-500 text-[16px] md:text-[18px] font-normal" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
-              Tell us what&apos;s on your mind
-            </p>
+            
           </motion.div>
 
         </div>
