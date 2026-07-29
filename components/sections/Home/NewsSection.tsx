@@ -6,19 +6,10 @@ import Link from "next/link";
 import { newsData } from "@/data/news.data";
 
 export default function NewsSection() {
-  // 1. Reverse array to get "last added" items first
-  const reversedNews = [...newsData].reverse();
-
-  // 2. Filter out by priorities
-  const topPriority = reversedNews.filter(
-    (item) => item.tag.toLowerCase() === "top"
-  );
-  const secondPriority = reversedNews.filter(
-    (item) => item.tag.toLowerCase() === "latest"
-  );
-
-  // 3. Combine priorities and slice to only get 4 items max
-  const displayNews = [...topPriority, ...secondPriority].slice(0, 4);
+  const targetIds = ["news-1", "news-2", "news-3", "news-4"];
+  const displayNews = targetIds
+    .map((id) => newsData.find((item) => item.id === id))
+    .filter(Boolean);
 
   return (
     <section className="section bg-white overflow-hidden hidden md:block" id="news">
