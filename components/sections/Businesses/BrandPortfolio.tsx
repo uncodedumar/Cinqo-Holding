@@ -5,15 +5,14 @@ import Image from "next/image";
 import { brandPortfolio } from "@/data/businesses.data";
 import type { BrandPortfolioItem, BrandPortfolioCategory } from "@/data/businesses.data";
 
-// Per-logo optical normalization rules so wide/small/tall brand logos appear perfectly balanced
 const logoStyles: Record<string, { container: string; imgClass?: string }> = {
   "BASF Master Builders Solutions": {
     container: "h-[75px] md:h-[90px] max-w-[280px] md:max-w-[320px]",
-    imgClass: "scale-125 md:scale-140 origin-left",
+    imgClass: "scale-140 md:scale-160 origin-left -translate-x-4 -translate-y-3",
   },
   Sika: {
     container: "h-[48px] md:h-[55px] max-w-[140px]",
-    imgClass: "scale-90 origin-left",
+    imgClass: "scale-120 origin-left",
   },
   "Ecophon Saint-Gobain": {
     container: "h-[50px] md:h-[58px] max-w-[200px]",
@@ -25,7 +24,7 @@ const logoStyles: Record<string, { container: string; imgClass?: string }> = {
   },
   Flovac: {
     container: "h-[60px] md:h-[75px] max-w-[220px]",
-    imgClass: "scale-110 origin-left",
+    imgClass: "scale-100 origin-left -translate-x-1",
   },
   "Gyproc Saint-Gobain": {
     container: "h-[60px] md:h-[70px] max-w-[220px]",
@@ -37,7 +36,7 @@ const logoStyles: Record<string, { container: string; imgClass?: string }> = {
   },
   Crafco: {
     container: "h-[60px] md:h-[70px] max-w-[220px]",
-    imgClass: "scale-105 origin-left",
+    imgClass: "scale-250 origin-left -translate-x-3 -translate-y-3",
   },
   Sikkens: {
     container: "h-[60px] md:h-[70px] max-w-[220px]",
@@ -45,7 +44,7 @@ const logoStyles: Record<string, { container: string; imgClass?: string }> = {
   },
   "Apple Chemie": {
     container: "h-[60px] md:h-[70px] max-w-[220px]",
-    imgClass: "scale-105 origin-left",
+    imgClass: "scale-125 origin-left",
   },
 };
 
