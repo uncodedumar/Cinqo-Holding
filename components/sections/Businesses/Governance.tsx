@@ -38,11 +38,6 @@ const timelineData = [
 
 const investmentsData = [
   {
-    logoAlt: "ilium composites",
-    logoSrc: "/images/investments/ilium.png", // Update these paths with your actual logo files
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
     logoAlt: "Procural",
     logoSrc: "/images/investments/procural.png",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -50,6 +45,11 @@ const investmentsData = [
   {
     logoAlt: "AROOJ development company",
     logoSrc: "/images/investments/arooj.png",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+  {
+    logoAlt: "ilium composites",
+    logoSrc: "/images/investments/ilium.png", // Update these paths with your actual logo files
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {

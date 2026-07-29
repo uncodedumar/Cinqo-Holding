@@ -3,25 +3,20 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { useLenis } from "@/components/providers/SmoothScrollProvider";
 
 const textContent =
   "While firmly rooted in Bahrain, Cinqo continues to expand its presence across the GCC through sustainable growth, strategic partnerships and opportunities aligned with its strengths and long-term vision.";
 
-const words = textContent.split(/\s+/);
-
 export default function About() {
-  const lenis = useLenis();
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
-  const textSectionRef = useRef<HTMLDivElement>(null);
-  const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   
   // New Refs for animations
   const countRef = useRef<HTMLSpanElement>(null);
   const textRiseRef = useRef<HTMLDivElement>(null);
   const centerTextRef = useRef<HTMLDivElement>(null);
+  const scrollTextRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -67,222 +62,84 @@ export default function About() {
       }
 
       // 3. Fullscreen Scroll Reveal & Center Text Animation (Second Section)
-      if (!section || !wrap || !overlay) return;
+      if (section && wrap && overlay) {
+        const scaleX = window.innerWidth / wrap.offsetWidth;
+        const scaleY = window.innerHeight / wrap.offsetHeight;
+        const scale = Math.max(scaleX, scaleY) * 1.05;
 
-      const scaleX = window.innerWidth / wrap.offsetWidth;
-      const scaleY = window.innerHeight / wrap.offsetHeight;
-      const scale = Math.max(scaleX, scaleY) * 1.05;
+        // Set initial state for center text
+        if (centerTextRef.current) {
+          gsap.set(centerTextRef.current, { y: 30, opacity: 0 });
+        }
 
-      // Set initial state for center text
-      if (centerTextRef.current) {
-        gsap.set(centerTextRef.current, { y: 30, opacity: 0 });
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "center center",
+            end: `+=${window.innerHeight * 2}`,
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        // Zoom in: scale up, melt corners, lift shadow away, fade overlay in
+        tl.to(wrap, {
+          scale,
+          borderRadius: "0px",
+          boxShadow: "0 0 0 0 rgba(0,0,0,0)",
+          duration: 0.48,
+          ease: "power2.inOut",
+        })
+        .to(overlay, { opacity: 0.4, duration: 0.48, ease: "power2.inOut" }, "<");
+
+        // Reveal text in the center
+        if (centerTextRef.current) {
+          tl.to(centerTextRef.current, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, "-=0.24");
+        }
       }
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "center center",
-          end: `+=${window.innerHeight * 2}`,
-          pin: true,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      // Zoom in: scale up, melt corners, lift shadow away, fade overlay in
-      tl.to(wrap, {
-        scale,
-        borderRadius: "0px",
-        boxShadow: "0 0 0 0 rgba(0,0,0,0)",
-        duration: 0.48,
-        ease: "power2.inOut",
-      })
-      .to(overlay, { opacity: 0.4, duration: 0.48, ease: "power2.inOut" }, "<")
-
-      // Reveal text in the center
-      if (centerTextRef.current) {
-        tl.to(centerTextRef.current, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, "-=0.24");
-      }
-      // `section` is nullable; gsap's scope param takes an element or nothing.
-    }, section ?? undefined);
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
-  // -- EXISTING UNTOUCHED LOGIC FOR 3RD SECTION --
+  // 4. Fade in / Color Reveal animation for Section 3 (Matching Projects/Text.tsx style)
   useEffect(() => {
-    if (!lenis) return;
+    const element = scrollTextRef.current;
+    if (!element) return;
 
-    const section = textSectionRef.current;
-    const spans = wordRefs.current.filter(Boolean) as HTMLSpanElement[];
-    if (!section || spans.length === 0) return;
+    const ctx = gsap.context(() => {
+      const text = element.innerText;
+      element.innerHTML = text
+        .split(/\s+/)
+        .map((word) => `<span class="word inline-block">${word}&nbsp;</span>`)
+        .join("");
 
-    const tl = gsap.timeline({ paused: true })
-      .to(spans, { fontWeight: 600, stagger: 1, duration: 1.5, ease: "power2.out" });
+      const words = element.querySelectorAll(".word");
 
-    let locked = false;
-    let animationProgress = 0;
-    let canLock = true;
-    let touchStartY = 0;
-    const sensitivity = 0.0005;
-
-    const onWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      if (!locked) return;
-
-      const step = e.deltaY * sensitivity;
-      const next = Math.max(0, Math.min(1, animationProgress + step));
-
-      tl.progress(next);
-
-      if ((next >= 1 && e.deltaY > 0) || (next <= 0 && e.deltaY < 0)) {
-        release();
-        return;
-      }
-
-      animationProgress = next;
-    };
-
-    const onTouchStart = (e: TouchEvent) => {
-      if (!locked) return;
-      touchStartY = e.touches[0].clientY;
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-      if (!locked) return;
-      e.preventDefault();
-
-      const dy = touchStartY - e.touches[0].clientY;
-      const step = dy * sensitivity;
-      const next = Math.max(0, Math.min(1, animationProgress + step));
-
-      tl.progress(next);
-
-      if ((next >= 1 && dy > 0) || (next <= 0 && dy < 0)) {
-        release();
-        return;
-      }
-
-      animationProgress = next;
-      touchStartY = e.touches[0].clientY;
-    };
-
-    const onTouchEnd = () => {};
-
-    const KEY_STEP: Record<string, number> = {
-      ArrowDown: 0.05, ArrowUp: -0.05,
-      PageDown: 0.2, PageUp: -0.2,
-      " ": 0.1,
-    };
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (!locked) return;
-      const step = KEY_STEP[e.key];
-      if (step === undefined) return;
-      e.preventDefault();
-
-      const next = Math.max(0, Math.min(1, animationProgress + step));
-      tl.progress(next);
-
-      if ((next >= 1 && step > 0) || (next <= 0 && step < 0)) {
-        release();
-        return;
-      }
-
-      animationProgress = next;
-    };
-
-    const lock = (dir: "down" | "up") => {
-      if (locked || !canLock) return;
-      stopObservers();
-      locked = true;
-      canLock = false;
-      animationProgress = dir === "up" ? 1 : 0;
-      tl.progress(animationProgress);
-      lenis.stop();
-      window.addEventListener("wheel", onWheel, { passive: false });
-      window.addEventListener("touchstart", onTouchStart, { passive: true });
-      window.addEventListener("touchmove", onTouchMove, { passive: false });
-      window.addEventListener("touchend", onTouchEnd);
-      window.addEventListener("keydown", onKeyDown);
-    };
-
-    const release = () => {
-      if (!locked) return;
-      locked = false;
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("touchend", onTouchEnd);
-      window.removeEventListener("keydown", onKeyDown);
-      lenis.start();
-
-      canLock = false;
-      const exitObserver = new IntersectionObserver(
-        ([e]) => {
-          if (!e.isIntersecting) {
-            exitObserver.disconnect();
-            canLock = true;
-            startObservers();
-          }
-        },
-        { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
+      gsap.fromTo(
+        words,
+        { color: "#d1d5db", opacity: 0.3 },
+        {
+          color: "#000000",
+          opacity: 1,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true,
+          },
+        }
       );
-      exitObserver.observe(section);
-    };
+    }, element);
 
-    let centerObserver: IntersectionObserver | null = null;
-    let scrollListener: (() => void) | null = null;
-
-    const startObservers = () => {
-      stopObservers();
-      
-      let lastScrollY = window.scrollY;
-      scrollListener = () => { lastScrollY = window.scrollY; };
-      window.addEventListener("scroll", scrollListener, { passive: true });
-
-      centerObserver = new IntersectionObserver(
-        ([e]) => {
-          if (e.isIntersecting && !locked && canLock) {
-            stopObservers();
-            const isScrollingDown = window.scrollY >= lastScrollY;
-            lock(isScrollingDown ? "down" : "up");
-          }
-        },
-        { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
-      );
-      
-      centerObserver.observe(section);
-    };
-
-    const stopObservers = () => {
-      centerObserver?.disconnect();
-      centerObserver = null;
-      if (scrollListener) {
-        window.removeEventListener("scroll", scrollListener);
-        scrollListener = null;
-      }
-    };
-
-    startObservers();
-
-    return () => {
-      if (locked) {
-        window.removeEventListener("wheel", onWheel);
-        window.removeEventListener("touchstart", onTouchStart);
-        window.removeEventListener("touchmove", onTouchMove);
-        window.removeEventListener("touchend", onTouchEnd);
-        window.removeEventListener("keydown", onKeyDown);
-        lenis.start();
-      }
-      stopObservers();
-      tl.kill();
-    };
-  }, [lenis]);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="bg-white">
-      {/* SECTION 1 - Refactored to match image_8647e4.jpg EXACTLY */}
+      {/* SECTION 1 */}
       <section
         id="about-us"
         className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-24 scroll-mt-28"
@@ -349,7 +206,7 @@ export default function About() {
           <div ref={overlayRef} className="absolute inset-0 bg-black opacity-0 z-10 pointer-events-none" />
         </div>
         
-        {/* NEW Center Text Reveal (Overlays the zoomed-in image) */}
+        {/* Center Text Reveal (Overlays the zoomed-in image) */}
         <div ref={centerTextRef} className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
           <h2 className="text-4xl md:text-6xl text-white font-bold tracking-wider text-center px-4 drop-shadow-lg">
             Cinqo Holding
@@ -357,25 +214,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* SECTION 3 - Untouched Highlight Scroll Text */}
-      <section ref={textSectionRef} className="relative flex items-start justify-center bg-white px-6 py-24 z-30">
-        <p className="max-w-3xl text-center text-[2rem] leading-relaxed text-black/80">
-          {words.map((word, i) => (
-            <span key={i}>
-              <span className="relative inline-block">
-                <span className="invisible font-semibold">{word}</span>
-                <span
-                  ref={(el) => { wordRefs.current[i] = el; }}
-                  className="absolute left-[50%] top-0 -translate-x-1/2 w-full text-center"
-                >
-                  {word}
-                </span>
-              </span>
-              {" "}
-            </span>
-          ))}
+      {/* SECTION 3 - Fade-in Scroll Text */}
+      <section className="relative flex items-center justify-center bg-white px-6 py-32 z-30 min-h-[50vh]">
+        <p
+          ref={scrollTextRef}
+          className="max-w-4xl text-center text-[2rem] md:text-[2.5rem] leading-relaxed font-light text-black/80"
+        >
+          {textContent}
         </p>
       </section>
     </div>
   );
-}
+}

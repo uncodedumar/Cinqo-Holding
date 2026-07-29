@@ -154,9 +154,6 @@ export default function TeamSection() {
                   {exec.designation}
                 </p>
               </div>
-              <a href={exec.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
-                <LinkedInIcon />
-              </a>
             </div>
           </div>
         ))}
@@ -188,9 +185,6 @@ export default function TeamSection() {
                   {executives[8].designation}
                 </p>
               </div>
-              <a href={executives[8].linkedin || "#"} target="_blank" rel="noopener noreferrer" className="text-gray-400 mt-1 transition-colors duration-300 group-hover:text-blue-700">
-                <LinkedInIcon />
-              </a>
             </div>
           </div>
         </div>

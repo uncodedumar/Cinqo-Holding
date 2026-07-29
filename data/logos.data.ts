@@ -23,7 +23,6 @@ import type { PartnerLogo } from "@/types";
   { id: "brand-17", name: "BRPH", logo: "/images/logos/image018.png" },
   { id: "brand-18", name: "360 Degrees", logo: "/images/logos/image019.jpg" },
   { id: "brand-19", name: "NBK National Bank of Kuwait", logo: "/images/logos/image020.png" },
-  { id: "brand-20", name: "BFG", logo: "/images/logos/image021.jpg" },
   { id: "brand-21", name: "DGJ", logo: "/images/logos/image022.jpg" },
   { id: "brand-22", name: "Design Studio", logo: "/images/logos/image023.png" },
   { id: "brand-23", name: "Sepam", logo: "/images/logos/image024.jpg" },
