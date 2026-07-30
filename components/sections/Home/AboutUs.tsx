@@ -65,7 +65,7 @@ export default function AboutUs() {
       // Word-by-word fade and blur reveals for Mission and Vision copies
       [missionTextRef.current, visionTextRef.current].forEach((el, i) => {
         if (!el) return;
-        const split = new SplitText(el, { type: "words" });
+        const split = new SplitText(el, { type: "words", wordsClass: hoverSpanClass });
         splits.push(split);
         gsap.fromTo(
           split.words,
@@ -138,11 +138,7 @@ export default function AboutUs() {
             Vision
           </h3>
           <p ref={visionTextRef} className="max-w-4xl mx-auto">
-            {VISION_TEXT.split(" ").map((word, index) => (
-              <span key={index} className={hoverSpanClass}>
-                {word}{" "}
-              </span>
-            ))}
+            {VISION_TEXT}
           </p>
         </div>
         <br />
@@ -152,11 +148,7 @@ export default function AboutUs() {
             Mission
           </h3>
           <p ref={missionTextRef} className="max-w-4xl mx-auto">
-            {MISSION_TEXT.split(" ").map((word, index) => (
-              <span key={index} className={hoverSpanClass}>
-                {word}{" "}
-              </span>
-            ))}
+            {MISSION_TEXT}
           </p>
         </div>
 
