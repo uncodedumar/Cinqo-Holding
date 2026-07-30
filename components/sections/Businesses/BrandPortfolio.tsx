@@ -120,7 +120,7 @@ function CategorySection({ category, isLast }: { category: BrandPortfolioCategor
 
 export default function BrandPortfolio() {
   return (
-    <section className="bg-white">
+    <section className="bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <div className="max-w-[1280px] mx-auto px-[clamp(20px,5vw,64px)] pt-12 pb-24">
           
