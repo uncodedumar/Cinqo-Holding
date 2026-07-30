@@ -28,7 +28,7 @@ export default function TrustedBySection() {
           role="region" 
           aria-label="Scrolling brand logos"
         >
-          <div className="animate-marquee flex whitespace-nowrap gap-6 md:gap-10 items-center">
+          <div className="animate-marquee flex whitespace-nowrap gap-2 md:gap-10 items-center">
             {[...logosData, ...logosData, ...logosData].map((logoItem, i) => (
               <div 
                 key={`logo-${logoItem.id}-${i}`} 
