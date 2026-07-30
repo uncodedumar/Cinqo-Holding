@@ -31,23 +31,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          href="/images/hero/holdingNewBg.png"
-          as="image"
-          fetchPriority="high"
-          media="(max-width: 768px)"
-        />
-        <link
-          rel="preload"
-          href="/images/hero/holdingNewBg.png"
-          as="image"
-          fetchPriority="high"
-          media="(min-width: 769px)"
-        />
-      </head>
       <body className={`${inter.variable} ${ibmPlexSans.variable}`}>
         <SmoothScrollProvider>
           <Navbar />
