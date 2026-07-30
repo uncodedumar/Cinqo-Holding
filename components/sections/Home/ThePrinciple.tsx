@@ -175,6 +175,7 @@ export default function ThePrinciple() {
         start: "top top",
         end: () => `+=${window.innerHeight * PIN_VH_MULTIPLIER}`,
         pin: true,
+        pinType: "transform",
         scrub: 1,
         anticipatePin: 1,
         onUpdate: (self) => {
