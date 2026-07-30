@@ -18,7 +18,7 @@ export default function SubscribeNow() {
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: false }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative overflow-hidden bg-white mx-[50px] mt-[10px] mb-[150px] rounded-sm"
+        className="relative overflow-hidden bg-white mx-4 md:mx-[50px] mt-[10px] mb-12 md:mb-[150px] rounded-sm"
       >
         <div className="bg-white bg-[url('/images/subscribe/Subscribe.png')] bg-center bg-cover bg-no-repeat overflow-hidden text-white text-center rounded-[5px] px-4 py-24 flex flex-col items-center gap-6">
           <h2>Get Latest News Updates</h2>

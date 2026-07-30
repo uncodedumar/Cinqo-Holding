@@ -35,7 +35,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           <div
-            className="relative z-[1] bg-white-100"
+            className="relative z-[1] bg-white-100 max-md:!mb-0"
             style={{ marginBottom: "var(--footer-height, 780px)" }}
           >
             {children}
