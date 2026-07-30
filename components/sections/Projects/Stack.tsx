@@ -170,7 +170,7 @@ const StackedSection = () => {
 
               and gsap animates those dimensions during the stack sequence. */}
 
-          <Image src={src} alt="stack" fill sizes="90vw" className="object-cover" />
+          <Image src={src} alt="stack" fill sizes="90vw" className="object-fill md:object-cover" />
 
          
 
