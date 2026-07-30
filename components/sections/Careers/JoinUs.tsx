@@ -191,7 +191,7 @@ export default function JoinCinqo({
     <div className="flex flex-col lg:flex-row w-full bg-[rgba(0,0,0,0.02)] text-black font-display antialiased">
       
       {/* LEFT COLUMN: Form Body (White background matching instructions) */}
-      <div className="w-full lg:w-[69%] py-12 flex flex-col justify-center">
+      <div className="w-full lg:w-[69%] py-12 flex flex-col justify-center px-4 md:px-8 lg:px-0">
         <div className="w-full max-w-[792px] mx-auto">
           
           {/* Header & Subtitle Section */}
@@ -491,7 +491,7 @@ export default function JoinCinqo({
       </div>
 
       {/* RIGHT COLUMN: Image */}
-      <div className="w-full lg:w-[31%] relative min-h-[600px] border-l border-neutral-100">
+      <div className="hidden md:block w-full lg:w-[31%] relative min-h-[600px] border-l border-neutral-100">
         <Image
           src="/images/careers/image.png"
           alt="Careers"
