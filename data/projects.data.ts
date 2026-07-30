@@ -200,14 +200,14 @@ export const PROJECTS: Project[] = [
     subheading: "Dummy subheading",
     date: "1 Jan, 2026",
     status: "completed",
-    image: "/images/projects/flooring/AVS�Villa/1.jpg",
+    image: "/images/projects/flooring/AVS Villa/1.jpg",
     logo: "/images/logos/4.png",
     company: "CFCT",
     description: "Dummy description for AVS Villa.",
     thumbnails: [
-      "/images/projects/flooring/AVS�Villa/2.jpg",
-      "/images/projects/flooring/AVS�Villa/3.jpg",
-      "/images/projects/flooring/AVS�Villa/4.jpg"
+      "/images/projects/flooring/AVS Villa/2.jpg",
+      "/images/projects/flooring/AVS Villa/3.jpg",
+      "/images/projects/flooring/AVS Villa/4.jpg"
     ]
   },
   {
@@ -216,14 +216,14 @@ export const PROJECTS: Project[] = [
     subheading: "Dummy subheading",
     date: "1 Jan, 2026",
     status: "completed",
-    image: "/images/projects/flooring/Bader Noorudin�Villa/1.jpg",
+    image: "/images/projects/flooring/Bader Noorudin Villa/1.jpg",
     logo: "/images/logos/4.png",
     company: "CFCT",
     description: "Dummy description for Bader Noorudin Villa.",
     thumbnails: [
-      "/images/projects/flooring/Bader Noorudin�Villa/2.jpg",
-      "/images/projects/flooring/Bader Noorudin�Villa/3.jpg",
-      "/images/projects/flooring/Bader Noorudin�Villa/4.jpg"
+      "/images/projects/flooring/Bader Noorudin Villa/2.jpg",
+      "/images/projects/flooring/Bader Noorudin Villa/3.jpg",
+      "/images/projects/flooring/Bader Noorudin Villa/4.jpg"
     ]
   },
   {
