@@ -65,14 +65,16 @@ export default function OurCompanies() {
               </div>
 
               {/* Overlapping White Logo Badge */}
-              <div className="relative z-10 -mt-10 mx-auto bg-white rounded-xl shadow-md border border-gray-100/90 px-4 py-2 flex items-center justify-center min-w-[120px] max-w-[150px] h-14 transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  width={130}
-                  height={55}
-                  className="max-h-10 max-w-[110px] w-auto object-contain"
-                />
+              <div className="relative z-10 -mt-10 mx-auto bg-white rounded-xl shadow-md border border-gray-100/90 flex items-center justify-center w-20 h-[72px] transition-transform duration-300 group-hover:scale-105">
+                <div className="relative h-16 w-16">
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    fill
+                    sizes="64px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
 
               {/* Card Content Body */}
