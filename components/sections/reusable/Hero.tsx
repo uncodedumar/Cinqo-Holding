@@ -136,7 +136,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
               fill
               priority={i === 0}
               className="object-cover"
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 100vw"
               style={slide.imagePosition ? { objectPosition: slide.imagePosition } : undefined}
             />
           </div>
