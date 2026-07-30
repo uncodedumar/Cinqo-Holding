@@ -1,5 +1,3 @@
-import Image from 'next/image'; // 1. Import Next.js Image
-
 export default function Location() {
   return (
     <section className="relative w-full h-[350px] md:h-[350px] lg:h-[500px]">

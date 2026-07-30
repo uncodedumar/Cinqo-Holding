@@ -2,15 +2,9 @@
 
 import React, { useEffect, useRef } from 'react';
 
-import gsap from 'gsap';
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-import Image from 'next/image'; // 1. Import Next.js Image
-
-
-
-gsap.registerPlugin(ScrollTrigger);
+import Image from 'next/image';
 
 
 

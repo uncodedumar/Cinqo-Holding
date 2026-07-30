@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from "@/lib/gsap";
 import Image from 'next/image'; // 1. Import Next.js Image
 import { SectorShowcaseItem } from '@/data/businesses.data';
 
