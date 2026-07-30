@@ -58,7 +58,7 @@ export default function TrustedBySection() {
           animation: marquee 80s linear infinite;
           will-change: transform;
         }
-        @media (prefers-reduced-motion: no-preference) {
+        @media (hover: hover) and (prefers-reduced-motion: no-preference) {
           .group:hover .animate-marquee {
             animation-play-state: paused;
           }
