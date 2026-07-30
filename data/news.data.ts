@@ -387,15 +387,15 @@ export const newsData: NewsItem[] = [
     id: "news-15",
     slug: "seef-mall-expansion",
     tag: "Top",
-    title: "CC150 Expansion of Seef Mall",
+    title: "CC150_Expansion of Seef Mall",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-7.webp",
     href: "/news/seef-mall-expansion",
     excerpt: "CINQO signs contract for Seef Mall Expansion, one of Bahrain's largest mall expansion projects.",
     content: [
       {
-        type: "heading",
-        text: "Proud Moment for CINQO!"
+        type: "paragraph",
+        text: "**Proud Moment for CINQO!**"
       },
       {
         type: "paragraph",
@@ -411,7 +411,7 @@ export const newsData: NewsItem[] = [
     id: "news-16",
     slug: "danube-sports-world",
     tag: "Top",
-    title: "CC149 Danube Sports World",
+    title: "CC149_Danube Sports World",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-16.png",
     href: "/news/danube-sports-world",
@@ -431,7 +431,7 @@ export const newsData: NewsItem[] = [
     id: "news-17",
     slug: "courtyard-riffa-phase-2",
     tag: "Latest",
-    title: "CC147 Courtyard Riffa – Phase 2",
+    title: "CC147_Courtyard Riffa – Phase 2",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-17.png",
     href: "/news/courtyard-riffa-phase-2",
@@ -439,11 +439,11 @@ export const newsData: NewsItem[] = [
     content: [
       {
         type: "paragraph",
-        text: "CINQO is currently undertaking the construction of Courtyard Riffa \u2013 Phase 2, a major commercial expansion located adjacent to the Bahrain National Stadium. This development is an extension of the successful Phase 1 mall and is designed to enhance the retail experience in the Riffa area."
+        text: "CINQO is currently undertaking the construction of **Courtyard Riffa \u2013 Phase 2,** a major commercial expansion located adjacent to the Bahrain National Stadium. This development is an extension of the successful Phase 1 mall and is designed to enhance the retail experience in the Riffa area."
       },
       {
         type: "paragraph",
-        text: "The project will feature a new LuLu Hypermarket as its anchor tenant, complemented by multiple drive-through outlets, spacious parking facilities, and modern external infrastructure. Designed by MSCEB Consultants, the development showcases contemporary architecture and a state-of-the-art layout, creating a vibrant and convenient destination for shoppers and visitors."
+        text: "The project will feature a **new LuLu Hypermarket** as its anchor tenant, complemented by multiple drive-through outlets, spacious parking facilities, and modern external infrastructure. Designed by **MSCEB Consultants,** the development showcases contemporary architecture and a state-of-the-art layout, creating a vibrant and convenient destination for shoppers and visitors."
       },
       {
         type: "paragraph",
@@ -455,15 +455,15 @@ export const newsData: NewsItem[] = [
     id: "news-18",
     slug: "nbk-headquarters-bahrain",
     tag: "Top",
-    title: "CC143 NBK Headquarters Bahrain",
+    title: "CC143_NBK Headquarters Bahrain",
     date: "July 30, 2026",
-    featuredImage: "/images/news/news-18.png",
+    featuredImage: "/images/news/news-18.webp",
     href: "/news/nbk-headquarters-bahrain",
     excerpt: "CINQO delivers Bahrain's first LEED Gold-certified commercial headquarters for National Bank of Kuwait in Seef.",
     content: [
       {
         type: "paragraph",
-        text: "In a joint venture with IMAR, CINQO is proud to be delivering the National Bank of Kuwait (NBK) Headquarters in Seef, Bahrain's first LEED Gold-certified state-of-the-art commercial headquarters."
+        text: "In a joint venture with **IMAR**, CINQO is proud to be delivering the **National Bank of Kuwait (NBK) Headquarters** in Seef, Bahrain's first **LEED Gold-certified** state-of-the-art commercial headquarters."
       },
       {
         type: "paragraph",
@@ -475,7 +475,7 @@ export const newsData: NewsItem[] = [
       },
       {
         type: "paragraph",
-        text: "The project is being executed in full compliance with LEED Gold construction requirements, including stringent environmental controls, waste management, erosion and sediment control, housekeeping, and indoor air quality (IAQ) management. Once completed, the NBK Headquarters will set a new benchmark for sustainable, high-performance commercial buildings in Bahrain, further demonstrating CINQO's commitment to innovation, quality, and engineering excellence."
+        text: "The project is being executed in full compliance with **LEED Gold** construction requirements, including stringent environmental controls, waste management, erosion and sediment control, housekeeping, and indoor air quality (IAQ) management. Once completed, the NBK Headquarters will set a new benchmark for sustainable, high-performance commercial buildings in Bahrain, further demonstrating CINQO's commitment to innovation, quality, and engineering excellence."
       }
     ],
   },
@@ -483,7 +483,7 @@ export const newsData: NewsItem[] = [
     id: "news-19",
     slug: "jasra-compound",
     tag: "Latest",
-    title: "CC142 Construction of Jasra Compound",
+    title: "CC142-Construction of Jasra Compound",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-19.png",
     href: "/news/jasra-compound",
@@ -507,7 +507,7 @@ export const newsData: NewsItem[] = [
     id: "news-20",
     slug: "bahrain-philanthropic-society-headquarters",
     tag: "Top",
-    title: "CC137 Bahrain Philanthropic Society Headquarters – Adliya",
+    title: "CC137_Bahrain Philanthropic Society Headquarters – Adliya",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-20.png",
     href: "/news/bahrain-philanthropic-society-headquarters",
@@ -531,7 +531,7 @@ export const newsData: NewsItem[] = [
     id: "news-21",
     slug: "quality-education-international-school",
     tag: "Latest",
-    title: "CC136 Quality Education International School",
+    title: "CC136_Quality Education International School",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-21.png",
     href: "/news/quality-education-international-school",
@@ -559,7 +559,7 @@ export const newsData: NewsItem[] = [
     id: "news-22",
     slug: "git-headquarters-seef",
     tag: "News",
-    title: "CC135 11-Storey Building at Seef – GIT Headquarters",
+    title: "CC135_11-Storey Building at Seef – GIT Headquarters",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-22.png",
     href: "/news/git-headquarters-seef",
@@ -583,7 +583,7 @@ export const newsData: NewsItem[] = [
     id: "news-23",
     slug: "la-gardenia-mall-juffair",
     tag: "Top",
-    title: "CC129 Commercial Mall at Juffair – La Gardenia Mall",
+    title: "CC129_Commercial Mall at Juffair – La Gardenia Mall",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-23.png",
     href: "/news/la-gardenia-mall-juffair",
@@ -607,7 +607,7 @@ export const newsData: NewsItem[] = [
     id: "news-24",
     slug: "luxury-residential-compound-hamala",
     tag: "Latest",
-    title: "CC133 Family Compound at Hamala",
+    title: "CC133_Family Compound at Hamala",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-24.png",
     href: "/news/luxury-residential-compound-hamala",
@@ -615,7 +615,7 @@ export const newsData: NewsItem[] = [
     content: [
       {
         type: "paragraph",
-        text: "CINQO Contracting W.L.L. was awarded the construction of a luxury residential compound in Hamala, including staff accommodation, extensive landscaping, and associated external works, for one of Bahrain's well-known families."
+        text: "CINQO Contracting W.L.L. was awarded the construction of **a luxury residential compound in Hamala**, including staff accommodation, extensive landscaping, and associated external works, for one of Bahrain's well-known families."
       },
       {
         type: "paragraph",
