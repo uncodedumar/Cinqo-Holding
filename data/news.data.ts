@@ -627,7 +627,7 @@ export const newsData: NewsItem[] = [
     id: "news-25",
     slug: "the-outlet-mall-dumistan",
     tag: "Top",
-    title: "CC126 Commercial Development at Dumistan – The Outlet Mall",
+    title: "CC126_Commercial Development at Dumistan – The Outlet Mall",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-25.png",
     href: "/news/the-outlet-mall-dumistan",
@@ -635,7 +635,7 @@ export const newsData: NewsItem[] = [
     content: [
       {
         type: "paragraph",
-        text: "In 2023, we successfully completed The Outlet Mall, Dumistan, under a fast-track program and handed it over to Century 21 for leasing and operation."
+        text: "In 2023, we successfully completed **The Outlet Mall, Dumistan**, under a fast-track program and handed it over to Century 21 for leasing and operation."
       },
       {
         type: "paragraph",
@@ -651,7 +651,7 @@ export const newsData: NewsItem[] = [
     id: "news-26",
     slug: "commercial-development-riffa",
     tag: "News",
-    title: "CC110 Proposed Commercial Development at Riffa",
+    title: "CC110_Proposed Commercial Development at Riffa",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-26.png",
     href: "/news/commercial-development-riffa",
@@ -671,7 +671,7 @@ export const newsData: NewsItem[] = [
     id: "news-27",
     slug: "ar-kanoo-international-school",
     tag: "Latest",
-    title: "CC109 AR Kanoo International School Development",
+    title: "CC109_AR Kanoo International School Development",
     date: "July 30, 2026",
     featuredImage: "/images/news/news-27.png",
     href: "/news/ar-kanoo-international-school",
@@ -691,9 +691,9 @@ export const newsData: NewsItem[] = [
     id: "news-28",
     slug: "building-communities-beyond-construction",
     tag: "Top",
-    title: "CC100 Building Communities Beyond Construction",
+    title: "CC100_Building Communities Beyond Construction",
     date: "July 30, 2026",
-    featuredImage: "/images/news/news-28.png",
+    featuredImage: "/images/news/news-28.webp",
     href: "/news/building-communities-beyond-construction",
     excerpt: "CINQO extends expertise beyond commercial developments, refurbishing homes for families in need and building stronger communities.",
     content: [

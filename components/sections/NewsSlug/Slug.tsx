@@ -4,30 +4,35 @@ import type { ContentLink, NewsItem } from "@/types";
 import type { ReactNode } from "react";
 
 function renderParagraph(text: string, links?: ContentLink[]): ReactNode {
-  if (!links || links.length === 0) return text;
+  let parts: ReactNode[] = text.split(/(\*\*[^*]+\*\*)/).filter(Boolean);
 
-  let parts: ReactNode[] = [text];
-
-  links.forEach((link, i) => {
-    // Explicit generic: ReactNode is itself iterable, so inference otherwise
-    // narrows the callback's return to the wrong element type.
-    parts = parts.flatMap<ReactNode>((part) => {
-      if (typeof part !== "string") return [part];
-      const idx = part.indexOf(link.text);
-      if (idx === -1) return [part];
-      return [
-        part.slice(0, idx),
-        <Link
-          key={`${link.url}-${i}`}
-          href={link.url}
-          className="text-coral-600 font-medium hover:underline"
-        >
-          {link.text}
-        </Link>,
-        part.slice(idx + link.text.length),
-      ];
-    });
+  parts = parts.map((part, i) => {
+    if (typeof part !== "string") return part;
+    const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
+    if (boldMatch) return <strong key={`b-${i}`}>{boldMatch[1]}</strong>;
+    return part;
   });
+
+  if (links && links.length > 0) {
+    links.forEach((link, i) => {
+      parts = parts.flatMap<ReactNode>((part) => {
+        if (typeof part !== "string") return [part];
+        const idx = part.indexOf(link.text);
+        if (idx === -1) return [part];
+        return [
+          part.slice(0, idx),
+          <Link
+            key={`${link.url}-${i}`}
+            href={link.url}
+            className="text-coral-600 font-medium hover:underline"
+          >
+            {link.text}
+          </Link>,
+          part.slice(idx + link.text.length),
+        ];
+      });
+    });
+  }
 
   return parts;
 }
