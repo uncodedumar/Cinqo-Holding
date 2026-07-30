@@ -415,21 +415,35 @@ export default function Credibility() {
 
       <div className="container relative z-10">
         <div
-          className="grid gap-6 grid-cols-2 min-[1024px]:grid-cols-5 border-y-2 border-line-dark py-16"
+          className="grid gap-x-0 min-[1024px]:gap-x-6 gap-y-10 min-[1024px]:gap-y-6 grid-cols-2 min-[1024px]:grid-cols-5 border-y-2 border-line-dark py-16"
           style={{ perspective: "1200px" }}
         >
-          {STATS.map((stat, index) => (
-            <div
-              className={`stat-item mt-3 flex flex-col gap-2 will-change-transform ${
-                index === 0
-                  ? "pl-0"
-                  : "pl-6 min-[1024px]:pl-5 border-l-2 border-line-dark"
-              }`}
-              style={{ transformStyle: "preserve-3d" }}
-              data-target={stat.target}
-              data-suffix={stat.suffix}
-              key={stat.label}
-            >
+          {STATS.map((stat, index) => {
+            const isLast = index === STATS.length - 1;
+            
+            let colStyles = "";
+            if (index === 0) {
+              colStyles = "pr-4 min-[1024px]:pr-0 pl-0 border-l-0";
+            } else if (isLast) {
+              colStyles = "pl-0 border-l-0 min-[1024px]:pl-5 min-[1024px]:border-l-2";
+            } else if (index % 2 === 0) {
+              colStyles = "pr-4 min-[1024px]:pr-0 pl-0 border-l-0 min-[1024px]:pl-5 min-[1024px]:border-l-2";
+            } else {
+              colStyles = "pl-4 min-[1024px]:pl-5 border-l-2";
+            }
+
+            const alignStyles = isLast 
+              ? "col-span-2 items-center text-center min-[1024px]:col-span-1 min-[1024px]:items-start min-[1024px]:text-left"
+              : "";
+
+            return (
+              <div
+                className={`stat-item mt-3 flex flex-col gap-2 will-change-transform border-line-dark ${colStyles} ${alignStyles}`}
+                style={{ transformStyle: "preserve-3d" }}
+                data-target={stat.target}
+                data-suffix={stat.suffix}
+                key={stat.label}
+              >
               <span className="text-eyebrow uppercase tracking-[0.08em] text-muted-light flex items-start min-[1024px]:min-h-[2.2rem]">
                 {stat.label}
               </span>
@@ -450,11 +464,12 @@ export default function Credibility() {
 
               <span className="stat-underline block h-[2px] w-10 bg-coral-600 scale-x-0" />
 
-              <p className="text-[0.75rem] text-muted-light mt-1 leading-normal w-full pr-1">
+              <p className={`text-[0.75rem] text-muted-light mt-1 leading-normal w-full pr-1 ${isLast ? 'max-w-[200px] mx-auto min-[1024px]:max-w-none min-[1024px]:mx-0' : ''}`}>
                 {stat.caption}
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
