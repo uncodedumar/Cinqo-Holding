@@ -65,12 +65,13 @@ export default function ProfessionalFramework() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-[92%] md:w-[90%] mx-auto mb-24"
       >
-        <div className="w-full rounded-sm overflow-hidden">
-          <img
+        <div className="w-full rounded-sm overflow-hidden relative aspect-[2.35/1]">
+          <Image
             src="/images/careers/horizon.webp"
             alt="Cinqo Holdings Professional Horizon"
-            className="w-full h-auto block"
-            style={{ marginTop: '-25%', marginBottom: '-5%' }}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 92vw, 90vw"
           />
         </div>
       </motion.div>

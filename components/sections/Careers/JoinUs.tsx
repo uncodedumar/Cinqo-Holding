@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import "flag-icons/css/flag-icons.min.css";
 
 interface JoinCinqoProps {
   /** Submission event handler */

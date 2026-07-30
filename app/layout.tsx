@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-display",
+  display: "swap",
 });
 
 const ibmPlexSans = IBM_Plex_Sans({

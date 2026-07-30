@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { gsap, SplitText } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
+import { SplitText } from "gsap/SplitText";
 
 const MISSION_TEXT =
   "To build and operate each business within the Group to a standard that retains clients, protects capital and delivers consistent results across market conditions — while fostering an environment where our teams are developed, empowered and held to the same standard of excellence.";
@@ -22,6 +23,8 @@ export default function AboutUs() {
 
   useEffect(() => {
     if (!sectionRef.current) return;
+
+    gsap.registerPlugin(SplitText);
 
     const splits: InstanceType<typeof SplitText>[] = [];
 
