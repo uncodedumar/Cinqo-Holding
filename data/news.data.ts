@@ -8,274 +8,12 @@ import type { NewsItem } from "@/types";
  */
 export const newsData: NewsItem[] = [
   {
-    id: "news-6",
-    slug: "standard-news",
-    tag: "News",
-    title: "Standard News Article (Will be skipped)",
-    date: "May 15, 2026",
-    featuredImage: "/images/news/news-6.webp",
-    href: "/news/standard-news",
-    excerpt: "A brief look into our baseline operations and standard updates.",
-    content: [
-      {
-        type: "paragraph",
-        text: "This is a baseline sample article for testing sorting and skipping functionality within the UI rendering logic.",
-      }
-    ],
-  },
-  {
-    id: "news-5",
-    slug: "strategic-group-restructuring",
-    tag: "Latest",
-    title: "Cinqo Holding Initiates Strategic Group Restructuring",
-    date: "May 19, 2026",
-    featuredImage: "/images/news/news-5.webp",
-    href: "/news/strategic-group-restructuring",
-    excerpt: "Cinqo Holding outlines a comprehensive internal restructuring plan to accelerate long-term operational velocity.",
-    content: [
-      {
-        type: "heading",
-        text: "Building the Next Phase of Growth"
-      },
-      {
-        type: "paragraph",
-        text: "Today, Cinqo Holding announced a sweeping internal transformation designed to streamline operational workflows and maximize capital efficiency across all global subsidiaries. This organizational pivot positions us to aggressively pursue scale throughout the remainder of 2026.",
-      },
-      {
-        type: "image",
-        src: "/images/projects/1.jpg",
-        alt: "Cinqo Corporate Restructuring Org Chart",
-        caption: "Figure 1: The optimized operational framework for our global operations."
-      },
-      {
-        type: "paragraph",
-        text: "A central focus of this transition is tightening our product integration. Key leadership appointments will be confirmed over the coming weeks, ensuring that execution metrics line up perfectly with investor expectations. For immediate updates, you can check our Investor Relations page.",
-        links: [
-          { text: "Investor Relations", url: "/investors" }
-        ]
-      }
-    ],
-  },
-  {
-    id: "news-4",
-    slug: "global-markets",
-    tag: "Top",
-    title: "Major Milestone: Cinqo Reaches Global Markets",
-    date: "May 20, 2026",
-    featuredImage: "/images/news/news-4.webp",
-    href: "/news/global-markets",
-    excerpt: "Cinqo successfully scales operations across European and APAC markets, onboarding tier-one enterprise accounts.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Following regulatory clearings across multiple jurisdictions, we are thrilled to announce that our platform infrastructure is now fully operational in international hubs.",
-      },
-      {
-        type: "paragraph",
-        text: "Early adoption trends indicate strong product-market fit within foreign enterprise brackets. Feel free to contact our international sales division for local partnership details.",
-        links: [
-          { text: "contact our international sales division", url: "/contact?dept=intl" }
-        ]
-      }
-    ],
-  },
-  {
-    id: "news-3",
-    slug: "q2-earnings",
-    tag: "Latest",
-    title: "Q2 Earnings Report Released to Stakeholders",
-    date: "May 21, 2026",
-    featuredImage: "/images/news/news-3.webp",
-    href: "/news/q2-earnings",
-    excerpt: "Financial metrics outpace original projections with a 34% year-over-year revenue climb for Q2.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Cinqo has delivered an exceptional fiscal quarter, marked by high net retention rates and lowered operational overhead. The complete documentation is available right now for direct download.",
-        links: [
-          { text: "direct download", url: "/downloads/reports/q2-2026.pdf" }
-        ]
-      }
-    ],
-  },
-  {
-    id: "news-2",
-    slug: "startup-acquisition",
-    tag: "Top",
-    title: "Cinqo Acquires Leading Tech Startup",
-    date: "May 22, 2026",
-    featuredImage: "/images/news/news-2.webp",
-    href: "/news/startup-acquisition",
-    excerpt: "The acquisition expands Cinqo's technical capabilities, integrating next-generation data architecture.",
-    content: [
-      {
-        type: "paragraph",
-        text: "By acquiring industry innovators, we are directly integrating cutting-edge capabilities into our core enterprise offerings.",
-      },
-      {
-        type: "image",
-        src: "/images/projects/2.jpg",
-        alt: "Cinqo Engineering Team Welcome",
-        caption: "Welcoming our new engineering additions to the main workspace."
-      }
-    ],
-  },
-  {
     id: "news-1",
-    slug: "ai-integration",
-    tag: "Latest",
-    title: "New AI Integration Announced Across Platforms",
-    date: "May 23, 2026",
-    featuredImage: "/images/news/news-1.webp",
-    href: "/news/ai-integration",
-    excerpt: "Intelligent tooling updates roll out immediately, introducing predictive workflows for all premium tiers.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Automation is at the heart of efficiency. Today's platform rollout embeds intelligent workflows directly into the user dashboard, drastically shrinking operational latency.",
-      }
-    ],
-  },
-  {
-    id: "news-7",
-    slug: "trading-supply-agreement",
-    tag: "Top",
-    title: "Cinqo Trading Signs Multi-Year Supply Agreement",
-    date: "May 24, 2026",
-    featuredImage: "/images/projects/news-7.webp",
-    href: "/news/trading-supply-agreement",
-    excerpt: "A new multi-year supply agreement cements Cinqo Trading's position as a preferred regional distribution partner.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Cinqo Trading has finalized a multi-year supply agreement with a coalition of regional distributors, securing long-term pipeline stability across our core markets.",
-      },
-      {
-        type: "paragraph",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The agreement is expected to nearly double throughput capacity by the end of the fiscal year.",
-      }
-    ],
-  },
-  {
-    id: "news-8",
-    slug: "coatings-protective-range-launch",
-    tag: "Latest",
-    title: "Cinqo Coatings Launches New Protective Range",
-    date: "May 25, 2026",
-    featuredImage: "/images/projects/4.jpg",
-    href: "/news/coatings-protective-range-launch",
-    excerpt: "Cinqo Coatings & Coating Technologies unveils a next-generation protective coatings line built for extreme climates.",
-    content: [
-      {
-        type: "heading",
-        text: "Engineered for Extreme Conditions"
-      },
-      {
-        type: "paragraph",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The new range extends protective lifespan by up to 40% in high-humidity environments.",
-      }
-    ],
-  },
-  {
-    id: "news-9",
-    slug: "facilities-management-regional-contract",
-    tag: "Top",
-    title: "THC Facilities Management Wins Regional Contract",
-    date: "May 26, 2026",
-    featuredImage: "/images/hero/h1.jpg",
-    href: "/news/facilities-management-regional-contract",
-    excerpt: "THC Facilities Management secures a landmark regional maintenance contract spanning multiple commercial towers.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This new engagement expands THC's managed portfolio to over 40 commercial sites across the region.",
-      }
-    ],
-  },
-  {
-    id: "news-10",
-    slug: "industry-excellence-awards",
-    tag: "Latest",
-    title: "Cinqo Holding Recognized at Industry Excellence Awards",
-    date: "May 27, 2026",
-    featuredImage: "/images/hero/h2.jpg",
-    href: "/news/industry-excellence-awards",
-    excerpt: "Cinqo Holding receives top honors for operational excellence at this year's regional industry awards ceremony.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. The recognition highlights consistent delivery across our diversified portfolio.",
-      }
-    ],
-  },
-  {
-    id: "news-11",
-    slug: "fitout-hospitality-project",
-    tag: "News",
-    title: "Cinqo Fitout Completes Landmark Hospitality Project",
-    date: "May 28, 2026",
-    featuredImage: "/images/hero/h3.png",
-    href: "/news/fitout-hospitality-project",
-    excerpt: "Cinqo Fitout delivers a flagship hospitality interior project ahead of schedule and under budget.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The project spans over 25,000 square meters of premium interior space.",
-      },
-      {
-        type: "image",
-        src: "/images/companies/c1.jpg",
-        alt: "Cinqo Fitout hospitality interior",
-        caption: "The completed lobby and guest lounge areas of the flagship project."
-      }
-    ],
-  },
-  {
-    id: "news-12",
-    slug: "sustainability-roadmap",
-    tag: "Top",
-    title: "Group Announces Expanded Sustainability Roadmap",
-    date: "May 29, 2026",
-    featuredImage: "/images/companies/h1.jpg",
-    href: "/news/sustainability-roadmap",
-    excerpt: "Cinqo Holding sets ambitious new sustainability targets across energy use, waste reduction, and materials sourcing.",
-    content: [
-      {
-        type: "heading",
-        text: "A Roadmap to Net-Positive Operations"
-      },
-      {
-        type: "paragraph",
-        text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Learn more about our commitments on the sustainability page.",
-        links: [
-          { text: "sustainability page", url: "/about#sustainability" }
-        ]
-      }
-    ],
-  },
-  {
-    id: "news-13",
-    slug: "contracting-new-development",
-    tag: "Latest",
-    title: "Cinqo Contracting Breaks Ground on New Development",
-    date: "May 30, 2026",
-    featuredImage: "/images/news/news-1.jpg",
-    href: "/news/contracting-new-development",
-    excerpt: "Cinqo Contracting begins construction on a mixed-use development set to redefine the local skyline.",
-    content: [
-      {
-        type: "paragraph",
-        text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. The development includes residential, retail, and office components across three towers.",
-      }
-    ],
-  },
-  {
-    id: "news-14",
     slug: "hawar-hotel-development-phase-1-phase-2-enhancement-works",
     tag: "News",
     title: "Hawar Hotel Development – Phase 1, Phase 2 & Enhancement Works",
     date: "July 29, 2026",
-    featuredImage: "/images/news/news-7.webp",
+    featuredImage: "/images/news/news-1.webp",
     href: "/news/hawar-hotel-development-phase-1-phase-2-enhancement-works",
     excerpt: "Cinqo Supports the Successful Delivery of Hawar Hotel Development Through Integrated Finishing Solutions",
     content: [
@@ -298,12 +36,12 @@ export const newsData: NewsItem[] = [
     ],
   },
   {
-    id: "news-15",
+    id: "news-2",
     slug: "kooheji-projects",
     tag: "Top",
     title: "Kooheji Projects",
     date: "July 29, 2026",
-    featuredImage: "/images/news/news-6.webp",
+    featuredImage: "/images/news/news-2.webp",
     href: "/news/kooheji-projects",
     excerpt: "Cinqo Strengthens Portfolio Through Flooring & Finishing Works Across Kooheji Developments",
     content: [
@@ -382,12 +120,12 @@ export const newsData: NewsItem[] = [
     ],
   },
   {
-    id: "news-16",
+    id: "news-3",
     slug: "tivoli-avani-hotel-and-residences",
     tag: "Latest",
     title: "Tivoli & Avani Hotel and Residences",
     date: "July 29, 2026",
-    featuredImage: "/images/news/news-5.webp",
+    featuredImage: "/images/news/news-3.webp",
     href: "/news/tivoli-avani-hotel-and-residences",
     excerpt: "Cinqo Executes High-Performance Car Park Epoxy and Polyurethane Floor Coating and Architectural Floor and Wall Finishes Package at Tivoli & Avani Hotel and Residences",
     content: [
@@ -406,7 +144,7 @@ export const newsData: NewsItem[] = [
     ],
   },
   {
-    id: "news-17",
+    id: "news-4",
     slug: "future-generation-reserve-phase-2",
     tag: "News",
     title: "Future Generation Reserve Phase 2",
@@ -430,12 +168,12 @@ export const newsData: NewsItem[] = [
     ],
   },
   {
-    id: "news-18",
+    id: "news-5",
     slug: "bahrain-marina-development-phase-1",
     tag: "Latest",
     title: "Bahrain Marina Development Phase 1",
     date: "July 29, 2026",
-    featuredImage: "/images/news/news-3.webp",
+    featuredImage: "/images/news/news-5.webp",
     href: "/news/bahrain-marina-development-phase-1",
     excerpt: "Bahrain Marina Development Phase 1 – Car Park Epoxy & Polyurethane Flooring Systems and Architectural Floor & Wall Finishes",
     content: [
@@ -454,12 +192,12 @@ export const newsData: NewsItem[] = [
     ],
   },
   {
-    id: "news-19",
+    id: "news-6",
     slug: "marassi-galleria",
     tag: "Top",
     title: "Marassi Galleria",
     date: "July 29, 2026",
-    featuredImage: "/images/news/news-2.webp",
+    featuredImage: "/images/news/news-6.webp",
     href: "/news/marassi-galleria",
     excerpt: "Marassi Galleria – Specialized Flooring Solutions for Bahrain's Premier Retail Destination",
     content: [
@@ -478,12 +216,12 @@ export const newsData: NewsItem[] = [
     ],
   },
   {
-    id: "news-20",
+    id: "news-7",
     slug: "international-airport-airport-modernization-program",
     tag: "News",
     title: "International Airport – Airport Modernization Program",
     date: "July 29, 2026",
-    featuredImage: "/images/news/news-1.webp",
+    featuredImage: "/images/news/news-7.webp",
     href: "/news/international-airport-airport-modernization-program",
     excerpt: "Cinqo Completes 175,000 m² High-Performance Car Park Epoxy Flooring Package for Bahrain International Airport",
     content: [
@@ -499,6 +237,150 @@ export const newsData: NewsItem[] = [
         type: "paragraph",
         text: "Delivered as part of one of Bahrain's most significant aviation infrastructure developments, this project reflects Cinqo's expertise in executing large-scale flooring solutions for major public infrastructure developments. It highlights our ability to manage complex flooring requirements with technical precision, advanced application methods and a strong commitment to quality, performance and project excellence.",
       },
+    ],
+  },
+  {
+    id: "news-8",
+    slug: "integrated-fm-agreement-al-futtaim",
+    tag: "Top",
+    title: "Landmark Integrated FM Agreement Secured with Al Futtaim Group",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-7.webp",
+    href: "/news/integrated-fm-agreement-al-futtaim",
+    excerpt: "A comprehensive full Facility Management contract with Al Futtaim Group, covering hard and soft FM services across MEP, firefighting, safety, and security.",
+    content: [
+      {
+        type: "paragraph",
+        text: "We are proud to announce our landmark partnership with the Al Futtaim Group for a comprehensive, full Facility Management (FM) contract. Under this agreement, our team will deliver an all-encompassing suite of both hard and soft FM services, including MEP preventive maintenance, specialized firefighting and safety systems, and automated sliding doors or shutters."
+      },
+      {
+        type: "paragraph",
+        text: "To ensure a seamless operational ecosystem, the scope also covers dedicated housekeeping deployment, premium pest control management, and rigorous security protocols. This contract underscores our capability to manage complex, large-scale assets with unmatched precision."
+      }
+    ],
+  },
+  {
+    id: "news-9",
+    slug: "strategic-fm-collaboration-cbre",
+    tag: "Latest",
+    title: "Strategic FM Collaboration Underway with CBRE for Premier Financial Institution",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-6.webp",
+    href: "/news/strategic-fm-collaboration-cbre",
+    excerpt: "High-level discussions commenced alongside CBRE to service comprehensive facility management requirements for a premier financial institution.",
+    content: [
+      {
+        type: "paragraph",
+        text: "In a major stride forward for our FM division, we have commenced high-level discussions alongside global real estate giant CBRE to service the comprehensive facility management requirements of a premier financial institution. Delivering bespoke, end-to-end soft and hard facility management solutions, this initiative highlights our trusted operational standards and capacity for strict client confidentiality."
+      },
+      {
+        type: "paragraph",
+        text: "This milestone significantly strengthens our strategic relationship with CBRE, positioning us optimistically for future large-scale corporate partnerships."
+      }
+    ],
+  },
+  {
+    id: "news-10",
+    slug: "premium-housekeeping-contract-seef-properties",
+    tag: "Top",
+    title: "Premium Housekeeping Contract Awarded for Seef Properties Portfolio",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-5.webp",
+    href: "/news/premium-housekeeping-contract-seef-properties",
+    excerpt: "A major expansion of soft FM portfolio through a comprehensive housekeeping services contract covering over 350,000 m\u00b2 of retail and entertainment space.",
+    content: [
+      {
+        type: "paragraph",
+        text: "We are thrilled to announce a major expansion of our soft Facility Management (FM) portfolio through a comprehensive housekeeping services contract awarded by Seef Properties. Under this major agreement, our teams are managing the integrated soft FM and sanitization services across their premier retail and lifestyle assets, including Al Liwan, Seef Mall \u2013 Seef District, Seef Mall \u2013 Muharraq, and Seef Mall \u2013 Isa Town."
+      },
+      {
+        type: "paragraph",
+        text: "The mandate extends into Seef\u2019s elite leisure destinations, fully covering major family entertainment hubs like Yabeela, Magic Island, and the brand's complete entertainment property portfolio. To support this massive operational footprint, our HR and operations divisions successfully executed a fast-tracked mobilization program alongside rigorous, specialized training."
+      },
+      {
+        type: "paragraph",
+        text: "Staff have been strictly upskilled in high-traffic crowd management, advanced safety sanitization protocols, and customer-centric hospitality behaviors to align with the premium experience expected by Seef's visitors. This monumental contract encompasses a combined gross coverage of over 350,000 square meters of high-density retail and entertainment space, cementing our status as a market leader in massive-scale retail soft FM deployment."
+      }
+    ],
+  },
+  {
+    id: "news-11",
+    slug: "turnkey-fit-out-excellence-stc-bahrain",
+    tag: "Latest",
+    title: "Turnkey Interior Fit-Out Excellence Delivered for STC Bahrain",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-4.webp",
+    href: "/news/turnkey-fit-out-excellence-stc-bahrain",
+    excerpt: "Multiple high-specification interior fit-out projects awarded by STC Bahrain, reflecting continued trust in superior craftsmanship and project management.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Our Interior Fit-Outs department continues to solidify its reputation for corporate excellence, having been awarded multiple projects by telecom leader STC Bahrain. We are executing complete, high-specification interior fit-out solutions tailored to match their progressive corporate identity and technological needs."
+      },
+      {
+        type: "paragraph",
+        text: "These consecutive wins reflect STC\u2019s continued trust in our ability to deliver superior craftsmanship, seamless project management, and premium corporate environments."
+      }
+    ],
+  },
+  {
+    id: "news-12",
+    slug: "rapid-fit-out-transformation-world-trade-center",
+    tag: "News",
+    title: "Rapid 60-Day Fit-Out Transformation at World Trade Center",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-12.JPG",
+    href: "/news/rapid-fit-out-transformation-world-trade-center",
+    excerpt: "Complete interior fit-out for Bina Al Bahrain at the World Trade Center delivered within a strict 60-day timeline.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Demonstrating our exceptional fast-track project capabilities, we successfully completed the complete interior fit-out for the Bina Al Bahrain office at the World Trade Center within a strict 60-day timeline. The extensive scope of work demanded meticulous coordination, spanning demolition, structural enhancements, premium flooring, bespoke furniture integration, and cutting-edge technology and lighting installations."
+      },
+      {
+        type: "paragraph",
+        text: "The space was further elevated with advanced HVAC systems and specialized stretched ceilings, proving our ability to deliver luxury under tight corporate deadlines."
+      }
+    ],
+  },
+  {
+    id: "news-13",
+    slug: "precision-engineering-rolls-royce-showroom",
+    tag: "Top",
+    title: "Precision Engineering Delivered for Rolls-Royce Showroom",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-13.JPG",
+    href: "/news/precision-engineering-rolls-royce-showroom",
+    excerpt: "Interior fit-out for Euro Motors' state-of-the-art Rolls-Royce showroom, requiring the highest caliber of luxury craftsmanship and precision engineering.",
+    content: [
+      {
+        type: "paragraph",
+        text: "We are thrilled to showcase our interior fit-out work for Euro Motors' state-of-the-art Rolls-Royce showroom, a project requiring the highest caliber of luxury craftsmanship. Collaborating closely with elite international design teams and top-tier consultants, our team translated ultra-premium brand aesthetics into a physical masterpiece."
+      },
+      {
+        type: "paragraph",
+        text: "The finished showroom stands as a testament to our precision engineering, flawless finishings, and ability to meet the stringent global standards of the world\u2019s most prestigious automotive brands."
+      }
+    ],
+  },
+  {
+    id: "news-14",
+    slug: "brand-compliant-fit-out-maserati-showroom",
+    tag: "Latest",
+    title: "Seamless Brand-Compliant Fit-Out Executed for Maserati Showroom",
+    date: "July 30, 2026",
+    featuredImage: "/images/news/news-14.jpeg",
+    href: "/news/brand-compliant-fit-out-maserati-showroom",
+    excerpt: "Fast-paced fit-out solution for the Maserati showroom, featuring specialized micro-cement flooring and strict adherence to global brand guidelines.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Speed, adherence to global brand guidelines, and innovation came together in our recent fast-paced fit-out solution for the Maserati showroom. Our team meticulously executed every design specification down to the finest detail, ensuring the space strictly aligned with Maserati\u2019s elite international identity."
+      },
+      {
+        type: "paragraph",
+        text: "A key highlight of the project was the application of a specialized micro-cement floor in the vehicle display area, adding a sophisticated, multi-dimensional aesthetic that perfectly complements the luxury fleet."
+      }
     ],
   },
 ];
