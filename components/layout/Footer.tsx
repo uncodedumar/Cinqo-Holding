@@ -72,7 +72,7 @@ export default function Footer() {
         src="/videos/footer/image.webp"
         alt=""
         fill
-        className="bg-media object-cover"
+        className="bg-media object-fill md:object-cover"
       />
       <div className="absolute inset-0 z-[1] bg-black/25" />
 
