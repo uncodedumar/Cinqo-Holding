@@ -238,7 +238,7 @@ export default function ContactForm() {
         {/* LEFT COLUMN: Contact Form */}
         <form onSubmit={handleSubmit} className="flex-1 min-h-[820px] pt-3 pl-4 pr-4 pb-8 lg:pb-0">
           
-          <h1 className="text-[30px] leading-[1.2] font-normal text-[#1A1A1A] mb-6">
+          <h1 className="text-[22px] md:text-[30px] leading-[1.2] font-normal text-[#1A1A1A] mb-4 md:mb-6">
             You can contact Cinqo via our secure form or through the contact details provided opposite.
           </h1>
 
@@ -404,10 +404,10 @@ export default function ContactForm() {
         <div className="lg:w-[34%] w-full border-t-[0.5px] lg:border-t-0 lg:border-l-[0.5px] border-black flex flex-col">
           
           {/* Top Cell */}
-            <div className="border-t-0 pt-4 pr-5 pb-4 w-full flex-1 relative">
+          <div className="border-t-0 pt-4 pr-5 pb-4 pl-3 w-full flex-1 flex flex-col justify-between min-h-[160px] relative">
             <Mail className="absolute top-4 right-3 text-[#E03A3E]" size={16} strokeWidth={1.5} />
-            <h4 className="text-[11px] font-medium text-gray-600 pl-3">RFP Responses and Qualification Submissions</h4>
-            <div className="absolute bottom-4 left-3 text-left">
+            <h4 className="text-[11px] font-medium text-gray-600 pr-6">RFP Responses and Qualification Submissions</h4>
+            <div className="mt-4 text-left">
                <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
                <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
                  <p>info@cinqo-me.com</p>
@@ -416,10 +416,10 @@ export default function ContactForm() {
           </div>
 
           {/* Business Hours Segment */}
-          <div className="border-t-[0.5px]  border-black pt-4 pr-5 pb-4 w-full flex-1 relative">
+          <div className="border-t-[0.5px] border-black pt-4 pr-5 pb-4 pl-3 w-full flex-1 flex flex-col justify-between min-h-[160px] relative">
             <Clock className="absolute top-4 right-3 text-[#E03A3E]" size={16} strokeWidth={1.5} />
-            <h4 className="text-[11px] font-medium text-gray-600 pl-3">Business Hours</h4>
-            <div className="absolute bottom-4 left-3 text-left">
+            <h4 className="text-[11px] font-medium text-gray-600 pr-6">Business Hours</h4>
+            <div className="mt-4 text-left">
                <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
                <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
                  <p>Sat. - Wed. 8am to 5pm</p>
@@ -430,16 +430,16 @@ export default function ContactForm() {
           </div>
 
           {/* Postal Address Segment */}
-          <div className="border-t-[0.5px]  border-black pt-4 pr-5 pb-4 w-full flex-1 relative">
+          <div className="border-t-[0.5px] border-black pt-4 pr-5 pb-4 pl-3 w-full flex-1 flex flex-col justify-between min-h-[160px] relative">
             <LocationPin className="absolute top-4 right-3 text-[#E03A3E]" size={16} strokeWidth={1.5} />
-            <h4 className="text-[11px] font-medium text-gray-600 pl-3">Postal Address:</h4>
-            <div className="absolute bottom-4 left-3 text-left">
+            <h4 className="text-[11px] font-medium text-gray-600 pr-6">Postal Address:</h4>
+            <div className="mt-4 text-left">
                <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
                <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
                  <p>YBAK TOWER,</p>
                  <p>Level 14, Entrance No. 143-144</p>
                  <p>Road 1703, Block 317.</p>
-                 <p>Diplomatic Area, Kingdom of<br/>Bahrain.</p>
+                 <p>Diplomatic Area, Kingdom of<br className="hidden lg:block"/>Bahrain.</p>
                </div>
              </div>
           </div>
