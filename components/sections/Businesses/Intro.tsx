@@ -41,7 +41,7 @@ export default function Intro({ business }: { business: BusinessData }) {
               muted
               playsInline
               poster={business.introBgImage}
-              className="absolute inset-0 w-full h-full object-cover brightness-100 saturate-[0.5] contrast-[0.95]"
+              className="absolute inset-0 w-full h-full object-fill md:object-cover brightness-100 saturate-[0.5] contrast-[0.95]"
             >
               <source src={business.introBgVideo} type="video/mp4" />
             </video>
@@ -50,7 +50,7 @@ export default function Intro({ business }: { business: BusinessData }) {
               src={business.introBgImage}
               alt={`${business.name} Background`}
               fill
-              className="object-cover brightness-100 saturate-[0.5] contrast-[0.95]"
+              className="object-fill md:object-cover brightness-100 saturate-[0.5] contrast-[0.95]"
               sizes="100vw"
             />
           )}
