@@ -73,7 +73,7 @@ export default function Footer() {
       <div className="absolute inset-0 z-[1] bg-black/25" />
 
       <div className="container relative z-20 grid gap-10 pt-16 pb-10 md:pt-20 lg:pt-[120px] grid-cols-1 lg:grid-cols-[1fr_2fr]">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
           <Image
             src="/images/logos/NewFooterLogo.png"
             alt="Cinqo"
@@ -88,9 +88,9 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:justify-items-end">
           {FOOTER_COLUMNS.map((col) => (
-            <div key={col.title}>
+            <div key={col.title} className="flex flex-col items-center sm:items-start text-center sm:text-left">
               <h4 className="text-sm uppercase tracking-[0.08em] mb-4 text-cream-50 font-semibold">{col.title}</h4>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col items-center sm:items-start gap-3">
                 {col.links.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-base text-cream-50 opacity-85 transition-opacity duration-300 ease-out hover:opacity-100">{link.label}</Link>
