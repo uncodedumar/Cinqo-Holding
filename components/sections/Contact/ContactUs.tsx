@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import "flag-icons/css/flag-icons.min.css";
 
 // Icons as inline SVGs
 const Mail = (p: { className?: string; size?: number; strokeWidth?: number }) => (

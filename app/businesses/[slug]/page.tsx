@@ -1,13 +1,15 @@
 import { notFound } from "next/navigation";
 import { businesses} from "@/data/businesses.data";
+import dynamic from "next/dynamic";
 import Intro from "@/components/sections/Businesses/Intro";
 import DefineUs from "@/components/sections/Businesses/DefineUs";
 import Capabilities from "@/components/sections/Businesses/Capabilities";
 import Sectors from "@/components/sections/Businesses/Sectors";
-import BrandPortfolio from "@/components/sections/Businesses/BrandPortfolio";
 import Governance from "@/components/sections/Businesses/Governance";
 import Projects from "@/components/sections/Businesses/Projects";
 import News from "@/components/sections/Home/NewsSection";
+
+const BrandPortfolio = dynamic(() => import("@/components/sections/Businesses/BrandPortfolio"));
 
 /** Trading is the only business that distributes third-party brands. */
 const SLUG_TRADING = "cinqo-trading";

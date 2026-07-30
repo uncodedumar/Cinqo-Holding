@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Home/Hero";
 import AboutUs from "@/components/sections/Home/AboutUs";
-import Credibility from "@/components/sections/Home/Credibility";
 import OurCompanies from "@/components/sections/Home/OurCompanies";
-import ThePrinciple from "@/components/sections/Home/ThePrinciple";
-import ProjectHighlights from "@/components/sections/Home/ProjectHighlights";
 import LogosLoop from "@/components/sections/Home/LogosLoop";
 import NewsSection from "@/components/sections/Home/NewsSection";
 import SubscribeNow from "@/components/sections/Home/SubscribeNow";
+
+const Credibility = dynamic(() => import("@/components/sections/Home/Credibility"));
+const ThePrinciple = dynamic(() => import("@/components/sections/Home/ThePrinciple"));
+const ProjectHighlights = dynamic(() => import("@/components/sections/Home/ProjectHighlights"));
 
 export default function Home() {
   return (
@@ -20,7 +22,6 @@ export default function Home() {
       <LogosLoop />
       <NewsSection />
       <SubscribeNow />
-      
     </main>
   );
 }
