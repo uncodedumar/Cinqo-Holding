@@ -34,8 +34,12 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
 
   const [isMobile, setIsMobile] = useState(false);
 
+  /** On mobile, `x: "100vw"` guarantees the element starts off-screen right
+      regardless of its own computed width. On desktop, `x: "150%"` gives the
+      existing smooth slide-in from well outside the viewport. */
+  const fadeRestX = isMobile ? "100vw" : "150%";
   const fade: Variants = {
-    rest: { opacity: 0, x: "150%" },
+    rest: { opacity: 0, x: fadeRestX },
     hover: { opacity: 1, x: "0%", transition: { duration: 0.8, ease: EASE } },
   };
 
