@@ -299,6 +299,27 @@
   animation: kenburns 6s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-light {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .glass-frost-hover:hover {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .will-change-transform {
+    will-change: auto;
+  }
+}
+
 @keyframes scroll {
   to { transform: translateX(-50%); }
 }
