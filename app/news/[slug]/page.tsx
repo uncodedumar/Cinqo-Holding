@@ -25,7 +25,7 @@ export default async function NewsSlugPage({
   const sidebarNews = [...newsData]
     .filter((item) => item.slug !== slug)
     .reverse()
-    .slice(0, 10)
+    .slice(0, 4)
     .sort((a, b) => TAG_PRIORITY[a.tag] - TAG_PRIORITY[b.tag]);
 
   return (
