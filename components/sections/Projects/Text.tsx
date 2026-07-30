@@ -39,7 +39,7 @@ export default function ScrollRevealText() {
     <div className="max-w-[95%] mx-auto py-20 px-6">
       <p
         ref={textRef}
-        className="text-4xl font-light leading-relaxed"
+        className="text-2xl md:text-4xl font-light leading-relaxed"
       >
         Our portfolio reflects the breadth of the Group&apos;s capabilities across
         contracting, facilities management, distribution and specialist services.
