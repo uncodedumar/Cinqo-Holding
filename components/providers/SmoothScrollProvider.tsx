@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
@@ -22,33 +22,56 @@ export default function SmoothScrollProvider({
   children: ReactNode;
 }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
+  const cleanupRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
-    const instance = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-    setLenis(instance);
+    const isMobile = window.innerWidth < 768;
 
-    instance.on("scroll", ScrollTrigger.update);
+    const initLenis = () => {
+      const instance = new Lenis({
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+      setLenis(instance);
 
-    const onTick = (time: number) => {
-      instance.raf(time * 1000);
+      instance.on("scroll", ScrollTrigger.update);
+
+      const onTick = (time: number) => {
+        instance.raf(time * 1000);
+      };
+      gsap.ticker.add(onTick);
+      gsap.ticker.lagSmoothing(0);
+
+      const onRefresh = () => instance.resize();
+      ScrollTrigger.addEventListener("refresh", onRefresh);
+      ScrollTrigger.refresh();
+
+      cleanupRef.current = () => {
+        ScrollTrigger.removeEventListener("refresh", onRefresh);
+        gsap.ticker.remove(onTick);
+        instance.destroy();
+        setLenis(null);
+      };
     };
-    gsap.ticker.add(onTick);
-    gsap.ticker.lagSmoothing(0);
 
-    const onRefresh = () => instance.resize();
-    ScrollTrigger.addEventListener("refresh", onRefresh);
-    ScrollTrigger.refresh();
+    if (isMobile) {
+      if (typeof requestIdleCallback !== "undefined") {
+        const id = requestIdleCallback(() => initLenis(), { timeout: 300 });
+        return () => {
+          cancelIdleCallback(id);
+          cleanupRef.current?.();
+        };
+      }
+      const timerId = window.setTimeout(initLenis, 150);
+      return () => {
+        clearTimeout(timerId);
+        cleanupRef.current?.();
+      };
+    }
 
-    return () => {
-      ScrollTrigger.removeEventListener("refresh", onRefresh);
-      gsap.ticker.remove(onTick);
-      instance.destroy();
-      setLenis(null);
-    };
+    initLenis();
+    return () => cleanupRef.current?.();
   }, []);
 
   return (
