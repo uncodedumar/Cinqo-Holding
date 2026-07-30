@@ -157,7 +157,7 @@ export const businesses: BusinessData[] = [
         title: "HIGH-END RESIDENTIAL\n VILLAS & COMPOUNDS",
         description:
           "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
-        image: "/images/sectors/cp11.jfif",
+        image: "/images/sectors/cp11.jpg",
       },
       {
         title: "RESIDENTIAL & \n COMMERCIAL TOWERS",

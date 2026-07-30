@@ -64,17 +64,17 @@ export default function ContactUs() {
       </div>
 
       {/* Bottom Content Row (Text + Image Aligned) */}
-      <div className="relative w-full flex-grow flex items-stretch">
+      <div className="relative w-full flex-grow flex flex-col md:block">
         <div className="px-6 md:px-12 max-w-[1440px] mx-auto w-full flex flex-col md:flex-row relative z-10 pointer-events-none">
           
           {/* Text Container */}
-          <motion.div className="w-full md:w-[45%] flex flex-col justify-between pb-12 md:pb-16 pointer-events-auto min-h-[450px] md:min-h-[550px]" variants={itemVariants}>
-            <h2 className="text-xl md:text-4xl font-medium leading-[1.1] text-black mb-8" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
+          <motion.div className="w-full md:w-[45%] flex flex-col justify-between pb-2 md:pb-16 pointer-events-auto min-h-0 md:min-h-[550px]" variants={itemVariants}>
+            <h2 className="text-xl md:text-4xl font-medium leading-[1.1] text-black mb-4 md:mb-8" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
               Contact Us to discuss your<br></br> requirements and a <br></br>memeber of our team <br></br>will get in touch.
             </h2>
             
             {/* Spacer to push subheading to the bottom */}
-            <div className="flex-grow"></div>
+            <div className="flex-grow hidden md:block"></div>
 
             
           </motion.div>
@@ -83,7 +83,7 @@ export default function ContactUs() {
 
         {/* Absolute Image spanning top-to-bottom of this flex container, bleeding right */}
         <motion.div 
-          className="absolute right-0 top-0 bottom-0 z-0 w-full md:w-[60%] max-w-[1100px]" 
+          className="relative md:absolute right-0 top-0 bottom-0 z-0 w-full md:w-[60%] max-w-[1100px] h-[350px] md:h-auto" 
           variants={wipeVariants}
         >
           <Image 
