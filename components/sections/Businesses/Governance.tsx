@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const timelineData = [
@@ -146,10 +147,12 @@ export default function GovernanceTimelineAndInvestments() {
               style={{ top: markerPosition }}
               className="absolute -translate-y-1/2 w-12 h-12 flex items-center justify-center "
             >
-              <img 
-                src="/images/logos/Circle.webp" 
-                alt="Scroll Marker Indicator" 
-                className="w-full h-full object-contain "
+<Image
+                src="/images/logos/Circle.webp"
+                alt="Scroll Marker Indicator"
+                width={48}
+                height={48}
+                className="object-contain"
               />
             </motion.div>
           </div>
@@ -192,14 +195,17 @@ export default function GovernanceTimelineAndInvestments() {
                 {/* Fallback styling for when images aren't loaded yet. 
                     Will automatically use the img tag when paths are correct. */}
                 <div className="relative w-[80%] h-16 flex items-center justify-center">
-                  <img 
-                    src={investment.logoSrc} 
+<Image
+                    src={investment.logoSrc}
                     alt={investment.logoAlt}
-                    className="max-w-full max-h-full object-contain"
+                    fill
+                    className="object-contain"
                     onError={(e) => {
-                      // Fallback text if image path is broken temporarily
                       (e.currentTarget as HTMLImageElement).style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = `<span class="font-bold text-xl text-black">${investment.logoAlt}</span>`;
+                      const fallback = document.createElement('span');
+                      fallback.className = 'font-bold text-xl text-black';
+                      fallback.textContent = investment.logoAlt;
+                      e.currentTarget.parentElement?.appendChild(fallback);
                     }}
                   />
                 </div>

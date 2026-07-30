@@ -99,7 +99,6 @@ export default function TeamSection() {
                   alt={director.name}
                   fill
                   className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.1]"
-                  unoptimized
                 />
               </div>
               <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10 pointer-events-none" />
@@ -139,7 +138,6 @@ export default function TeamSection() {
                   alt={exec.name}
                   fill
                   className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.15]"
-                  unoptimized
                 />
               </div>
               <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10 pointer-events-none" />
@@ -170,7 +168,6 @@ export default function TeamSection() {
                   alt={executives[8].name}
                   fill
                   className="scale-[1.1] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.15]"
-                  unoptimized
                 />
               </div>
               <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10 z-10 pointer-events-none" />

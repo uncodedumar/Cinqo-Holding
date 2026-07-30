@@ -13,7 +13,6 @@ export default function NewsSlugHero({ title, image }: NewsSlugHeroProps) {
         alt={title}
         fill
         priority
-        quality={100}
         className="object-cover"
         sizes="100vw"
       />

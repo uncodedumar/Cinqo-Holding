@@ -69,8 +69,6 @@ export default function Footer() {
         alt=""
         fill
         className="bg-media object-cover"
-        quality={100}
-        priority
       />
       <div className="absolute inset-0 z-[1] bg-black/25" />
 

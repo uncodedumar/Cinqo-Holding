@@ -183,7 +183,6 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
                     }`}
                     width={400}
                     height={300}
-                    unoptimized
                     className="w-full h-full object-cover rounded-sm shadow-md"
                   />
                 </div>
