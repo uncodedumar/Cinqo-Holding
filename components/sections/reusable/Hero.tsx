@@ -116,7 +116,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
   return (
     <section
       className={`relative flex items-end overflow-hidden text-cream-50 ${
-        isCompact ? "w-full h-[360px] md:h-[440px] lg:h-[500px]" : "min-h-screen"
+        isCompact ? "w-full h-[360px] md:h-[440px] lg:h-[500px]" : "min-h-[100svh] md:min-h-screen"
       }`}
       id={id}
       ref={containerRef}
@@ -152,7 +152,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
       {/* Hero Content Container */}
       <div
         className={`container relative z-20 flex flex-col !pl-[40px] select-none ${
-          isCompact ? "pb-10 md:pb-14 gap-3" : "pb-24 gap-6"
+          isCompact ? "pb-10 md:pb-14 gap-3" : "pb-55 md:pb-28 gap-6"
         }`}
         ref={contentRef}
       >
