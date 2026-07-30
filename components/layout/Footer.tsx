@@ -44,7 +44,11 @@ export default function Footer() {
     if (!el) return;
 
     const setHeightVar = () => {
-      document.documentElement.style.setProperty("--footer-height", `${el.offsetHeight}px`);
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        document.documentElement.style.setProperty("--footer-height", `${el.offsetHeight}px`);
+      } else {
+        document.documentElement.style.setProperty("--footer-height", "0px");
+      }
     };
 
     setHeightVar();
@@ -62,7 +66,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="fixed inset-x-0 bottom-0 z-[-2] max-h-screen overflow-y-auto overflow-x-hidden bg-navy-950 text-cream-50 isolate flex flex-col"
+      className="relative md:fixed inset-x-0 bottom-0 z-0 md:z-[-2] w-full md:max-h-screen overflow-hidden md:overflow-y-auto overflow-x-hidden bg-navy-950 text-cream-50 isolate flex flex-col"
     >
       <Image
         src="/videos/footer/image.webp"
@@ -72,7 +76,7 @@ export default function Footer() {
       />
       <div className="absolute inset-0 z-[1] bg-black/25" />
 
-      <div className="container relative z-20 grid gap-10 pt-16 pb-10 md:pt-20 lg:pt-[120px] grid-cols-1 lg:grid-cols-[1fr_2fr]">
+      <div className="container relative z-20 grid gap-8 md:gap-10 pt-10 pb-6 md:pt-20 md:pb-10 lg:pt-[120px] grid-cols-1 lg:grid-cols-[1fr_2fr]">
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
           <Image
             src="/images/logos/NewFooterLogo.png"
