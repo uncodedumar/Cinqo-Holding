@@ -6,11 +6,14 @@ import Image from "next/image";
 import { PROJECTS } from "@/data/projects.data";
 
 export default function CompletedProjects() {
-  // Filter data to only show "ongoing" projects
+  // Filter data to only show "completed" projects
   const ongoingProjects = PROJECTS.filter((project) => project.status === "completed");
   
   // Track which accordion row is open
   const [openId, setOpenId] = useState<string | null>(null);
+
+  // Track active image index per project for circular gallery
+  const [activeIndex, setActiveIndex] = useState<Record<string, number>>({});
 
   const toggleRow = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
@@ -26,6 +29,23 @@ export default function CompletedProjects() {
       <div className="border-t border-gray-200">
         {ongoingProjects.map((project) => {
           const isOpen = openId === project.id;
+          const allImages = [project.image, ...(project.thumbnails || [])];
+          const currIdx = activeIndex[project.id] || 0;
+          const total = allImages.length;
+
+          const handlePrev = () => {
+            setActiveIndex((prev) => ({
+              ...prev,
+              [project.id]: ((prev[project.id] || 0) - 1 + total) % total,
+            }));
+          };
+
+          const handleNext = () => {
+            setActiveIndex((prev) => ({
+              ...prev,
+              [project.id]: ((prev[project.id] || 0) + 1) % total,
+            }));
+          };
 
           return (
             <div key={project.id} className="border-b border-gray-200 overflow-hidden">
@@ -89,12 +109,12 @@ export default function CompletedProjects() {
                       
                       {/* Left Side: Large Project Image */}
                       <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-gray-100">
-                        <Image
-                          src={project.image}
-                          alt={project.name}
-                          fill
-                          className="object-cover"
-                        />
+                          <Image
+                            src={allImages[currIdx]}
+                            alt={project.name}
+                            fill
+                            className="object-cover"
+                          />
                       </div>
 
                       {/* Right Side: Text, Logo, and Gallery */}
@@ -113,9 +133,11 @@ export default function CompletedProjects() {
                         )}
 
                         {/* Description */}
-                        <p className="text-gray-700 leading-relaxed mb-6">
-                          {project.description}
-                        </p>
+                        <div className="text-gray-700 leading-relaxed mb-6 space-y-4">
+                          {project.description.split('\n\n').map((paragraph, i) => (
+                            <p key={i}>{paragraph}</p>
+                          ))}
+                        </div>
 
                         {/* Bullet Points */}
                         {project.bullets && (
@@ -129,29 +151,37 @@ export default function CompletedProjects() {
                         {/* Bottom Thumbnail Gallery & Controls */}
                         <div className="mt-auto flex justify-between items-end gap-4 flex-wrap">
                           {/* Thumbnails */}
-                          {project.thumbnails && (
+                          {allImages.length > 1 && (
                             <div className="flex gap-3">
-                              {project.thumbnails.map((thumb, idx) => (
-                                <div key={idx} className="relative w-20 h-20 rounded-xl overflow-hidden shadow-sm">
-                                  <Image
-                                    src={thumb}
-                                    alt={`Thumbnail ${idx + 1}`}
-                                    fill
-                                    className="object-cover"
-                                  />
-                                </div>
-                              ))}
+                              {allImages.map((thumb, idx) =>
+                                idx !== currIdx ? (
+                                  <div key={idx} className="relative w-20 h-20 rounded-xl overflow-hidden shadow-sm">
+                                    <Image
+                                      src={thumb}
+                                      alt={`Thumbnail ${idx + 1}`}
+                                      fill
+                                      className="object-cover"
+                                    />
+                                  </div>
+                                ) : null
+                              )}
                             </div>
                           )}
 
-                          {/* Arrows (Static for styling purposes as requested) */}
+                          {/* Arrows */}
                           <div className="flex items-center gap-3">
-                            <button className="w-10 h-10 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors">
+                            <button
+                              onClick={handlePrev}
+                              className="w-10 h-10 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors"
+                            >
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                               </svg>
                             </button>
-                            <button className="h-10 px-6 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors">
+                            <button
+                              onClick={handleNext}
+                              className="h-10 px-6 rounded-full bg-neutral-800 text-white flex items-center justify-center hover:bg-neutral-700 transition-colors"
+                            >
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                               </svg>
