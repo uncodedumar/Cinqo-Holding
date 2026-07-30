@@ -122,7 +122,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/3 Storey Building at Janabiyah/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for 3 Storey Building at Janabiyah.",
     thumbnails: [
       "/images/projects/flooring/3 Storey Building at Janabiyah/2.jpg",
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/Adliya 7 Storey Project/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for Adliya 7 Storey Project.",
     thumbnails: [
       "/images/projects/flooring/Adliya 7 Storey Project/2.jpg",
@@ -154,7 +154,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/AL WASEET PLASTIC COMPANY FACTORY, KUWAIT/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for AL WASEET PLASTIC COMPANY FACTORY, KUWAIT.",
     thumbnails: [
       "/images/projects/flooring/AL WASEET PLASTIC COMPANY FACTORY, KUWAIT/2.jpg",
@@ -170,7 +170,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/AMAS JOTUN/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for AMAS JOTUN.",
     thumbnails: [
       "/images/projects/flooring/AMAS JOTUN/2.jpg",
@@ -186,7 +186,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/AVENUES MALL - BERGER/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for AVENUES MALL - BERGER.",
     thumbnails: [
       "/images/projects/flooring/AVENUES MALL - BERGER/2.jpg",
@@ -202,7 +202,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/AVS�Villa/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for AVS Villa.",
     thumbnails: [
       "/images/projects/flooring/AVS�Villa/2.jpg",
@@ -218,7 +218,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/Bader Noorudin�Villa/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for Bader Noorudin Villa.",
     thumbnails: [
       "/images/projects/flooring/Bader Noorudin�Villa/2.jpg",
@@ -234,7 +234,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/BAHRAIN AIRPORT/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for BAHRAIN AIRPORT.",
     thumbnails: [
       "/images/projects/flooring/BAHRAIN AIRPORT/2.jpg",
@@ -250,7 +250,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/CITY CENTRE BAHRAIN/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for CITY CENTRE BAHRAIN.",
     thumbnails: [
       "/images/projects/flooring/CITY CENTRE BAHRAIN/2.jpg",
@@ -265,7 +265,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/EXHIBITION WORLD/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for EXHIBITION WORLD.",
     thumbnails: [
       "/images/projects/flooring/EXHIBITION WORLD/2.jpg",
@@ -281,7 +281,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/FGR PHASE 2/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for FGR PHASE 2."
   },
   {
@@ -292,7 +292,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/FONTANA INFINITY/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for FONTANA INFINITY.",
     thumbnails: [
       "/images/projects/flooring/FONTANA INFINITY/2.jpg",
@@ -308,7 +308,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/Hamala Villa/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for Hamala Villa.",
     thumbnails: [
       "/images/projects/flooring/Hamala Villa/2.jpg",
@@ -324,7 +324,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/HAWAR/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for HAWAR.",
     thumbnails: [
       "/images/projects/flooring/HAWAR/2.jpg",
@@ -340,7 +340,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/HIDD OASIS/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for HIDD OASIS.",
     thumbnails: [
       "/images/projects/flooring/HIDD OASIS/2.jpeg",
@@ -356,7 +356,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/IKEA/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for IKEA.",
     thumbnails: [
       "/images/projects/flooring/IKEA/2.jpg",
@@ -372,7 +372,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/JUFFAIR SQUARE (JRD) BERGER/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for JUFFAIR SQUARE (JRD) BERGER.",
     thumbnails: [
       "/images/projects/flooring/JUFFAIR SQUARE (JRD) BERGER/2.jpg",
@@ -388,7 +388,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/KING HAMAD BERGER/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for KING HAMAD BERGER.",
     thumbnails: [
       "/images/projects/flooring/KING HAMAD BERGER/2.jpg",
@@ -404,7 +404,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/LAGOON VIEWS/1.png",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for LAGOON VIEWS.",
     thumbnails: [
       "/images/projects/flooring/LAGOON VIEWS/2.png",
@@ -420,7 +420,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/MARASSI/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for MARASSI."
   },
   {
@@ -431,7 +431,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/MARINA/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for MARINA.",
     thumbnails: [
       "/images/projects/flooring/MARINA/2.jpg",
@@ -447,7 +447,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/MKF -JOTUN/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for MKF -JOTUN.",
     thumbnails: [
       "/images/projects/flooring/MKF -JOTUN/2.jpg",
@@ -463,7 +463,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/OASIS MALL BERGER/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for OASIS MALL BERGER.",
     thumbnails: [
       "/images/projects/flooring/OASIS MALL BERGER/2.jpg",
@@ -479,7 +479,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/ONYX TOWER/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for ONYX TOWER.",
     thumbnails: [
       "/images/projects/flooring/ONYX TOWER/2.jpg",
@@ -495,7 +495,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/RES AT BARBAR/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for RES AT BARBAR.",
     thumbnails: [
       "/images/projects/flooring/RES AT BARBAR/2.jpg",
@@ -510,7 +510,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/SA2/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for SA2.",
     thumbnails: [
       "/images/projects/flooring/SA2/2.jpg",
@@ -526,7 +526,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/SBV - JOTUN/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for SBV - JOTUN.",
     thumbnails: [
       "/images/projects/flooring/SBV - JOTUN/2.jpg",
@@ -542,7 +542,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     image: "/images/projects/flooring/STP TUBLI/1.jpg",
     logo: "/images/logos/4.png",
-    company: "Cinqo Holding",
+    company: "CFCT",
     description: "Dummy description for STP TUBLI.",
     thumbnails: [
       "/images/projects/flooring/STP TUBLI/2.jpg",
