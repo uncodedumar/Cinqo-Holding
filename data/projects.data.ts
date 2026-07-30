@@ -548,5 +548,313 @@ export const PROJECTS: Project[] = [
       "/images/projects/flooring/STP TUBLI/2.jpg",
       "/images/projects/flooring/STP TUBLI/3.jpg"
     ]
-  }
+  },
+{
+    id: "cc-001",
+    name: "3 Storey @ Riffa, NTC, AEB",
+    subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+    date: "27 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/3 Storey @ Riffa, NTC, AEB/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    bullets: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/3 Storey @ Riffa, NTC, AEB/2.jpeg",
+      "/images/projects/Contracting/Completed/3 Storey @ Riffa, NTC, AEB/3.jpeg",
+      "/images/projects/Contracting/Completed/3 Storey @ Riffa, NTC, AEB/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-002",
+    name: "3 Storey Building at Janabiyah (Sabeel Residence)",
+    subheading: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    date: "21 Sep, 2024",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/3 Storey Building at Janabiyah (Sabeel\u00A0Residence)/1.jpg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    bullets: [
+      "Duis aute irure dolor in reprehenderit in voluptate.",
+      "Velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Excepteur sint occaecat cupidatat non proident."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/3 Storey Building at Janabiyah (Sabeel\u00A0Residence)/2.jpg",
+      "/images/projects/Contracting/Completed/3 Storey Building at Janabiyah (Sabeel\u00A0Residence)/3.jpg",
+      "/images/projects/Contracting/Completed/3 Storey Building at Janabiyah (Sabeel\u00A0Residence)/4.jpg"
+    ]
+  },
+  {
+    id: "cc-003",
+    name: "AR Kanno School",
+    subheading: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    date: "XX-YY-ZZZZ",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/AR Kanno School/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    bullets: [
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur.",
+      "Aut odit aut fugit, sed quia consequuntur magni dolores.",
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/AR Kanno School/2.jpeg"
+    ]
+  },
+  {
+    id: "cc-004",
+    name: "AVS\u00A0Villa",
+    subheading: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
+    date: "21 Sep, 2024",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/AVS\u00A0Villa/1.jpg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+    bullets: [
+      "Similique sunt in culpa qui officia deserunt mollitia.",
+      "Animi, id est laborum et dolorum fuga.",
+      "Et harum quidem rerum facilis est et expedita distinctio."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/AVS\u00A0Villa/2.jpg",
+      "/images/projects/Contracting/Completed/AVS\u00A0Villa/3.jpg",
+      "/images/projects/Contracting/Completed/AVS\u00A0Villa/4.jpg"
+    ]
+  },
+  {
+    id: "cc-005",
+    name: "Bader Noorudin\u00A0Villa",
+    subheading: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime.",
+    date: "21 Sep, 2024",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Bader Noorudin\u00A0Villa/1.jpg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
+    bullets: [
+      "Temporibus autem quibusdam et aut officiis debitis aut rerum.",
+      "Necessitatibus saepe eveniet ut et voluptates repudiandae.",
+      "Molestiae non recusandae earum rerum hic tenetur a sapiente."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Bader Noorudin\u00A0Villa/2.jpg",
+      "/images/projects/Contracting/Completed/Bader Noorudin\u00A0Villa/3.jpg",
+      "/images/projects/Contracting/Completed/Bader Noorudin\u00A0Villa/4.jpg"
+    ]
+  },
+  {
+    id: "cc-006",
+    name: "Compound Villas at Janabiyah",
+    subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    date: "27 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Compound Villas at Janabiyah/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    bullets: [
+      "Duis aute irure dolor in reprehenderit in voluptate velit.",
+      "Esse cillum dolore eu fugiat nulla pariatur excepteur sint.",
+      "Occaecat cupidatat non proident sunt in culpa qui officia."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Compound Villas at Janabiyah/2.jpeg",
+      "/images/projects/Contracting/Completed/Compound Villas at Janabiyah/3.jpeg",
+      "/images/projects/Contracting/Completed/Compound Villas at Janabiyah/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-007",
+    name: "Dumistan Mall, Qattan",
+    subheading: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    date: "28 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Dumistan Mall, Qattan/1.jpg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    bullets: [
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+      "Aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+      "Voluptatem sequi nesciunt neque porro quisquam est qui dolorem."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Dumistan Mall, Qattan/2.jpg",
+      "/images/projects/Contracting/Completed/Dumistan Mall, Qattan/3.jpg",
+      "/images/projects/Contracting/Completed/Dumistan Mall, Qattan/4.jpg"
+    ]
+  },
+  {
+    id: "cc-008",
+    name: "Jasra Villa",
+    subheading: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.",
+    date: "15 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Jasra Villa/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+    bullets: [
+      "Similique sunt in culpa qui officia deserunt mollitia animi.",
+      "Id est laborum et dolorum fuga et harum quidem rerum facilis.",
+      "Est et expedita distinctio nam libero tempore cum soluta nobis."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Jasra Villa/2.jpeg",
+      "/images/projects/Contracting/Completed/Jasra Villa/3.jpeg",
+      "/images/projects/Contracting/Completed/Jasra Villa/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-009",
+    name: "Luxury Villas Compound @ Janabiya",
+    subheading: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime.",
+    date: "30 Apr, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Luxury Villas Compound @ Janabiya/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus temporibus autem quibusdam.",
+    bullets: [
+      "Et aut officiis debitis aut rerum necessitatibus saepe eveniet.",
+      "Ut et voluptates repudiandae sint et molestiae non recusandae.",
+      "Earum rerum hic tenetur a sapiente delectus ut aut reiciendis."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Luxury Villas Compound @ Janabiya/2.jpeg",
+      "/images/projects/Contracting/Completed/Luxury Villas Compound @ Janabiya/3.jpeg",
+      "/images/projects/Contracting/Completed/Luxury Villas Compound @ Janabiya/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-010",
+    name: "National Transport at Riffa",
+    subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    date: "27 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/National Transport at Riffa/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    bullets: [
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+      "Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.",
+      "Cupidatat non proident sunt in culpa qui officia deserunt."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/National Transport at Riffa/2.jpeg",
+      "/images/projects/Contracting/Completed/National Transport at Riffa/3.jpeg",
+      "/images/projects/Contracting/Completed/National Transport at Riffa/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-011",
+    name: "Office Building ay Adliya,AA",
+    subheading: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    date: "XX-YY-ZZZZ",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Office Building ay Adliya,AA/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    bullets: [
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+      "Aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+      "Voluptatem sequi nesciunt neque porro quisquam est qui dolorem."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Office Building ay Adliya,AA/2.jpeg",
+      "/images/projects/Contracting/Completed/Office Building ay Adliya,AA/3.jpeg",
+      "/images/projects/Contracting/Completed/Office Building ay Adliya,AA/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-012",
+    name: "Private Villa in Hamala",
+    subheading: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
+    date: "30 Apr, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Private Villa in Hamala/1.png",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+    bullets: [
+      "Similique sunt in culpa qui officia deserunt mollitia animi.",
+      "Id est laborum et dolorum fuga et harum quidem rerum facilis.",
+      "Est et expedita distinctio nam libero tempore cum soluta nobis."
+    ]
+  },
+  {
+    id: "cc-013",
+    name: "Quality School,AA",
+    subheading: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime.",
+    date: "9 Jul, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Quality School,AA/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus temporibus autem quibusdam.",
+    bullets: [
+      "Et aut officiis debitis aut rerum necessitatibus saepe eveniet.",
+      "Ut et voluptates repudiandae sint et molestiae non recusandae.",
+      "Earum rerum hic tenetur a sapiente delectus ut aut reiciendis."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Quality School,AA/2.jpeg",
+      "/images/projects/Contracting/Completed/Quality School,AA/3.jpeg",
+      "/images/projects/Contracting/Completed/Quality School,AA/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-014",
+    name: "Strip Mall at Juffair, AA",
+    subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    date: "28 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Strip Mall at Juffair, AA/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    bullets: [
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+      "Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.",
+      "Cupidatat non proident sunt in culpa qui officia deserunt."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Strip Mall at Juffair, AA/2.jpeg",
+      "/images/projects/Contracting/Completed/Strip Mall at Juffair, AA/3.jpeg",
+      "/images/projects/Contracting/Completed/Strip Mall at Juffair, AA/4.jpeg"
+    ]
+  },
+  {
+    id: "cc-015",
+    name: "Two Storey Villa at Jasra",
+    subheading: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    date: "27 Jun, 2026",
+    status: "completed",
+    image: "/images/projects/Contracting/Completed/Two Storey Villa at Jasra/1.jpeg",
+    logo: "/images/companies/cinqo-contracting.png",
+    company: "Cinqo Contracting",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    bullets: [
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+      "Aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+      "Voluptatem sequi nesciunt neque porro quisquam est qui dolorem."
+    ],
+    thumbnails: [
+      "/images/projects/Contracting/Completed/Two Storey Villa at Jasra/2.jpeg",
+      "/images/projects/Contracting/Completed/Two Storey Villa at Jasra/3.jpeg",
+      "/images/projects/Contracting/Completed/Two Storey Villa at Jasra/4.jpeg"
+    ]
+  },
 ];
