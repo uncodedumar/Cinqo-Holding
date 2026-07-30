@@ -23,10 +23,7 @@ const line: Variants = {
   hover: { y: "0%", transition: { duration: 0.7, ease: EASE } },
 };
 
-const fade: Variants = {
-  rest: { opacity: 0, x: "150%" },
-  hover: { opacity: 1, x: "0%", transition: { duration: 0.6, ease: EASE } },
-};
+
 
 export default function ShowcaseSection({ data }: { data: BusinessData }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,6 +33,11 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
   const activeProject = projects[activeIndex];
 
   const [isMobile, setIsMobile] = useState(false);
+
+  const fade: Variants = {
+    rest: { opacity: 0, x: "150%" },
+    hover: { opacity: 1, x: "0%", transition: { duration: 0.8, ease: EASE } },
+  };
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -63,7 +65,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
 
     const timer = window.setTimeout(
       () => setActiveIndex((i) => (i + 1) % projects.length),
-      AUTOPLAY_MS
+      isMobile ? 12000 : AUTOPLAY_MS
     );
 
     return () => window.clearTimeout(timer);
@@ -71,11 +73,8 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
 
   if (!activeProject) return null;
 
-  // Thumbnails are duplicated back-to-back so the marquee can loop seamlessly.
-  const loopedThumbnails = [
-    ...activeProject.hoverThumbnails,
-    ...activeProject.hoverThumbnails,
-  ];
+  // Thumbnails are duplicated so the marquee loops seamlessly across all devices.
+  const loopedThumbnails = [...activeProject.hoverThumbnails, ...activeProject.hoverThumbnails];
 
   return (
     <section className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans pb-12 lg:pb-0">
@@ -86,7 +85,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
       */}
       <div className="w-full lg:w-[28%] xl:w-1/4 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between pt-8 pb-4 px-6 md:p-10 lg:p-14 shrink-0 bg-white z-10">
         {/* Top text — identical for every project */}
-        <p className="text-ink/80 text-h2 leading-snug pr-4 max-w-[26ch]">
+        <p className="text-ink/80 text-h2 leading-snug max-w-[26ch] font-bold text-center w-full mx-auto">
           {data.showcaseText}
         </p>
 
@@ -187,7 +186,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
           >
             {/* Spacing comes from per-item padding, not `gap`, so the -50%
                 loop point lands exactly on the duplicate. */}
-            <div className="flex items-center w-max animate-projects-marquee">
+            <div className={`flex items-center w-max ${isHovered ? "animate-projects-marquee" : ""}`}>
               {loopedThumbnails.map((thumb, tIdx) => (
                 <div
                   key={`${activeProject.title}-${tIdx}`}
@@ -223,11 +222,16 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
         dangerouslySetInnerHTML={{
           __html: `
         @keyframes projects-marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          from { transform: translateX(50); }
+          to { transform: translateX(-120%); }
         }
         .animate-projects-marquee {
           animation: projects-marquee 28s linear infinite;
+        }
+        @media (max-width: 1023px) {
+          .animate-projects-marquee {
+            animation: projects-marquee 12s linear infinite;
+          }
         }
         @media (prefers-reduced-motion: reduce) {
           .animate-projects-marquee { animation: none; }
