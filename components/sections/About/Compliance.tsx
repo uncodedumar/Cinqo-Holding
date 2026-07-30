@@ -129,7 +129,7 @@ export default function GovernanceGrid() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative min-h-[500px] lg:min-h-full rounded-[2px] overflow-hidden"
+            className="hidden md:block lg:col-span-5 relative min-h-[500px] lg:min-h-full rounded-[2px] overflow-hidden"
           >
             {/* Parallax Container for Tower - Sized larger to allow vertical panning without clipping */}
             <motion.div 
