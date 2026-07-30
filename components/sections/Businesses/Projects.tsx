@@ -35,14 +35,31 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
   const projects = data.showcaseProjects ?? [];
   const activeProject = projects[activeIndex];
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // On mobile, automatically trigger the hover reveal after a delay
+  useEffect(() => {
+    if (isMobile) {
+      setIsHovered(false);
+      const timer = setTimeout(() => setIsHovered(true), 1200);
+      return () => clearTimeout(timer);
+    }
+  }, [activeIndex, isMobile]);
+
   /*
-    Auto-advance every AUTOPLAY_MS. Keying the timer on activeIndex means a
-    manual click restarts the countdown rather than cutting it short, and the
-    rotation pauses while hovered so the reveal isn't pulled out from under
-    the reader.
+    Auto-advance every AUTOPLAY_MS. 
+    On desktop, rotation pauses while hovered so the reveal isn't pulled out from under the reader.
+    On mobile, it continues to auto-advance since hover is forced on.
   */
   useEffect(() => {
-    if (isHovered || projects.length < 2) return;
+    if ((isHovered && !isMobile) || projects.length < 2) return;
 
     const timer = window.setTimeout(
       () => setActiveIndex((i) => (i + 1) % projects.length),
@@ -50,7 +67,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
     );
 
     return () => window.clearTimeout(timer);
-  }, [activeIndex, isHovered, projects.length]);
+  }, [activeIndex, isHovered, isMobile, projects.length]);
 
   if (!activeProject) return null;
 
@@ -61,20 +78,20 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
   ];
 
   return (
-    <section className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans">
+    <section className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans pb-12 lg:pb-0">
       {/*
         LEFT COLUMN (STATIC)
         Sticky for the duration of the section only; nothing scrolls inside it,
         so it stays put until the section itself scrolls out of view.
       */}
-      <div className="w-full lg:w-[28%] xl:w-1/4 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between p-8 md:p-10 lg:p-14 shrink-0 bg-white z-10">
+      <div className="w-full lg:w-[28%] xl:w-1/4 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between pt-8 pb-4 px-6 md:p-10 lg:p-14 shrink-0 bg-white z-10">
         {/* Top text — identical for every project */}
         <p className="text-ink/80 text-h2 leading-snug pr-4 max-w-[26ch]">
           {data.showcaseText}
         </p>
 
         {/* Project switcher + CTA */}
-        <div className="flex flex-col gap-8 mt-10 lg:mt-0">
+        <div className="flex flex-col gap-6 mt-6 lg:mt-0">
           <ul className="flex flex-col gap-3 text-[15px] font-semibold uppercase tracking-wide">
             {projects.map((project, idx) => {
               const isActive = idx === activeIndex;
