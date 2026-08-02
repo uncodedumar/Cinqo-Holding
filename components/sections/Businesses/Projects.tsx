@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,8 +23,6 @@ const line: Variants = {
   hover: { y: "0%", transition: { duration: 0.7, ease: EASE } },
 };
 
-
-
 export default function ShowcaseSection({ data }: { data: BusinessData }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -33,14 +31,11 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
   const activeProject = projects[activeIndex];
 
   const [isMobile, setIsMobile] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
-  /** On mobile, `x: "100vw"` guarantees the element starts off-screen right
-      regardless of its own computed width. On desktop, `x: "150%"` gives the
-      existing smooth slide-in from well outside the viewport. */
-  const fadeRestX = isMobile ? "100vw" : "150%";
   const fade: Variants = {
-    rest: { opacity: 0, x: fadeRestX },
-    hover: { opacity: 1, x: "0%", transition: { duration: 0.8, ease: EASE } },
+    rest: { opacity: 0, y: 15 },
+    hover: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
   };
 
   useEffect(() => {
@@ -50,14 +45,11 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // On mobile, automatically trigger the hover reveal after a delay
+  // On mobile, keep hover state active so showcase details and marquee are continuously active.
   useEffect(() => {
-    if (isMobile) {
-      setIsHovered(false);
-      const timer = setTimeout(() => setIsHovered(true), 1200);
-      return () => clearTimeout(timer);
-    }
-  }, [activeIndex, isMobile]);
+    if (!isMobile) return;
+    setIsHovered(true);
+  }, [isMobile, activeIndex]);
 
   /*
     Auto-advance every AUTOPLAY_MS. 
@@ -77,11 +69,19 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
 
   if (!activeProject) return null;
 
-  // Thumbnails are duplicated so the marquee loops seamlessly across all devices.
-  const loopedThumbnails = [...activeProject.hoverThumbnails, ...activeProject.hoverThumbnails];
+  // Thumbnails are duplicated 4 times so the marquee row never runs out of items on any screen width.
+  const loopedThumbnails = [
+    ...activeProject.hoverThumbnails,
+    ...activeProject.hoverThumbnails,
+    ...activeProject.hoverThumbnails,
+    ...activeProject.hoverThumbnails,
+  ];
 
   return (
-    <section className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans pb-6 lg:pb-0">
+    <section
+      ref={sectionRef}
+      className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans pb-6 lg:pb-0"
+    >
       {/*
         LEFT COLUMN (STATIC)
         Sticky for the duration of the section only; nothing scrolls inside it,
@@ -132,10 +132,8 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
         Shows exactly one project at a time — whichever is active — with a
         crossfade between projects and a hover reveal layered on top.
       */}
-      {/* `lg:flex-1` only — in the mobile column layout a plain `flex-1` zeroes
-          out the height via flex-basis and collapses the image. */}
       <div
-        className="relative w-full lg:flex-1 h-[65vh] lg:h-screen overflow-hidden"
+        className="relative w-full lg:flex-1 h-[70vh] min-h-[460px] lg:h-screen overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -164,7 +162,7 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
           variants={overlay}
           initial="rest"
           animate={isHovered ? "hover" : "rest"}
-          className="absolute inset-0 flex flex-col justify-between p-8 md:p-10 lg:p-14 pointer-events-none"
+          className="absolute inset-0 flex flex-col justify-between pointer-events-none z-10"
         >
           {/* Softening veil so the copy stays legible over any photograph */}
           <motion.div
@@ -174,27 +172,36 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
           />
 
           {/* Top-left title */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden p-5 sm:p-8 lg:p-14 pb-0">
             <motion.h2
               variants={line}
-              className="text-xl md:text-2xl font-medium tracking-wide text-black uppercase"
+              className="text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-black uppercase line-clamp-1"
             >
               {activeProject.title}
             </motion.h2>
           </div>
 
-          {/* Centre band — continuously looping thumbnail marquee */}
+          {/* Centre band — continuously looping thumbnail marquee spanning 100% full width to the extreme right edge */}
           <motion.div
             variants={fade}
-            className="relative overflow-hidden -mx-8 md:-mx-10 lg:-mx-14 pl-8 md:pl-10 lg:pl-14 w-[calc(100%+4rem)] md:w-[calc(100%+5rem)] lg:w-[calc(100%+7rem)]"
+            className="relative w-full overflow-hidden shrink-0 py-2"
           >
-            {/* Spacing comes from per-item padding, not `gap`, so the -50%
-                loop point lands exactly on the duplicate. */}
-            <div className={`flex items-center w-max ${isHovered ? "animate-projects-marquee" : ""}`}>
+            <motion.div
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: isMobile ? 20 : 28,
+                  ease: "linear",
+                },
+              }}
+              className="flex items-center w-max"
+            >
               {loopedThumbnails.map((thumb, tIdx) => (
                 <div
                   key={`${activeProject.title}-${tIdx}`}
-                  className="w-44 md:w-64 lg:w-72 aspect-[4/3] relative shrink-0 pr-4"
+                  className="w-36 sm:w-48 md:w-64 lg:w-72 aspect-[4/3] relative shrink-0 pr-3 sm:pr-4"
                 >
                   <Image
                     src={thumb}
@@ -207,42 +214,20 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
                   />
                 </div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Bottom description */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden p-5 sm:p-8 lg:p-14 pt-0 pb-10 sm:pb-14 lg:pb-20">
             <motion.p
               variants={line}
-              className="text-black font-semibold text-base md:text-lg max-w-3xl leading-relaxed"
+              className="text-black font-semibold text-sm sm:text-base md:text-lg max-w-3xl leading-snug sm:leading-relaxed line-clamp-3 sm:line-clamp-none"
             >
               {activeProject.hoverDescription}
             </motion.p>
           </div>
         </motion.div>
       </div>
-
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        @keyframes projects-marquee {
-          from { transform: translateX(50); }
-          to { transform: translateX(-120%); }
-        }
-        .animate-projects-marquee {
-          animation: projects-marquee 28s linear infinite;
-        }
-        @media (max-width: 1023px) {
-          .animate-projects-marquee {
-            animation: projects-marquee 12s linear infinite;
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-projects-marquee { animation: none; }
-        }
-      `,
-        }}
-      />
     </section>
   );
 }
