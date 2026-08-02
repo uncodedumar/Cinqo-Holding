@@ -377,7 +377,7 @@ export default function Credibility() {
 
   return (
     <section
-      className="relative overflow-hidden text-cream-50 flex items-center justify-center py-12 min-[1024px]:py-24 font-body"
+      className="relative overflow-hidden text-cream-50 flex items-center justify-center py-2 min-[1024px]:py-24 font-body"
       ref={sectionRef}
     >
       {/* Uses global .bg-media class for absolute positioning, object-cover, and z-index */}
@@ -415,7 +415,7 @@ export default function Credibility() {
 
       <div className="container relative z-10">
         <div
-          className="grid gap-x-0 min-[1024px]:gap-x-6 gap-y-10 min-[1024px]:gap-y-6 grid-cols-2 min-[1024px]:grid-cols-5 border-y-2 border-line-dark py-16"
+          className="grid gap-x-0 min-[1024px]:gap-x-6 gap-y-6 grid-cols-2 min-[1024px]:grid-cols-5 border-y-2 border-line-dark py-6 min-[1024px]:py-16"
           style={{ perspective: "1200px" }}
         >
           {STATS.map((stat, index) => {
@@ -436,9 +436,16 @@ export default function Credibility() {
               ? "col-span-2 items-center text-center min-[1024px]:col-span-1 min-[1024px]:items-start min-[1024px]:text-left"
               : "";
 
+            let orderClass = "";
+            if (index === 0) orderClass = "order-1 min-[1024px]:order-none";
+            else if (index === 1) orderClass = "order-2 min-[1024px]:order-none";
+            else if (index === 2) orderClass = "order-4 min-[1024px]:order-none";
+            else if (index === 3) orderClass = "order-5 min-[1024px]:order-none";
+            else if (index === 4) orderClass = "order-3 min-[1024px]:order-none";
+
             return (
               <div
-                className={`stat-item mt-3 flex flex-col gap-2 will-change-transform border-line-dark ${colStyles} ${alignStyles}`}
+                className={`stat-item mt-3 flex flex-col gap-2 will-change-transform border-line-dark ${colStyles} ${alignStyles} ${orderClass}`}
                 style={{ transformStyle: "preserve-3d" }}
                 data-target={stat.target}
                 data-suffix={stat.suffix}
