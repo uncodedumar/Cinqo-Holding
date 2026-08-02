@@ -97,14 +97,14 @@ export default function AboutUs() {
   return (
     <section
       ref={sectionRef}
-      className="w-full pb-20 pt-8 md:pt-16 px-4 bg-white flex flex-col items-center overflow-hidden"
+      className="w-full pb-4 md:pb-20 pt-4 md:pt-16 px-4 bg-white flex flex-col items-center overflow-hidden"
     >
       <div className="w-full flex flex-col items-center max-w-6xl">
         
         {/* Section Heading */}
         <h2
           ref={eyebrowRef}
-          className="text-black font-semibold text-[24px] mb-8 tracking-wide font-[var(--font-ibm-plex)]"
+          className="text-black font-semibold text-[20px] md:text-[24px] mb-4 md:mb-8 tracking-wide font-[var(--font-ibm-plex)]"
         >
           About Us
         </h2>
@@ -112,7 +112,7 @@ export default function AboutUs() {
         {/* Hero Typography */}
         <div
           ref={heroTextRef}
-          className="text-center text-[32px] leading-[1.6] font-light text-[#737373] mb-20 w-full tracking-tight font-['Inter',_sans-serif]"
+          className="text-center text-[22px] md:text-[32px] leading-[1.6] font-light text-[#737373] mb-12 md:mb-20 w-full tracking-tight font-['Inter',_sans-serif]"
         >
           <span className={hoverSpanClass}>With a team of over</span>{" "}
           <span className={`${hoverSpanClass} text-black font-normal`}>1200 employees</span>{" "}
@@ -133,8 +133,8 @@ export default function AboutUs() {
           </span>
         </div>
  {/* Vision Content Block styled exactly like About Us */}
- <div className="text-center text-[32px] leading-[1.6] font-light text-[#737373] w-full tracking-tight font-['Inter',_sans-serif]">
-          <h3 className="text-black font-semibold text-[24px] mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
+ <div className="text-center text-[22px] md:text-[32px] leading-[1.6] font-light text-[#737373] w-full tracking-tight font-['Inter',_sans-serif]">
+          <h3 className="text-black font-semibold text-[20px] md:text-[24px] mb-2 md:mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
             Vision
           </h3>
           <p ref={visionTextRef} className="max-w-4xl mx-auto">
@@ -143,8 +143,8 @@ export default function AboutUs() {
         </div>
         <br />
         {/* Mission Content Block styled exactly like About Us */}
-        <div className="text-center text-[32px] leading-[1.6] font-light text-[#737373] mb-20 w-full tracking-tight font-['Inter',_sans-serif]">
-          <h3 className="text-black font-semibold text-[24px] mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
+        <div className="text-center text-[22px] md:text-[32px] leading-[1.6] font-light text-[#737373] mb-8 md:mb-20 w-full tracking-tight font-['Inter',_sans-serif]">
+          <h3 className="text-black font-semibold text-[20px] md:text-[24px] mb-2 md:mb-6 tracking-wide font-[var(--font-ibm-plex)] uppercase">
             Mission
           </h3>
           <p ref={missionTextRef} className="max-w-4xl mx-auto">
