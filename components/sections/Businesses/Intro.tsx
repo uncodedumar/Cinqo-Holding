@@ -55,7 +55,7 @@ export default function Intro({ business }: { business: BusinessData }) {
             />
           )}
           {/* Light overlay to wash out the background and ensure text legibility */}
-          <div className="absolute inset-0 bg-white/80" />
+          <div className="absolute inset-0 bg-white/50 sm:bg-white/65" />
         </div>
 
         {/* Content Container */}

@@ -152,12 +152,12 @@ export default function About() {
             muted
             playsInline
             poster="/images/about/a2.jpeg"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-75"
           >
             <source src="/videos/your-background-video.mp4" type="video/mp4" />
           </video>
-          {/* Overlay to ensure text readability matches the light tone of the image */}
-          <div className="absolute inset-0 bg-[#f8f8f8]/85" />
+          {/* Overlay to ensure text readability while keeping the background image crisp */}
+          <div className="absolute inset-0 bg-white/50 sm:bg-white/65" />
         </div>
 
         <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-20 items-center">
