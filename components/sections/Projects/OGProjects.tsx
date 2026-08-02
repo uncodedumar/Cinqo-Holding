@@ -120,7 +120,7 @@ export default function OngoingProjects() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10">
                       
                       {/* Left Side: Large Project Image */}
                       <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-gray-100">
@@ -148,7 +148,7 @@ export default function OngoingProjects() {
                         )}
 
                         {/* Description */}
-                        <div className="text-gray-700 leading-relaxed mb-6 space-y-4">
+                        <div className="text-gray-700 leading-relaxed mb-4 lg:mb-6 space-y-2 lg:space-y-4">
                           {project.description.split('\n\n').map((paragraph, i) => (
                             <p key={i}>{paragraph}</p>
                           ))}
