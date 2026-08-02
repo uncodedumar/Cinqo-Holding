@@ -142,7 +142,7 @@ export default function About() {
       {/* SECTION 1 */}
       <section
         id="about-us"
-        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-24 scroll-mt-28"
+        className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden py-12 md:py-24 scroll-mt-28"
       >
         {/* Video Background with Image Fallback via 'poster' */}
         <div className="absolute inset-0 z-0">
@@ -160,7 +160,7 @@ export default function About() {
           <div className="absolute inset-0 bg-[#f8f8f8]/85" />
         </div>
 
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-center">
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-20 items-center">
           
           {/* Left Column: 20+ Years */}
           <div className="md:col-span-5 flex justify-center md:justify-end font-[var(--font-ibm-plex)]">
@@ -175,7 +175,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Paragraph Text */}
-          <div ref={textRiseRef} className="md:col-span-7 flex flex-col gap-6 text-[17px] md:text-[19px] leading-[1.6] text-black/80">
+          <div ref={textRiseRef} className="md:col-span-7 flex flex-col gap-4 md:gap-6 text-[16px] sm:text-[17px] md:text-[19px] leading-[1.6] text-black/80">
             <p>
               Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 600 professionals serving clients across Bahrain&rsquo;s public and private sectors.
             </p>
@@ -208,17 +208,17 @@ export default function About() {
         
         {/* Center Text Reveal (Overlays the zoomed-in image) */}
         <div ref={centerTextRef} className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-          <h2 className="text-4xl md:text-6xl text-white font-bold tracking-wider text-center px-4 drop-shadow-lg">
+          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center px-4 drop-shadow-lg">
             Cinqo Holding
           </h2>
         </div>
       </section>
 
       {/* SECTION 3 - Fade-in Scroll Text */}
-      <section className="relative flex items-center justify-center bg-white px-6 py-32 z-30 min-h-[50vh]">
+      <section className="relative flex items-center justify-center bg-white px-6 py-12 md:py-32 z-30 min-h-[40vh] md:min-h-[50vh]">
         <p
           ref={scrollTextRef}
-          className="max-w-4xl text-center text-[2rem] md:text-[2.5rem] leading-relaxed font-light text-black/80"
+          className="max-w-4xl text-center text-[22px] sm:text-[24px] md:text-[2.5rem] leading-relaxed font-light text-black/80"
         >
           {textContent}
         </p>
