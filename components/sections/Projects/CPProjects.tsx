@@ -120,7 +120,7 @@ export default function CompletedProjects() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10">
+                    <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10">
                       
                       {/* Left Side: Large Project Image */}
                       <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-gray-100">
@@ -137,7 +137,7 @@ export default function CompletedProjects() {
                         
                         {/* Logo */}
                         {project.logo && (
-                          <div className="relative w-32 h-16 mb-6">
+                          <div className="relative w-32 h-16 mb-3 lg:mb-6">
                             <Image
                               src={project.logo}
                               alt={`${project.name} Logo`}
