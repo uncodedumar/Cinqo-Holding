@@ -167,41 +167,24 @@ const StackedSection = () => {
         >
 
           {/* `fill` (not w/h) because the card sizes itself in viewport units
-
               and gsap animates those dimensions during the stack sequence. */}
-
-          <Image src={src} alt="stack" fill sizes="90vw" className="object-fill md:object-cover" />
-
-         
+          <Image src={src} alt="stack" fill sizes="(max-width: 768px) 100vw, 90vw" className="object-cover" priority={i === images.length - 1} />
 
           {/* Conditional text container solely on the last image */}
-
           {i === images.length - 1 && (
-
             <div
-
               ref={textRef}
-
               // A subtle dark overlay helps ensure the white text is readable regardless of the photo
-
-              className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 opacity-0 translate-y-10"
-
+              className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 opacity-0 translate-y-10 px-6 text-center"
             >
-
-              <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 text-center">
-
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-6 text-center tracking-tight">
                 Unbound Potential
-
               </h2>
 
-              <p className="text-xl md:text-2xl text-white/90 text-center max-w-2xl px-4">
-
+              <p className="text-sm sm:text-xl md:text-2xl text-white/90 text-center max-w-2xl px-4 leading-relaxed">
                 Keep scrolling down to discover what comes next.
-
               </p>
-
             </div>
-
           )}
 
         </div>
