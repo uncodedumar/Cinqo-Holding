@@ -153,7 +153,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
       {/* Hero Content Container */}
       <div
         className={`container relative z-20 flex flex-col !pl-[40px] select-none ${
-          isCompact ? "pb-10 md:pb-14 gap-3" : "pb-20 md:pb-28 gap-6"
+          isCompact ? "pb-10 md:pb-14 gap-3" : "pb-24 md:pb-28 gap-4 md:gap-6"
         }`}
         ref={contentRef}
       >
@@ -167,7 +167,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
             className={`animate-slide-item text-white leading-[1.15] tracking-tight whitespace-pre-line ${
               isCompact
                 ? "text-2xl md:text-4xl lg:text-[2.75rem] font-bold uppercase max-w-4xl"
-                : "text-4xl md:text-5xl lg:text-[4rem] font-semibold"
+                : "text-3xl md:text-5xl lg:text-[4rem] font-semibold"
             }`}
           >
             {slides[activeIndex].headline1}
@@ -182,7 +182,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
        
         
         {slides[activeIndex].subtitle && (
-          <p className="animate-slide-item max-w-[850px] text-white/85 text-base md:text-lg font-normal leading-relaxed">
+          <p className="animate-slide-item max-w-[850px] text-white/85 text-sm md:text-lg font-normal leading-relaxed">
             {slides[activeIndex].subtitle}
           </p>
         )}

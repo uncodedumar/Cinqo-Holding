@@ -7,7 +7,7 @@ export default function HomeHero() {
     <Hero 
       slides={homeHeroSlidesData} 
       cta={{ href: "/contact", text: "Get in Touch >" }} 
-      heightClass="min-h-[60svh] md:min-h-screen"
+      heightClass="min-h-[70svh] md:min-h-screen"
     />
 
   );
