@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
@@ -45,6 +45,46 @@ const governanceCards = [
 
 export default function GovernanceGrid() {
   const sectionRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Handle manual scroll to update dots
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollCenter = container.scrollLeft + container.offsetWidth / 2;
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    cardRefs.current.forEach((card, i) => {
+      if (card) {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distance = Math.abs(scrollCenter - cardCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = i;
+        }
+      }
+    });
+    setActiveIndex(closestIndex);
+  };
+
+  // Auto-play for mobile
+  useEffect(() => {
+    const isMobile = window.innerWidth < 640; // sm breakpoint
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => {
+        const next = (prev + 1) % governanceCards.length;
+        cardRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        return next;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Parallax Scroll setup
   const { scrollYProgress } = useScroll({
@@ -80,15 +120,23 @@ export default function GovernanceGrid() {
         <div className="grid lg:grid-cols-12 gap-5 items-stretch">
           
           {/* Left Block: Compact 2-Column Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {governanceCards.map((card, i) => (
-              <motion.div
-                key={card.title}
+          <div className="lg:col-span-7 flex flex-col min-w-0">
+            <div 
+              ref={scrollContainerRef}
+              onScroll={handleScroll}
+              className="flex sm:grid overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory sm:snap-none sm:grid-cols-2 gap-4 pb-4 sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
+              {governanceCards.map((card, i) => (
+                <motion.div
+                  ref={(el) => {
+                    cardRefs.current[i] = el;
+                  }}
+                  key={card.title}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.45, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative rounded-sm overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[380px] lg:min-h-[auto] cursor-default"
+                className="group relative rounded-sm overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[380px] lg:min-h-[auto] cursor-default flex-none w-[85vw] sm:w-auto snap-center sm:snap-align-none"
               >
                 {/* Background Image with Parallax & Hover Scale */}
                 <motion.div 
@@ -121,6 +169,22 @@ export default function GovernanceGrid() {
                 </div>
               </motion.div>
             ))}
+            </div>
+
+            {/* Mobile Pagination Dots */}
+            <div className="flex sm:hidden justify-center gap-2 mt-4">
+              {governanceCards.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    cardRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    setActiveIndex(i);
+                  }}
+                  className={`w-2 h-2 rounded-full transition-colors ${i === activeIndex ? 'bg-black' : 'bg-gray-300'}`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Block: Domineering Column Banner Image */}
