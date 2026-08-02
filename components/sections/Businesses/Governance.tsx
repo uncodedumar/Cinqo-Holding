@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion";
 
 const timelineData = [
   {
@@ -112,8 +112,15 @@ export default function GovernanceTimelineAndInvestments() {
     offset: ["start center", "end center"],
   });
 
-  // Map the scroll progress (0 to 1) to the vertical position (0% to 100%)
-  const markerPosition = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Smooth out the scroll progress to prevent jittering, especially on mobile touch devices
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Map the smooth scroll progress (0 to 1) to the vertical position (0% to 100%)
+  const markerPosition = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <div className="w-full flex flex-col items-center bg-white">
