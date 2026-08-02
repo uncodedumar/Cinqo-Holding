@@ -74,7 +74,7 @@ export default function TeamSection() {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 max-w-[1400px] mx-auto font-sans bg-white">
+    <section ref={sectionRef} className="pt-10 pb-20 md:py-20 px-6 max-w-[1400px] mx-auto font-sans bg-white">
       
       {/* ================= DIRECTORS SECTION ================= */}
       <h2 id="directors" className="text-2xl font-bold text-gray-900 mb-8 tracking-wide scroll-mt-28">Directors</h2>

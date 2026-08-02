@@ -39,7 +39,7 @@ export default function Leadership() {
     <section
       id="chairmans-message"
       ref={sectionRef}
-      className="bg-white py-8 md:py-24 overflow-hidden scroll-mt-28"
+      className="bg-white pt-8 pb-4 md:py-24 overflow-hidden scroll-mt-28"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <motion.div
