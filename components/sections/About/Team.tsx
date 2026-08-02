@@ -122,7 +122,7 @@ export default function TeamSection() {
       <h2 id="executives" className="text-2xl font-bold text-gray-900 mb-8 tracking-wide scroll-mt-28">Executive Management</h2>
       
       {/* First 8 Executives Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-8 sm:gap-y-12">
         {executives.slice(0, 8).map((exec, index) => (
           <div key={index} className="reveal-card group cursor-pointer flex flex-col gap-4">
             <div className="relative w-full aspect-[4/5] bg-gray-50 rounded-xl overflow-hidden shadow-sm">
@@ -152,8 +152,8 @@ export default function TeamSection() {
       </div>
 
       {/* Last Executive (Selina) */}
-      <div className="flex justify-center mt-12">
-        <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+      <div className="flex justify-center mt-8 sm:mt-12">
+        <div className="w-[calc(50%-8px)] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
           <div className="reveal-card group cursor-pointer flex flex-col gap-4">
             <div className="relative w-full aspect-[4/5] bg-gray-50 rounded-xl overflow-hidden shadow-sm">
               <div className="parallax-wrapper absolute inset-0 w-full h-full">
