@@ -11,6 +11,7 @@ export default function OurCompanies() {
 
   // Intersection Observer to trigger the "rise up" animation on scroll
   useEffect(() => {
+    const el = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,12 +22,12 @@ export default function OurCompanies() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (el) {
+      observer.observe(el);
     }
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (el) observer.unobserve(el);
     };
   }, []);
 
@@ -71,7 +72,7 @@ export default function OurCompanies() {
                     src={company.logo}
                     alt={`${company.name} logo`}
                     fill
-                    sizes="64px"
+                    sizes="320px"
                     className="object-contain"
                   />
                 </div>

@@ -57,6 +57,7 @@ export default function ThePrinciple() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const textBlockRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const stRef = useRef<ScrollTrigger | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -169,8 +170,8 @@ export default function ThePrinciple() {
     handleResize();
     requestFrame(1);
 
-    const ctxGsap = gsap.context(() => {
-      ScrollTrigger.create({
+    const id = setTimeout(() => {
+      stRef.current = ScrollTrigger.create({
         trigger: wrap,
         start: "top top",
         end: () => `+=${window.innerHeight * PIN_VH_MULTIPLIER}`,
@@ -180,15 +181,13 @@ export default function ThePrinciple() {
         anticipatePin: 1,
         onUpdate: (self) => {
           const progress = self.progress;
-          // Calculate the exact float frame for ultra-smooth sub-frame text interpolation
           const exactFrame = 1 + progress * (TOTAL_FRAMES - 1);
-          // Pass integer frame to the canvas drawing logic
           requestFrame(Math.round(exactFrame));
 
           const segmentLength = TOTAL_FRAMES / TEXT_BLOCKS.length;
-          const FADE_IN_DUR = 10; // Frame span for fade in
-          const FADE_OUT_DUR = 10; // Frame span for fade out
-          const GAP = 1; // Guaranteed empty frames between blocks to absolutely prevent overlaps
+          const FADE_IN_DUR = 10;
+          const FADE_OUT_DUR = 10;
+          const GAP = 1;
 
           textBlockRefs.current.forEach((el, i) => {
             if (!el) return;
@@ -198,7 +197,6 @@ export default function ThePrinciple() {
             const isFirst = i === 0;
             const isLast = i === TEXT_BLOCKS.length - 1;
 
-            // Define interpolation bounds tied perfectly to the scroll frame
             const fadeInStart = isFirst ? -1 : startFrame + GAP;
             const fadeInEnd = isFirst ? 0 : fadeInStart + FADE_IN_DUR;
 
@@ -214,30 +212,25 @@ export default function ThePrinciple() {
               opacity = 0;
               y = 40;
             } else if (exactFrame >= fadeInStart && exactFrame <= fadeInEnd) {
-              // Fading in (power3.out emulation)
               const p = (exactFrame - fadeInStart) / (fadeInEnd - fadeInStart);
               const easeP = 1 - Math.pow(1 - p, 3);
               opacity = easeP;
               y = 40 * (1 - easeP);
             } else if (exactFrame > fadeInEnd && exactFrame < fadeOutStart) {
-              // Fully visible
               opacity = 1;
               y = 0;
               pointerEvents = "auto";
               ariaHidden = "false";
             } else if (exactFrame >= fadeOutStart && exactFrame <= fadeOutEnd) {
-              // Fading out (power2.inOut emulation)
               const p = (exactFrame - fadeOutStart) / (fadeOutEnd - fadeOutStart);
               const easeP = p < 0.5 ? 2 * p * p : -1 + (4 - 2 * p) * p;
               opacity = 1 - easeP;
               y = -30 * easeP;
             } else if (exactFrame > fadeOutEnd) {
-              // Faded out
               opacity = 0;
               y = -30;
             }
 
-            // Apply directly — no time-based tweens means 0% chance of timeline overlaps
             el.style.opacity = opacity.toFixed(3);
             el.style.transform = `translateY(${y.toFixed(2)}px)`;
             el.style.pointerEvents = pointerEvents;
@@ -250,11 +243,12 @@ export default function ThePrinciple() {
           });
         },
       });
-    }, wrap);
+    }, 0);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      ctxGsap.revert();
+      clearTimeout(id);
+      stRef.current?.kill();
       cache.clear();
     };
   }, []);
