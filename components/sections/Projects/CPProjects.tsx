@@ -5,9 +5,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { PROJECTS } from "@/data/projects.data";
 
+function groupByCompany(projects: typeof PROJECTS): [string, typeof PROJECTS][] {
+  const order: string[] = [];
+  const groups: Record<string, typeof PROJECTS> = {};
+  for (const project of projects) {
+    const company = project.company || "Cinqo Trading";
+    if (!groups[company]) {
+      groups[company] = [];
+      order.push(company);
+    }
+    groups[company].push(project);
+  }
+  return order.map((name) => [name, groups[name]]);
+}
+
 export default function CompletedProjects() {
   // Filter data to only show "completed" projects
-  const ongoingProjects = PROJECTS.filter((project) => project.status === "completed");
+  const completedProjects = PROJECTS.filter((project) => project.status === "completed");
+  const grouped = groupByCompany(completedProjects);
   
   // Track which accordion row is open
   const [openId, setOpenId] = useState<string | null>(null);
@@ -27,7 +42,12 @@ export default function CompletedProjects() {
       <h2 className="text-2xl font-bold mb-6 text-black">Completed Projects</h2>
       
       <div className="border-t border-gray-200">
-        {ongoingProjects.map((project) => {
+        {grouped.map(([company, projects]) => (
+        <div key={company}>
+        <h3 className="text-lg md:text-xl font-bold text-black uppercase tracking-wide py-4 px-4 border-b border-gray-200">
+          {company}
+        </h3>
+        {projects.map((project) => {
           const isOpen = openId === project.id;
           const allImages = [project.image, ...(project.thumbnails || [])];
           const currIdx = activeIndex[project.id] || 0;
@@ -59,14 +79,8 @@ export default function CompletedProjects() {
                     : "bg-white text-black hover:bg-[#71797E] hover:text-white"
                 }`}
               >
-                {/* Company Division */}
-                <div className="col-span-12 md:col-span-3 font-semibold text-md md:text-lg truncate">
-                  {/* Uses project.company if it exists in your data, otherwise falls back to "Cinqo Trading" */}
-                  {project.company || "Cinqo Trading"}
-                </div>
-
                 {/* Heading */}
-                <div className="col-span-12 md:col-span-3 font-bold text-lg md:text-xl truncate">
+                <div className="col-span-12 md:col-span-4 font-bold text-lg md:text-xl truncate">
                   {project.name}
                 </div>
 
@@ -80,12 +94,12 @@ export default function CompletedProjects() {
                 </div>
 
                 {/* Date */}
-                <div className="col-span-10 md:col-span-2 text-right text-sm md:text-base font-medium">
+                <div className="col-span-10 md:col-span-3 text-right text-sm md:text-base font-medium">
                   {project.date}
                 </div>
 
                 {/* Rotating Plus / Close Icon */}
-                <div className="col-span-2 md:col-span-1 flex justify-end items-center">
+                <div className="col-span-2 md:col-span-2 flex justify-end items-center">
                   <motion.div
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -194,10 +208,11 @@ export default function CompletedProjects() {
                   </motion.div>
                 )}
               </AnimatePresence>
-              
             </div>
           );
         })}
+        </div>
+        ))}
       </div>
     </section>
   );
