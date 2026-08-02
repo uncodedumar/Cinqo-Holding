@@ -78,6 +78,18 @@ export default function GovernanceGrid() {
     }, 100);
   };
 
+  const scrollToCard = (index: number) => {
+    const container = scrollContainerRef.current;
+    const card = cardRefs.current[index];
+    if (container && card) {
+      const targetScrollLeft = card.offsetLeft - (container.clientWidth - card.clientWidth) / 2;
+      container.scrollTo({
+        left: targetScrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
   // Auto-play for mobile
   useEffect(() => {
     const isMobile = window.innerWidth < 640; // sm breakpoint
@@ -90,7 +102,7 @@ export default function GovernanceGrid() {
           return prev;
         }
         const next = prev + 1;
-        cardRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        scrollToCard(next);
         return next;
       });
     }, 4000);
@@ -189,7 +201,7 @@ export default function GovernanceGrid() {
                 <button
                   key={i}
                   onClick={() => {
-                    cardRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    scrollToCard(i);
                     setActiveIndex(i);
                   }}
                   className={`w-2 h-2 rounded-full transition-colors ${i === activeIndex ? 'bg-black' : 'bg-gray-300'}`}
