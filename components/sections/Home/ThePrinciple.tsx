@@ -156,7 +156,7 @@ export default function ThePrinciple() {
     };
 
     const handleResize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       canvas.style.width = `${window.innerWidth}px`;
@@ -232,7 +232,7 @@ export default function ThePrinciple() {
             }
 
             el.style.opacity = opacity.toFixed(3);
-            el.style.transform = `translateY(${y.toFixed(2)}px)`;
+            el.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
             el.style.pointerEvents = pointerEvents;
             
             if (ariaHidden === "true") {
@@ -280,8 +280,9 @@ export default function ThePrinciple() {
                 aria-hidden={i === 0 ? undefined : "true"}
                 className="absolute w-full flex flex-col items-center justify-center transform"
                 style={{
+                  willChange: "transform, opacity",
                   opacity: i === 0 ? 1 : 0,
-                  transform: i === 0 ? "translateY(0px)" : "translateY(40px)",
+                  transform: i === 0 ? "translate3d(0, 0px, 0)" : "translate3d(0, 40px, 0)",
                   pointerEvents: i === 0 ? "auto" : "none",
                 }}
               >
