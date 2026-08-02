@@ -5,10 +5,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { PROJECTS } from "@/data/projects.data";
 
+function groupByCompany(projects: typeof PROJECTS): [string, typeof PROJECTS][] {
+  const order: string[] = [];
+  const groups: Record<string, typeof PROJECTS> = {};
+  for (const project of projects) {
+    const company = project.company || "Cinqo Trading";
+    if (!groups[company]) {
+      groups[company] = [];
+      order.push(company);
+    }
+    groups[company].push(project);
+  }
+  return order.map((name) => [name, groups[name]]);
+}
+
 export default function CompletedProjects() {
   // Filter data to only show "completed" projects
-  const ongoingProjects = PROJECTS.filter((project) => project.status === "completed");
+  const completedProjects = PROJECTS.filter((project) => project.status === "completed");
+  const grouped = groupByCompany(completedProjects);
   
+  // Track which company group is open
+  const [openCompany, setOpenCompany] = useState<string | null>(null);
+
   // Track which accordion row is open
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -19,6 +37,10 @@ export default function CompletedProjects() {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  const toggleCompany = (company: string) => {
+    setOpenCompany((prev) => (prev === company ? null : company));
+  };
+
   return (
     <section
       id="completed-projects"
@@ -27,7 +49,38 @@ export default function CompletedProjects() {
       <h2 className="text-2xl font-bold mb-6 text-black">Completed Projects</h2>
       
       <div className="border-t border-gray-200">
-        {ongoingProjects.map((project) => {
+        {grouped.map(([company, projects]) => {
+          const companyOpen = openCompany === company;
+          return (
+        <div key={company}>
+        <div
+          onClick={() => toggleCompany(company)}
+          className={`font-ibm-plex text-xl md:text-2xl font-bold uppercase tracking-[0.06em] py-5 px-4 border-b border-gray-200 flex items-center justify-between gap-3 cursor-pointer transition-colors duration-300 ${
+            companyOpen ? "text-navy-900 bg-gray-50" : "text-navy-900 hover:bg-gray-50"
+          }`}
+        >
+          <div className="flex items-center gap-3">
+            <span className="w-1.5 h-6 bg-coral-600" aria-hidden="true" />
+            {company}
+          </div>
+          <motion.span
+            animate={{ rotate: companyOpen ? 45 : 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="text-3xl md:text-4xl font-light leading-none"
+          >
+            +
+          </motion.span>
+        </div>
+        <AnimatePresence>
+        {companyOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
+        {projects.map((project) => {
           const isOpen = openId === project.id;
           const allImages = [project.image, ...(project.thumbnails || [])];
           const currIdx = activeIndex[project.id] || 0;
@@ -59,14 +112,8 @@ export default function CompletedProjects() {
                     : "bg-white text-black hover:bg-[#71797E] hover:text-white"
                 }`}
               >
-                {/* Company Division */}
-                <div className="col-span-12 md:col-span-3 font-semibold text-md md:text-lg truncate">
-                  {/* Uses project.company if it exists in your data, otherwise falls back to "Cinqo Trading" */}
-                  {project.company || "Cinqo Trading"}
-                </div>
-
                 {/* Heading */}
-                <div className="col-span-12 md:col-span-3 font-bold text-lg md:text-xl truncate">
+                <div className="col-span-12 md:col-span-4 font-bold text-lg md:text-xl truncate">
                   {project.name}
                 </div>
 
@@ -80,12 +127,12 @@ export default function CompletedProjects() {
                 </div>
 
                 {/* Date */}
-                <div className="col-span-10 md:col-span-2 text-right text-sm md:text-base font-medium">
+                <div className="col-span-10 md:col-span-3 text-right text-sm md:text-base font-medium">
                   {project.date}
                 </div>
 
                 {/* Rotating Plus / Close Icon */}
-                <div className="col-span-2 md:col-span-1 flex justify-end items-center">
+                <div className="col-span-2 md:col-span-2 flex justify-end items-center">
                   <motion.div
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -105,7 +152,7 @@ export default function CompletedProjects() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10">
                       
                       {/* Left Side: Large Project Image */}
                       <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-gray-100">
@@ -122,7 +169,7 @@ export default function CompletedProjects() {
                         
                         {/* Logo */}
                         {project.logo && (
-                          <div className="relative w-32 h-16 mb-6">
+                          <div className="relative w-32 h-16 mb-3 lg:mb-6">
                             <Image
                               src={project.logo}
                               alt={`${project.name} Logo`}
@@ -133,7 +180,7 @@ export default function CompletedProjects() {
                         )}
 
                         {/* Description */}
-                        <div className="text-gray-700 leading-relaxed mb-6 space-y-4">
+                        <div className="text-gray-700 leading-relaxed mb-4 lg:mb-6 space-y-2 lg:space-y-4">
                           {project.description.split('\n\n').map((paragraph, i) => (
                             <p key={i}>{paragraph}</p>
                           ))}
@@ -194,8 +241,13 @@ export default function CompletedProjects() {
                   </motion.div>
                 )}
               </AnimatePresence>
-              
             </div>
+          );
+        })}
+        </motion.div>
+        )}
+        </AnimatePresence>
+        </div>
           );
         })}
       </div>
