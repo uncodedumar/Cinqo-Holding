@@ -49,25 +49,33 @@ export default function GovernanceGrid() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Handle manual scroll to update dots
-  const handleScroll = () => {
-    if (!scrollContainerRef.current) return;
-    const container = scrollContainerRef.current;
-    const scrollCenter = container.scrollLeft + container.offsetWidth / 2;
-    let closestIndex = 0;
-    let minDistance = Infinity;
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    cardRefs.current.forEach((card, i) => {
-      if (card) {
-        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        const distance = Math.abs(scrollCenter - cardCenter);
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestIndex = i;
+  // Handle manual scroll to update dots (debounced to prevent re-renders cancelling smooth scrolls)
+  const handleScroll = () => {
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    
+    scrollTimeoutRef.current = setTimeout(() => {
+      if (!scrollContainerRef.current) return;
+      const container = scrollContainerRef.current;
+      const scrollCenter = container.scrollLeft + container.offsetWidth / 2;
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cardRefs.current.forEach((card, i) => {
+        if (card) {
+          const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+          const distance = Math.abs(scrollCenter - cardCenter);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestIndex = i;
+          }
         }
-      }
-    });
-    setActiveIndex(closestIndex);
+      });
+      setActiveIndex(closestIndex);
+    }, 100);
   };
 
   // Auto-play for mobile
@@ -77,7 +85,11 @@ export default function GovernanceGrid() {
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => {
-        const next = (prev + 1) % governanceCards.length;
+        if (prev >= governanceCards.length - 1) {
+          clearInterval(interval);
+          return prev;
+        }
+        const next = prev + 1;
         cardRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         return next;
       });
