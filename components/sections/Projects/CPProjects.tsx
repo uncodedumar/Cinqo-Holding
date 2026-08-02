@@ -44,7 +44,8 @@ export default function CompletedProjects() {
       <div className="border-t border-gray-200">
         {grouped.map(([company, projects]) => (
         <div key={company}>
-        <h3 className="text-lg md:text-xl font-bold text-black uppercase tracking-wide py-4 px-4 border-b border-gray-200">
+        <h3 className="font-ibm-plex text-xl md:text-2xl font-bold text-navy-900 uppercase tracking-[0.06em] py-5 px-4 border-b border-gray-200 flex items-center gap-3">
+          <span className="w-1.5 h-6 bg-coral-600" aria-hidden="true" />
           {company}
         </h3>
         {projects.map((project) => {
