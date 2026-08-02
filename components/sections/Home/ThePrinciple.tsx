@@ -176,7 +176,6 @@ export default function ThePrinciple() {
         start: "top top",
         end: () => `+=${window.innerHeight * PIN_VH_MULTIPLIER}`,
         pin: true,
-        pinType: "transform",
         scrub: 1,
         anticipatePin: 1,
         onUpdate: (self) => {
@@ -254,8 +253,8 @@ export default function ThePrinciple() {
   }, []);
 
   return (
-    <div ref={wrapRef} className="relative h-screen w-full bg-black">
-      <section className="relative h-screen w-full overflow-hidden">
+    <div ref={wrapRef} className="relative h-[100svh] w-full bg-black">
+      <section className="relative h-[100svh] w-full overflow-hidden">
         <canvas ref={canvasRef} aria-hidden className="absolute inset-0 h-full w-full" />
 
         {/* Legibility scrim */}
