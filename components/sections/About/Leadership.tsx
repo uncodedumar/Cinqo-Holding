@@ -39,15 +39,15 @@ export default function Leadership() {
     <section
       id="chairmans-message"
       ref={sectionRef}
-      className="bg-white py-12 md:py-24 overflow-hidden scroll-mt-28"
+      className="bg-white py-8 md:py-24 overflow-hidden scroll-mt-28"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <motion.div
           style={{ y }}
-          className="grid grid-cols-1 gap-10 lg:grid-cols-[46%_1fr] lg:gap-14 items-stretch"
+          className="grid grid-cols-1 gap-6 lg:grid-cols-[46%_1fr] lg:gap-14 items-stretch"
         >
           {/* Left Side: Image container that stretches to exactly match the text height on desktop */}
-          <div className="relative w-full h-[450px] lg:h-auto lg:min-h-full rounded-sm overflow-hidden">
+          <div className="relative w-full h-[350px] md:h-[450px] lg:h-auto lg:min-h-full rounded-sm overflow-hidden">
             <Image
               src="/images/about/chairman.jpeg"
               alt="Chairman of Cinqo Holding"
@@ -76,12 +76,12 @@ export default function Leadership() {
 
               <motion.h2
                 variants={itemVariants}
-                className="mb-8 text-2xl font-medium leading-[1.2] tracking-wider text-[#111111] md:text-3xl xl:text-[32px] [font-family:var(--font-display)] uppercase"
+                className="mb-4 md:mb-8 text-2xl font-medium leading-[1.2] tracking-wider text-[#111111] md:text-3xl xl:text-[32px] [font-family:var(--font-display)] uppercase"
               >
                 CHAIRMAN&rsquo;S MESSAGE
               </motion.h2>
 
-              <div className="max-w-[720px] space-y-6 text-left text-[16px] md:text-[17px] leading-[1.8] text-[#6A6A6A] [font-family:var(--font-body)]">
+              <div className="max-w-[720px] space-y-4 md:space-y-6 text-left text-[16px] md:text-[17px] leading-[1.8] text-[#6A6A6A] [font-family:var(--font-body)]">
                 <motion.p variants={itemVariants}>
                   At Cinqo, we do not see ourselves as a collection of{" "}
                   <strong className="font-semibold text-[#333333]">
