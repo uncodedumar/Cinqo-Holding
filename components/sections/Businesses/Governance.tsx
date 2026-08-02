@@ -195,7 +195,7 @@ export default function GovernanceTimelineAndInvestments() {
           {investmentsData.map((investment, index) => (
             <div 
               key={index}
-              className="bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] max-w-[320px] aspect-square flex flex-col items-center justify-center p-8 rounded-sm text-center"
+              className="bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] max-w-[260px] md:max-w-[300px] aspect-square flex flex-col items-center justify-center p-5 md:p-6 rounded-sm text-center mx-auto"
             >
               {/* Logo Wrapper */}
               <div className="flex-1 flex items-end justify-center pb-6 w-full">
