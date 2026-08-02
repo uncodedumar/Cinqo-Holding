@@ -55,19 +55,19 @@ export default function OurCompanies() {
               className="group flex flex-col w-full bg-white rounded-2xl border border-gray-200/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden hover:-translate-y-1.5"
             >
               {/* Top Photo Banner */}
-              <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-gray-100">
+              <div className="relative w-full h-36 sm:h-52 overflow-hidden bg-gray-100">
                 <Image
                   src={company.bgImage}
                   alt={company.name}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-[50%_32%] md:object-center w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
               {/* Overlapping White Logo Badge */}
-              <div className="relative z-10 -mt-10 mx-auto bg-white rounded-xl shadow-md border border-gray-100/90 flex items-center justify-center w-20 h-[72px] transition-transform duration-300 group-hover:scale-105">
-                <div className="relative h-16 w-16">
+              <div className="relative z-10 -mt-12 md:-mt-10 mx-auto bg-white rounded-xl shadow-md border border-gray-100/90 flex items-center justify-center w-28 h-[90px] md:w-20 md:h-[72px] transition-transform duration-300 group-hover:scale-105">
+                <div className="relative h-20 w-20 md:h-16 md:w-16">
                   <Image
                     src={company.logo}
                     alt={`${company.name} logo`}
@@ -79,7 +79,7 @@ export default function OurCompanies() {
               </div>
 
               {/* Card Content Body */}
-              <div className="flex-1 flex flex-col justify-between pt-4 pb-5 px-6 text-center">
+              <div className="flex-1 flex flex-col justify-between pt-4 pb-4 px-4 md:pb-5 md:px-6 text-center">
                 <div>
                   {/* Company Name */}
                   <h3 className="text-lg font-bold text-gray-900 tracking-tight leading-snug mb-3 group-hover:text-coral-600 transition-colors">
@@ -122,4 +122,4 @@ export default function OurCompanies() {
       </div>
     </section>
   );
-}
+}
