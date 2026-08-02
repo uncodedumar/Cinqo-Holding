@@ -18,10 +18,11 @@ type HeroProps = {
   showDots?: boolean;
   /** "full" = full-viewport home carousel. "compact" = short banner (matches the news article hero). */
   variant?: "full" | "compact";
+  heightClass?: string;
 };
 
 
-export default function Hero({ slides, cta, id = "hero", showDots = true, variant = "full" }: HeroProps) {
+export default function Hero({ slides, cta, id = "hero", showDots = true, variant = "full", heightClass }: HeroProps) {
   const isCompact = variant === "compact";
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -116,7 +117,7 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
   return (
     <section
       className={`relative flex items-end overflow-hidden text-cream-50 ${
-        isCompact ? "w-full h-[360px] md:h-[440px] lg:h-[500px]" : "min-h-[100svh] md:min-h-screen"
+        isCompact ? "w-full h-[360px] md:h-[440px] lg:h-[500px]" : (heightClass || "min-h-[100svh] md:min-h-screen")
       }`}
       id={id}
       ref={containerRef}

@@ -5,9 +5,10 @@ export default function HomeHero() {
   return (
     
     <Hero 
-  slides={homeHeroSlidesData} 
-  cta={{ href: "/contact", text: "Get in Touch >" }} 
-/>
+      slides={homeHeroSlidesData} 
+      cta={{ href: "/contact", text: "Get in Touch >" }} 
+      heightClass="min-h-[75svh] md:min-h-screen"
+    />
 
   );
 }
