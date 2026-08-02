@@ -30,7 +30,7 @@ export default function Intro({ business }: { business: BusinessData }) {
       <Hero slides={[heroSlide]} showDots={false} variant="compact" />
 
       {/* Intro Text Section */}
-      <div className="relative w-full py-16 md:py-24 overflow-hidden">
+      <div className="relative w-full py-4 md:py-24 overflow-hidden">
         
         {/* Background Handling: Video with Image Fallback */}
         <div className="absolute inset-0 z-0">
@@ -62,7 +62,7 @@ export default function Intro({ business }: { business: BusinessData }) {
         <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12">
           
           {/* Two-column layout mimicking the reference image exactly */}
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-16">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-16">
             
             {/* Left side: Heading */}
             <motion.div 
@@ -73,7 +73,7 @@ export default function Intro({ business }: { business: BusinessData }) {
               variants={riseUpVariants}
             >
               {business.introHeading && (
-                <h2 className="text-base md:text-lg font-semibold text-black uppercase whitespace-pre-line tracking-wide">
+                <h2 className="text-sm md:text-lg font-semibold text-black uppercase whitespace-pre-line tracking-wide">
                   {business.introHeading}
                 </h2>
               )}
@@ -94,7 +94,7 @@ export default function Intro({ business }: { business: BusinessData }) {
                 }
               }}
             >
-              <p className="text-[1.375rem] text-black/80 leading-relaxed font-light whitespace-pre-line">
+              <p className="text-lg md:text-[1.375rem] text-black/80 leading-relaxed font-light whitespace-pre-line">
                 {business.introText}
               </p>
             </motion.div>

@@ -22,7 +22,7 @@ export default function ProfessionalFramework() {
   return (
     <section className="bg-white overflow-hidden">
       {/* Top Text Section */}
-      <div className="container mx-auto px-4 md:px-4 py-16 md:py-24">
+      <div className="container mx-auto px-4 md:px-4 pt-16 pb-6 md:py-24">
         <div className="grid md:grid-cols-2 gap-2 lg:gap-4 items-start">
           <motion.h2 
             initial="hidden"

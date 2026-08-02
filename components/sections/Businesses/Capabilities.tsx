@@ -15,10 +15,10 @@ export default function Capabilities({ capabilities }: { capabilities: BusinessD
   };
 
   return (
-    <section className="w-full py-24 md:py-28 bg-white">
+    <section className="w-full pt-8 pb-8 md:py-28 bg-white">
       {/* Header constrained to max-width */}
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <h2 className="mb-12 md:mb-16 text-center [font-family:var(--font-display)] font-semibold text-[18px] md:text-[20px] tracking-[0.05em] text-ink uppercase">
+        <h2 className="mb-6 md:mb-16 text-center [font-family:var(--font-display)] font-semibold text-[18px] md:text-[20px] tracking-[0.05em] text-ink uppercase">
           Capabilities
         </h2>
       </div>

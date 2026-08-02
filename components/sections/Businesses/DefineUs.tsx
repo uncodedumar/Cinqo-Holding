@@ -19,7 +19,7 @@ export default function DefineUs({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full py-24 md:py-28 bg-cream-50"
+      className="w-full pt-12 pb-6 md:py-28 bg-cream-50"
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <motion.div

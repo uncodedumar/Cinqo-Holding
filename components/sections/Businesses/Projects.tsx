@@ -81,13 +81,13 @@ export default function ShowcaseSection({ data }: { data: BusinessData }) {
   const loopedThumbnails = [...activeProject.hoverThumbnails, ...activeProject.hoverThumbnails];
 
   return (
-    <section className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans pb-12 lg:pb-0">
+    <section className="relative flex flex-col lg:flex-row w-full bg-white overflow-hidden font-sans pb-6 lg:pb-0">
       {/*
         LEFT COLUMN (STATIC)
         Sticky for the duration of the section only; nothing scrolls inside it,
         so it stays put until the section itself scrolls out of view.
       */}
-      <div className="w-full lg:w-[28%] xl:w-1/4 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between pt-8 pb-4 px-6 md:p-10 lg:p-14 shrink-0 bg-white z-10">
+      <div className="w-full lg:w-[28%] xl:w-1/4 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between pt-4 pb-2 px-6 md:p-10 lg:p-14 shrink-0 bg-white z-10">
         {/* Top text — identical for every project */}
         <p className="text-ink/80 text-h2 leading-snug max-w-[26ch] font-bold text-center w-full mx-auto">
           {data.showcaseText}

@@ -120,9 +120,9 @@ export default function GovernanceTimelineAndInvestments() {
       {/* ======================= */}
       {/* TIMELINE SECTION        */}
       {/* ======================= */}
-      <section className="w-full py-32 px-6 flex flex-col items-center overflow-hidden">
+      <section className="w-full pt-12 pb-10 md:py-32 px-6 flex flex-col items-center overflow-hidden">
         {/* Top Heading */}
-        <h2 className="text-3xl font-bold tracking-widest uppercase mb-24 text-center text-black">
+        <h2 className="text-3xl font-bold tracking-widest uppercase mb-10 md:mb-24 text-center text-black">
           Governance & Oversight
         </h2>
 
@@ -173,9 +173,9 @@ export default function GovernanceTimelineAndInvestments() {
       {/* ======================= */}
       {/* INVESTMENTS SECTION     */}
       {/* ======================= */}
-      <section className="w-full py-24 px-6 flex flex-col items-center">
+      <section className="w-full pt-4 pb-12 md:py-24 px-6 flex flex-col items-center">
         {/* Section Heading */}
-        <h2 className="text-3xl font-bold tracking-widest uppercase mb-16 text-center text-black">
+        <h2 className="text-3xl font-bold tracking-widest uppercase mb-8 md:mb-16 text-center text-black">
           Investments
         </h2>
 
