@@ -83,7 +83,7 @@ export default function ContactUs() {
 
         {/* Absolute Image spanning top-to-bottom of this flex container, bleeding right */}
         <motion.div 
-          className="relative md:absolute right-0 top-0 bottom-0 z-0 w-full md:w-[60%] max-w-[1100px] h-[350px] md:h-auto" 
+          className="relative md:absolute right-0 top-0 bottom-0 z-0 w-[85%] md:w-[60%] max-w-[1100px] h-[240px] md:h-auto mx-auto md:mx-0 mt-4 md:mt-0 mb-12 md:mb-0" 
           variants={wipeVariants}
         >
           <Image 
