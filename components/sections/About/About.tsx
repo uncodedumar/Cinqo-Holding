@@ -165,7 +165,7 @@ export default function About() {
           {/* Left Column: 20+ Years */}
           <div className="md:col-span-5 flex justify-center md:justify-end font-[var(--font-ibm-plex)]">
             <div className="flex flex-col items-center">
-              <h2 className="text-[140px] md:text-[160px] leading-[0.8] font-normal text-black tracking-tighter">
+              <h2 className="text-[100px] md:text-[160px] leading-[0.8] font-normal text-black tracking-tighter">
                 <span ref={countRef}>0</span>+
               </h2>
               <p className="text-[20px] md:text-[22px] font-semibold text-black tracking-wide mt-3">
