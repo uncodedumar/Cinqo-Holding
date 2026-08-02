@@ -24,6 +24,9 @@ export default function OngoingProjects() {
   const ongoingProjects = PROJECTS.filter((project) => project.status === "ongoing");
   const grouped = groupByCompany(ongoingProjects);
   
+  // Track which company group is open
+  const [openCompany, setOpenCompany] = useState<string | null>(null);
+
   // Track which accordion row is open
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -34,6 +37,10 @@ export default function OngoingProjects() {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  const toggleCompany = (company: string) => {
+    setOpenCompany((prev) => (prev === company ? null : company));
+  };
+
   return (
     <section
       id="ongoing-projects"
@@ -42,12 +49,37 @@ export default function OngoingProjects() {
       <h2 className="text-2xl font-bold mb-6 text-black">Ongoing Projects</h2>
       
       <div className="border-t border-gray-200">
-        {grouped.map(([company, projects]) => (
+        {grouped.map(([company, projects]) => {
+          const companyOpen = openCompany === company;
+          return (
         <div key={company}>
-        <h3 className="font-ibm-plex text-xl md:text-2xl font-bold text-navy-900 uppercase tracking-[0.06em] py-5 px-4 border-b border-gray-200 flex items-center gap-3">
-          <span className="w-1.5 h-6 bg-coral-600" aria-hidden="true" />
-          {company}
-        </h3>
+        <div
+          onClick={() => toggleCompany(company)}
+          className={`font-ibm-plex text-xl md:text-2xl font-bold uppercase tracking-[0.06em] py-5 px-4 border-b border-gray-200 flex items-center justify-between gap-3 cursor-pointer transition-colors duration-300 ${
+            companyOpen ? "text-navy-900 bg-gray-50" : "text-navy-900 hover:bg-gray-50"
+          }`}
+        >
+          <div className="flex items-center gap-3">
+            <span className="w-1.5 h-6 bg-coral-600" aria-hidden="true" />
+            {company}
+          </div>
+          <motion.span
+            animate={{ rotate: companyOpen ? 45 : 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="text-3xl md:text-4xl font-light leading-none"
+          >
+            +
+          </motion.span>
+        </div>
+        <AnimatePresence>
+        {companyOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
         {projects.map((project) => {
           const isOpen = openId === project.id;
           const allImages = [project.image, ...(project.thumbnails || [])];
@@ -212,8 +244,12 @@ export default function OngoingProjects() {
             </div>
           );
         })}
+        </motion.div>
+        )}
+        </AnimatePresence>
         </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
