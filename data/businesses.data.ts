@@ -58,25 +58,25 @@ export const businesses: BusinessData[] = [
         title: "INCOME-GENERATING REAL ESTATE",
         description:
           "Commercial, industrial and residential assets with stable cash flows and long-term value creation potential.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/Businesses/CinqoHolding/Sectors/card1.jpeg",
       },
       {
         title: "TECHNOLOGY VENTURES",
         description:
           "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/Businesses/CinqoHolding/Sectors/card2.jpeg",
       },
       {
         title: "EARLY-STAGE BUSINESSES",
         description:
           "Selective investments in emerging ventures with strong leadership, sound fundamentals and sustainable growth potential.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/Businesses/CinqoHolding/Sectors/card3.JPG",
       },
       {
         title: "INDUSTRIAL PARTNERSHIPS & DISTRIBUTION RIGHTS",
         description:
           "Strategic investments in industries focused on innovation and value addition.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/Businesses/CinqoHolding/Sectors/card4.jpeg",
       },
     ],
     capabilities: [],
@@ -157,25 +157,25 @@ export const businesses: BusinessData[] = [
         title: "HIGH-END RESIDENTIAL\n VILLAS & COMPOUNDS",
         description:
           "Delivery of luxury villas and gated communities with a focus on quality, coordination and finishing excellence.",
-        image: "/images/sectors/cp11.jpg",
+        image: "/images/sectors/cp12.jpg",
       },
       {
         title: "RESIDENTIAL & \n COMMERCIAL TOWERS",
         description:
           "Construction of mid- and high-rise developments with strong emphasis on programme control, logistics and safety compliance.",
-        image: "/images/sectors/cp12.jpg",
+        image: "/images/sectors/cp11.jpg",
       },
       {
         title: "COMMERCIAL MALLS &\n MIXED-USE DEVELOPMENTS",
         description:
           "Execution of retail and mixed-use projects requiring coordinated structural, architectural and MEP delivery.",
-        image: "/images/sectors/cp13.jpg",
+        image: "/images/sectors/cp3.jpg",
       },
       {
         title: "WAREHOUSES &\n INDUSTRIAL FACILITIES",
         description:
           "Development of industrial structures incorporating utility integration, fire safety systems and operational infrastructure.",
-        image: "/images/sectors/cp14.jpg",
+        image: "/images/companies/trading2.jpeg",
       },
     ],
     showcaseText: "Projects Highlights",

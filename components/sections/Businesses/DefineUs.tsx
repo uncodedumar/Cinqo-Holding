@@ -53,25 +53,24 @@ export default function DefineUs({
               {item.bgimage && (
                 <>
                   <div
-                    className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+                    className="absolute inset-0 bg-cover bg-center z-0 blur-[1.5px] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                     style={{ backgroundImage: `url(${item.bgimage})` }}
                   />
-                  {/* Gradient overlay to ensure text readability */}
-                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/60 to-white/0 transition-opacity duration-500 group-hover:opacity-90" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 </>
               )}
 
-              <div className="relative z-10 flex flex-col gap-3 mt-auto">
+              <div className="relative z-10 flex flex-col gap-0.5 mt-auto">
                 <motion.h3
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.4, delay: i * 0.08 + 0.1 }}
-                  className="[font-family:var(--font-body)] font-semibold text-[14px] md:text-[15px] xl:text-[16px] leading-snug text-ink tracking-wide uppercase transition-colors duration-300 group-hover:text-[var(--color-coral-500)] min-h-[3.5rem] md:min-h-[4.5rem]"
+                  className="[font-family:var(--font-body)] flex items-center font-semibold text-[14px] md:text-[15px] xl:text-[16px] leading-snug text-white tracking-wide uppercase transition-colors duration-300 group-hover:text-white min-h-[3.5rem] md:min-h-[4.5rem]"
                 >
                   {item.title}
                 </motion.h3>
-                <p className="[font-family:var(--font-body)] font-normal text-[13px] md:text-[14px] leading-relaxed text-muted transition-colors duration-300 group-hover:text-ink min-h-[5rem] md:min-h-[6rem]">
+                <p className="[font-family:var(--font-body)] font-normal text-[13px] md:text-[14px] leading-relaxed text-white drop-shadow-sm transition-colors duration-300 group-hover:text-white/90 min-h-[5rem] md:min-h-[6rem]">
                   {item.description}
                 </p>
               </div>
