@@ -207,8 +207,16 @@ export default function About() {
         </div>
         
         {/* Center Text Reveal (Overlays the zoomed-in image) */}
-        <div ref={centerTextRef} className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center px-4 drop-shadow-lg">
+        <div ref={centerTextRef} className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 pointer-events-none px-4">
+          <Image
+            src="/images/logos/NewFooterLogo.png"
+            alt="Cinqo Holding logo"
+            width={200}
+            height={80}
+            className="drop-shadow-lg"
+            sizes="200px"
+          />
+          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center uppercase drop-shadow-lg">
             Cinqo Holding
           </h2>
         </div>
