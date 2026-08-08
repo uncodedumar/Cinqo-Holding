@@ -177,7 +177,7 @@ export default function About() {
           {/* Right Column: Paragraph Text */}
           <div ref={textRiseRef} className="md:col-span-7 flex flex-col gap-4 md:gap-6 text-[16px] sm:text-[17px] md:text-[19px] leading-[1.6] text-black/80">
             <p>
-              Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 600 professionals serving clients across Bahrain&rsquo;s public and private sectors.
+              Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 1200 professionals serving clients across Bahrain&rsquo;s public and private sectors.
             </p>
             <p>
               The Group comprises one holding company and five specialised companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
