@@ -17,7 +17,7 @@ const executives = [
   { name: "Salman", designation: "Operations Manager – Cinqo Contracting", image: "/images/about/Salman.png", linkedin: "#" },
   { name: "Ranjith", designation: "General Manager – Cinqo Trading", image: "/images/about/Ranjith.png", linkedin: "#" },
   { name: "Mohd Ali", designation: "Operations Manager – THC Facilities Management", image: "/images/about/Ali.png", linkedin: "#" },
-  { name: "Collins", designation: "Operations Manager – THC Fit Out", image: "/images/about/Collins.png", linkedin: "#" },
+  { name: "Collins", designation: "Business Development Manager – THC Fit Out", image: "/images/about/Collins.png", linkedin: "#" },
   { name: "Prakash", designation: "Group Finance Manager", image: "/images/about/Prakash_.png", linkedin: "#" },
   { name: "Satish", designation: "Group HR Manager", image: "/images/about/Satish.png", linkedin: "#" },
   { name: "Alok", designation: "Group Business Development Manager", image: "/images/about/Alok.png", linkedin: "#" },
