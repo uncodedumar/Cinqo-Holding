@@ -180,7 +180,7 @@ export default function About() {
               Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 1200 professionals serving clients across Bahrain&rsquo;s public and private sectors.
             </p>
             <p>
-              The Group comprises one holding company and five specialised companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
+              The Group comprises a holding company and five specialised companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
             </p>
             <p>
               Growth is pursued selectively, guided by capability, operational readiness and long-term sustainability.
@@ -211,10 +211,10 @@ export default function About() {
           <Image
             src="/images/logos/NewFooterLogo.png"
             alt="Cinqo Holding logo"
-            width={400}
-            height={160}
-            className="drop-shadow-lg"
-            sizes="400px"
+            width={220}
+            height={88}
+            className="drop-shadow-lg mx-auto"
+            sizes="220px"
           />
         </div>
       </section>

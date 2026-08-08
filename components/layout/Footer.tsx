@@ -69,7 +69,7 @@ export default function Footer() {
       className="relative md:fixed inset-x-0 bottom-0 z-0 md:z-[-2] w-full md:max-h-screen overflow-hidden md:overflow-y-auto overflow-x-hidden bg-navy-950 text-cream-50 isolate flex flex-col"
     >
       <Image
-        src="/videos/footer/footerNewBg.jpeg"
+        src="/videos/footer/footerNewBg.webp"
         alt=""
         fill
         className="bg-media object-cover"

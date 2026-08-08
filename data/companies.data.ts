@@ -1,7 +1,7 @@
 import type { CompanyCard } from "@/types";
 
 /**
- * Our Companies — one holding company and five specialized companies under Cinqo Holding.
+ * Our Companies — a holding company and five specialized companies under Cinqo Holding.
  * `bgImage` is revealed with a frosted-glass blur on card hover.
  */
 export const companiesData: CompanyCard[] = [
