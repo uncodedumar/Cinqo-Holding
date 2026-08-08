@@ -405,7 +405,8 @@ export const businesses: BusinessData[] = [
         title: "INVENTORY & LOGISTICS",
         description:
           "ERP-managed inventory, batch traceability and real-time stock visibility support reliable supply across retail and project channels.",
-        bgimage: "/images/companies/wdu/CT/CT-Inventory-and-logistics-original.jpg",
+        bgimage:
+          "/images/companies/wdu/CT/CT-Inventory-and-logistics-original.jpg",
       },
       {
         title: "AFTER-SALES SUPPORT",
@@ -495,13 +496,15 @@ export const businesses: BusinessData[] = [
         title: "LIFECYCLE FOCUS",
         description:
           "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
-        bgimage: "/images/companies/wdu/THCFM/THC-fm-Operational-Continuity.jpeg",
+        bgimage:
+          "/images/companies/wdu/THCFM/THC-fm-Operational-Continuity.jpeg",
       },
       {
         title: "TRANSPARENT REPORTING",
         description:
           "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
-        bgimage: "/images/companies/wdu/THCFM/THC-fm-transparent-reporting.jpeg",
+        bgimage:
+          "/images/companies/wdu/THCFM/THC-fm-transparent-reporting.jpeg",
       },
     ],
     capabilities: [
@@ -547,19 +550,19 @@ export const businesses: BusinessData[] = [
         title: "Residential Towers & Compounds",
         description:
           "Maintenance of HVAC, fire systems, lifts and shared infrastructure to ensure consistent building performance.",
-        image: "/images/sectors/card-3.webp",
+        image: "/images/sectors/cp11.jpg",
       },
       {
         title: "Office Buildings",
         description:
           "Preventive maintenance and system optimisation for corporate environments focused on uptime and efficiency.",
-        image: "/images/sectors/card-2.webp",
+        image: "/images/Businesses/CinqoContracting/Projects/riffaBg.jpeg",
       },
       {
         title: "Industrial Facilities",
         description:
           "Technical servicing of operational assets and infrastructure aligned with compliance and productivity requirements.",
-        image: "/images/sectors/card-4.webp",
+        image: "/images/sectors/fm_sector4.JPG",
       },
     ],
     showcaseText: "Projects Highlights",
@@ -624,19 +627,22 @@ export const businesses: BusinessData[] = [
         title: "CONTROLLED EXECUTION",
         description:
           "Trade coordination, sequencing and finish management are carefully supervised throughout delivery.",
-        bgimage: "/images/companies/wdu/THCFitout/THCFitoutControlledExecution.jpeg",
+        bgimage:
+          "/images/companies/wdu/THCFitout/THCFitoutControlledExecution.jpeg",
       },
       {
         title: "MATERIAL OVERSIGHT",
         description:
           "Specifications and finishes are monitored through structured reviews and on-site quality control.",
-        bgimage: "/images/companies/wdu/THCFitout/THCFitoutMaterialOversight.jpg",
+        bgimage:
+          "/images/companies/wdu/THCFitout/THCFitoutMaterialOversight.jpg",
       },
       {
         title: "DETAIL ORIENTATION",
         description:
           "Precision in finishing, alignment and coordination defines the quality of the final outcome.",
-        bgimage: "/images/companies/wdu/THCFitout/THCFitoutDetailOrientation.jpg",
+        bgimage:
+          "/images/companies/wdu/THCFitout/THCFitoutDetailOrientation.jpg",
       },
     ],
     capabilities: [
@@ -676,25 +682,25 @@ export const businesses: BusinessData[] = [
         title: "Corporate Offices",
         description:
           "Interior construction aligned with functionality, acoustic performance and service integration.",
-        image: "/images/sectors/sector-1.webp",
+        image: "/images/sectors/fitout_s1.JPG",
       },
       {
         title: "Retail & F&B",
         description:
           "Fast-track fit-out delivery focused on brand requirements and operational readiness.",
-        image: "/images/sectors/sector-2.webp",
+        image: "/images/sectors/cp3.jpg",
       },
       {
         title: "Residential Interiors",
         description:
           "Premium villa and apartment interiors delivered with attention to detail and material quality.",
-        image: "/images/sectors/sector-3.jpg",
+        image: "/images/Businesses/CinqoContracting/Projects/janabaya2.jpg",
       },
       {
         title: "Healthcare & Clinics",
         description:
           "Fit-outs incorporating hygienic materials and coordinated building services.",
-        image: "/images/sectors/sector-1.webp",
+        image: "/images/companies/trading2.jpeg",
       },
     ],
     showcaseText: "Projects Highlights",
