@@ -75,7 +75,7 @@ export const careersHeroSlidesData: HeroSlideV2[] = [
   {
     id: "careers1",
     image: "/images/hero/hero-carrers.jpg",
-    alt: "Careers at Cinqo Holdings",
+    alt: "Careers at Cinqo Holding",
     headline1: "Careers",
   },
 ];
@@ -84,7 +84,7 @@ export const contactHeroSlidesData: HeroSlideV2[] = [
   {
     id: "contact1",
     image: "/images/hero/h1.jpg",
-    alt: "Contact Cinqo Holdings",
+    alt: "Contact Cinqo Holding",
     headline1: "Contact Us.",
   },
 ];
@@ -102,7 +102,7 @@ export const newsSlugHeroSlidesData: HeroSlideV2[] = [
   {
     id: "contact1",
     image: "/images/hero/hero-news.jpg",
-    alt: "Contact Cinqo Holdings",
+    alt: "Contact Cinqo Holding",
     headline1: "News.",
   },
 ];

@@ -68,7 +68,7 @@ export default function ProfessionalFramework() {
         <div className="w-full rounded-sm overflow-hidden relative aspect-[2.35/1]">
           <Image
             src="/images/careers/horizon.webp"
-            alt="Cinqo Holdings Professional Horizon"
+            alt="Cinqo Holding Professional Horizon"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 92vw, 90vw"

@@ -215,7 +215,7 @@ export default function Navbar() {
             <Link
               href="/home"
               className="flex items-center transition-transform duration-200 hover:scale-106"
-              aria-label="Cinqo Holdings Home"
+              aria-label="Cinqo Holding Home"
             >
               <svg
                 width="80"
