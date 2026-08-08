@@ -99,25 +99,25 @@ export const businesses: BusinessData[] = [
         title: "Executive Oversight",
         description:
           "Projects operate with direct leadership visibility, ensuring accountability, timely decision-making and effective risk management throughout delivery.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CC/CC-Executive-oversight.jpg",
       },
       {
         title: "Quality & Compliance",
         description:
           "Materials, workmanship and safety standards are maintained through inspections, testing and compliance monitoring throughout execution.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CC/CC-Quality-and-Compliance.jpg",
       },
       {
         title: "Programme Control",
         description:
           "Scheduling and sequencing are actively monitored across all project phases, supported by ERP-enabled tracking and reporting.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CC/CC-Program-Control.jpg",
       },
       {
         title: "Commercial Discipline",
         description:
           "Cost exposure, variations and financial commitments are managed through structured controls and documented approval processes.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CC/CC-Commercial-Discipline.jpg",
       },
     ],
     capabilities: [
@@ -233,25 +233,25 @@ export const businesses: BusinessData[] = [
         title: "SYSTEM-BASED APPROACH",
         description:
           "Solutions are specified as complete systems tailored to operational, chemical and mechanical performance requirements.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-System-Based-Approach.jpg",
       },
       {
         title: "PREPARATION INTEGRITY",
         description:
           "Substrate evaluation, moisture testing and surface preparation form the foundation of long-term system performance.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-Preperation-Integrity.jpg",
       },
       {
         title: "APPLICATION CONTROL",
         description:
           "Environmental conditions, application parameters and quality standards are monitored throughout installation.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-Application-Control.jpg",
       },
       {
         title: "PERFORMANCE DURABILITY",
         description:
           "Systems are selected to withstand operational demands while maximising service life and reliability.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-Perfromance-Durability.jpg",
       },
     ],
     capabilities: [
@@ -393,25 +393,25 @@ export const businesses: BusinessData[] = [
         title: "PRINCIPAL ALIGNMENT",
         description:
           "Manufacturer relationships are built on long-term partnerships, commercial integrity and consistent market representation.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CT/CT-Techncial-Distribution.jpg",
       },
       {
         title: "TECHNICAL DISTRIBUTION",
         description:
           "Specification guidance, application support and technical advisory services form an integral part of the distribution model.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CT/CT-Principal-Alignment.jpg",
       },
       {
         title: "INVENTORY & LOGISTICS",
         description:
           "ERP-managed inventory, batch traceability and real-time stock visibility support reliable supply across retail and project channels.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CT/CT-Inventory-and-logistics-original.jpg",
       },
       {
         title: "AFTER-SALES SUPPORT",
         description:
           "Technical support, warranty coordination and field assistance continue beyond delivery to support long-term product performance.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/CT/CT-IAftersales-Support.jpg",
       },
     ],
     capabilities: [
@@ -483,25 +483,25 @@ export const businesses: BusinessData[] = [
         title: "ASSET PRESERVATION",
         description:
           "Maintenance programmes are designed to maximise asset lifespan, reliability and operational performance.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFM/THC-fm-Assett-Preservation.jpeg",
       },
       {
         title: "OPERATIONAL CONTINUITY",
         description:
           "Systems are monitored and maintained to minimise downtime and support uninterrupted operations.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFM/THC-FM-Life-cycle-focus.jpeg",
       },
       {
         title: "LIFECYCLE FOCUS",
         description:
           "Maintenance decisions are guided by long-term asset performance and total cost of ownership.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFM/THC-fm-Operational-Continuity.jpeg",
       },
       {
         title: "TRANSPARENT REPORTING",
         description:
           "Clients benefit from clear visibility across maintenance activities, compliance requirements and asset performance.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFM/THC-fm-transparent-reporting.jpeg",
       },
     ],
     capabilities: [
@@ -618,25 +618,25 @@ export const businesses: BusinessData[] = [
         title: "DESIGN INTEGRITY",
         description:
           "Projects are executed in accordance with approved designs while maintaining alignment with architectural intent.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFitout/THCFitoutDesignIntegrity.jpg",
       },
       {
         title: "CONTROLLED EXECUTION",
         description:
           "Trade coordination, sequencing and finish management are carefully supervised throughout delivery.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFitout/THCFitoutControlledExecution.jpeg",
       },
       {
         title: "MATERIAL OVERSIGHT",
         description:
           "Specifications and finishes are monitored through structured reviews and on-site quality control.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFitout/THCFitoutMaterialOversight.jpg",
       },
       {
         title: "DETAIL ORIENTATION",
         description:
           "Precision in finishing, alignment and coordination defines the quality of the final outcome.",
-        bgimage: "/images/companies/ci1.png",
+        bgimage: "/images/companies/wdu/THCFitout/THCFitoutDetailOrientation.jpg",
       },
     ],
     capabilities: [

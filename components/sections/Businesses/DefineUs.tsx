@@ -57,7 +57,7 @@ export default function DefineUs({
                     style={{ backgroundImage: `url(${item.bgimage})` }}
                   />
                   {/* Gradient overlay to ensure text readability */}
-                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/80 to-white/20 transition-opacity duration-500 group-hover:opacity-90" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/60 to-white/0 transition-opacity duration-500 group-hover:opacity-90" />
                 </>
               )}
 
