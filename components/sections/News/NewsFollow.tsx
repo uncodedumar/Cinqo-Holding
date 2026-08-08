@@ -16,9 +16,7 @@ const FollowUsBanner: React.FC = () => {
             Follow us to stay updated with the latest news from our Group
           </h2>
           <p className="text-[#333333] text-[0.7rem] leading-relaxed">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry.
+            Be the first to know about our newest developments, industry insights, and corporate milestones. Follow our social media pages to join the conversation and see how our Group is shaping the future.
           </p>
         </div>
 
