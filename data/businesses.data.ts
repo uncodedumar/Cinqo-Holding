@@ -169,7 +169,7 @@ export const businesses: BusinessData[] = [
         title: "COMMERCIAL MALLS &\n MIXED-USE DEVELOPMENTS",
         description:
           "Execution of retail and mixed-use projects requiring coordinated structural, architectural and MEP delivery.",
-        image: "/images/sectors/cp3.jpg",
+        image: "/images/sectors/cp3.JPG",
       },
       {
         title: "WAREHOUSES &\n INDUSTRIAL FACILITIES",
@@ -688,7 +688,7 @@ export const businesses: BusinessData[] = [
         title: "Retail & F&B",
         description:
           "Fast-track fit-out delivery focused on brand requirements and operational readiness.",
-        image: "/images/sectors/cp3.jpg",
+        image: "/images/sectors/cp3.JPG",
       },
       {
         title: "Residential Interiors",
