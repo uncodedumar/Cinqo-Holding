@@ -446,25 +446,25 @@ export const businesses: BusinessData[] = [
         title: "CONSTRUCTION & CONTRACTING",
         description:
           "Supply of coatings, construction chemicals and engineered systems supported by specification and application advisory services.",
-        image: "/images/sectors/sector-1.webp",
+        image: "/images/Businesses/CinqoContracting/Projects/janabayaBg.jpg",
       },
       {
         title: "RETAIL DISTRIBUTION",
         description:
           "Structured supply to retail channels supported by inventory management, pricing governance and brand development.",
-        image: "/images/sectors/sector-2.webp",
+        image: "/images/companies/trading.jpeg",
       },
       {
         title: "INDUSTRIAL & MANUFACTURING",
         description:
           "Technical products and systems supporting operational efficiency, asset protection and facility performance.",
-        image: "/images/sectors/sector-3.jpg",
+        image: "/images/companies/IndustrialPartnerhsips.jpg",
       },
       {
         title: "INFRASTRUCTURE & \n UTILITIES",
         description:
           "Specialised technologies and engineering solutions supporting municipal and large-scale infrastructure projects.",
-        image: "/images/sectors/sector-1.webp",
+        image: "/images/sectors/cp11.JPG",
       },
     ],
     showcaseText: "",
