@@ -56,10 +56,8 @@ const STATS = [
 
     label: "International Brands",
 
-    heading: "Trusted by Leading Organisations:",
-
     caption:
-      "Our work is defined by the trust of the organisations we serve. From major developments and public-sector projects to leading businesses and institutions, our clients rely on Cinqo for expertise, accountability and consistent delivery.",
+      "Exclusive and authorized representation of leading global brands.",
   },
 ];
 
@@ -473,8 +471,7 @@ export default function Credibility() {
 
               <span className="stat-underline block h-[2px] w-10 bg-coral-600 scale-x-0" />
 
-              <p className={`text-[0.75rem] text-muted-light mt-3 leading-normal w-full pr-1 ${isLast ? 'max-w-[200px] mx-auto min-[1024px]:max-w-none min-[1024px]:mx-0' : ''}`}>
-                {stat.heading && <>{stat.heading} </>}
+              <p className={`text-[0.75rem] text-muted-light mt-1 leading-normal w-full pr-1 ${isLast ? 'max-w-[200px] mx-auto min-[1024px]:max-w-none min-[1024px]:mx-0' : ''}`}>
                 {stat.caption}
               </p>
             </div>

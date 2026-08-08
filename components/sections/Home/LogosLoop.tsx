@@ -11,8 +11,11 @@ export default function TrustedBySection() {
       {/* 1. Header Text Container */}
       <div className="w-full max-w-[1400px] flex flex-col items-start mb-3 px-2">
         <div className="relative">
-          <p id="trusted-by-heading" className="text-md font-light text-slate-900">
-            Exclusive and authorized representation of leading global manufacturers, delivering world-class technical solutions across coatings, chemicals, and infrastructure.
+          <h2 id="trusted-by-heading" className="text-lg font-bold text-slate-900">
+            Trusted by Leading Organisations
+          </h2>
+          <p className="text-md font-light text-slate-900 mt-2">
+            Our work is defined by the trust of the organisations we serve. From major developments and public-sector projects to leading businesses and institutions, our clients rely on Cinqo for expertise, accountability and consistent delivery.
           </p>
         </div>
       </div>
