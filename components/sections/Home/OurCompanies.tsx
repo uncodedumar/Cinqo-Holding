@@ -43,7 +43,7 @@ export default function OurCompanies() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Our Companies</h2>
           <p className="text-base sm:text-lg mt-3 text-gray-600">
-            Five operating Companies. Governed by one unified structure.
+            One Holding Company and Five Specialized Companies. Governed by one unified structure.
           </p>
         </div>
 

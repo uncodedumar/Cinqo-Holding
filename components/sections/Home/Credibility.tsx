@@ -46,7 +46,7 @@ const STATS = [
     label: "Companies",
 
     caption:
-      "Five specialized companies operating under a single, unified structure.",
+      "One Holding Company and Five Specialized Companies operating under a single, unified structure.",
   },
 
   {
