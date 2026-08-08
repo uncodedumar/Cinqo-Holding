@@ -211,14 +211,11 @@ export default function About() {
           <Image
             src="/images/logos/NewFooterLogo.png"
             alt="Cinqo Holding logo"
-            width={200}
-            height={80}
+            width={400}
+            height={160}
             className="drop-shadow-lg"
-            sizes="200px"
+            sizes="400px"
           />
-          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center uppercase drop-shadow-lg">
-            Cinqo Holding
-          </h2>
         </div>
       </section>
 
