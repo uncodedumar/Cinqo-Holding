@@ -84,9 +84,7 @@ export default function Leadership() {
               <div className="max-w-[720px] space-y-4 md:space-y-6 text-left text-[16px] md:text-[17px] leading-[1.8] text-[#6A6A6A] [font-family:var(--font-body)]">
                 <motion.p variants={itemVariants}>
                   At Cinqo, we do not see ourselves as a collection of{" "}
-                  <strong className="font-semibold text-[#333333]">
-                    separate businesses.
-                  </strong>{" "}
+                  separate businesses.{" "}
                   We operate as one organisation built on a simple principle:
                   take responsibility for what we commit, plan properly and
                   execute with discipline. When these foundations hold, results

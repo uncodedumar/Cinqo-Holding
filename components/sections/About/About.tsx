@@ -177,10 +177,10 @@ export default function About() {
           {/* Right Column: Paragraph Text */}
           <div ref={textRiseRef} className="md:col-span-7 flex flex-col gap-4 md:gap-6 text-[16px] sm:text-[17px] md:text-[19px] leading-[1.6] text-black/80">
             <p>
-              Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 600 professionals serving clients across Bahrain&rsquo;s public and private sectors.
+              Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 1200 professionals serving clients across Bahrain&rsquo;s public and private sectors.
             </p>
             <p>
-              The Group comprises five specialised operating companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
+              The Group comprises one holding company and five specialised companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
             </p>
             <p>
               Growth is pursued selectively, guided by capability, operational readiness and long-term sustainability.
@@ -207,8 +207,16 @@ export default function About() {
         </div>
         
         {/* Center Text Reveal (Overlays the zoomed-in image) */}
-        <div ref={centerTextRef} className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center px-4 drop-shadow-lg">
+        <div ref={centerTextRef} className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 pointer-events-none px-4">
+          <Image
+            src="/images/logos/NewFooterLogo.png"
+            alt="Cinqo Holding logo"
+            width={200}
+            height={80}
+            className="drop-shadow-lg"
+            sizes="200px"
+          />
+          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center uppercase drop-shadow-lg">
             Cinqo Holding
           </h2>
         </div>

@@ -1,13 +1,13 @@
 import type { CompanyCard } from "@/types";
 
 /**
- * Our Companies — the 5 operating companies under Cinqo Holding.
+ * Our Companies — one holding company and five specialized companies under Cinqo Holding.
  * `bgImage` is revealed with a frosted-glass blur on card hover.
  */
 export const companiesData: CompanyCard[] = [
   {
     id: "cinqo-holding-investments",
-    name: "Cinqo Holding Investments",
+    name: "Cinqo Holding",
     logo: "/images/logos/5.png",
     bgImage: "/images/companies/c6.jpg",
     description:
@@ -20,7 +20,7 @@ export const companiesData: CompanyCard[] = [
     logo: "/images/logos/6.png",
     bgImage: "/images/hero/contracting-hero.png",
     description:
-      "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.",
+      "Delivering turnkey construction solutions across a diverse portfolio of developments - from luxury residences and mixed use projects to commercial and industrial facilities.",
     href: "/businesses/cinqo-contracting",
   },
   {

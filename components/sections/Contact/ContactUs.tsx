@@ -436,9 +436,9 @@ export default function ContactForm() {
             <div className="mt-4 text-left">
                <ArrowDownRight className="text-gray-800 mb-1" size={21} strokeWidth={1.5} />
                <div className="text-[21px] leading-[1] text-[#1A1A1A] font-medium">
-                 <p>YBAK TOWER,</p>
-                 <p>Level 14, Entrance No. 143-144</p>
-                 <p>Road 1703, Block 317.</p>
+                 <p>YBA KANOO TOWER,</p>
+                 <p>Level 14</p>
+                 <p>Road 1307, Block 317.</p>
                  <p>Diplomatic Area, Kingdom of<br className="hidden lg:block"/>Bahrain.</p>
                </div>
              </div>

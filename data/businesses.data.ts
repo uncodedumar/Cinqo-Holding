@@ -45,8 +45,8 @@ export interface BusinessData {
 export const businesses: BusinessData[] = [
   {
     slug: "cinqo-holding-investments",
-    name: "CINQO HOLDING INVESTMENTS",
-    heroImage: "/images/companies/c6.jpg",
+    name: "CINQO HOLDING",
+    heroImage: "/images/hero/heroHolding.jpg",
     heroImagePosition: "60% 25%",
     introBgImage: "/images/companies/ci5.png",
     introBgVideo: "/images/companies/Intro-6.mp4",
