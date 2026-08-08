@@ -303,7 +303,7 @@ export const businesses: BusinessData[] = [
         title: "WAREHOUSES &\n LOGISTICS",
         description:
           "Heavy-duty flooring systems designed for continuous operational traffic and material handling.",
-        image: "/images/sectors/cp53.jpg",
+        image: "/images/companies/trading2.jpeg",
       },
       {
         title: "CAR PARKS &\n PODIUMS",
