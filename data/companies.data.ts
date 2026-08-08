@@ -7,7 +7,7 @@ import type { CompanyCard } from "@/types";
 export const companiesData: CompanyCard[] = [
   {
     id: "cinqo-holding-investments",
-    name: "Cinqo Holding Investments",
+    name: "Cinqo Holding",
     logo: "/images/logos/5.png",
     bgImage: "/images/companies/c6.jpg",
     description:
