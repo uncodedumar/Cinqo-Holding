@@ -180,7 +180,7 @@ export default function About() {
               Since its inception, Cinqo Holding has evolved from a construction-focused business into a diversified group of more than 1200 professionals serving clients across Bahrain&rsquo;s public and private sectors.
             </p>
             <p>
-              The Group comprises one holding company and five specialised companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
+              The Group comprises a holding company and five specialised companies operating under a unified framework of governance, financial oversight and strategic direction, enabling each business to maintain its technical focus while benefiting from shared leadership and systems.
             </p>
             <p>
               Growth is pursued selectively, guided by capability, operational readiness and long-term sustainability.
@@ -197,7 +197,7 @@ export default function About() {
           style={{ boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)" }}
         >
           <Image
-            src="/images/about/9add3f66-e635-4034-8524-da355a9df816.jpeg"
+            src="/images/about/9add3f66-e635-4034-8524-da355a9df816.webp"
             alt="Cinqo Holding"
             fill
             className="object-cover"
@@ -211,14 +211,11 @@ export default function About() {
           <Image
             src="/images/logos/NewFooterLogo.png"
             alt="Cinqo Holding logo"
-            width={200}
-            height={80}
-            className="drop-shadow-lg"
-            sizes="200px"
+            width={220}
+            height={88}
+            className="drop-shadow-lg mx-auto"
+            sizes="220px"
           />
-          <h2 className="text-5xl md:text-7xl text-white font-black tracking-wider text-center uppercase drop-shadow-lg">
-            Cinqo Holding
-          </h2>
         </div>
       </section>
 
