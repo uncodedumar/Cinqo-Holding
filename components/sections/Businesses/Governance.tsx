@@ -41,23 +41,34 @@ const investmentsData = [
   {
     logoAlt: "Procural",
     logoSrc: "/images/investments/procural.png",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "A digital B2B procurement and tendering platform connecting buyers and suppliers through smarter and transparent procurement.",
+    url: "https://www.procural.com",
   },
   {
     logoAlt: "AROOJ development company",
     logoSrc: "/images/investments/arooj.png",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Developing planned residential communities that combine quality construction, functional design and comfortable living.",
+    logoSizeClass: "w-[90%] h-24",
+    logoScaleClass: "scale-[0.9]",
   },
   {
     logoAlt: "ilium composites",
     logoSrc: "/images/investments/ilium.png",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "A Bahrain based manufacturer of advanced glass-fibre reinforcements for composite manufacturing across global industrial markets.",
+    url: "https://www.iliumcomposites.com",
   },
   {
     logoAlt: "Al Rashid Health Center",
-    logoSrc: "/images/investments/al-rashid.png",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  }
+    logoSrc: "/images/investments/Rashid_Health-Centre.png",
+    description:
+      "Providing accessible, patient-focused healthcare services with an emphasis on quality, professional care and community wellbeing.",
+    url: "https://www.rashidcenter.com",
+    logoSizeClass: "w-[95%] h-32",
+    logoScaleClass: "scale-125",
+  },
 ];
 
 const TimelineItem = ({
@@ -192,40 +203,56 @@ export default function GovernanceTimelineAndInvestments() {
           3 top / 2 bottom perfectly centered layout if max-width is constrained.
         */}
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-full w-full">
-          {investmentsData.map((investment, index) => (
-            <div 
-              key={index}
-              className="bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] max-w-[260px] md:max-w-[300px] aspect-square flex flex-col items-center justify-center p-5 md:p-6 rounded-sm text-center mx-auto"
-            >
-              {/* Logo Wrapper */}
-              <div className="flex-1 flex items-end justify-center pb-6 w-full">
-                {/* Fallback styling for when images aren't loaded yet. 
-                    Will automatically use the img tag when paths are correct. */}
-                <div className="relative w-[80%] h-16 flex items-center justify-center">
-<Image
-                    src={investment.logoSrc}
-                    alt={investment.logoAlt}
-                    fill
-                    className="object-contain"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                      const fallback = document.createElement('span');
-                      fallback.className = 'font-bold text-xl text-black';
-                      fallback.textContent = investment.logoAlt;
-                      e.currentTarget.parentElement?.appendChild(fallback);
-                    }}
-                  />
-                </div>
-              </div>
+          {investmentsData.map((investment, index) => {
+            const className =
+              "bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] max-w-[260px] md:max-w-[300px] aspect-square flex flex-col items-center justify-center p-5 md:p-6 rounded-sm text-center mx-auto";
 
-              {/* Dummy Text */}
-              <div className="flex-1 flex items-start pt-2">
-                <p className="text-gray-700 text-[13px] leading-relaxed">
-                  {investment.description}
-                </p>
+            const cardContent = (
+              <>
+                {/* Logo Wrapper */}
+                <div className="flex-1 flex items-end justify-center pb-6 w-full">
+                  {/* Fallback styling for when images aren't loaded yet. 
+                      Will automatically use the img tag when paths are correct. */}
+                  <div className={`relative ${investment.logoScaleClass || ""} ${investment.logoSizeClass || "w-[80%] h-16"} flex items-center justify-center`}>
+                    <Image
+                      src={investment.logoSrc}
+                      alt={investment.logoAlt}
+                      fill
+                      className="object-contain"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = 'none';
+                        const fallback = document.createElement('span');
+                        fallback.className = 'font-bold text-xl text-black';
+                        fallback.textContent = investment.logoAlt;
+                        e.currentTarget.parentElement?.appendChild(fallback);
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Description */}
+                <div className="flex-1 flex items-start pt-2">
+                  <p className="text-gray-700 text-[13px] leading-relaxed">
+                    {investment.description}
+                  </p>
+                </div>
+              </>
+            );
+
+            if (investment.url) {
+              return (
+                <a key={index} href={investment.url} target="_blank" rel="noopener noreferrer" className={className}>
+                  {cardContent}
+                </a>
+              );
+            }
+
+            return (
+              <div key={index} className={className}>
+                {cardContent}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>
