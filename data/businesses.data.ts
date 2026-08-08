@@ -64,19 +64,19 @@ export const businesses: BusinessData[] = [
         title: "TECHNOLOGY VENTURES",
         description:
           "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
-        bgimage: "/images/Businesses/CinqoHolding/Sectors/card2.jpeg",
+        bgimage: "/images/companies/TechnologyVenture.jpeg",
       },
       {
         title: "EARLY-STAGE BUSINESSES",
         description:
           "Selective investments in emerging ventures with strong leadership, sound fundamentals and sustainable growth potential.",
-        bgimage: "/images/Businesses/CinqoHolding/Sectors/card3.JPG",
+        bgimage: "/images/companies/Earlystagebusiness.jpg",
       },
       {
         title: "INDUSTRIAL PARTNERSHIPS & DISTRIBUTION RIGHTS",
         description:
           "Strategic investments in industries focused on innovation and value addition.",
-        bgimage: "/images/Businesses/CinqoHolding/Sectors/card4.jpeg",
+        bgimage: "/images/companies/IndustrialPartnerhsips.jpg",
       },
     ],
     capabilities: [],
@@ -393,13 +393,13 @@ export const businesses: BusinessData[] = [
         title: "PRINCIPAL ALIGNMENT",
         description:
           "Manufacturer relationships are built on long-term partnerships, commercial integrity and consistent market representation.",
-        bgimage: "/images/companies/wdu/CT/CT-Techncial-Distribution.jpg",
+        bgimage: "/images/companies/wdu/CT/CT-Principal-Alignment.jpg",
       },
       {
         title: "TECHNICAL DISTRIBUTION",
         description:
           "Specification guidance, application support and technical advisory services form an integral part of the distribution model.",
-        bgimage: "/images/companies/wdu/CT/CT-Principal-Alignment.jpg",
+        bgimage: "/images/companies/wdu/CT/CT-Techncial-Distribution.jpg",
       },
       {
         title: "INVENTORY & LOGISTICS",

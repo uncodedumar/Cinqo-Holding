@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   title: "Cinqo Holding — Built on Commitment. Driven by Performance.",
   description:
     "Cinqo Holding is a diversified Bahrain-based group operating across construction, technical distribution, specialist coatings, facilities management, interior fit-out and strategic investments.",
+  icons: {
+    icon: "/app/favicon.ico",
+    shortcut: "/app/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
