@@ -20,7 +20,7 @@ export const companiesData: CompanyCard[] = [
     logo: "/images/logos/6.png",
     bgImage: "/images/hero/contracting-hero.png",
     description:
-      "Delivering civil and building construction across residential, commercial and industrial sectors, including luxury villas, residential towers, mixed-use developments, warehouses and industrial facilities.",
+      "Delivering turnkey construction solutions across a diverse portfolio of developments - from luxury residences and mixed use projects to commercial and industrial facilities.",
     href: "/businesses/cinqo-contracting",
   },
   {
