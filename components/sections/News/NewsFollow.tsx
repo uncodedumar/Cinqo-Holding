@@ -23,14 +23,14 @@ const FollowUsBanner: React.FC = () => {
         {/* Right Side: Social Icons Area */}
         <div className="flex items-center gap-6 pb-1">
           <a 
-            href="#" 
+            href="https://www.instagram.com/cinqoholding/?hl=en" 
             className="text-gray-800 hover:text-black hover:scale-110 transition-all duration-200"
             aria-label="Instagram"
           >
             <FaInstagram size={28} />
           </a>
           <a 
-            href="#" 
+            href="https://www.facebook.com/pages/Cinqo-Group/857571134291830" 
             className="text-gray-800 hover:text-black hover:scale-110 transition-all duration-200"
             aria-label="Facebook"
           >
@@ -44,7 +44,7 @@ const FollowUsBanner: React.FC = () => {
             <FaXTwitter size={28} />
           </a>
           <a 
-            href="#" 
+            href="https://www.linkedin.com/company/cinqo-group" 
             className="text-gray-800 hover:text-black hover:scale-110 transition-all duration-200"
             aria-label="LinkedIn"
           >
