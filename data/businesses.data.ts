@@ -58,25 +58,25 @@ export const businesses: BusinessData[] = [
         title: "INCOME-GENERATING REAL ESTATE",
         description:
           "Commercial, industrial and residential assets with stable cash flows and long-term value creation potential.",
-        bgimage: "/images/Businesses/CinqoHolding/Sectors/card1.jpeg",
+        bgimage: "/images/companies/wdu/CH/card1.jpeg",
       },
       {
         title: "TECHNOLOGY VENTURES",
         description:
           "Investments in scalable technology businesses supported by disciplined governance and structured growth strategies.",
-        bgimage: "/images/companies/TechnologyVenture.jpeg",
+        bgimage: "/images/companies/wdu/CH/TechnologyVenture.webp",
       },
       {
         title: "EARLY-STAGE BUSINESSES",
         description:
           "Selective investments in emerging ventures with strong leadership, sound fundamentals and sustainable growth potential.",
-        bgimage: "/images/companies/Earlystagebusiness.jpg",
+        bgimage: "/images/companies/wdu/CH/Earlystagebusiness.webp",
       },
       {
         title: "INDUSTRIAL PARTNERSHIPS & DISTRIBUTION RIGHTS",
         description:
           "Strategic investments in industries focused on innovation and value addition.",
-        bgimage: "/images/companies/IndustrialPartnerhsips.jpg",
+        bgimage: "/images/companies/wdu/CH/IndustrialPartnerhsips.webp",
       },
     ],
     capabilities: [],
@@ -99,7 +99,7 @@ export const businesses: BusinessData[] = [
         title: "Executive Oversight",
         description:
           "Projects operate with direct leadership visibility, ensuring accountability, timely decision-making and effective risk management throughout delivery.",
-        bgimage: "/images/companies/wdu/CC/CC-Executive-oversight.jpg",
+        bgimage: "/images/companies/wdu/CC/CC-Executive-oversight.webp",
       },
       {
         title: "Quality & Compliance",
@@ -111,7 +111,7 @@ export const businesses: BusinessData[] = [
         title: "Programme Control",
         description:
           "Scheduling and sequencing are actively monitored across all project phases, supported by ERP-enabled tracking and reporting.",
-        bgimage: "/images/companies/wdu/CC/CC-Program-Control.jpg",
+        bgimage: "/images/companies/wdu/CC/CC-Program-Control.webp",
       },
       {
         title: "Commercial Discipline",
@@ -233,25 +233,25 @@ export const businesses: BusinessData[] = [
         title: "SYSTEM-BASED APPROACH",
         description:
           "Solutions are specified as complete systems tailored to operational, chemical and mechanical performance requirements.",
-        bgimage: "/images/companies/wdu/CFCT/CFCT-System-Based-Approach.jpg",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-System-Based-Approach.webp",
       },
       {
         title: "PREPARATION INTEGRITY",
         description:
           "Substrate evaluation, moisture testing and surface preparation form the foundation of long-term system performance.",
-        bgimage: "/images/companies/wdu/CFCT/CFCT-Preperation-Integrity.jpg",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-Preperation-Integrity.webp",
       },
       {
         title: "APPLICATION CONTROL",
         description:
           "Environmental conditions, application parameters and quality standards are monitored throughout installation.",
-        bgimage: "/images/companies/wdu/CFCT/CFCT-Application-Control.jpg",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-Application-Control.webp",
       },
       {
         title: "PERFORMANCE DURABILITY",
         description:
           "Systems are selected to withstand operational demands while maximising service life and reliability.",
-        bgimage: "/images/companies/wdu/CFCT/CFCT-Perfromance-Durability.jpg",
+        bgimage: "/images/companies/wdu/CFCT/CFCT-Perfromance-Durability.webp",
       },
     ],
     capabilities: [
@@ -393,26 +393,26 @@ export const businesses: BusinessData[] = [
         title: "PRINCIPAL ALIGNMENT",
         description:
           "Manufacturer relationships are built on long-term partnerships, commercial integrity and consistent market representation.",
-        bgimage: "/images/companies/wdu/CT/CT-Principal-Alignment.jpg",
+        bgimage: "/images/companies/wdu/CT/CT-Principal-Alignment.webp",
       },
       {
         title: "TECHNICAL DISTRIBUTION",
         description:
           "Specification guidance, application support and technical advisory services form an integral part of the distribution model.",
-        bgimage: "/images/companies/wdu/CT/CT-Techncial-Distribution.jpg",
+        bgimage: "/images/companies/wdu/CT/CT-Techncial-Distribution.webp",
       },
       {
         title: "INVENTORY & LOGISTICS",
         description:
           "ERP-managed inventory, batch traceability and real-time stock visibility support reliable supply across retail and project channels.",
         bgimage:
-          "/images/companies/wdu/CT/CT-Inventory-and-logistics-original.jpg",
+          "/images/companies/wdu/CT/CT-Inventory-and-logistics-original.webp",
       },
       {
         title: "AFTER-SALES SUPPORT",
         description:
           "Technical support, warranty coordination and field assistance continue beyond delivery to support long-term product performance.",
-        bgimage: "/images/companies/wdu/CT/CT-IAftersales-Support.jpg",
+        bgimage: "/images/companies/wdu/CT/CT-IAftersales-Support.webp",
       },
     ],
     capabilities: [
@@ -621,7 +621,7 @@ export const businesses: BusinessData[] = [
         title: "DESIGN INTEGRITY",
         description:
           "Projects are executed in accordance with approved designs while maintaining alignment with architectural intent.",
-        bgimage: "/images/companies/wdu/THCFitout/THCFitoutDesignIntegrity.jpg",
+        bgimage: "/images/companies/wdu/THCFitout/THCFitoutDesignIntegrity.JPG",
       },
       {
         title: "CONTROLLED EXECUTION",
@@ -635,14 +635,14 @@ export const businesses: BusinessData[] = [
         description:
           "Specifications and finishes are monitored through structured reviews and on-site quality control.",
         bgimage:
-          "/images/companies/wdu/THCFitout/THCFitoutMaterialOversight.jpg",
+          "/images/companies/wdu/THCFitout/THCFitoutMaterialOversig.webp",
       },
       {
         title: "DETAIL ORIENTATION",
         description:
           "Precision in finishing, alignment and coordination defines the quality of the final outcome.",
         bgimage:
-          "/images/companies/wdu/THCFitout/THCFitoutDetailOrientation.jpg",
+          "/images/companies/wdu/THCFitout/THCFitoutDetailOrientation.JPG",
       },
     ],
     capabilities: [

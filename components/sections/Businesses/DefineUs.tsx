@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { BusinessData } from "@/data/businesses.data";
 
@@ -49,14 +50,17 @@ export default function DefineUs({
               className="group relative overflow-hidden bg-white border border-line rounded-sm px-5 pb-6 flex flex-col h-full min-h-[380px] lg:min-h-[420px] cursor-default"
             >
               {/* Premium Background Image Layer */}
-              {/* @ts-ignore - Assuming bgimage exists on the data type based on your request */}
               {item.bgimage && (
                 <>
-                  <div
-                    className="absolute inset-0 bg-cover bg-center z-0 blur-[1.5px] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-                    style={{ backgroundImage: `url(${item.bgimage})` }}
+                  <Image
+                    src={item.bgimage}
+                    alt={item.title}
+                    fill
+                    quality={85}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover z-0 transform-gpu [backface-visibility:hidden] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
                 </>
               )}
 
