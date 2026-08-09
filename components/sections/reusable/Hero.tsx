@@ -152,8 +152,8 @@ export default function Hero({ slides, cta, id = "hero", showDots = true, varian
 
       {/* Hero Content Container */}
       <div
-        className={`container relative z-20 flex flex-col !pl-[40px] select-none ${
-          isCompact ? "pb-10 md:pb-14 gap-3" : "pb-24 md:pb-28 gap-4 md:gap-6"
+        className={`container relative z-20 flex flex-col pt-20 md:pt-28 px-6 md:px-12 select-none ${
+          isCompact ? "pb-10 md:pb-14 gap-3" : "pb-20 md:pb-28 gap-4 md:gap-6"
         }`}
         ref={contentRef}
       >
