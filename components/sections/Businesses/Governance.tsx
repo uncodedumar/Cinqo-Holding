@@ -205,12 +205,12 @@ export default function GovernanceTimelineAndInvestments() {
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-2 max-w-full w-full">
           {investmentsData.map((investment, index) => {
             const className =
-              "bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-0.375rem)] max-w-[260px] md:max-w-[300px] lg:max-w-none aspect-square flex flex-col items-center justify-center p-5 md:p-6 rounded-sm text-center mx-auto";
+              "bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-0.375rem)] max-w-[320px] md:max-w-[300px] lg:max-w-none min-h-[340px] sm:min-h-0 sm:aspect-square flex flex-col items-center justify-center p-5 md:p-6 rounded-sm text-center mx-auto";
 
             const cardContent = (
               <>
                 {/* Logo Wrapper */}
-                <div className="flex-1 flex items-end justify-center pb-6 w-full">
+                <div className="flex-1 flex items-center justify-center pb-2 w-full">
                   {/* Fallback styling for when images aren't loaded yet. 
                       Will automatically use the img tag when paths are correct. */}
                   <div className={`relative ${investment.logoScaleClass || ""} ${investment.logoSizeClass || "w-[80%] h-16"} flex items-center justify-center`}>
