@@ -205,7 +205,7 @@ export default function GovernanceTimelineAndInvestments() {
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-2 max-w-full w-full">
           {investmentsData.map((investment, index) => {
             const className =
-              "bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-0.375rem)] max-w-[320px] md:max-w-[300px] lg:max-w-none min-h-[340px] sm:min-h-0 sm:aspect-square flex flex-col items-center justify-center p-5 md:p-6 rounded-sm text-center mx-auto";
+              "bg-[#c8cccf] w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-0.5rem)] max-w-[360px] md:max-w-[340px] lg:max-w-[320px] min-h-[360px] sm:min-h-[340px] sm:aspect-square flex flex-col items-center justify-center p-6 md:p-8 rounded-sm text-center mx-auto";
 
             const cardContent = (
               <>
