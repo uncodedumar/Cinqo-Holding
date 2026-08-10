@@ -10,7 +10,6 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "Home", href: "/home" },
       { label: "About", href: "/about" },
-      { label: "Companies", href: "/companies" },
       { label: "Cinqo News", href: "/news" },
       { label: "Careers", href: "/careers" },
       { label: "Projects", href: "/projects" },
