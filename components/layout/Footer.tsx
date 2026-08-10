@@ -17,7 +17,7 @@ const FOOTER_COLUMNS = [
     ],
   },
   {
-    title: "Divisions",
+    title: "Companies",
     links: [
       { label: "Cinqo Holding", href: "/businesses/cinqo-holding-investments" },
       { label: "Cinqo Contracting", href: "/businesses/cinqo-contracting" },
