@@ -178,12 +178,49 @@ export default function JoinCinqo({
     fileInputRef.current?.click();
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (onSubmit) {
       onSubmit({ ...formData, resumeName: fileName });
-    } else {
-      console.log('Form Submitted Data:', { ...formData, resumeName: fileName });
+      return;
+    }
+
+    setStatus('submitting');
+    setErrorMessage('');
+    try {
+      const data = new FormData();
+      Object.entries(formData).forEach(([key, value]) => data.append(key, value));
+      if (fileInputRef.current?.files?.[0]) {
+        data.append('resume', fileInputRef.current.files[0]);
+      }
+
+      const res = await fetch('/api/careers', { method: 'POST', body: data });
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || 'Something went wrong.');
+
+      setStatus('success');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        countryCode: 'BH',
+        phoneNumber: '',
+        currentLocation: '',
+        countryState: '',
+        areaOfExpertise: '',
+        preferredCompany: '',
+        yearsOfExperience: '',
+        linkedinProfile: '',
+        professionalSummary: '',
+      });
+      setFileName('');
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong.');
     }
   };
 
@@ -480,10 +517,18 @@ export default function JoinCinqo({
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-[153px] h-[41px] border border-[rgba(251,51,62,0.8)] bg-transparent text-[#231F20] text-[14px] font-normal tracking-wide flex items-center justify-center hover:bg-[#F5333F]/10 active:bg-[#F5333F]/20 transition-all focus:outline-none"
+                disabled={status === 'submitting'}
+                className="w-[153px] h-[41px] border border-[rgba(251,51,62,0.8)] bg-transparent text-[#231F20] text-[14px] font-normal tracking-wide flex items-center justify-center hover:bg-[#F5333F]/10 active:bg-[#F5333F]/20 transition-all focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit Now
+                {status === 'submitting' ? 'Submitting...' : 'Submit Now'}
               </button>
+
+              {status === 'success' && (
+                <p className="text-[11px] text-green-600 mt-2">Thank you — your application has been submitted successfully.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-[11px] text-red-600 mt-2">{errorMessage || 'Failed to submit application. Please try again.'}</p>
+              )}
             </div>
 
           </form>

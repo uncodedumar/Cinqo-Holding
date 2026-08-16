@@ -226,9 +226,31 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form Submitted:', { ...formData, enquiryPurpose });
+    setStatus('submitting');
+    setErrorMessage('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          phone: selectedCountry ? `${selectedCountry.dial} ${formData.phone}` : formData.phone,
+          enquiryPurpose,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.');
+      setStatus('success');
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong.');
+    }
   };
 
   return (
@@ -394,10 +416,18 @@ export default function ContactForm() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="px-8 py-2 border-2 border-[var(--color-coral-500)] bg-white text-[#1A1A1A] font-medium text-sm cursor-pointer hover:opacity-80 active:opacity-50 focus:outline-none rounded-none"
+            disabled={status === 'submitting'}
+            className="px-8 py-2 border-2 border-[var(--color-coral-500)] bg-white text-[#1A1A1A] font-medium text-sm cursor-pointer hover:opacity-80 active:opacity-50 focus:outline-none rounded-none disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit Now
+            {status === 'submitting' ? 'Sending...' : 'Submit Now'}
           </button>
+
+          {status === 'success' && (
+            <p className="text-xs text-green-600 mt-3">Thank you — your message has been sent successfully.</p>
+          )}
+          {status === 'error' && (
+            <p className="text-xs text-red-600 mt-3">{errorMessage || 'Failed to send message. Please try again.'}</p>
+          )}
         </form>
 
         {/* RIGHT COLUMN: Info Panel */}
